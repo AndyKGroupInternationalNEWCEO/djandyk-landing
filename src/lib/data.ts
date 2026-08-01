@@ -184,6 +184,14 @@ export const CASE_STUDIES = [
 // Discography — Albums 2026 (maps to DiscographySection tab 1)
 export const ALBUMS_2026 = [
   {
+    title: "Borrowed Sunshine",
+    genre: "Trance / Progressive Trance",
+    year: 2026,
+    status: "in-progress",
+    coverUrl: "/releases/borrowed-sunshine-cover.png",
+    spotifyUrl: "https://open.spotify.com/artist/3JhFGt6jRQvnYgvhWMQHUU",
+  },
+  {
     title: "Do Not Disturb",
     genre: "Groovy House / Funky Tech House",
     year: 2026,
@@ -440,6 +448,18 @@ export const ADAM_SHOWCASE = ADAM_ROADMAP;
 export type TracklistEntry = { num: string; title: string; released?: boolean; comingSoon?: boolean; spotifyUrl?: string; label?: string; isIntro?: boolean; releaseDate?: string };
 
 export const TRACKLISTS: Record<string, TracklistEntry[]> = {
+  "Borrowed Sunshine": [
+    { num: "01", title: "Too Hot To Go Home (feat. Ben Wheeler)", releaseDate: "2026-08-28", label: "28.8.2026" },
+    { num: "02", title: "The Way You Smile", releaseDate: "2026-08-21", label: "21.8.2026" },
+    { num: "03", title: "Take It Off Slowly (feat. Nicolas Beech)", releaseDate: "2026-08-14", label: "14.8.2026" },
+    { num: "04", title: "Stay A Little Longer (feat. Ben Wheeler)", releaseDate: "2026-08-07", label: "7.8.2026" },
+    { num: "05", title: "Borrowed Sunshine", releaseDate: "2026-07-31", label: "Out Now" },
+    { num: "06", title: "One More Bad Idea (feat. Mark Lutscher)", releaseDate: "2026-09-04", label: "4.9.2026" },
+    { num: "07", title: "We Outran Tomorrow (feat. Max Liem)", releaseDate: "2026-09-11", label: "11.9.2026" },
+    { num: "08", title: "Hands All Over Me (feat. Max Liem)", releaseDate: "2026-09-18", label: "18.9.2026" },
+    { num: "09", title: "Half Past Summer (feat. Mark Lutscher)", releaseDate: "2026-09-25", label: "25.9.2026" },
+    { num: "10", title: "Nothing Asked To Stay (feat. Nicolas Beech)", releaseDate: "2026-10-02", label: "2.10.2026" },
+  ],
   "Do Not Disturb": [
     { num: "01", title: "Blame The DJ (feat. Juliana Ritter)", releaseDate: "2026-07-12", label: "Out Now" },
     { num: "02", title: "Put It On My Tab (feat. Adam Rooth)", releaseDate: "2026-07-19", label: "19.7.2026" },
