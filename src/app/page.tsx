@@ -41,6 +41,7 @@ import { HeroBackground } from "@/components/BackgroundGrid";
 import LatestReleaseBanner from "@/components/LatestReleaseBanner";
 import SixTranceBalladsPromo from "@/components/SixTranceBalladsPromo";
 import BorrowedSunshinePromo from "@/components/BorrowedSunshinePromo";
+import BackToEurodancePromo from "@/components/BackToEurodancePromo";
 import MusicLabSection from "@/components/MusicLabSection";
 import MusicLabBanner from "@/components/MusicLabBanner";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -174,6 +175,8 @@ export default function Home() {
       <SixTranceBalladsPromo />
 
       <BorrowedSunshinePromo />
+
+      <BackToEurodancePromo />
 
       <TronDivider />
 
