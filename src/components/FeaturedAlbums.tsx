@@ -12,7 +12,7 @@ const FEATURED_RELEASES = [
     genre: "Trance / Progressive Trance",
     description: "10 Tracks. 10 Stories. 10 Moments You'll Never Forget.",
     completionDate: "2026-10-02",
-    href: "https://open.spotify.com/artist/3JhFGt6jRQvnYgvhWMQHUU",
+    href: "/borrowed-sunshine",
     cover: "/releases/borrowed-sunshine-cover.png",
   },
   {
