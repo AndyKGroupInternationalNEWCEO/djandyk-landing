@@ -8,6 +8,15 @@ import ScrollReveal from "@/components/ScrollReveal";
 const FEATURED_RELEASES = [
   {
     kicker: "Album · 2026",
+    title: "Back to Eurodance",
+    genre: "Authentic 90s Eurodance",
+    description: "6 Tracks. 6 Memories. One Return to the Dancefloor.",
+    completionDate: "2026-10-16",
+    href: "/back-to-eurodance",
+    cover: "/releases/back-to-eurodance-cover.png",
+  },
+  {
+    kicker: "Album · 2026",
     title: "Borrowed Sunshine",
     genre: "Trance / Progressive Trance",
     description: "10 Tracks. 10 Stories. 10 Moments You'll Never Forget.",
