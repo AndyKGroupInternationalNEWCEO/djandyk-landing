@@ -101,7 +101,7 @@ export default function BorrowedSunshinePromo() {
           {/* Album artwork — right */}
           <div className="order-2 lg:order-3">
             <img
-              src="/releases/borrowed-sunshine-cover.png"
+              src="/releases/borrowed-sunshine-promo.png"
               alt="Borrowed Sunshine — Trance / Progressive Trance album by DJ Andy'K"
               className="w-full aspect-square object-cover rounded-2xl"
               style={{
