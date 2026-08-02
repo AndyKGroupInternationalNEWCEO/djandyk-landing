@@ -71,7 +71,7 @@ const TRACKS = [
     releaseDate: "2026-07-31",
     date: "31.7.2026",
     accent: "#E8A020",
-    coverUrl: COVER,
+    coverUrl: "/releases/borrowed-sunshine.png",
     audioSrc: "/audio/borrowed-sunshine.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
