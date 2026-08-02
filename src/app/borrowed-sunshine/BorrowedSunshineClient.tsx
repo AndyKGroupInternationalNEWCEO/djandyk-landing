@@ -174,14 +174,8 @@ function TrackCard({ track }: { track: Track }) {
           src={track.coverUrl}
           alt={track.title}
           className="w-full h-full object-cover"
-          style={{
-            filter: !isOut ? "brightness(0.85) saturate(0.9)" : "none",
-          }}
         />
-        <div
-          className="absolute inset-0 flex items-end p-3"
-          style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55) 20%, transparent)" }}
-        >
+        <div className="absolute inset-0 flex items-end p-3">
           <span
             className="text-[9px] font-mono uppercase tracking-[0.3em] px-2.5 py-1 rounded-full border"
             style={{
