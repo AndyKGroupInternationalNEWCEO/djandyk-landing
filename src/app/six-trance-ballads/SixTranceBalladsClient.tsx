@@ -612,7 +612,7 @@ export default function SixTranceBalladsClient() {
           </p>
 
           <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.28)" }}>
-            Six personal letters in trance. New track every Wednesday. Full album 22.7.2026.
+            All 6 tracks out now. Full album available on all platforms.
           </p>
         </section>
 
