@@ -11,6 +11,7 @@ const TRACKS = [
     n: 1,
     title: "Stay (feat. Eva & Mark Witman)",
     from: "feat. Eva & Mark Witman",
+    story: "The night had almost won, until the piano found us first. We stayed because leaving felt like the wrong kind of ending.",
     releaseDate: "2026-09-11",
     date: "11.9.2026",
     accent: "#C060D0",
@@ -24,6 +25,7 @@ const TRACKS = [
     n: 2,
     title: "Fire Inside (feat. Ritta & J-Jack)",
     from: "feat. Ritta & J-Jack",
+    story: "Something older than the music was moving under our feet. We didn't call it out — it called itself.",
     releaseDate: "2026-09-18",
     date: "18.9.2026",
     accent: "#D040A0",
@@ -37,6 +39,7 @@ const TRACKS = [
     n: 3,
     title: "Back To You (feat. Jully Calleb & Spencer Marks)",
     from: "feat. Jully Calleb & Spencer Marks",
+    story: "Every street we tried led back to the same door. Some hearts just aren't built for other directions.",
     releaseDate: "2026-09-25",
     date: "25.9.2026",
     accent: "#9060C0",
@@ -50,6 +53,7 @@ const TRACKS = [
     n: 4,
     title: "No Control (feat. Ritta & J-Jack)",
     from: "feat. Ritta & J-Jack",
+    story: "The beat stopped asking permission somewhere around midnight. By the drop, none of us were driving anymore.",
     releaseDate: "2026-10-02",
     date: "2.10.2026",
     accent: "#E050B0",
@@ -63,6 +67,7 @@ const TRACKS = [
     n: 5,
     title: "Too Late For Goodbye (feat. Nella & J'B Ray)",
     from: "feat. Nella & J'B Ray",
+    story: "The lights were already coming up when we asked for one more song. Goodbye can wait for the next chorus.",
     releaseDate: "2026-10-09",
     date: "9.10.2026",
     accent: "#A050D0",
@@ -76,6 +81,7 @@ const TRACKS = [
     n: 6,
     title: "Feel My Body (feat. Iazabella Marieera & Paollo Rivaninni)",
     from: "feat. Iazabella Marieera & Paollo Rivaninni",
+    story: "The bassline found our pulse before we noticed it was gone. Some nights don't need words, just movement.",
     releaseDate: "2026-10-16",
     date: "16.10.2026",
     accent: "#C040C0",
@@ -155,8 +161,16 @@ function TrackCard({ track }: { track: Track }) {
         </h3>
 
         {/* Release date */}
-        <p className="text-[11px] font-mono uppercase tracking-widest mb-3" style={{ color: isOut ? track.accent : "rgba(255,255,255,0.25)" }}>
+        <p className="text-[11px] font-mono uppercase tracking-widest mb-2" style={{ color: isOut ? track.accent : "rgba(255,255,255,0.25)" }}>
           {isOut ? "Released" : `Release · ${track.date}`}
+        </p>
+
+        {/* Story — 2-line pull-quote */}
+        <p
+          className="text-sm leading-relaxed mb-3 font-serif italic"
+          style={{ color: "rgba(255,255,255,0.28)" }}
+        >
+          {track.story}
         </p>
 
         {/* Audio player */}
