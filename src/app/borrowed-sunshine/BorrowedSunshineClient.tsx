@@ -108,7 +108,7 @@ const TRACKS = [
   {
     n: 8,
     title: "Hands All Over Me",
-    from: "feat. Max Liem",
+    from: "DJ Andy'K",
     story: "The distance disappeared before the words did. Some moments ask for surrender, not permission.",
     releaseDate: "2026-09-18",
     date: "18.9.2026",
@@ -122,7 +122,7 @@ const TRACKS = [
   {
     n: 9,
     title: "Half Past Summer",
-    from: "feat. Mark Lutscher",
+    from: "DJ Andy'K",
     story: "You can feel summer leaving long before it says goodbye. Some sunsets never stop following you.",
     releaseDate: "2026-09-25",
     date: "25.9.2026",
@@ -136,7 +136,7 @@ const TRACKS = [
   {
     n: 10,
     title: "Nothing Asked To Stay",
-    from: "feat. Nicolas Beech",
+    from: "DJ Andy'K",
     story: "No promises were broken because none were ever made. Sometimes silence is the only goodbye people leave behind.",
     releaseDate: "2026-10-02",
     date: "2.10.2026",
