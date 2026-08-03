@@ -12,7 +12,7 @@ const TRACKS = [
   { num: "07", title: "We Outran Tomorrow (feat. Max Liem)", releaseDate: "2026-09-11", date: "11.9.2026", accent: "#A06030" },
   { num: "08", title: "Hands All Over Me", releaseDate: "2026-09-18", date: "18.9.2026", accent: "#906050" },
   { num: "09", title: "Half Past Summer", releaseDate: "2026-09-25", date: "25.9.2026", accent: "#C09060" },
-  { num: "10", title: "Nothing Asked To Stay", releaseDate: "2026-10-02", date: "2.10.2026", accent: "#8A7060" },
+  { num: "10", title: "Nothing Asked To Stay", releaseDate: "2026-10-09", date: "9.10.2026", accent: "#8A7060" },
 ];
 
 export default function BorrowedSunshinePromo() {
