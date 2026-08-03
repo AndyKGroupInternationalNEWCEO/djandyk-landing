@@ -472,9 +472,9 @@ export const TRACKLISTS: Record<string, TracklistEntry[]> = {
     { num: "05", title: "Borrowed Sunshine", releaseDate: "2026-07-31", label: "Out Now" },
     { num: "06", title: "One More Bad Idea (feat. Mark Lutscher)", releaseDate: "2026-09-04", label: "4.9.2026" },
     { num: "07", title: "We Outran Tomorrow (feat. Max Liem)", releaseDate: "2026-09-11", label: "11.9.2026" },
-    { num: "08", title: "Hands All Over Me (feat. Max Liem)", releaseDate: "2026-09-18", label: "18.9.2026" },
-    { num: "09", title: "Half Past Summer (feat. Mark Lutscher)", releaseDate: "2026-09-25", label: "25.9.2026" },
-    { num: "10", title: "Nothing Asked To Stay (feat. Nicolas Beech)", releaseDate: "2026-10-02", label: "2.10.2026" },
+    { num: "08", title: "Hands All Over Me", releaseDate: "2026-09-18", label: "18.9.2026" },
+    { num: "09", title: "Half Past Summer", releaseDate: "2026-09-25", label: "25.9.2026" },
+    { num: "10", title: "Nothing Asked To Stay", releaseDate: "2026-10-02", label: "2.10.2026" },
   ],
   "Do Not Disturb": [
     { num: "01", title: "Blame The DJ (feat. Juliana Ritter)", releaseDate: "2026-07-12", label: "Out Now" },
