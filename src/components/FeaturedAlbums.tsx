@@ -20,7 +20,7 @@ const FEATURED_RELEASES = [
     title: "Borrowed Sunshine",
     genre: "Trance / Progressive Trance",
     description: "10 Tracks. 10 Stories. 10 Moments You'll Never Forget.",
-    completionDate: "2026-10-02",
+    completionDate: "2026-10-09",
     href: "/borrowed-sunshine",
     cover: "/releases/borrowed-sunshine-promo.png",
   },
