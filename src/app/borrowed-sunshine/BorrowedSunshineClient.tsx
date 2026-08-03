@@ -107,7 +107,7 @@ const TRACKS = [
   },
   {
     n: 8,
-    title: "Hands All Over Me (feat. Max Liem)",
+    title: "Hands All Over Me",
     from: "feat. Max Liem",
     story: "The distance disappeared before the words did. Some moments ask for surrender, not permission.",
     releaseDate: "2026-09-18",
@@ -121,7 +121,7 @@ const TRACKS = [
   },
   {
     n: 9,
-    title: "Half Past Summer (feat. Mark Lutscher)",
+    title: "Half Past Summer",
     from: "feat. Mark Lutscher",
     story: "You can feel summer leaving long before it says goodbye. Some sunsets never stop following you.",
     releaseDate: "2026-09-25",
@@ -135,7 +135,7 @@ const TRACKS = [
   },
   {
     n: 10,
-    title: "Nothing Asked To Stay (feat. Nicolas Beech)",
+    title: "Nothing Asked To Stay",
     from: "feat. Nicolas Beech",
     story: "No promises were broken because none were ever made. Sometimes silence is the only goodbye people leave behind.",
     releaseDate: "2026-10-02",
