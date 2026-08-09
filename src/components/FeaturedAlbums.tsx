@@ -11,7 +11,7 @@ const FEATURED_RELEASES = [
     title: "Back to Eurodance",
     genre: "Authentic 90s Eurodance",
     description: "6 Tracks. 6 Memories. One Return to the Dancefloor.",
-    completionDate: "2026-10-16",
+    completionDate: "2026-10-23",
     href: "/back-to-eurodance",
     cover: "/releases/back-to-eurodance-cover.png",
   },
