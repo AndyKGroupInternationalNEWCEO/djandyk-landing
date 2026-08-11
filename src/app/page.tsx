@@ -44,6 +44,7 @@ import BorrowedSunshinePromo from "@/components/BorrowedSunshinePromo";
 import BackToEurodancePromo from "@/components/BackToEurodancePromo";
 import MusicLabSection from "@/components/MusicLabSection";
 import MusicLabBanner from "@/components/MusicLabBanner";
+import BeatportBanner from "@/components/BeatportBanner";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const jsonLd = {
@@ -166,6 +167,8 @@ export default function Home() {
       <ScrollReveal>
         <FaqSection />
       </ScrollReveal>
+
+      <BeatportBanner />
 
       {/* Featured Releases */}
       <ScrollReveal>
