@@ -10,7 +10,7 @@ export const COMPANY = {
     "Every track is built as a journey \u2014 from the first chord to the final beat, designed to move both body and soul.",
   label: "ANDY\u2019K GROUP INTERNATIONAL LTD",
   basedIn: "United Kingdom",
-  genre: "Trance \u00B7 Progressive House \u00B7 EDM",
+  genre: "Trance \u00B7 Progressive Trance \u00B7 Groovy House \u00B7 Funky Tech House \u00B7 90s Eurodance",
   email: "ceo@andykgroup.com",
   website: "djandykofficial.com",
   labelWebsite: "https://www.andykgroup.com",

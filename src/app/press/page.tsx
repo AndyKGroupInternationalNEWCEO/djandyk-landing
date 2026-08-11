@@ -12,6 +12,15 @@ import {
 
 const PRESS_URL = "https://www.djandykofficial.com/press";
 
+const SIX_TRANCE_BALLADS = {
+  title: "Six Trance Ballads (From Me, To...)",
+  genre: "Trance / Progressive Trance",
+  year: 2026,
+  coverUrl: "/releases/six-trance-ballads-the-album.png",
+  spotifyUrl: undefined as string | undefined,
+  soundcloudUrl: undefined as string | undefined,
+};
+
 export const metadata: Metadata = {
   title: "Press & Media Kit | DJ Andy'K Official",
   description:
@@ -93,6 +102,7 @@ function DownloadCard({
 
 export default function PressPage() {
   const allReleases = [
+    { ...SIX_TRANCE_BALLADS, category: "Album" },
     ...ALBUMS_2026.map((a) => ({ ...a, category: "Album" })),
     ...EPS_SINGLES_2026.map((e) => ({ ...e, category: e.type ?? "Single" })),
     ...PIANO_SERIES_2026.map((p) => ({ ...p, category: "Piano Series" })),
@@ -153,11 +163,8 @@ export default function PressPage() {
         <Section>
           <SectionTitle>Artist Bio</SectionTitle>
           <div className="glass-card rounded-xl p-6">
-            <p className="text-sm text-muted leading-relaxed mb-4">
-              DJ Andy&apos;K is a UK-based producer of Trance, Progressive House, and EDM. Every track is built as a structured emotional journey — combining energy, melodic depth, and storytelling through sound. Released under ANDY&apos;K GROUP INTERNATIONAL LTD.
-            </p>
             <p className="text-sm text-muted leading-relaxed">
-              With a discography spanning four albums, multiple EPs and singles in 2026, DJ Andy&apos;K has developed a distinctive sound that bridges the emotional and the euphoric — music for late nights, long drives, and moments that need a soundtrack.
+              DJ Andy&apos;K is a UK-based electronic music producer and DJ creating across multiple genres — Trance, Progressive Trance, Groovy House, Funky Tech House, and 90s Eurodance. In 2026 alone he has released four full albums: Six Trance Ballads (From Me, To...), Borrowed Sunshine, Do Not Disturb, and Back to Eurodance — each a complete concept project with its own visual identity, story, and sound. His music is available on all major streaming platforms.
             </p>
           </div>
         </Section>
@@ -169,7 +176,7 @@ export default function PressPage() {
             <InfoRow label="Artist" value="DJ Andy'K" />
             <InfoRow label="Real Name" value={COMPANY.realName} />
             <InfoRow label="Genres" value={COMPANY.genre} />
-            <InfoRow label="BPM Range" value="120–124 BPM (main productions)" />
+            <InfoRow label="BPM Range" value="120–138 BPM (main productions)" />
             <InfoRow label="Based In" value={COMPANY.basedIn} />
             <InfoRow label="Active Since" value="2024" />
             <InfoRow label="Label" value={COMPANY.label} />
