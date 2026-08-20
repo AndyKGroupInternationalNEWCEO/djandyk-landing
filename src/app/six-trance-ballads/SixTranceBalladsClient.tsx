@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { getAlbumStatus } from "@/lib/albumStatus";
 
 const TRACKS = [
   {
@@ -576,6 +577,8 @@ function TrackCard({ track }: { track: Track }) {
 }
 
 export default function SixTranceBalladsClient() {
+  const albumStatus = getAlbumStatus(TRACKS);
+
   return (
     <>
       <Navbar />
@@ -587,7 +590,7 @@ export default function SixTranceBalladsClient() {
             className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-6 px-3 py-1 rounded-full border"
             style={{ color: GREEN, borderColor: `${GREEN}33`, background: `${GREEN}0d` }}
           >
-            Album · Trance Ballads · 2026
+            {albumStatus === "released" ? "Released" : "Album · Trance Ballads · 2026"}
           </span>
 
           <h1

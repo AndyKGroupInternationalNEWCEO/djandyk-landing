@@ -40,6 +40,7 @@ const FEATURED_RELEASES = [
     description: "Six personal letters in trance. New track every Wednesday. Full album 22.7.2026.",
     availableNow: true,
     href: "/six-trance-ballads",
+    embedUrl: "https://open.spotify.com/embed/album/6tXnXiMbG1n9Tt3NnVij3n?utm_source=generator&theme=0",
     cover: "/releases/six-trance-ballads-the-album.png",
   },
   {
