@@ -24,7 +24,7 @@ export default function BorrowedSunshinePromo() {
       tagline="Trance / Progressive Trance"
       description="10 Tracks. 10 Stories. 10 Moments You'll Never Forget."
       ctaHref="/borrowed-sunshine"
-      coverSrc="/releases/borrowed-sunshine-promo.png"
+      coverSrc="/releases/borrowed-sunshine-cover.png"
       coverAlt="Borrowed Sunshine — Trance / Progressive Trance album by DJ Andy'K"
       tracks={TRACKS}
     />
