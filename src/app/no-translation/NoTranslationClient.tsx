@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { getAlbumStatus } from "@/lib/albumStatus";
 
 const COVER = "/releases/no-translation-cover.png";
 
@@ -275,6 +276,8 @@ function TrackCard({ track }: { track: Track }) {
 }
 
 export default function NoTranslationClient() {
+  const albumStatus = getAlbumStatus(TRACKS);
+
   return (
     <>
       <Navbar />
@@ -286,7 +289,7 @@ export default function NoTranslationClient() {
             className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-6 px-3 py-1 rounded-full border"
             style={{ color: ACCENT, borderColor: `${ACCENT}33`, background: `${ACCENT}0d` }}
           >
-            Album · Melodic Progressive Tech House · 2026
+            {albumStatus === "released" ? "Released" : "Album · Melodic Progressive Tech House · 2026"}
           </span>
 
           <h1

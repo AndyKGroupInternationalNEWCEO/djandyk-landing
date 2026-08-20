@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getAlbumStatus } from "@/lib/albumStatus";
 
 export type AlbumPromoTrack = {
   num: string;
@@ -31,6 +32,8 @@ export default function AlbumPromoSection({
   coverAlt,
   tracks,
 }: AlbumPromoSectionProps) {
+  const albumStatus = getAlbumStatus(tracks);
+
   return (
     <section className="relative overflow-hidden" style={{ background: "#0d1117" }}>
       <div className="max-w-[1200px] mx-auto px-8 py-16">
@@ -86,7 +89,7 @@ export default function AlbumPromoSection({
                 color: accent,
               }}
             >
-              {kicker}
+              {albumStatus === "released" ? "Released" : kicker}
             </span>
 
             <h2
