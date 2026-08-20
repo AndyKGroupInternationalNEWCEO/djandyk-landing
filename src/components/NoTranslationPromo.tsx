@@ -3,12 +3,12 @@ import Link from "next/link";
 const ACCENT = "#E84C3C";
 
 const TRACKS = [
-  { num: "01", title: "Don't Look Away (feat. Emir Cem Karahan)", releaseDate: "2026-10-30", date: "30.10.2026", accent: "#E84C3C" },
-  { num: "02", title: "No Explanation (feat. Rania Al-Masri)", releaseDate: "2026-11-06", date: "6.11.2026", accent: "#F0A020" },
-  { num: "03", title: "Read My Face (feat. Arta Gashi)", releaseDate: "2026-11-13", date: "13.11.2026", accent: "#4A90D9" },
-  { num: "04", title: "Read It in My Eyes (feat. Luka Vuković)", releaseDate: "2026-11-20", date: "20.11.2026", accent: "#D9432E" },
-  { num: "05", title: "Before Dawn (feat. Mira Velinova)", releaseDate: "2026-11-27", date: "27.11.2026", accent: "#40E0C0" },
-  { num: "06", title: "Under Your Skin (feat. Andreea Dumitrescu)", releaseDate: "2026-12-04", date: "4.12.2026", accent: "#E8B020" },
+  { num: "01", title: "Don't Look Away (Bana Öyle Bakma)", releaseDate: "2026-10-30", date: "30.10.2026", accent: "#E84C3C" },
+  { num: "02", title: "No Explanation (Bala Kalam)", releaseDate: "2026-11-06", date: "6.11.2026", accent: "#F0A020" },
+  { num: "03", title: "Read My Face (Pa Fjalë)", releaseDate: "2026-11-13", date: "13.11.2026", accent: "#4A90D9" },
+  { num: "04", title: "Read It in My Eyes (Pročitaj Mi u Očima)", releaseDate: "2026-11-20", date: "20.11.2026", accent: "#D9432E" },
+  { num: "05", title: "Before Dawn (Преди Зори)", releaseDate: "2026-11-27", date: "27.11.2026", accent: "#40E0C0" },
+  { num: "06", title: "Under Your Skin (Sub Pielea Ta)", releaseDate: "2026-12-04", date: "4.12.2026", accent: "#E8B020" },
 ];
 
 export default function NoTranslationPromo() {
