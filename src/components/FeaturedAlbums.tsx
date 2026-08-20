@@ -8,6 +8,15 @@ import ScrollReveal from "@/components/ScrollReveal";
 const FEATURED_RELEASES = [
   {
     kicker: "Album · 2026",
+    title: "No Translation",
+    genre: "Melodic Progressive Tech House",
+    description: "Six Languages. One Night. Nothing Needs Explaining.",
+    completionDate: "2026-12-04",
+    href: "/no-translation",
+    cover: "/releases/no-translation-cover.png",
+  },
+  {
+    kicker: "Album · 2026",
     title: "Back to Eurodance",
     genre: "Authentic 90s Eurodance",
     description: "6 Tracks. 6 Memories. One Return to the Dancefloor.",

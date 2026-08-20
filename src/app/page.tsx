@@ -42,6 +42,7 @@ import LatestReleaseBanner from "@/components/LatestReleaseBanner";
 import SixTranceBalladsPromo from "@/components/SixTranceBalladsPromo";
 import BorrowedSunshinePromo from "@/components/BorrowedSunshinePromo";
 import BackToEurodancePromo from "@/components/BackToEurodancePromo";
+import NoTranslationPromo from "@/components/NoTranslationPromo";
 import MusicLabSection from "@/components/MusicLabSection";
 import MusicLabBanner from "@/components/MusicLabBanner";
 import BeatportBanner from "@/components/BeatportBanner";
@@ -180,6 +181,8 @@ export default function Home() {
       <BorrowedSunshinePromo />
 
       <BackToEurodancePromo />
+
+      <NoTranslationPromo />
 
       <TronDivider />
 
