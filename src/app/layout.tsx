@@ -3,7 +3,6 @@ import { IBM_Plex_Sans, IBM_Plex_Mono, Playfair_Display } from "next/font/google
 import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 import CookieBanner from "@/components/CookieBanner";
-import FloatingPlayer from "@/components/FloatingPlayer";
 import AlbumAnnouncementPopup from "@/components/AlbumAnnouncementPopup";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
@@ -52,7 +51,6 @@ export const metadata: Metadata = {
     "When Later Becomes Never",
     "Human Stories",
     "Deep Connections",
-    "Music Is Your Passion",
     "Four Elements",
     "djandykofficial.com",
     "Andy'K Group International",
@@ -132,7 +130,6 @@ export default function RootLayout({
         <ThemeProvider>
           <LanguageProvider>
             {children}
-            <FloatingPlayer />
             <CookieBanner />
             {/* AlbumAnnouncementPopup removed — Before I Forget campaign ended */}
           </LanguageProvider>

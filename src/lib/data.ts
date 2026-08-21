@@ -241,14 +241,6 @@ export const ALBUMS_2026 = [
     spotifyUrl: "https://open.spotify.com/album/39Zb0euYMqdqg658wqKVGU",
   },
   {
-    title: "Music Is Your Passion",
-    genre: "Trance",
-    year: 2026,
-    note: "Recorded 2025 \u00B7 Released as album 2026",
-    coverUrl: "/albums/music-is-your-passion.jpg",
-    spotifyUrl: "https://open.spotify.com/album/2en5D8nLMSTpRE6fhS1BJY",
-  },
-  {
     title: "Four Elements",
     genre: "Deep Melodic / Progressive",
     year: 2026,
@@ -549,16 +541,6 @@ export const TRACKLISTS: Record<string, TracklistEntry[]> = {
     { num: "05", title: "Midnight Drive" },
     { num: "06", title: "Mask" },
     { num: "07", title: "Stone" },
-  ],
-  "Music Is Your Passion": [
-    { num: "01", title: "Music Is Your Passion (Intro)" },
-    { num: "02", title: "Beyond The Horizon" },
-    { num: "03", title: "I Will Never Fall Again" },
-    { num: "04", title: "Love Will Find Us Once Again" },
-    { num: "05", title: "Voices Of Tomorrow" },
-    { num: "06", title: "This Is Brand New Dawn" },
-    { num: "07", title: "Shine Forever" },
-    { num: "08", title: "Music Is Your Passion (Outro)" },
   ],
   "Four Elements": [
     { num: "01", title: "Pull Me Through" },

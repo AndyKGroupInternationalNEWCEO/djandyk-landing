@@ -95,17 +95,6 @@ const FEATURED_RELEASES = [
   },
   {
     kicker: "Album · 2026",
-    title: "Music Is Your Passion",
-    genre: "Trance",
-    description: "Where it all began. The sound that defines everything that followed.",
-    note: "Recorded 2025 \u00B7 Released as album 2026",
-    availableNow: true,
-    href: "https://open.spotify.com/album/2en5D8nLMSTpRE6fhS1BJY",
-    embedUrl: "https://open.spotify.com/embed/album/2en5D8nLMSTpRE6fhS1BJY?utm_source=generator&theme=0",
-    cover: "/albums/music-is-your-passion.jpg",
-  },
-  {
-    kicker: "Album · 2026",
     title: "Four Elements",
     genre: "Deep Melodic / Progressive",
     description: "Four tracks. Four feelings. One direction.",

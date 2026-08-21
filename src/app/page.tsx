@@ -127,14 +127,6 @@ const jsonLd = {
     },
     {
       "@type": "MusicAlbum",
-      name: "Music Is Your Passion",
-      byArtist: { "@type": "MusicGroup", name: "DJ Andy'K" },
-      datePublished: "2026",
-      genre: ["Trance"],
-      url: "https://open.spotify.com/album/2en5D8nLMSTpRE6fhS1BJY",
-    },
-    {
-      "@type": "MusicAlbum",
       name: "Four Elements",
       byArtist: { "@type": "MusicGroup", name: "DJ Andy'K" },
       datePublished: "2026",
