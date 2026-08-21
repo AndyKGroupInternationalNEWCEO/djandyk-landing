@@ -104,7 +104,11 @@ function TrackCard({ track }: { track: Track }) {
 
   return (
     <div
-      className="rounded-2xl overflow-hidden"
+      className="card-float"
+      style={{ animationDelay: `${(track.n % 6) * 0.5}s` }}
+    >
+    <div
+      className="card-float-inner rounded-2xl overflow-hidden"
       style={{
         background: "rgba(255,255,255,0.04)",
         backdropFilter: "blur(12px)",
@@ -271,6 +275,7 @@ function TrackCard({ track }: { track: Track }) {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 }

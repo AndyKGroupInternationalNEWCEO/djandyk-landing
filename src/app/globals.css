@@ -374,3 +374,36 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .lab-wave-bar { animation: none; opacity: 0.3; }
 }
+
+/* ===== FLOATING TRACK CARDS ===== */
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+.card-float {
+  animation: cardFloat 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.card-float:hover {
+  animation-play-state: paused;
+}
+
+.card-float-inner {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.card-float:hover .card-float-inner {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-float {
+    animation: none;
+  }
+  .card-float:hover .card-float-inner {
+    transform: none;
+  }
+}
