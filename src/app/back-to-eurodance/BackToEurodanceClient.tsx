@@ -104,7 +104,7 @@ function TrackCard({ track }: { track: Track }) {
 
   return (
     <div
-      className="card-punch rounded-2xl overflow-hidden"
+      className="card-punch rounded-2xl overflow-hidden w-[260px] sm:w-[280px] shrink-0 snap-start"
       style={{
         background: "rgba(255,255,255,0.04)",
         backdropFilter: "blur(12px)",
@@ -314,9 +314,9 @@ export default function BackToEurodanceClient() {
           </p>
         </section>
 
-        {/* Track list — 2-col on desktop */}
-        <section className="px-6 pb-12 max-w-[1100px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Track list — horizontal swipeable row */}
+        <section className="pb-12 max-w-[1100px] mx-auto">
+          <div className="no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-6 pb-2">
             {TRACKS.map((track) => (
               <TrackCard key={track.n} track={track} />
             ))}

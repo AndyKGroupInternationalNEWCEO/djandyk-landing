@@ -159,7 +159,7 @@ function TrackCard({ track }: { track: Track }) {
   const isOut = new Date(track.releaseDate) <= new Date();
 
   return (
-    <div className="card-glow rounded-2xl" style={{ color: track.accent }}>
+    <div className="card-glow rounded-2xl w-[260px] sm:w-[280px] shrink-0 snap-start" style={{ color: track.accent }}>
     <div
       className="card-glow-inner rounded-2xl overflow-hidden"
       style={{
@@ -371,9 +371,9 @@ export default function BorrowedSunshineClient() {
           </p>
         </section>
 
-        {/* Track list — 2-col on desktop */}
-        <section className="px-6 pb-12 max-w-[1100px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Track list — horizontal swipeable row */}
+        <section className="pb-12 max-w-[1100px] mx-auto">
+          <div className="no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-6 pb-2">
             {TRACKS.map((track) => (
               <TrackCard key={track.n} track={track} />
             ))}
