@@ -104,13 +104,14 @@ function TrackCard({ track }: { track: Track }) {
 
   return (
     <div
-      className="rounded-2xl overflow-hidden"
+      className="card-punch rounded-2xl overflow-hidden"
       style={{
         background: "rgba(255,255,255,0.04)",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
         border: "1px solid rgba(255,255,255,0.08)",
         borderTop: `2px solid ${track.accent}`,
+        color: track.accent,
       }}
     >
       {/* Cover — full width square */}

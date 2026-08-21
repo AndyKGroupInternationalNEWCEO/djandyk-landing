@@ -407,3 +407,83 @@ body {
     transform: none;
   }
 }
+
+/* ===== BORROWED SUNSHINE — WARM GLOW PULSE ===== */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 0 0 transparent; }
+  50%      { box-shadow: 0 0 26px 2px color-mix(in srgb, currentColor 35%, transparent); }
+}
+
+.card-glow {
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+.card-glow:hover {
+  animation-play-state: paused;
+}
+
+.card-glow-inner {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-glow:hover .card-glow-inner {
+  box-shadow: 0 0 44px 6px color-mix(in srgb, currentColor 60%, transparent);
+  transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-glow { animation: none; }
+  .card-glow:hover .card-glow-inner { transform: none; }
+}
+
+/* ===== SIX TRANCE BALLADS — SLOW BREATHING COVER ===== */
+@keyframes coverBreathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.035); }
+}
+
+.card-breathe-cover-wrap {
+  animation: coverBreathe 8s ease-in-out infinite;
+}
+
+.card-breathe:hover .card-breathe-cover-wrap {
+  animation-play-state: paused;
+}
+
+.card-breathe-cover {
+  transition: transform 0.5s ease;
+}
+
+.card-breathe:hover .card-breathe-cover {
+  transform: scale(1.07);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-breathe-cover-wrap { animation: none; }
+  .card-breathe:hover .card-breathe-cover { transform: none; }
+}
+
+/* ===== BACK TO EURODANCE — PUNCHY HOVER BOUNCE ===== */
+@keyframes punchBounce {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(0.96); }
+  60%  { transform: scale(1.05); }
+  80%  { transform: scale(0.99); }
+  100% { transform: scale(1.02); }
+}
+
+.card-punch {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-punch:hover {
+  animation: punchBounce 0.5s cubic-bezier(0.36, 1.8, 0.4, 1) forwards;
+  box-shadow: 0 14px 32px -8px color-mix(in srgb, currentColor 55%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-punch:hover {
+    animation: none;
+    transform: none;
+  }
+}

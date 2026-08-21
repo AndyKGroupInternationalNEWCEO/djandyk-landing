@@ -405,7 +405,7 @@ function TrackCard({ track }: { track: Track }) {
 
   return (
     <div
-      className="rounded-2xl overflow-hidden"
+      className="card-breathe rounded-2xl overflow-hidden"
       style={{
         background: "rgba(255,255,255,0.04)",
         backdropFilter: "blur(12px)",
@@ -416,14 +416,16 @@ function TrackCard({ track }: { track: Track }) {
     >
       {/* Cover — full width square */}
       <div className="aspect-square w-full relative overflow-hidden">
-        <img
-          src={track.coverUrl}
-          alt={track.title}
-          className="w-full h-full object-cover"
-          style={{
-            filter: !isOut ? "brightness(0.85) saturate(0.9)" : "none",
-          }}
-        />
+        <div className="card-breathe-cover-wrap w-full h-full">
+          <img
+            src={track.coverUrl}
+            alt={track.title}
+            className="card-breathe-cover w-full h-full object-cover"
+            style={{
+              filter: !isOut ? "brightness(0.85) saturate(0.9)" : "none",
+            }}
+          />
+        </div>
         <div
           className="absolute inset-0 flex items-end p-3"
           style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55) 20%, transparent)" }}

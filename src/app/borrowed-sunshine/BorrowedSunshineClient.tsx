@@ -159,8 +159,9 @@ function TrackCard({ track }: { track: Track }) {
   const isOut = new Date(track.releaseDate) <= new Date();
 
   return (
+    <div className="card-glow rounded-2xl" style={{ color: track.accent }}>
     <div
-      className="rounded-2xl overflow-hidden"
+      className="card-glow-inner rounded-2xl overflow-hidden"
       style={{
         background: "rgba(255,255,255,0.04)",
         backdropFilter: "blur(12px)",
@@ -327,6 +328,7 @@ function TrackCard({ track }: { track: Track }) {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 }
