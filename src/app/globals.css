@@ -377,12 +377,12 @@ body {
 
 /* ===== FLOATING TRACK CARDS ===== */
 @keyframes cardFloat {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-8px); }
+  0%, 100%  { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-18px) rotate(0.6deg); }
 }
 
 .card-float {
-  animation: cardFloat 6s ease-in-out infinite;
+  animation: cardFloat 3.2s ease-in-out infinite;
   will-change: transform;
 }
 
