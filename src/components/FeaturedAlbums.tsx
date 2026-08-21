@@ -58,7 +58,8 @@ const FEATURED_RELEASES = [
     genre: "Trance / Progressive Trance",
     description: "Eight tracks of progressive trance — a journey through memory, emotion, and release.",
     completionDate: "2026-07-03",
-    href: "https://soundcloud.com/djandykofficial",
+    href: "https://open.spotify.com/album/5pRDNwagYj2SS5CgYdhC5a",
+    embedUrl: "https://open.spotify.com/embed/album/5pRDNwagYj2SS5CgYdhC5a?utm_source=generator&theme=0",
     cover: "/releases/before-i-forget.png",
   },
   {

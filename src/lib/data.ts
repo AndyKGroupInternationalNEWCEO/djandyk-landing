@@ -45,7 +45,7 @@ export const LATEST_RELEASES = [
     title: "Before I Forget",
     type: "New Single \u00b7 Trance",
     coverUrl: "/releases/before-i-forget.png",
-    spotifyUrl: "https://open.spotify.com/album/0KN8WFTt4WsjSB6f2jXx20?si=XDyLYdTyRzC9XU0gDs1eDQ",
+    spotifyUrl: "https://open.spotify.com/album/5pRDNwagYj2SS5CgYdhC5a",
   },
   {
     title: "Someone I Used To Be",
@@ -213,7 +213,7 @@ export const ALBUMS_2026 = [
     year: "2026",
     status: "in-progress",
     coverUrl: "/releases/before-i-forget.png",
-    spotifyUrl: "https://open.spotify.com/album/0KN8WFTt4WsjSB6f2jXx20",
+    spotifyUrl: "https://open.spotify.com/album/5pRDNwagYj2SS5CgYdhC5a",
     soundcloudUrl: "https://soundcloud.com/djandykofficial",
   },
   {
