@@ -16,7 +16,7 @@ const TRACKS = [
       "A breath becomes the dividing line between fading away and returning. The opening track turns vulnerability into motion: one spark, one heartbeat, and the will to remain.",
     accent: "#4AC8E0",
     coverUrl: "/releases/breathe-me-back-to-life.png",
-    audioSrc: null as string | null,
+    audioSrc: "/audio/breathe-me-back-to-life.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
     lyrics: [
@@ -43,7 +43,7 @@ const TRACKS = [
       "Survival is not shown as an escape, but as light remaining inside every scar. The afterglow becomes proof that the darkness did not win.",
     accent: "#E0A050",
     coverUrl: "/releases/alive-in-the-afterglow.png",
-    audioSrc: null as string | null,
+    audioSrc: "/audio/alive-in-the-afterglow.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
     lyrics: [
@@ -66,7 +66,7 @@ const TRACKS = [
       "An empty room keeps speaking through objects, memory and echo. Even without a voice, silence carries the shape of someone who remains present.",
     accent: "#4A90D0",
     coverUrl: "/releases/even-silence-sounds-like-you.png",
-    audioSrc: null as string | null,
+    audioSrc: "/audio/even-silence-sounds-like-you.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
     lyrics: [
@@ -88,7 +88,7 @@ const TRACKS = [
       "Departure becomes the impossible place where two people finally meet. Timing is cruel, but the space left behind reveals what was always real.",
     accent: "#C87840",
     coverUrl: "/releases/after-you-left.png",
-    audioSrc: null as string | null,
+    audioSrc: "/audio/after-you-left.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
     lyrics: [
@@ -110,7 +110,7 @@ const TRACKS = [
       "Forever is not required for something to matter. Two people burn brightly inside borrowed time, knowing that what ends can still leave a permanent mark.",
     accent: "#9060E0",
     coverUrl: "/releases/temporary-immortals.png",
-    audioSrc: null as string | null,
+    audioSrc: "/audio/temporary-immortals.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
     lyrics: [
@@ -132,7 +132,7 @@ const TRACKS = [
       "Distance does not disappear; it changes rhythm. Fear loses time, two tired hearts find the same pulse, and the space between them begins to dance.",
     accent: "#4070E0",
     coverUrl: "/releases/the-distance-learned-to-dance.png",
-    audioSrc: null as string | null,
+    audioSrc: "/audio/the-distance-learned-to-dance.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
     lyrics: [
@@ -154,7 +154,7 @@ const TRACKS = [
       "Youth once felt like a guaranteed destination. The future faded, but its pulse remains alive in the people who carried it together.",
     accent: "#60D8E8",
     coverUrl: "/releases/we-were-future-once.png",
-    audioSrc: null as string | null,
+    audioSrc: "/audio/we-were-future-once.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
     lyrics: [
@@ -176,7 +176,7 @@ const TRACKS = [
       "The album arrives at a feeling that requires no explanation, memory or future. Nothing needs to happen first. Euphoria exists as pulse, frequency and pure presence.",
     accent: "#E8B020",
     coverUrl: "/releases/euphoria-needs-no-story.png",
-    audioSrc: null as string | null,
+    audioSrc: "/audio/euphoria-needs-no-story.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
     lyrics: [
@@ -275,6 +275,24 @@ function TrackCard({ track }: { track: Track }) {
             {track.story}
           </p>
 
+          {/* Audio player */}
+          {track.audioSrc && (
+            <div className="mb-3">
+              <audio
+                controls
+                preload="none"
+                className="w-full"
+                style={{
+                  accentColor: track.accent,
+                  colorScheme: "dark",
+                  borderRadius: "6px",
+                }}
+              >
+                <source src={track.audioSrc} type="audio/mpeg" />
+              </audio>
+            </div>
+          )}
+
           {/* Lyrics toggle */}
           <button
             onClick={() => setLyricsOpen((o) => !o)}
@@ -318,12 +336,6 @@ function TrackCard({ track }: { track: Track }) {
 
           {/* Streaming links */}
           <div className="flex gap-2 flex-wrap">
-            <span
-              className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 rounded border"
-              style={{ color: "rgba(255,255,255,0.15)", borderColor: "rgba(255,255,255,0.08)" }}
-            >
-              Preview — soon
-            </span>
             <span
               className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 rounded border"
               style={{ color: "rgba(255,255,255,0.15)", borderColor: "rgba(255,255,255,0.08)" }}
