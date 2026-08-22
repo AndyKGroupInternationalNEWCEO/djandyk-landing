@@ -11,7 +11,7 @@ const FEATURED_RELEASES = [
     title: "Opus No. 1: Vienna",
     genre: "Fortepiano · Orchestra · Progressive Trance",
     description: "A continuous work in four movements — fortepiano and orchestra transformed into progressive trance, composed in Vienna.",
-    completionDate: "2099-01-01",
+    completionDate: "2026-08-22",
     href: "/opus-no-1-vienna",
     cover: "/releases/opus-no-1-vienna-cover.png",
   },

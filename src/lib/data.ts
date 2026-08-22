@@ -32,7 +32,6 @@ export const LATEST_RELEASES = [
     type: "New Album · Fortepiano · Orchestra · Trance",
     coverUrl: "/releases/opus-no-1-vienna-cover.png",
     spotifyUrl: "/opus-no-1-vienna",
-    comingSoon: true,
   },
   {
     title: "THE ALBUM — From Me, To...",
