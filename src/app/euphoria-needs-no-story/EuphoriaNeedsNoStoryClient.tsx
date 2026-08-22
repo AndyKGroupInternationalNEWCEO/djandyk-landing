@@ -207,7 +207,7 @@ function TrackCard({ track }: { track: Track }) {
 
   return (
     <div
-      className="card-glow w-[260px] sm:w-[280px] shrink-0 snap-start"
+      className="card-glow w-full"
       style={{ color: track.accent }}
     >
       <div
@@ -429,9 +429,9 @@ export default function EuphoriaNeedsNoStoryClient() {
           </div>
         </section>
 
-        {/* Track list — horizontal swipeable row */}
-        <section id="tracks" className="pt-12 pb-12 max-w-[1100px] mx-auto">
-          <div className="no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-6 pb-2">
+        {/* Track list — 4-column grid */}
+        <section id="tracks" className="pt-12 pb-12 px-6 max-w-[1400px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {TRACKS.map((track) => (
               <TrackCard key={track.n} track={track} />
             ))}
