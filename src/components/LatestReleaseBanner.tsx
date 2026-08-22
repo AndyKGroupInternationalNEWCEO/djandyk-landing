@@ -28,6 +28,9 @@ export default function LatestReleaseBanner() {
   }
 
   function getReleaseLabel(): string {
+    if ("comingSoon" in release && release.comingSoon) {
+      return "Coming Soon";
+    }
     if ("weeklyReleases" in release && release.weeklyReleases) {
       return `Out ${getWeeklyLabel(release.weeklyReleases)}`;
     }

@@ -28,6 +28,13 @@ export const COMPANY = {
 
 export const LATEST_RELEASES = [
   {
+    title: "Opus No. 1: Vienna",
+    type: "New Album · Fortepiano · Orchestra · Trance",
+    coverUrl: "/releases/opus-no-1-vienna-cover.png",
+    spotifyUrl: "/opus-no-1-vienna",
+    comingSoon: true,
+  },
+  {
     title: "THE ALBUM — From Me, To...",
     type: "Six Trance Ballads · New Every Wednesday",
     coverUrl: "/releases/six-trance-ballads-the-album.png",
