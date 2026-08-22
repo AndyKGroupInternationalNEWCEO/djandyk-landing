@@ -8,6 +8,15 @@ import ScrollReveal from "@/components/ScrollReveal";
 const FEATURED_RELEASES = [
   {
     kicker: "Album · 2026",
+    title: "Opus No. 1: Vienna",
+    genre: "Fortepiano · Orchestra · Progressive Trance",
+    description: "A continuous work in four movements — fortepiano and orchestra transformed into progressive trance, composed in Vienna.",
+    completionDate: "2099-01-01",
+    href: "/opus-no-1-vienna",
+    cover: "/releases/opus-no-1-vienna-cover.png",
+  },
+  {
+    kicker: "Album · 2026",
     title: "Euphoria Needs No Story",
     genre: "Trance",
     description: "Eight tracks. Four voices. One continuous trance journey — rebirth, memory, silence, distance and temporary immortality before arriving at pure euphoria.",
