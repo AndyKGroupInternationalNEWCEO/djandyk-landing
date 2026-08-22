@@ -227,7 +227,7 @@ function TrackCard({ track }: { track: Track }) {
             alt={track.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 flex items-end p-3">
+          <div className="absolute inset-0 flex items-start justify-start p-3">
             <span
               className="text-[9px] font-mono uppercase tracking-[0.3em] px-2.5 py-1 rounded-full border"
               style={{
