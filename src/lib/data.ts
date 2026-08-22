@@ -184,9 +184,17 @@ export const CASE_STUDIES = [
 // Discography — Albums 2026 (maps to DiscographySection tab 1)
 export const ALBUMS_2026 = [
   {
+    title: "Euphoria Needs No Story",
+    genre: "Trance",
+    year: 2026,
+    status: "in-progress",
+    coverUrl: "/releases/euphoria-needs-no-story-cover.png",
+    description: "Eight tracks. Four voices. One continuous trance journey.",
+  },
+  {
     title: "Back to Eurodance",
     genre: "Authentic 90s Eurodance",
-    year: 2026,
+    year: 2027,
     status: "in-progress",
     coverUrl: "/releases/back-to-eurodance-cover.png",
     description: "6 Tracks. 6 Memories. One Return to the Dancefloor.",
@@ -448,6 +456,16 @@ export const ADAM_SHOWCASE = ADAM_ROADMAP;
 export type TracklistEntry = { num: string; title: string; released?: boolean; comingSoon?: boolean; spotifyUrl?: string; label?: string; isIntro?: boolean; releaseDate?: string };
 
 export const TRACKLISTS: Record<string, TracklistEntry[]> = {
+  "Euphoria Needs No Story": [
+    { num: "01", title: "Breathe Me Back to Life (feat. Mattew Brexon)", label: "Coming Soon" },
+    { num: "02", title: "Alive in the Afterglow (feat. Jullian Recherr)", label: "Coming Soon" },
+    { num: "03", title: "Even Silence Sounds Like You (feat. Robert Zigller)", label: "Coming Soon" },
+    { num: "04", title: "After You Left (feat. Robert Zigller)", label: "Coming Soon" },
+    { num: "05", title: "Temporary Immortals (feat. Thymoty Lorrens)", label: "Coming Soon" },
+    { num: "06", title: "The Distance Learned to Dance (feat. Thymoty Lorrens)", label: "Coming Soon" },
+    { num: "07", title: "We Were Future Once (feat. Robert Zigller)", label: "Coming Soon" },
+    { num: "08", title: "Euphoria Needs No Story (feat. Mattew Brexon)", label: "Coming Soon" },
+  ],
   "No Translation": [
     { num: "01", title: "Don't Look Away (Bana Öyle Bakma) feat. Emir Cem Karahan", releaseDate: "2026-10-30", label: "30.10.2026" },
     { num: "02", title: "No Explanation (Bala Kalam) feat. Rania Al-Masri", releaseDate: "2026-11-06", label: "6.11.2026" },
@@ -457,12 +475,12 @@ export const TRACKLISTS: Record<string, TracklistEntry[]> = {
     { num: "06", title: "Under Your Skin (Sub Pielea Ta) feat. Andreea Dumitrescu", releaseDate: "2026-12-04", label: "4.12.2026" },
   ],
   "Back to Eurodance": [
-    { num: "01", title: "Stay (feat. Eva & Mark Witman)", releaseDate: "2026-09-11", label: "11.9.2026" },
-    { num: "02", title: "Fire Inside (feat. Ritta & J-Jack)", releaseDate: "2026-09-18", label: "18.9.2026" },
-    { num: "03", title: "Back To You (feat. Jully Calleb & Spencer Marks)", releaseDate: "2026-09-25", label: "25.9.2026" },
-    { num: "04", title: "No Control (feat. Ritta & J-Jack)", releaseDate: "2026-10-02", label: "2.10.2026" },
-    { num: "05", title: "Too Late For Goodbye (feat. Nella & J'B Ray)", releaseDate: "2026-10-09", label: "9.10.2026" },
-    { num: "06", title: "Feel My Body (feat. Iazabella Marieera & Paollo Rivaninni)", releaseDate: "2026-10-16", label: "16.10.2026" },
+    { num: "01", title: "Stay (feat. Eva & Mark Witman)", releaseDate: "2027-01-03", label: "3.1.2027" },
+    { num: "02", title: "Fire Inside (feat. Ritta & J-Jack)", releaseDate: "2027-01-03", label: "3.1.2027" },
+    { num: "03", title: "Back To You (feat. Jully Calleb & Spencer Marks)", releaseDate: "2027-01-03", label: "3.1.2027" },
+    { num: "04", title: "No Control (feat. Ritta & J-Jack)", releaseDate: "2027-01-03", label: "3.1.2027" },
+    { num: "05", title: "Too Late For Goodbye (feat. Nella & J'B Ray)", releaseDate: "2027-01-03", label: "3.1.2027" },
+    { num: "06", title: "Feel My Body (feat. Iazabella Marieera & Paollo Rivaninni)", releaseDate: "2027-01-03", label: "3.1.2027" },
   ],
   "Borrowed Sunshine": [
     { num: "01", title: "Too Hot To Go Home (feat. Ben Wheeler)", releaseDate: "2026-08-28", label: "28.8.2026" },

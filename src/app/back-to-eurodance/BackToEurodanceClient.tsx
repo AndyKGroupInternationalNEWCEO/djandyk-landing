@@ -13,8 +13,8 @@ const TRACKS = [
     title: "Stay (feat. Eva & Mark Witman)",
     from: "feat. Eva & Mark Witman",
     story: "The night had almost won, until the piano found us first. We stayed because leaving felt like the wrong kind of ending.",
-    releaseDate: "2026-09-11",
-    date: "11.9.2026",
+    releaseDate: "2027-01-03",
+    date: "3.1.2027",
     accent: "#C060D0",
     coverUrl: "/releases/stay.png",
     audioSrc: "/audio/stay.mp3",
@@ -27,8 +27,8 @@ const TRACKS = [
     title: "Fire Inside (feat. Ritta & J-Jack)",
     from: "feat. Ritta & J-Jack",
     story: "Something older than the music was moving under our feet. We didn't call it out — it called itself.",
-    releaseDate: "2026-09-18",
-    date: "18.9.2026",
+    releaseDate: "2027-01-03",
+    date: "3.1.2027",
     accent: "#D040A0",
     coverUrl: "/releases/fire-inside.png",
     audioSrc: "/audio/fire-inside.mp3",
@@ -41,8 +41,8 @@ const TRACKS = [
     title: "Back To You (feat. Jully Calleb & Spencer Marks)",
     from: "feat. Jully Calleb & Spencer Marks",
     story: "Every street we tried led back to the same door. Some hearts just aren't built for other directions.",
-    releaseDate: "2026-09-25",
-    date: "25.9.2026",
+    releaseDate: "2027-01-03",
+    date: "3.1.2027",
     accent: "#9060C0",
     coverUrl: "/releases/back-to-you.png",
     audioSrc: "/audio/back-to-you.mp3",
@@ -55,8 +55,8 @@ const TRACKS = [
     title: "No Control (feat. Ritta & J-Jack)",
     from: "feat. Ritta & J-Jack",
     story: "The beat stopped asking permission somewhere around midnight. By the drop, none of us were driving anymore.",
-    releaseDate: "2026-10-02",
-    date: "2.10.2026",
+    releaseDate: "2027-01-03",
+    date: "3.1.2027",
     accent: "#E050B0",
     coverUrl: "/releases/no-control.png",
     audioSrc: "/audio/no-control.mp3",
@@ -69,8 +69,8 @@ const TRACKS = [
     title: "Too Late For Goodbye (feat. Nella & J'B Ray)",
     from: "feat. Nella & J'B Ray",
     story: "The lights were already coming up when we asked for one more song. Goodbye can wait for the next chorus.",
-    releaseDate: "2026-10-09",
-    date: "9.10.2026",
+    releaseDate: "2027-01-03",
+    date: "3.1.2027",
     accent: "#A050D0",
     coverUrl: "/releases/too-late-for-goodbye.png",
     audioSrc: "/audio/too-late-for-goodbye.mp3",
@@ -83,8 +83,8 @@ const TRACKS = [
     title: "Feel My Body (feat. Iazabella Marieera & Paollo Rivaninni)",
     from: "feat. Iazabella Marieera & Paollo Rivaninni",
     story: "The bassline found our pulse before we noticed it was gone. Some nights don't need words, just movement.",
-    releaseDate: "2026-10-16",
-    date: "16.10.2026",
+    releaseDate: "2027-01-03",
+    date: "3.1.2027",
     accent: "#C040C0",
     coverUrl: "/releases/feel-my-body.png",
     audioSrc: "/audio/feel-my-body.mp3",
@@ -290,7 +290,7 @@ export default function BackToEurodanceClient() {
             className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-6 px-3 py-1 rounded-full border"
             style={{ color: ACCENT, borderColor: `${ACCENT}33`, background: `${ACCENT}0d` }}
           >
-            {albumStatus === "released" ? "Released" : "Album · Eurodance · 2026"}
+            {albumStatus === "released" ? "Released" : "Album · Eurodance · 2027"}
           </span>
 
           <h1
@@ -310,7 +310,7 @@ export default function BackToEurodanceClient() {
           <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.28)" }}>
             6 Tracks. 6 Memories. One Return to the Dancefloor.
             <br />
-            Full album: 23.10.2026
+            Full album: 3.1.2027
           </p>
         </section>
 

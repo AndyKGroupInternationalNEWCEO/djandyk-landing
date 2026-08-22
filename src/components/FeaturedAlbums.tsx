@@ -8,6 +8,15 @@ import ScrollReveal from "@/components/ScrollReveal";
 const FEATURED_RELEASES = [
   {
     kicker: "Album · 2026",
+    title: "Euphoria Needs No Story",
+    genre: "Trance",
+    description: "Eight tracks. Four voices. One continuous trance journey — rebirth, memory, silence, distance and temporary immortality before arriving at pure euphoria.",
+    completionDate: "2099-01-01",
+    href: "/euphoria-needs-no-story",
+    cover: "/releases/euphoria-needs-no-story-cover.png",
+  },
+  {
+    kicker: "Album · 2026",
     title: "No Translation",
     genre: "Melodic Progressive Tech House",
     description: "Six Languages. One Night. Nothing Needs Explaining.",
@@ -16,11 +25,11 @@ const FEATURED_RELEASES = [
     cover: "/releases/no-translation-cover.png",
   },
   {
-    kicker: "Album · 2026",
+    kicker: "Album · 2027",
     title: "Back to Eurodance",
     genre: "Authentic 90s Eurodance",
     description: "6 Tracks. 6 Memories. One Return to the Dancefloor.",
-    completionDate: "2026-10-23",
+    completionDate: "2027-01-03",
     href: "/back-to-eurodance",
     cover: "/releases/back-to-eurodance-cover.png",
   },
