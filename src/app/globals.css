@@ -497,3 +497,17 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* ===== EUPHORIA NEEDS NO STORY — GOLD CRACK GLOW ===== */
+@keyframes euphoriaCrackGlow {
+  0%, 100% { opacity: 0.35; }
+  50%      { opacity: 0.75; }
+}
+
+.euphoria-crack-glow {
+  animation: euphoriaCrackGlow 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .euphoria-crack-glow { animation: none; opacity: 0.5; }
+}

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const COVER = "/releases/euphoria-needs-no-story-cover.png";
 const ACCENT = "#E8B020";
 
 const TRACKS = [
@@ -342,44 +343,82 @@ export default function EuphoriaNeedsNoStoryClient() {
       <Navbar />
 
       <main className="pt-[60px] min-h-screen font-sans" style={{ background: "#0d1117" }}>
-        {/* Hero */}
-        <section className="px-6 pt-20 pb-12 max-w-[680px] mx-auto text-center">
-          <span
-            className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-6 px-3 py-1 rounded-full border"
-            style={{ color: ACCENT, borderColor: `${ACCENT}33`, background: `${ACCENT}0d` }}
-          >
-            Album · Trance · 2026
-          </span>
+        {/* Hero — full-width animated cover */}
+        <section className="relative w-full overflow-hidden" style={{ minHeight: "78vh" }}>
+          <img
+            src={COVER}
+            alt="Euphoria Needs No Story — DJ Andy'K"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
 
-          <h1
-            className="text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-tight leading-[1.1] mb-3 font-sans"
-            style={{ color: "#f0f6fc" }}
-          >
-            EUPHORIA NEEDS NO STORY
-          </h1>
+          {/* Gold light pulse through the cracks — subtle, slow */}
+          <div
+            className="euphoria-crack-glow absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 60% 50% at 55% 40%, rgba(232,176,32,0.35), transparent 70%)",
+              mixBlendMode: "screen",
+            }}
+          />
 
-          <p
-            className="text-lg font-light mb-4 font-mono uppercase tracking-[0.2em]"
-            style={{ color: ACCENT }}
-          >
-            Eight Tracks. Four Voices. One Continuous Trance Journey.
-          </p>
+          {/* Legibility gradient */}
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to top, #0d1117 5%, rgba(13,17,23,0.55) 40%, rgba(13,17,23,0.15) 65%, transparent 100%)" }}
+          />
 
-          <p className="text-sm leading-relaxed mb-2" style={{ color: "rgba(255,255,255,0.28)" }}>
-            Euphoria Needs No Story moves through rebirth, memory, silence, distance and
-            temporary immortality before arriving at pure euphoria — without needing one
-            final explanation.
-          </p>
+          <div className="absolute top-6 left-6">
+            <span className="text-[10px] font-mono uppercase tracking-[0.35em]" style={{ color: "rgba(255,255,255,0.6)" }}>
+              Album
+            </span>
+          </div>
 
-          <p className="text-xs font-mono uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.2)" }}>
-            Written, produced &amp; created by DJ Andy&apos;K
-            <br />
-            Featuring Mattew Brexon, Jullian Recherr, Robert Zigller &amp; Thymoty Lorrens
-          </p>
+          <div className="relative z-10 flex flex-col items-center justify-end text-center h-full px-6 pb-14" style={{ minHeight: "78vh" }}>
+            <span
+              className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-5 px-3 py-1 rounded-full border"
+              style={{ color: ACCENT, borderColor: `${ACCENT}55`, background: "rgba(0,0,0,0.4)" }}
+            >
+              Album · Trance · 2026
+            </span>
+
+            <h1
+              className="text-[clamp(2.2rem,6vw,4.5rem)] font-bold tracking-tight leading-[1.05] mb-3 font-sans max-w-[900px]"
+              style={{ color: "#ffffff", textShadow: "0 4px 30px rgba(0,0,0,0.6)" }}
+            >
+              EUPHORIA NEEDS NO STORY
+            </h1>
+
+            <p
+              className="text-base sm:text-lg font-light mb-5 font-mono uppercase tracking-[0.2em]"
+              style={{ color: ACCENT }}
+            >
+              Eight Tracks. Four Voices. One Continuous Trance Journey.
+            </p>
+
+            <p className="text-sm leading-relaxed mb-5 max-w-[600px]" style={{ color: "rgba(255,255,255,0.55)" }}>
+              Euphoria Needs No Story moves through rebirth, memory, silence, distance and
+              temporary immortality before arriving at pure euphoria — without needing one
+              final explanation.
+            </p>
+
+            <a
+              href="#tracks"
+              className="inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold rounded transition-all duration-200 hover:-translate-y-0.5 mb-6"
+              style={{ background: ACCENT, color: "#111111" }}
+            >
+              Explore the Album ↓
+            </a>
+
+            <p className="text-xs font-mono uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.35)" }}>
+              Written, produced &amp; created by DJ Andy&apos;K
+              <br />
+              Featuring Mattew Brexon, Jullian Recherr, Robert Zigller &amp; Thymoty Lorrens
+            </p>
+          </div>
         </section>
 
         {/* Track list — horizontal swipeable row */}
-        <section className="pb-12 max-w-[1100px] mx-auto">
+        <section id="tracks" className="pt-12 pb-12 max-w-[1100px] mx-auto">
           <div className="no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-6 pb-2">
             {TRACKS.map((track) => (
               <TrackCard key={track.n} track={track} />
