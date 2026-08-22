@@ -15,6 +15,9 @@ const TRACKS = [
     story:
       "A breath becomes the dividing line between fading away and returning. The opening track turns vulnerability into motion: one spark, one heartbeat, and the will to remain.",
     accent: "#4AC8E0",
+    key: "F# minor",
+    bpm: 138,
+    chords: "F#m – A – D – D",
     coverUrl: "/releases/breathe-me-back-to-life.png",
     audioSrc: "/audio/breathe-me-back-to-life.mp3" as string | null,
     soundcloudUrl: null as string | null,
@@ -42,6 +45,9 @@ const TRACKS = [
     story:
       "Survival is not shown as an escape, but as light remaining inside every scar. The afterglow becomes proof that the darkness did not win.",
     accent: "#E0A050",
+    key: "F minor",
+    bpm: 138,
+    chords: "Fm – Db – Eb – Bbm",
     coverUrl: "/releases/alive-in-the-afterglow.png",
     audioSrc: "/audio/alive-in-the-afterglow.mp3" as string | null,
     soundcloudUrl: null as string | null,
@@ -65,6 +71,9 @@ const TRACKS = [
     story:
       "An empty room keeps speaking through objects, memory and echo. Even without a voice, silence carries the shape of someone who remains present.",
     accent: "#4A90D0",
+    key: "D# minor",
+    bpm: 133,
+    chords: "D#m – B – F# – C#",
     coverUrl: "/releases/even-silence-sounds-like-you.png",
     audioSrc: "/audio/even-silence-sounds-like-you.mp3" as string | null,
     soundcloudUrl: null as string | null,
@@ -87,6 +96,9 @@ const TRACKS = [
     story:
       "Departure becomes the impossible place where two people finally meet. Timing is cruel, but the space left behind reveals what was always real.",
     accent: "#C87840",
+    key: "A major",
+    bpm: 136,
+    chords: "F#m – D – A – E",
     coverUrl: "/releases/after-you-left.png",
     audioSrc: "/audio/after-you-left.mp3" as string | null,
     soundcloudUrl: null as string | null,
@@ -109,6 +121,9 @@ const TRACKS = [
     story:
       "Forever is not required for something to matter. Two people burn brightly inside borrowed time, knowing that what ends can still leave a permanent mark.",
     accent: "#9060E0",
+    key: "A minor",
+    bpm: 135,
+    chords: "Am – F – Dm – Am",
     coverUrl: "/releases/temporary-immortals.png",
     audioSrc: "/audio/temporary-immortals.mp3" as string | null,
     soundcloudUrl: null as string | null,
@@ -131,6 +146,9 @@ const TRACKS = [
     story:
       "Distance does not disappear; it changes rhythm. Fear loses time, two tired hearts find the same pulse, and the space between them begins to dance.",
     accent: "#4070E0",
+    key: "F# minor",
+    bpm: 130,
+    chords: "F#m – E – D – Bm",
     coverUrl: "/releases/the-distance-learned-to-dance.png",
     audioSrc: "/audio/the-distance-learned-to-dance.mp3" as string | null,
     soundcloudUrl: null as string | null,
@@ -153,6 +171,9 @@ const TRACKS = [
     story:
       "Youth once felt like a guaranteed destination. The future faded, but its pulse remains alive in the people who carried it together.",
     accent: "#60D8E8",
+    key: "A# minor",
+    bpm: 133,
+    chords: "A#m – F# – C# – G#",
     coverUrl: "/releases/we-were-future-once.png",
     audioSrc: "/audio/we-were-future-once.mp3" as string | null,
     soundcloudUrl: null as string | null,
@@ -175,6 +196,9 @@ const TRACKS = [
     story:
       "The album arrives at a feeling that requires no explanation, memory or future. Nothing needs to happen first. Euphoria exists as pulse, frequency and pure presence.",
     accent: "#E8B020",
+    key: "F# minor",
+    bpm: 138,
+    chords: "F#m – A – D – D",
     coverUrl: "/releases/euphoria-needs-no-story.png",
     audioSrc: "/audio/euphoria-needs-no-story.mp3" as string | null,
     soundcloudUrl: null as string | null,
@@ -266,6 +290,28 @@ function TrackCard({ track }: { track: Track }) {
           <p className="text-[11px] font-mono uppercase tracking-widest mb-2" style={{ color: "rgba(255,255,255,0.25)" }}>
             Release · TBA
           </p>
+
+          {/* Key / BPM / Chords */}
+          <div className="flex items-center gap-2 flex-wrap mb-3">
+            <span
+              className="text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded border"
+              style={{ color: track.accent, borderColor: `${track.accent}40` }}
+            >
+              {track.key}
+            </span>
+            <span
+              className="text-[10px] font-mono uppercase tracking-widest px-2 py-1 rounded border"
+              style={{ color: track.accent, borderColor: `${track.accent}40` }}
+            >
+              {track.bpm} BPM
+            </span>
+            <span
+              className="text-[10px] font-mono tracking-widest px-2 py-1 rounded border"
+              style={{ color: "rgba(255,255,255,0.45)", borderColor: "rgba(255,255,255,0.15)" }}
+            >
+              {track.chords}
+            </span>
+          </div>
 
           {/* Story — pull-quote */}
           <p
