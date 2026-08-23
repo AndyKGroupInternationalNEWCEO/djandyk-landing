@@ -77,7 +77,7 @@ const TRACKS = [
     bpm: 133,
     chords: "D#m – B – F# – C#",
     coverUrl: "/releases/even-silence-sounds-like-you.png",
-    videoUrl: null as string | null,
+    videoUrl: "/videos/even-silence-sounds-like-you.mp4" as string | null,
     audioSrc: "/audio/even-silence-sounds-like-you.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
