@@ -191,6 +191,55 @@ const TRACKS = [
   },
   {
     n: 8,
+    title: "Invisible North",
+    from: "feat. Mattew Brexon",
+    story:
+      "No map, no signal, no reason that can be explained out loud — only a pull that keeps proving itself right. Direction survives even when every visible marker disappears.",
+    accent: "#3AA0E0",
+    key: "F# minor",
+    bpm: 138,
+    chords: "F#m – A – D – D",
+    coverUrl: "/releases/invisible-north.png",
+    audioSrc: "/audio/invisible-north.mp3" as string | null,
+    soundcloudUrl: null as string | null,
+    spotifyUrl: null as string | null,
+    lyrics: [
+      ["[Verse 1]", "No signs on the road", "No map in my hand", "I don't know the way", "But I know where I stand", "The city disappears", "The signal is gone", "Something inside me", "Keeps pulling me on"],
+      ["[Pre-Chorus]", "I can't see the answer", "I can't see the source", "But every step keeps turning", "To my invisible north"],
+      ["[Chorus]", "Invisible north", "Invisible north", "I don't know where I'm going", "But I know I'm on course", "Invisible north", "Invisible north", "When the whole world loses direction", "I follow the force"],
+      ["[Verse 2]", "No stars in the sky", "No light on the street", "Still something is moving", "Underneath my feet", "I stopped asking why", "I stopped counting the cost", "Maybe having no direction", "Doesn't mean I'm lost"],
+      ["[Pre-Chorus]", "I can't see the answer", "I can't see the source", "But every step keeps turning", "To my invisible north"],
+      ["[Final Chorus]", "Invisible north", "Invisible north", "I don't know where I'm going", "But I know I'm on course", "Invisible north", "Invisible north", "When the whole world loses direction", "I follow the force"],
+      ["[Outro – Deep Spoken Voice]", "No map.", "No sign.", "Still—I know the way."],
+    ] as string[][],
+  },
+  {
+    n: 9,
+    title: "I Kept the Storm",
+    from: "feat. Jullian Recherr",
+    story:
+      "Wreckage becomes fuel instead of wound. What was left behind is not mourned but claimed, turned into a fire that dances instead of destroys.",
+    accent: "#D8A030",
+    key: "F minor",
+    bpm: 129,
+    chords: "Fm – Eb – Bbm – Db",
+    coverUrl: "/releases/i-kept-the-storm.png",
+    audioSrc: "/audio/i-kept-the-storm.mp3" as string | null,
+    soundcloudUrl: null as string | null,
+    spotifyUrl: null as string | null,
+    lyrics: [
+      ["[Verse 1]", "You left the door half-open", "I felt the cold move in", "Ash on the windowsill", "Rain in the sink again", "Your shadow in the hallway", "Still knows my name too well", "I took the broken pieces", "And made a ring of hell"],
+      ["[Pre-Chorus]", "I watched the sky turn black", "Then learned to breathe it in", "If you come back for mercy", "You'll find me standing in"],
+      ["[Chorus]", "I kept the storm", "I kept the storm", "You left it on my skin", "I kept the storm", "I kept the storm", "Now watch me dance in it", "(Kept the storm)", "(Kept the storm)"],
+      ["[Verse 2]", "Your note is in my jacket", "Faded at the seams", "Says \"don't let this part of you", "Go quiet in your dreams\"", "So I walk through the thunder", "Like it's calling me home", "Every crack in the ceiling", "Sings me back my own"],
+      ["[Pre-Chorus]", "I watched the sky turn black", "Then learned to breathe it in", "If you come back for mercy", "You'll find me standing in"],
+      ["[Chorus]", "I kept the storm", "I kept the storm", "You left it on my skin", "I kept the storm", "I kept the storm", "Now watch me dance in it", "(Kept the storm)", "(Kept the storm)"],
+      ["[Bridge]", "Break me open", "I won't fold", "I turned the wreckage", "Into gold", "Take your silence", "Take your blame", "I built a sunrise", "Out your rain"],
+      ["[Final Chorus]", "I kept the storm", "I kept the storm", "You left it on my skin", "I kept the storm", "I kept the storm", "Now watch me dance in it", "I kept the storm", "I kept the storm", "And I won't give you back", "I kept the storm", "I kept the storm", "I made a light from that (I Kept The Storm)"],
+    ] as string[][],
+  },
+  {
+    n: 10,
     title: "Euphoria Needs No Story",
     from: "feat. Mattew Brexon",
     story:
@@ -450,7 +499,7 @@ export default function EuphoriaNeedsNoStoryClient() {
               className="text-base sm:text-lg font-light mb-5 font-mono uppercase tracking-[0.2em]"
               style={{ color: ACCENT }}
             >
-              Eight Tracks. Four Voices. One Continuous Trance Journey.
+              Ten Tracks. Four Voices. One Continuous Trance Journey.
             </p>
 
             <p className="text-sm leading-relaxed mb-5 max-w-[600px]" style={{ color: "rgba(255,255,255,0.55)" }}>
@@ -482,6 +531,16 @@ export default function EuphoriaNeedsNoStoryClient() {
               <TrackCard key={track.n} track={track} />
             ))}
           </div>
+        </section>
+
+        {/* Full tracklist artwork */}
+        <section className="px-6 pb-16 max-w-[700px] mx-auto">
+          <img
+            src="/releases/euphoria-needs-no-story-tracklist.png"
+            alt="Euphoria Needs No Story — Full Tracklist"
+            className="w-full h-auto rounded-2xl"
+            style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+          />
         </section>
       </main>
 

@@ -20,7 +20,7 @@ export default function EuphoriaNeedsNoStoryPromo() {
       accent={ACCENT}
       kicker="Album · Trance · 2026"
       title="EUPHORIA NEEDS NO STORY"
-      tagline="Eight Tracks. Four Voices. One Continuous Trance Journey."
+      tagline="Ten Tracks. Four Voices. One Continuous Trance Journey."
       description="Rebirth, memory, silence, distance and temporary immortality — before arriving at pure euphoria."
       ctaHref="/euphoria-needs-no-story"
       coverSrc="/releases/euphoria-needs-no-story-cover.png"

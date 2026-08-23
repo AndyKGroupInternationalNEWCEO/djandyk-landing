@@ -19,7 +19,7 @@ const FEATURED_RELEASES = [
     kicker: "Album · 2026",
     title: "Euphoria Needs No Story",
     genre: "Trance",
-    description: "Eight tracks. Four voices. One continuous trance journey — rebirth, memory, silence, distance and temporary immortality before arriving at pure euphoria.",
+    description: "Ten tracks. Four voices. One continuous trance journey — rebirth, memory, silence, distance and temporary immortality before arriving at pure euphoria.",
     completionDate: "2099-01-01",
     href: "/euphoria-needs-no-story",
     cover: "/releases/euphoria-needs-no-story-cover.png",

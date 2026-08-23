@@ -195,7 +195,7 @@ export const ALBUMS_2026 = [
     year: 2026,
     status: "in-progress",
     coverUrl: "/releases/euphoria-needs-no-story-cover.png",
-    description: "Eight tracks. Four voices. One continuous trance journey.",
+    description: "Ten tracks. Four voices. One continuous trance journey.",
   },
   {
     title: "Back to Eurodance",
@@ -470,7 +470,9 @@ export const TRACKLISTS: Record<string, TracklistEntry[]> = {
     { num: "05", title: "Temporary Immortals (feat. Thymoty Lorrens)", label: "Coming Soon" },
     { num: "06", title: "The Distance Learned to Dance (feat. Thymoty Lorrens)", label: "Coming Soon" },
     { num: "07", title: "We Were Future Once (feat. Robert Zigller)", label: "Coming Soon" },
-    { num: "08", title: "Euphoria Needs No Story (feat. Mattew Brexon)", label: "Coming Soon" },
+    { num: "08", title: "Invisible North (feat. Mattew Brexon)", label: "Coming Soon" },
+    { num: "09", title: "I Kept the Storm (feat. Jullian Recherr)", label: "Coming Soon" },
+    { num: "10", title: "Euphoria Needs No Story (feat. Mattew Brexon)", label: "Coming Soon" },
   ],
   "No Translation": [
     { num: "01", title: "Don't Look Away (Bana Öyle Bakma) feat. Emir Cem Karahan", releaseDate: "2026-10-30", label: "30.10.2026" },
