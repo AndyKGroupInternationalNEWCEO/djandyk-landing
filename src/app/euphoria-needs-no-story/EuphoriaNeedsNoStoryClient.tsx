@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -259,7 +259,7 @@ const TRACKS = [
     bpm: 138,
     chords: "F#m – A – D – D",
     coverUrl: "/releases/euphoria-needs-no-story.png",
-    videoUrl: null as string | null,
+    videoUrl: "/videos/euphoria-needs-no-story.mp4" as string | null,
     audioSrc: "/audio/euphoria-needs-no-story.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -286,8 +286,7 @@ const TRACKS = [
 
 type Track = (typeof TRACKS)[number];
 
-function TrackCard({ track }: { track: Track }) {
-  const [lyricsOpen, setLyricsOpen] = useState(false);
+function TrackCard({ track, onOpenLyrics }: { track: Track; onOpenLyrics: (track: Track) => void }) {
   const innerRef = useRef<HTMLDivElement>(null);
 
   const handleTilt = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -432,9 +431,9 @@ function TrackCard({ track }: { track: Track }) {
             </div>
           )}
 
-          {/* Lyrics toggle */}
+          {/* Lyrics — opens in modal, keeps card height fixed */}
           <button
-            onClick={() => setLyricsOpen((o) => !o)}
+            onClick={() => onOpenLyrics(track)}
             className="flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest mb-3 py-1.5 transition-opacity hover:opacity-70 w-fit"
             style={{ color: track.accent }}
           >
@@ -443,35 +442,12 @@ function TrackCard({ track }: { track: Track }) {
               fill="none"
               stroke="currentColor"
               strokeWidth={2}
-              className="w-3 h-3 transition-transform duration-200"
-              style={{ transform: lyricsOpen ? "rotate(90deg)" : "rotate(0deg)" }}
+              className="w-3 h-3"
             >
               <path d="M6 4l4 4-4 4" />
             </svg>
-            {lyricsOpen ? "Hide lyrics" : "Read lyrics"}
+            Read lyrics
           </button>
-
-          {/* Lyrics block — stanza format */}
-          {lyricsOpen && (
-            <div
-              className="rounded-xl p-4 mb-3"
-              style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(255,255,255,0.06)" }}
-            >
-              {track.lyrics.map((stanza, si) => (
-                <div key={si} style={{ marginBottom: si < track.lyrics.length - 1 ? "1rem" : 0 }}>
-                  {stanza.map((line, li) => (
-                    <p
-                      key={li}
-                      className="text-sm leading-relaxed font-serif"
-                      style={{ color: "rgba(255,255,255,0.62)" }}
-                    >
-                      {line}
-                    </p>
-                  ))}
-                </div>
-              ))}
-            </div>
-          )}
 
           {/* Streaming links */}
           <div className="flex gap-2 flex-wrap">
@@ -489,6 +465,21 @@ function TrackCard({ track }: { track: Track }) {
 }
 
 export default function EuphoriaNeedsNoStoryClient() {
+  const [lyricsTrack, setLyricsTrack] = useState<Track | null>(null);
+
+  useEffect(() => {
+    if (!lyricsTrack) return;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLyricsTrack(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [lyricsTrack]);
+
   return (
     <>
       <Navbar />
@@ -590,7 +581,7 @@ export default function EuphoriaNeedsNoStoryClient() {
         <section id="tracks" className="pt-12 pb-12 px-6 max-w-[1400px] mx-auto">
           <ScrollReveal stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {TRACKS.map((track) => (
-              <TrackCard key={track.n} track={track} />
+              <TrackCard key={track.n} track={track} onOpenLyrics={setLyricsTrack} />
             ))}
           </ScrollReveal>
         </section>
@@ -622,6 +613,63 @@ export default function EuphoriaNeedsNoStoryClient() {
       <div className="bg-white">
         <Footer />
       </div>
+
+      {/* Lyrics modal */}
+      {lyricsTrack && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8"
+          style={{ background: "rgba(0,0,0,0.75)", backdropFilter: "blur(4px)" }}
+          onClick={() => setLyricsTrack(null)}
+        >
+          <div
+            className="relative w-full max-w-[640px] max-h-[85vh] overflow-y-auto rounded-2xl p-6 sm:p-8"
+            style={{
+              background: "#12161d",
+              border: `1px solid ${lyricsTrack.accent}40`,
+              borderTop: `2px solid ${lyricsTrack.accent}`,
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setLyricsTrack(null)}
+              aria-label="Close lyrics"
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full transition-opacity hover:opacity-70"
+              style={{ background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.7)" }}
+            >
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
+                <path d="M4 4l8 8M12 4l-8 8" />
+              </svg>
+            </button>
+
+            <span className="text-xs font-mono uppercase tracking-widest" style={{ color: lyricsTrack.accent }}>
+              {String(lyricsTrack.n).padStart(2, "0")} · {lyricsTrack.from}
+            </span>
+            <h3 className="text-2xl font-bold tracking-tight mb-5 mt-1 font-sans" style={{ color: "#ffffff" }}>
+              {lyricsTrack.title}
+            </h3>
+
+            {lyricsTrack.lyrics.length > 0 ? (
+              lyricsTrack.lyrics.map((stanza, si) => (
+                <div key={si} style={{ marginBottom: si < lyricsTrack.lyrics.length - 1 ? "1rem" : 0 }}>
+                  {stanza.map((line, li) => (
+                    <p
+                      key={li}
+                      className="text-sm leading-relaxed font-serif"
+                      style={{ color: "rgba(255,255,255,0.62)" }}
+                    >
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              ))
+            ) : (
+              <p className="text-sm font-serif italic" style={{ color: "rgba(255,255,255,0.35)" }}>
+                Lyrics coming soon.
+              </p>
+            )}
+          </div>
+        </div>
+      )}
     </>
   );
 }
