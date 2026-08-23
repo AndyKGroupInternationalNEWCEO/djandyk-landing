@@ -19,6 +19,7 @@ const TRACKS = [
     bpm: 138,
     chords: "F#m – A – D – D",
     coverUrl: "/releases/breathe-me-back-to-life.png",
+    videoUrl: "/videos/breathe-me-back-to-life.mp4" as string | null,
     audioSrc: "/audio/breathe-me-back-to-life.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -49,6 +50,7 @@ const TRACKS = [
     bpm: 138,
     chords: "Fm – Db – Eb – Bbm",
     coverUrl: "/releases/alive-in-the-afterglow.png",
+    videoUrl: "/videos/alive-in-the-afterglow.mp4" as string | null,
     audioSrc: "/audio/alive-in-the-afterglow.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -75,6 +77,7 @@ const TRACKS = [
     bpm: 133,
     chords: "D#m – B – F# – C#",
     coverUrl: "/releases/even-silence-sounds-like-you.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/even-silence-sounds-like-you.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -100,6 +103,7 @@ const TRACKS = [
     bpm: 136,
     chords: "F#m – D – A – E",
     coverUrl: "/releases/after-you-left.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/after-you-left.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -125,6 +129,7 @@ const TRACKS = [
     bpm: 135,
     chords: "Am – F – Dm – Am",
     coverUrl: "/releases/temporary-immortals.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/temporary-immortals.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -150,6 +155,7 @@ const TRACKS = [
     bpm: 130,
     chords: "F#m – E – D – Bm",
     coverUrl: "/releases/the-distance-learned-to-dance.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/the-distance-learned-to-dance.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -175,6 +181,7 @@ const TRACKS = [
     bpm: 133,
     chords: "A#m – F# – C# – G#",
     coverUrl: "/releases/we-were-future-once.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/we-were-future-once.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -200,6 +207,7 @@ const TRACKS = [
     bpm: 138,
     chords: "F#m – A – D – D",
     coverUrl: "/releases/invisible-north.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/invisible-north.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -224,6 +232,7 @@ const TRACKS = [
     bpm: 129,
     chords: "Fm – Eb – Bbm – Db",
     coverUrl: "/releases/i-kept-the-storm.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/i-kept-the-storm.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -249,6 +258,7 @@ const TRACKS = [
     bpm: 138,
     chords: "F#m – A – D – D",
     coverUrl: "/releases/euphoria-needs-no-story.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/euphoria-needs-no-story.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -293,13 +303,25 @@ function TrackCard({ track }: { track: Track }) {
           borderTop: `2px solid ${track.accent}`,
         }}
       >
-        {/* Cover — full width square */}
+        {/* Cover — full width square (animated when a video is available) */}
         <div className="aspect-square w-full relative overflow-hidden">
-          <img
-            src={track.coverUrl}
-            alt={track.title}
-            className="w-full h-full object-cover"
-          />
+          {track.videoUrl ? (
+            <video
+              src={track.videoUrl}
+              poster={track.coverUrl}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <img
+              src={track.coverUrl}
+              alt={track.title}
+              className="w-full h-full object-cover"
+            />
+          )}
           <div className="absolute inset-0 flex items-start justify-start p-3">
             <span
               className="text-[9px] font-mono uppercase tracking-[0.3em] px-2.5 py-1 rounded-full border"
@@ -496,6 +518,20 @@ export default function EuphoriaNeedsNoStoryClient() {
             </h1>
 
             <p
+              className="text-sm sm:text-base font-bold mb-4 font-mono uppercase tracking-[0.25em]"
+              style={{ color: "#ffffff" }}
+            >
+              The Defining Album of DJ Andy&apos;K
+            </p>
+
+            <p className="text-sm leading-relaxed mb-5 max-w-[600px]" style={{ color: "rgba(255,255,255,0.55)" }}>
+              Euphoria Needs No Story replaces the withdrawn album Music Is Your Passion,
+              which no longer represented the artistic direction and quality standard of
+              DJ Andy&apos;K. This new ten-track trance album marks a new chapter — and
+              becomes the defining album of his musical journey. A new era begins.
+            </p>
+
+            <p
               className="text-base sm:text-lg font-light mb-5 font-mono uppercase tracking-[0.2em]"
               style={{ color: ACCENT }}
             >
@@ -533,13 +569,21 @@ export default function EuphoriaNeedsNoStoryClient() {
           </div>
         </section>
 
-        {/* Full tracklist artwork */}
-        <section className="px-6 pb-16 max-w-[700px] mx-auto">
+        {/* Full tracklist artwork — full-bleed, same treatment as the hero */}
+        <section className="relative w-full overflow-hidden">
           <img
             src="/releases/euphoria-needs-no-story-tracklist.png"
             alt="Euphoria Needs No Story — Full Tracklist"
-            className="w-full h-auto rounded-2xl"
-            style={{ border: "1px solid rgba(255,255,255,0.08)" }}
+            className="w-full h-auto"
+          />
+
+          {/* Legibility gradients top & bottom, matching the hero */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom, #0d1117 0%, transparent 8%, transparent 92%, #0d1117 100%)",
+            }}
           />
         </section>
       </main>

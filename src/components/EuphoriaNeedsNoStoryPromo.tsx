@@ -11,7 +11,9 @@ const TRACKS = [
   { num: "05", title: "Temporary Immortals", releaseDate: FAR_FUTURE, date: "Coming Soon", accent: "#9060E0" },
   { num: "06", title: "The Distance Learned to Dance", releaseDate: FAR_FUTURE, date: "Coming Soon", accent: "#4070E0" },
   { num: "07", title: "We Were Future Once", releaseDate: FAR_FUTURE, date: "Coming Soon", accent: "#60D8E8" },
-  { num: "08", title: "Euphoria Needs No Story", releaseDate: FAR_FUTURE, date: "Coming Soon", accent: "#E8B020" },
+  { num: "08", title: "Invisible North", releaseDate: FAR_FUTURE, date: "Coming Soon", accent: "#3AA0E0" },
+  { num: "09", title: "I Kept the Storm", releaseDate: FAR_FUTURE, date: "Coming Soon", accent: "#D8A030" },
+  { num: "10", title: "Euphoria Needs No Story", releaseDate: FAR_FUTURE, date: "Coming Soon", accent: "#E8B020" },
 ];
 
 export default function EuphoriaNeedsNoStoryPromo() {
