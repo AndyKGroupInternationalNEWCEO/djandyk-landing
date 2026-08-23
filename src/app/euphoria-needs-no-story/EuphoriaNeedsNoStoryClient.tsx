@@ -103,7 +103,7 @@ const TRACKS = [
     bpm: 136,
     chords: "F#m – D – A – E",
     coverUrl: "/releases/after-you-left.png",
-    videoUrl: null as string | null,
+    videoUrl: "/videos/after-you-left.mp4" as string | null,
     audioSrc: "/audio/after-you-left.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -129,7 +129,7 @@ const TRACKS = [
     bpm: 135,
     chords: "Am – F – Dm – Am",
     coverUrl: "/releases/temporary-immortals.png",
-    videoUrl: null as string | null,
+    videoUrl: "/videos/temporary-immortals.mp4" as string | null,
     audioSrc: "/audio/temporary-immortals.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -384,10 +384,10 @@ function TrackCard({ track }: { track: Track }) {
             </span>
           </div>
 
-          {/* Story — pull-quote */}
+          {/* Story — pull-quote, glowing in the track's accent color like the artwork cracks */}
           <p
-            className="text-sm leading-relaxed mb-3 font-serif italic"
-            style={{ color: "rgba(255,255,255,0.28)" }}
+            className="story-glow text-sm leading-relaxed mb-3 font-serif italic"
+            style={{ color: "rgba(255,255,255,0.5)", "--accent": track.accent } as React.CSSProperties}
           >
             {track.story}
           </p>

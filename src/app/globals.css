@@ -511,3 +511,21 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .euphoria-crack-glow { animation: none; opacity: 0.5; }
 }
+
+@keyframes storyGlow {
+  0%, 85%, 100% { text-shadow: 0 0 0 transparent; }
+  92%           { text-shadow: 0 0 14px var(--accent, transparent), 0 0 4px var(--accent, transparent); }
+}
+
+.story-glow {
+  text-shadow: 0 0 0 transparent;
+  animation: storyGlow 10s ease-in-out infinite;
+}
+
+.story-glow:hover {
+  text-shadow: 0 0 14px var(--accent, transparent), 0 0 4px var(--accent, transparent) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-glow { animation: none; }
+}
