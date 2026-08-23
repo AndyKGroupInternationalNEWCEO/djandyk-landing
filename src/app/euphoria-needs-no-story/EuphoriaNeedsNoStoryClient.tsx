@@ -562,7 +562,7 @@ export default function EuphoriaNeedsNoStoryClient() {
 
         {/* Track list — 4-column grid */}
         <section id="tracks" className="pt-12 pb-12 px-6 max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {TRACKS.map((track) => (
               <TrackCard key={track.n} track={track} />
             ))}
