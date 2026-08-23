@@ -496,9 +496,13 @@ export default function EuphoriaNeedsNoStoryClient() {
       <main className="pt-[60px] min-h-screen font-sans" style={{ background: "#0d1117" }}>
         {/* Hero — full-width animated cover */}
         <section className="relative w-full overflow-hidden" style={{ minHeight: "78vh" }}>
-          <img
-            src={COVER}
-            alt="Euphoria Needs No Story — DJ Andy'K"
+          <video
+            src="/videos/euphoria-needs-no-story-hero.mp4"
+            poster={COVER}
+            autoPlay
+            loop
+            muted
+            playsInline
             className="absolute inset-0 w-full h-full object-cover"
           />
 
@@ -593,9 +597,13 @@ export default function EuphoriaNeedsNoStoryClient() {
 
         {/* Full tracklist artwork — full-bleed, same treatment as the hero */}
         <section className="relative w-full overflow-hidden">
-          <img
-            src="/releases/euphoria-needs-no-story-tracklist.png"
-            alt="Euphoria Needs No Story — Full Tracklist"
+          <video
+            src="/videos/euphoria-needs-no-story-tracklist.mp4"
+            poster="/releases/euphoria-needs-no-story-tracklist.png"
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-auto"
           />
 
