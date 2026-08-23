@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const COVER = "/releases/euphoria-needs-no-story-cover.png";
 const ACCENT = "#E8B020";
@@ -155,7 +156,7 @@ const TRACKS = [
     bpm: 130,
     chords: "F#m – E – D – Bm",
     coverUrl: "/releases/the-distance-learned-to-dance.png",
-    videoUrl: null as string | null,
+    videoUrl: "/videos/the-distance-learned-to-dance.mp4" as string | null,
     audioSrc: "/audio/the-distance-learned-to-dance.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -181,7 +182,7 @@ const TRACKS = [
     bpm: 133,
     chords: "A#m – F# – C# – G#",
     coverUrl: "/releases/we-were-future-once.png",
-    videoUrl: null as string | null,
+    videoUrl: "/videos/we-were-future-once.mp4" as string | null,
     audioSrc: "/audio/we-were-future-once.mp3" as string | null,
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -287,6 +288,22 @@ type Track = (typeof TRACKS)[number];
 
 function TrackCard({ track }: { track: Track }) {
   const [lyricsOpen, setLyricsOpen] = useState(false);
+  const innerRef = useRef<HTMLDivElement>(null);
+
+  const handleTilt = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = innerRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    el.style.transform = `perspective(700px) rotateX(${(-py * 8).toFixed(2)}deg) rotateY(${(px * 8).toFixed(2)}deg) translateY(-4px)`;
+  };
+
+  const resetTilt = () => {
+    const el = innerRef.current;
+    if (!el) return;
+    el.style.transform = "";
+  };
 
   return (
     <div
@@ -294,6 +311,9 @@ function TrackCard({ track }: { track: Track }) {
       style={{ color: track.accent }}
     >
       <div
+        ref={innerRef}
+        onMouseMove={handleTilt}
+        onMouseLeave={resetTilt}
         className="card-glow-inner rounded-2xl overflow-hidden"
         style={{
           background: "rgba(255,255,255,0.04)",
@@ -301,6 +321,8 @@ function TrackCard({ track }: { track: Track }) {
           WebkitBackdropFilter: "blur(12px)",
           border: "1px solid rgba(255,255,255,0.08)",
           borderTop: `2px solid ${track.accent}`,
+          transformStyle: "preserve-3d",
+          willChange: "transform",
         }}
       >
         {/* Cover — full width square (animated when a video is available) */}
@@ -560,13 +582,13 @@ export default function EuphoriaNeedsNoStoryClient() {
           </div>
         </section>
 
-        {/* Track list — 4-column grid */}
+        {/* Track list — 5-column grid, revealing in on scroll */}
         <section id="tracks" className="pt-12 pb-12 px-6 max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <ScrollReveal stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {TRACKS.map((track) => (
               <TrackCard key={track.n} track={track} />
             ))}
-          </div>
+          </ScrollReveal>
         </section>
 
         {/* Full tracklist artwork — full-bleed, same treatment as the hero */}
