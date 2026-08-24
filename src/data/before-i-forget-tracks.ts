@@ -529,6 +529,7 @@ export const beforeIForgetAlbum: Album = {
       chords: "D#m – B – F# – C#",
       durationSeconds: 280,
       coverUrl: "/releases/almost-home.png",
+      videoUrl: "/videos/almost-home.mp4",
       audioSrc: "/audio/almost-home.mp3",
       releaseDate: "2026-06-19",
       vocal: "DJ Andy'K & Lia Bonson",
