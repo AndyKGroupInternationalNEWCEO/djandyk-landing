@@ -186,7 +186,7 @@ export default function MonthlyTop10Section() {
               {!track.featuredArtist && <div className="mb-4" />}
 
               {track.audioPreview ? (
-                <div className="flex items-center gap-3 flex-wrap justify-center sm:justify-start">
+                <div className="flex items-center gap-3 w-full justify-center sm:justify-start">
                   <button
                     onClick={handleTogglePlay}
                     aria-label={isPlaying ? "Pause" : "Play"}
@@ -195,28 +195,39 @@ export default function MonthlyTop10Section() {
                     {isPlaying ? <PauseIcon /> : <PlayIcon />}
                   </button>
 
-                  <span className="text-[11px] font-mono w-9 text-right text-muted-2">
+                  <span className="text-[11px] font-mono w-9 text-right text-muted-2 shrink-0">
                     {formatTime(currentTime)}
                   </span>
 
-                  <input
-                    type="range"
-                    min={0}
-                    max={duration || 0}
-                    step={0.1}
-                    value={currentTime}
-                    onChange={(e) => {
-                      const t = Number(e.target.value);
+                  <div
+                    role="slider"
+                    aria-label="Seek"
+                    aria-valuemin={0}
+                    aria-valuemax={duration || 0}
+                    aria-valuenow={currentTime}
+                    className="flex-1 h-1.5 rounded-full cursor-pointer min-w-[80px]"
+                    style={{ background: "rgba(0,0,0,0.08)" }}
+                    onClick={(e) => {
+                      if (!duration) return;
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      const pct = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
+                      const t = pct * duration;
                       if (audioRef.current) audioRef.current.currentTime = t;
                       setCurrentTime(t);
+                      pauseRotationBriefly();
                     }}
-                    onPointerDown={pauseRotationBriefly}
-                    aria-label="Seek"
-                    className="flex-1 h-1 rounded-full appearance-none cursor-pointer min-w-[100px]"
-                    style={{ accentColor: "var(--color-highlight)" }}
-                  />
+                  >
+                    <div
+                      className="h-full rounded-full"
+                      style={{
+                        width: `${duration ? Math.min(100, (currentTime / duration) * 100) : 0}%`,
+                        background: "var(--color-highlight)",
+                        transition: "width 150ms linear",
+                      }}
+                    />
+                  </div>
 
-                  <span className="text-[11px] font-mono w-9 text-muted-2">
+                  <span className="text-[11px] font-mono w-9 text-muted-2 shrink-0">
                     {formatTime(duration)}
                   </span>
                 </div>
