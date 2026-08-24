@@ -129,144 +129,190 @@ export default function MonthlyTop10Section() {
   if (!collection || tracks.length === 0 || !track) return null;
 
   return (
-    <section id="top10" className="relative pt-10 pb-20 px-8 section-with-glass">
-      <div className="max-w-[900px] mx-auto">
-        <div className="text-center max-w-[700px] mx-auto mb-10">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-highlight font-mono block mb-3">
+    <section
+      id="top10"
+      className="relative w-full overflow-hidden select-none"
+      style={{ background: "linear-gradient(180deg, #060606 0%, #0e0e0e 55%, #060606 100%)" }}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
+      <div className="relative z-10 max-w-[1000px] mx-auto px-6 py-16 sm:py-20">
+        <div className="text-center max-w-[700px] mx-auto mb-12">
+          <span
+            className="text-[10px] uppercase tracking-[0.3em] font-mono block mb-3"
+            style={{ color: "rgba(255,255,255,0.55)" }}
+          >
             Monthly Selection
           </span>
-          <h2 className="text-[clamp(1.875rem,1.52rem+1.25vw,2.5rem)] font-bold tracking-tight leading-[1.2] text-foreground mb-4">
+          <h2
+            className="text-[clamp(1.875rem,1.52rem+1.25vw,2.5rem)] font-bold tracking-tight leading-[1.2] mb-4"
+            style={{ color: "#ffffff" }}
+          >
             DJ Andy&apos;K Top 10{" "}
-            <span className="font-serif italic font-light">· {collection.label}</span>
-          </h2>
-          <p className="text-base text-muted font-light">My ten essential tracks this month.</p>
-        </div>
-
-        <div
-          className="glass-card rounded-xl p-6 sm:p-8"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          <div className="flex items-center justify-between mb-6">
-            <span className="text-xs font-mono text-muted-2 tracking-widest">
-              {String(track.rank).padStart(2, "0")} / {String(tracks.length).padStart(2, "0")}
+            <span className="font-serif italic font-light" style={{ color: "rgba(255,255,255,0.7)" }}>
+              · {collection.label}
             </span>
-            <div className="flex items-center gap-1.5">
-              <button
-                onClick={() => goTo(index - 1)}
-                aria-label="Previous track"
-                className="flex items-center justify-center w-8 h-8 rounded-full border border-grid-500 text-muted-2 hover:text-highlight hover:border-highlight transition-colors"
-              >
-                <PrevIcon />
-              </button>
-              <button
-                onClick={() => goTo(index + 1)}
-                aria-label="Next track"
-                className="flex items-center justify-center w-8 h-8 rounded-full border border-grid-500 text-muted-2 hover:text-highlight hover:border-highlight transition-colors"
-              >
-                <NextIcon />
-              </button>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
-            <img
-              src={track.artwork}
-              alt={track.title}
-              className="w-32 h-32 sm:w-36 sm:h-36 rounded-xl object-cover shrink-0"
-            />
-
-            <div className="flex-1 min-w-0 w-full text-center sm:text-left">
-              <h3 className="text-lg font-bold text-foreground tracking-tight mb-1 leading-snug">
-                {track.title}
-              </h3>
-              {track.featuredArtist && (
-                <p className="text-sm text-muted-2 mb-4">feat. {track.featuredArtist}</p>
-              )}
-              {!track.featuredArtist && <div className="mb-4" />}
-
-              {track.audioPreview ? (
-                <div className="flex items-center gap-3 w-full justify-center sm:justify-start">
-                  <button
-                    onClick={handleTogglePlay}
-                    aria-label={isPlaying ? "Pause" : "Play"}
-                    className="flex items-center justify-center w-10 h-10 rounded-full bg-highlight text-white flex-shrink-0 transition-transform hover:scale-105"
-                  >
-                    {isPlaying ? <PauseIcon /> : <PlayIcon />}
-                  </button>
-
-                  <span className="text-[11px] font-mono w-9 text-right text-muted-2 shrink-0">
-                    {formatTime(currentTime)}
-                  </span>
-
-                  <div
-                    role="slider"
-                    aria-label="Seek"
-                    aria-valuemin={0}
-                    aria-valuemax={duration || 0}
-                    aria-valuenow={currentTime}
-                    className="flex-1 h-1.5 rounded-full cursor-pointer min-w-[80px]"
-                    style={{ background: "rgba(0,0,0,0.08)" }}
-                    onClick={(e) => {
-                      if (!duration) return;
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      const pct = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
-                      const t = pct * duration;
-                      if (audioRef.current) audioRef.current.currentTime = t;
-                      setCurrentTime(t);
-                      pauseRotationBriefly();
-                    }}
-                  >
-                    <div
-                      className="h-full rounded-full"
-                      style={{
-                        width: `${duration ? Math.min(100, (currentTime / duration) * 100) : 0}%`,
-                        background: "var(--color-highlight)",
-                        transition: "width 150ms linear",
-                      }}
-                    />
-                  </div>
-
-                  <span className="text-[11px] font-mono w-9 text-muted-2 shrink-0">
-                    {formatTime(duration)}
-                  </span>
-                </div>
-              ) : (
-                <p className="text-xs text-muted-2 italic">Preview coming soon</p>
-              )}
-
-              {track.releaseLink && (
-                <a
-                  href={track.releaseLink}
-                  {...(track.releaseLink.startsWith("/")
-                    ? {}
-                    : { target: "_blank", rel: "noopener noreferrer" })}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-highlight hover:text-deep-teal transition-colors mt-4"
-                >
-                  {track.releaseLink.startsWith("/") ? "View Track" : "Listen Now"}
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} className="w-3.5 h-3.5">
-                    <path d="M6 4l4 4-4 4" />
-                  </svg>
-                </a>
-              )}
-            </div>
-          </div>
-
-          <audio
-            ref={audioRef}
-            src={track.audioPreview}
-            preload="none"
-            onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
-            onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
-            onEnded={() => {
-              setIsPlaying(false);
-              goTo(index + 1);
-            }}
-          />
+          </h2>
+          <p className="text-base font-light" style={{ color: "rgba(255,255,255,0.5)" }}>
+            My ten essential tracks this month.
+          </p>
         </div>
+
+        {/* Rank + prev/next */}
+        <div className="flex items-center justify-between max-w-[280px] mx-auto mb-6">
+          <span
+            className="text-xs font-mono tracking-widest"
+            style={{ color: "rgba(255,255,255,0.4)" }}
+          >
+            {String(track.rank).padStart(2, "0")} / {String(tracks.length).padStart(2, "0")}
+          </span>
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={() => goTo(index - 1)}
+              aria-label="Previous track"
+              className="flex items-center justify-center w-8 h-8 rounded-full transition-colors"
+              style={{ border: "1px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.55)" }}
+            >
+              <PrevIcon />
+            </button>
+            <button
+              onClick={() => goTo(index + 1)}
+              aria-label="Next track"
+              className="flex items-center justify-center w-8 h-8 rounded-full transition-colors"
+              style={{ border: "1px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.55)" }}
+            >
+              <NextIcon />
+            </button>
+          </div>
+        </div>
+
+        {/* Big centered artwork with reflection — same visual language as Cover Flow */}
+        <div className="flex flex-col items-center">
+          <div className="relative" style={{ width: 240, height: 240 }}>
+            <div
+              className="relative w-full h-full rounded-lg overflow-hidden bg-black"
+              style={{ boxShadow: "0 30px 60px -15px rgba(0,0,0,0.7), 0 0 40px rgba(255,255,255,0.06)" }}
+            >
+              <img
+                src={track.artwork}
+                alt={track.title}
+                className="w-full h-full object-cover"
+                draggable={false}
+              />
+            </div>
+            <div
+              className="absolute left-0 w-full overflow-hidden rounded-lg bg-black"
+              aria-hidden="true"
+              style={{
+                top: "100%",
+                height: "45%",
+                transform: "scaleY(-1)",
+                WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.35), transparent 75%)",
+                maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.35), transparent 75%)",
+                opacity: 0.35,
+              }}
+            >
+              <img src={track.artwork} alt="" className="w-full h-full object-cover" draggable={false} />
+            </div>
+          </div>
+
+          <h3
+            className="text-2xl sm:text-3xl font-bold tracking-tight mt-10 mb-1 text-center"
+            style={{ color: "#ffffff" }}
+          >
+            {track.title}
+          </h3>
+          {track.featuredArtist && (
+            <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.5)" }}>
+              feat. {track.featuredArtist}
+            </p>
+          )}
+          {!track.featuredArtist && <div className="mb-8" />}
+
+          {track.audioPreview ? (
+            <div className="flex items-center gap-3 w-full max-w-[380px] justify-center mb-8">
+              <button
+                onClick={handleTogglePlay}
+                aria-label={isPlaying ? "Pause" : "Play"}
+                className="flex items-center justify-center w-11 h-11 rounded-full flex-shrink-0 transition-transform hover:scale-105"
+                style={{ background: "#ffffff", color: "#111111" }}
+              >
+                {isPlaying ? <PauseIcon /> : <PlayIcon />}
+              </button>
+
+              <span className="text-[11px] font-mono w-9 text-right shrink-0" style={{ color: "rgba(255,255,255,0.4)" }}>
+                {formatTime(currentTime)}
+              </span>
+
+              <div
+                role="slider"
+                aria-label="Seek"
+                aria-valuemin={0}
+                aria-valuemax={duration || 0}
+                aria-valuenow={currentTime}
+                className="flex-1 h-1.5 rounded-full cursor-pointer min-w-[80px]"
+                style={{ background: "rgba(255,255,255,0.15)" }}
+                onClick={(e) => {
+                  if (!duration) return;
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const pct = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
+                  const t = pct * duration;
+                  if (audioRef.current) audioRef.current.currentTime = t;
+                  setCurrentTime(t);
+                  pauseRotationBriefly();
+                }}
+              >
+                <div
+                  className="h-full rounded-full"
+                  style={{
+                    width: `${duration ? Math.min(100, (currentTime / duration) * 100) : 0}%`,
+                    background: "#ffffff",
+                    transition: "width 150ms linear",
+                  }}
+                />
+              </div>
+
+              <span className="text-[11px] font-mono w-9 shrink-0" style={{ color: "rgba(255,255,255,0.4)" }}>
+                {formatTime(duration)}
+              </span>
+            </div>
+          ) : (
+            <p className="text-xs italic mb-8" style={{ color: "rgba(255,255,255,0.35)" }}>
+              Preview coming soon
+            </p>
+          )}
+
+          {track.releaseLink && (
+            <a
+              href={track.releaseLink}
+              {...(track.releaseLink.startsWith("/")
+                ? {}
+                : { target: "_blank", rel: "noopener noreferrer" })}
+              className="inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold rounded transition-all duration-300 hover:-translate-y-0.5"
+              style={{ background: "#ffffff", color: "#111111" }}
+            >
+              Open Track
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} className="w-3.5 h-3.5">
+                <path d="M6 4l4 4-4 4" />
+              </svg>
+            </a>
+          )}
+        </div>
+
+        <audio
+          ref={audioRef}
+          src={track.audioPreview}
+          preload="none"
+          onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
+          onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
+          onEnded={() => {
+            setIsPlaying(false);
+            goTo(index + 1);
+          }}
+        />
 
         {/* Track indicators */}
-        <div className="flex justify-center gap-2 mt-6 flex-wrap">
+        <div className="flex justify-center gap-2 mt-12 flex-wrap">
           {tracks.map((t, i) => (
             <button
               key={t.rank}
@@ -276,7 +322,7 @@ export default function MonthlyTop10Section() {
                 height: "8px",
                 width: i === index ? "20px" : "8px",
                 borderRadius: "4px",
-                backgroundColor: i === index ? "#111111" : "#e5e5e5",
+                backgroundColor: i === index ? "#ffffff" : "rgba(255,255,255,0.2)",
                 border: "none",
                 padding: 0,
                 cursor: "pointer",
@@ -287,11 +333,12 @@ export default function MonthlyTop10Section() {
           ))}
         </div>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-10">
           <button
             onClick={handleTogglePlay}
             disabled={!track.audioPreview}
-            className="inline-flex items-center justify-center h-10 px-6 text-sm font-medium text-white bg-highlight hover:bg-deep-teal transition-colors rounded disabled:opacity-40 disabled:cursor-default"
+            className="inline-flex items-center justify-center h-10 px-6 text-sm font-medium rounded transition-colors disabled:opacity-40 disabled:cursor-default"
+            style={{ background: "#ffffff", color: "#111111" }}
           >
             Listen to this month&apos;s Top 10
           </button>
