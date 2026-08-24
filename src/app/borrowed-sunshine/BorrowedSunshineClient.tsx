@@ -4,6 +4,9 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getAlbumStatus } from "@/lib/albumStatus";
+import CoverFlow from "@/components/coverflow/CoverFlow";
+import SectionTabs from "@/components/coverflow/SectionTabs";
+import { borrowedSunshineAlbum } from "@/data/borrowed-sunshine-tracks";
 
 const COVER = "/releases/borrowed-sunshine-cover.png";
 
@@ -333,8 +336,9 @@ function TrackCard({ track }: { track: Track }) {
   );
 }
 
-export default function BorrowedSunshineClient() {
+export default function BorrowedSunshineClient({ initialSlug }: { initialSlug?: string } = {}) {
   const albumStatus = getAlbumStatus(TRACKS);
+  const [viewMode, setViewMode] = useState<"coverflow" | "overview">("coverflow");
 
   return (
     <>
@@ -371,14 +375,32 @@ export default function BorrowedSunshineClient() {
           </p>
         </section>
 
-        {/* Track list — horizontal swipeable row */}
-        <section className="pb-12 max-w-[1100px] mx-auto">
-          <div className="no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-6 pb-2">
-            {TRACKS.map((track) => (
-              <TrackCard key={track.n} track={track} />
-            ))}
+        {/* Cover Flow vs. Track Overview — one view at a time, Cover Flow by default */}
+        <div id="tracks" style={{ background: "#0d1117" }}>
+          <div className="flex justify-center pb-8 px-6">
+            <SectionTabs
+              accent={GOLD}
+              activeTab={viewMode}
+              onTabChange={(id) => setViewMode(id as "coverflow" | "overview")}
+              tabs={[
+                { id: "coverflow", label: "Cover Flow" },
+                { id: "overview", label: "Track Overview" },
+              ]}
+            />
           </div>
-        </section>
+
+          {viewMode === "coverflow" ? (
+            <CoverFlow album={borrowedSunshineAlbum} initialSlug={initialSlug} />
+          ) : (
+            <section className="pb-12 max-w-[1100px] mx-auto">
+              <div className="no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-6 pb-2">
+                {TRACKS.map((track) => (
+                  <TrackCard key={track.n} track={track} />
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
       </main>
 
       {/* Footer in white wrapper so site CSS vars render correctly */}
