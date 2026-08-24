@@ -352,6 +352,7 @@ export const noTranslationAlbum: Album = {
       chords: "Em – G – Am – Bm",
       durationSeconds: 294,
       coverUrl: "/releases/read-it-in-my-eyes.png",
+      videoUrl: "/videos/read-it-in-my-eyes.mp4",
       audioSrc: "/audio/read-it-in-my-eyes.mp3",
       releaseDate: "2026-11-20",
       vocal: "DJ Andy'K & Luka Vuković",
