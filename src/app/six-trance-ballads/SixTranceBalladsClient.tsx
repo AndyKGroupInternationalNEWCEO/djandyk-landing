@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getAlbumStatus } from "@/lib/albumStatus";
@@ -405,8 +406,8 @@ const GREEN = "#63B39A";
 
 
 function TrackCard({ track }: { track: Track }) {
-  const [lyricsOpen, setLyricsOpen] = useState(false);
   const isOut = new Date(track.releaseDate) <= new Date();
+  const slug = track.coverUrl.replace("/releases/", "").replace(".png", "");
 
   return (
     <div
@@ -482,25 +483,9 @@ function TrackCard({ track }: { track: Track }) {
           "{track.line}"
         </p>
 
-        {/* Audio player */}
-        <div className="mb-3">
-          <audio
-            controls
-            preload="none"
-            className="w-full"
-            style={{
-              accentColor: track.accent,
-              colorScheme: "dark",
-              borderRadius: "6px",
-            }}
-          >
-            <source src={track.audioSrc} type="audio/mpeg" />
-          </audio>
-        </div>
-
-        {/* Lyrics toggle */}
-        <button
-          onClick={() => setLyricsOpen((o) => !o)}
+        {/* Opens the full experience — real audio player, song info & lyrics */}
+        <Link
+          href={`/six-trance-ballads/${slug}`}
           className="flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest mb-3 py-1.5 transition-opacity hover:opacity-70 w-fit"
           style={{ color: track.accent }}
         >
@@ -509,35 +494,12 @@ function TrackCard({ track }: { track: Track }) {
             fill="none"
             stroke="currentColor"
             strokeWidth={2}
-            className="w-3 h-3 transition-transform duration-200"
-            style={{ transform: lyricsOpen ? "rotate(90deg)" : "rotate(0deg)" }}
+            className="w-3 h-3"
           >
             <path d="M6 4l4 4-4 4" />
           </svg>
-          {lyricsOpen ? "Hide lyrics" : "Read lyrics"}
-        </button>
-
-        {/* Lyrics block — stanza format */}
-        {lyricsOpen && (
-          <div
-            className="rounded-xl p-4 mb-3"
-            style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(255,255,255,0.06)" }}
-          >
-            {track.lyrics.map((stanza, si) => (
-              <div key={si} style={{ marginBottom: si < track.lyrics.length - 1 ? "1rem" : 0 }}>
-                {stanza.map((line, li) => (
-                  <p
-                    key={li}
-                    className="text-sm leading-relaxed font-serif"
-                    style={{ color: "rgba(255,255,255,0.62)" }}
-                  >
-                    {line}
-                  </p>
-                ))}
-              </div>
-            ))}
-          </div>
-        )}
+          Open Track
+        </Link>
 
         {/* Streaming links */}
         <div className="flex gap-2 flex-wrap">
@@ -598,6 +560,7 @@ export default function SixTranceBalladsClient({ initialSlug }: { initialSlug?: 
             src={COVER}
             alt="Six Trance Ballads — album cover"
             className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: "center 20%" }}
           />
 
           {/* Legibility gradient */}
