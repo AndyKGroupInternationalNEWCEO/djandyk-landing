@@ -4,22 +4,41 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
   COMPANY,
-  ALBUMS_2026,
   EPS_SINGLES_2026,
   PIANO_SERIES_2026,
   STREAMING_PLATFORMS,
 } from "@/lib/data";
+import { ALBUM_CATALOGUE, type AlbumCategory, type CatalogueAlbum } from "@/lib/albumCatalogue";
 
 const PRESS_URL = "https://www.djandykofficial.com/press";
 
-const SIX_TRANCE_BALLADS = {
-  title: "Six Trance Ballads (From Me, To...)",
-  genre: "Trance / Progressive Trance",
-  year: 2026,
-  coverUrl: "/releases/six-trance-ballads-the-album.png",
-  spotifyUrl: undefined as string | undefined,
-  soundcloudUrl: undefined as string | undefined,
+const CATEGORY_META: Record<AlbumCategory, { label: string; note: string }> = {
+  signature: {
+    label: "Signature Albums",
+    note: "Main press focus — complete worlds built through music, storytelling and visual identity.",
+  },
+  concept: {
+    label: "Concept Albums",
+    note: "Evidence of DJ Andy'K's creative and cultural range.",
+  },
+  studio: {
+    label: "Studio Albums",
+    note: "Documenting the evolution of his sound.",
+  },
+  legacy: {
+    label: "Legacy Collection",
+    note: "The foundation of his artistic development.",
+  },
 };
+
+function albumStatus(album: CatalogueAlbum): string {
+  if (album.archived) return "Archived Release";
+  if (album.completeBadge || album.availableNow) return "Released";
+  if (album.completionDate) {
+    return new Date(album.completionDate) <= new Date() ? "Released" : "In Development";
+  }
+  return "In Development";
+}
 
 export const metadata: Metadata = {
   title: "Press & Media Kit | DJ Andy'K Official",
@@ -101,12 +120,7 @@ function DownloadCard({
 }
 
 export default function PressPage() {
-  const allReleases = [
-    { ...SIX_TRANCE_BALLADS, category: "Album" },
-    ...ALBUMS_2026.map((a) => ({ ...a, category: "Album" })),
-    ...EPS_SINGLES_2026.map((e) => ({ ...e, category: e.type ?? "Single" })),
-    ...PIANO_SERIES_2026.map((p) => ({ ...p, category: "Piano Series" })),
-  ];
+  const categoryOrder: AlbumCategory[] = ["signature", "concept", "studio", "legacy"];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -164,7 +178,7 @@ export default function PressPage() {
           <SectionTitle>Artist Bio</SectionTitle>
           <div className="glass-card rounded-xl p-6">
             <p className="text-sm text-muted leading-relaxed">
-              DJ Andy&apos;K is a UK-based electronic music producer and DJ creating across multiple genres — Trance, Progressive Trance, Groovy House, Funky Tech House, and 90s Eurodance. In 2026 alone he has released four full albums: Six Trance Ballads (From Me, To...), Borrowed Sunshine, Do Not Disturb, and Back to Eurodance — each a complete concept project with its own visual identity, story, and sound. His music is available on all major streaming platforms.
+              DJ Andy&apos;K is a UK-based electronic music producer creating emotionally driven trance, progressive house and cinematic electronic music. His catalogue ranges from deeply personal signature albums to culturally inspired concept projects, documenting an artistic journey built through sound, storytelling and complete visual worlds.
             </p>
           </div>
         </Section>
@@ -199,24 +213,59 @@ export default function PressPage() {
           </div>
         </Section>
 
-        {/* Discography */}
+        {/* Discography — one clean list, four categories, each album exactly once */}
         <Section>
-          <SectionTitle>Discography 2026</SectionTitle>
+          <SectionTitle>Discography</SectionTitle>
+          <div className="flex flex-col gap-8">
+            {categoryOrder.map((category) => {
+              const albums = ALBUM_CATALOGUE.filter((a) => a.category === category);
+              const meta = CATEGORY_META[category];
+              return (
+                <div key={category}>
+                  <h3 className="text-sm font-bold text-foreground mb-1">{meta.label}</h3>
+                  <p className="text-xs text-muted-2 mb-3">{meta.note}</p>
+                  <div className="border border-grid-300 rounded-xl overflow-hidden bg-white divide-y divide-grid-300">
+                    {albums.map((album) => (
+                      <div key={album.title} className="flex items-center justify-between px-5 py-3.5 gap-4">
+                        <div className="min-w-0">
+                          <p className="text-sm font-medium text-foreground truncate">{album.title}</p>
+                          {album.genre && <p className="text-xs text-muted-2">{album.genre}</p>}
+                        </div>
+                        <div className="flex items-center gap-3 shrink-0">
+                          <span className="text-[10px] uppercase tracking-widest font-mono text-muted-2">
+                            {albumStatus(album)}
+                          </span>
+                          {album.href && (
+                            <a
+                              href={album.href}
+                              {...(album.href.startsWith("/") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                              className="text-xs text-highlight hover:text-deep-teal transition-colors"
+                            >
+                              {album.href.startsWith("/") ? "View Album" : "Listen ↗"}
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </Section>
+
+        {/* Singles & Piano Versions */}
+        <Section>
+          <SectionTitle>Singles &amp; Piano Versions</SectionTitle>
           <div className="border border-grid-300 rounded-xl overflow-hidden bg-white divide-y divide-grid-300">
-            {allReleases.map((item) => (
+            {[...EPS_SINGLES_2026, ...PIANO_SERIES_2026].map((item) => (
               <div key={item.title} className="flex items-center justify-between px-5 py-3.5 gap-4">
                 <div className="min-w-0">
                   <p className="text-sm font-medium text-foreground truncate">{item.title}</p>
-                  {(item as { genre?: string }).genre && (
-                    <p className="text-xs text-muted-2">{(item as { genre?: string }).genre}</p>
-                  )}
                 </div>
                 <div className="flex items-center gap-3 shrink-0">
-                  <span className="text-[10px] uppercase tracking-widest font-mono text-muted-2 hidden sm:block">
-                    {item.category}
-                  </span>
                   <span className="text-xs text-muted-2">{item.year}</span>
-                  {item.spotifyUrl ? (
+                  {item.spotifyUrl && (
                     <a
                       href={item.spotifyUrl}
                       target="_blank"
@@ -225,16 +274,7 @@ export default function PressPage() {
                     >
                       Spotify ↗
                     </a>
-                  ) : (item as { soundcloudUrl?: string }).soundcloudUrl ? (
-                    <a
-                      href={(item as { soundcloudUrl?: string }).soundcloudUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-highlight hover:text-deep-teal transition-colors"
-                    >
-                      SoundCloud ↗
-                    </a>
-                  ) : null}
+                  )}
                 </div>
               </div>
             ))}
