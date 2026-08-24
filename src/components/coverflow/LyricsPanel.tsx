@@ -9,7 +9,7 @@ export default function LyricsPanel({ track }: { track: Track }) {
         Lyrics
       </h2>
       <div
-        className="max-h-[60vh] lg:max-h-[65vh] overflow-y-auto pr-2 rounded-xl p-5"
+        className="rounded-xl p-5"
         style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}
       >
         {track.lyrics.length > 0 ? (

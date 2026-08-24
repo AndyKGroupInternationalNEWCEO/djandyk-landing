@@ -401,7 +401,7 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
       <div
         className="relative"
         style={{
-          height: isNarrow ? 340 : 520,
+          height: isNarrow ? 340 : isExpanded ? 640 : 520,
           marginTop: isExpanded ? (isNarrow ? 20 : 12) : 0,
           perspective: 1400,
           transition: `margin-top ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1)`,
@@ -435,27 +435,41 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
           >
             <div className="w-full max-w-[1500px] flex items-center justify-between gap-8">
               <div
-                className="w-[320px] flex-shrink-0 max-h-[85vh] overflow-y-auto pr-1"
+                className="relative w-[320px] flex-shrink-0"
                 style={{
                   opacity: isExpanding ? 1 : 0,
                   transform: isExpanding ? "translateX(0)" : "translateX(-48px)",
                   transition: `transform ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1), opacity ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1)`,
                 }}
               >
-                <SongInfoPanel key={active.slug} track={active} player={buildPlayerControls(activeIndex)} />
+                <div className="coverflow-scroll max-h-[640px] overflow-y-auto pr-2">
+                  <SongInfoPanel key={active.slug} track={active} player={buildPlayerControls(activeIndex)} />
+                </div>
+                <div
+                  className="absolute bottom-0 left-0 right-2 h-10 pointer-events-none"
+                  style={{ background: "linear-gradient(to bottom, transparent, #060606)" }}
+                  aria-hidden="true"
+                />
               </div>
 
               <div className="flex-1 min-w-[260px]" aria-hidden="true" />
 
               <div
-                className="w-[320px] flex-shrink-0"
+                className="relative w-[320px] flex-shrink-0"
                 style={{
                   opacity: isExpanding ? 1 : 0,
                   transform: isExpanding ? "translateX(0)" : "translateX(48px)",
                   transition: `transform ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1), opacity ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1)`,
                 }}
               >
-                <LyricsPanel key={`${active.slug}-lyrics`} track={active} />
+                <div className="coverflow-scroll max-h-[640px] overflow-y-auto pr-2">
+                  <LyricsPanel key={`${active.slug}-lyrics`} track={active} />
+                </div>
+                <div
+                  className="absolute bottom-0 left-0 right-2 h-10 pointer-events-none"
+                  style={{ background: "linear-gradient(to bottom, transparent, #060606)" }}
+                  aria-hidden="true"
+                />
               </div>
             </div>
           </div>

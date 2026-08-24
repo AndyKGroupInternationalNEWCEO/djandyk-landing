@@ -498,6 +498,29 @@ body {
   display: none;
 }
 
+/* ===== COVER FLOW — SONG INFO / LYRICS SCROLL PANELS ===== */
+.coverflow-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.coverflow-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.coverflow-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.coverflow-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+}
+
+.coverflow-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
 /* ===== EUPHORIA NEEDS NO STORY — GOLD CRACK GLOW ===== */
 @keyframes euphoriaCrackGlow {
   0%, 100% { opacity: 0.35; }
