@@ -18,6 +18,7 @@ export const beforeIForgetAlbum: Album = {
       chords: "Am – C – G – F",
       durationSeconds: 229,
       coverUrl: "/releases/before-i-forget.png",
+      videoUrl: "/videos/before-i-forget-song.mp4",
       audioSrc: "/audio/before-i-forget.mp3",
       releaseDate: "2026-05-15",
       lyrics: [
