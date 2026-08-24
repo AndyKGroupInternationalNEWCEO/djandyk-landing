@@ -171,7 +171,15 @@ export default function BeforeIForgetClient({ initialSlug }: { initialSlug?: str
       <main className="pt-[60px] min-h-screen font-sans" style={{ background: "#0d1117" }}>
         {/* Hero — full-width cover (swap to a video once one exists) */}
         <section className="relative w-full overflow-hidden" style={{ minHeight: "78vh" }}>
-          <img src={COVER} alt="Before I Forget — album cover" className="absolute inset-0 w-full h-full object-cover" />
+          <video
+            src="/videos/before-i-forget-hero.mp4"
+            poster={COVER}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          />
 
           <div
             className="absolute inset-0"
