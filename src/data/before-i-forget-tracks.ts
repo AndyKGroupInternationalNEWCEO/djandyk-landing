@@ -227,6 +227,7 @@ export const beforeIForgetAlbum: Album = {
       chords: "Gm – Eb – Bb – F",
       durationSeconds: 278,
       coverUrl: "/releases/what-i-remember.png",
+      videoUrl: "/videos/what-i-remember.mp4",
       audioSrc: "/audio/what-i-remember.mp3",
       releaseDate: "2026-06-12",
       lyrics: [
