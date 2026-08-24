@@ -12,15 +12,7 @@ function formatDuration(seconds?: number) {
 
 const PLATFORMS = ["Spotify", "Apple Music", "TIDAL", "YouTube", "Beatport"];
 
-export default function SongInfoPanel({
-  track,
-  player,
-  stickyHeading = false,
-}: {
-  track: Track;
-  player: AudioPlayerControls;
-  stickyHeading?: boolean;
-}) {
+export default function SongInfoPanel({ track, player }: { track: Track; player: AudioPlayerControls }) {
   const infoRows: { label: string; value: string }[] = [];
   if (track.bpm) infoRows.push({ label: "BPM", value: String(track.bpm) });
   if (track.key) infoRows.push({ label: "Key", value: track.key });
@@ -40,14 +32,7 @@ export default function SongInfoPanel({
 
   return (
     <div>
-      <h2
-        className={
-          stickyHeading
-            ? "sticky top-0 z-10 text-xs font-mono uppercase tracking-[0.3em] mb-4 py-2 -mt-2"
-            : "text-xs font-mono uppercase tracking-[0.3em] mb-4"
-        }
-        style={{ color: track.accent, background: stickyHeading ? "#060606" : undefined }}
-      >
+      <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: track.accent }}>
         Song Information
       </h2>
 

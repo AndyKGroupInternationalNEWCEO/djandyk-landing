@@ -2,23 +2,10 @@
 
 import type { Track } from "@/types/album";
 
-export default function LyricsPanel({
-  track,
-  stickyHeading = false,
-}: {
-  track: Track;
-  stickyHeading?: boolean;
-}) {
+export default function LyricsPanel({ track }: { track: Track }) {
   return (
     <div>
-      <h2
-        className={
-          stickyHeading
-            ? "sticky top-0 z-10 text-xs font-mono uppercase tracking-[0.3em] mb-4 py-2 -mt-2"
-            : "text-xs font-mono uppercase tracking-[0.3em] mb-4"
-        }
-        style={{ color: track.accent, background: stickyHeading ? "#060606" : undefined }}
-      >
+      <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: track.accent }}>
         Lyrics
       </h2>
       <div

@@ -323,13 +323,41 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
   const size = isNarrow ? SIZE_MOBILE : SIZE_DESKTOP;
   const progressPct = playerTrack && duration ? Math.min(100, (currentTime / duration) * 100) : 0;
 
+  // The 3D artwork carousel — focused cover plus receded/dimmed background
+  // covers. Always a fixed-height, overflow:hidden box so the 3D-transformed
+  // background slides can never bleed past their own band into whatever
+  // sits beside or below it (Song Info / Lyrics / the next page section).
+  const band = (
+    <div
+      className="relative"
+      style={{ height: isNarrow ? 340 : 520, perspective: 1400, overflow: "hidden" }}
+    >
+      <div className="absolute inset-0 flex items-center justify-center">
+        {tracks.map((track, i) => (
+          <CoverFlowSlide
+            key={track.slug}
+            track={track}
+            offset={i - activeIndex}
+            spacing={spacing}
+            depth={DEPTH}
+            angle={ANGLE}
+            size={size}
+            reducedMotion={reducedMotion}
+            expandState={!isExpanded ? "none" : i === activeIndex ? "focus" : "background"}
+            isExpanding={isExpanding}
+            onSelect={() => (i === activeIndex ? openTrack(i) : goTo(i))}
+          />
+        ))}
+      </div>
+    </div>
+  );
+
   return (
     <section
       ref={sectionRef}
       className="relative w-full select-none"
       style={{
         background: "linear-gradient(180deg, #060606 0%, #0e0e0e 55%, #060606 100%)",
-        overflow: "hidden",
       }}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
@@ -395,91 +423,58 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
         />
       )}
 
-      {/* Carousel band — the enlarged artwork and, on desktop, the Song
-          Info / Lyrics panels all live in this same band so they read as
-          one row: info — artwork — lyrics. */}
-      <div
-        className="relative"
-        style={{
-          height: isNarrow ? 340 : 520,
-          marginTop: isExpanded ? (isNarrow ? 20 : 12) : 0,
-          perspective: 1400,
-          transition: `margin-top ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1)`,
-        }}
-      >
-        <div className="absolute inset-0 flex items-center justify-center">
-          {tracks.map((track, i) => (
-            <CoverFlowSlide
-              key={track.slug}
-              track={track}
-              offset={i - activeIndex}
-              spacing={spacing}
-              depth={DEPTH}
-              angle={ANGLE}
-              size={size}
-              reducedMotion={reducedMotion}
-              expandState={!isExpanded ? "none" : i === activeIndex ? "focus" : "background"}
-              isExpanding={isExpanding}
-              onSelect={() => (i === activeIndex ? openTrack(i) : goTo(i))}
-            />
-          ))}
-        </div>
-
-        {/* SONG INFO (left) / LYRICS (right) — desktop only, overlapping
-            the artwork's own band so the artwork stays visually centred
-            between them. */}
-        {isExpanded && !isNarrow && (
+      {isExpanded && !isNarrow ? (
+        /* Desktop expanded — Song Info / artwork / Lyrics live together inside
+           one rounded card, sized to auto height (no max-height / overflow
+           hidden / negative margin / absolute positioning on the card or its
+           columns), so the card always finishes growing to fit whatever the
+           longest content (usually Lyrics) needs before anything below it
+           can start. A plain margin-bottom below the card — not padding
+           inside it — gives a clean gap before the next page section. */
+        <div className="relative z-10 px-6 max-w-[1600px] mx-auto" style={{ marginTop: 12, marginBottom: 64 }}>
           <div
-            className="absolute inset-0 flex items-center justify-center px-6 z-30"
-            style={{ pointerEvents: isExpanding ? "auto" : "none" }}
+            className="grid items-center gap-8 rounded-[32px] px-8 py-10"
+            style={{
+              gridTemplateColumns: "320px 1fr 320px",
+              background: "rgba(8, 8, 8, 0.88)",
+              border: "1px solid rgba(255,255,255,0.07)",
+            }}
           >
-            <div className="w-full max-w-[1500px] flex items-center justify-between gap-8">
-              <div
-                className="relative w-[320px] flex-shrink-0"
-                style={{
-                  opacity: isExpanding ? 1 : 0,
-                  transform: isExpanding ? "translateX(0)" : "translateX(-48px)",
-                  transition: `transform ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1), opacity ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1)`,
-                }}
-              >
-                <div className="coverflow-scroll max-h-[520px] overflow-y-auto pr-2">
-                  <SongInfoPanel
-                    key={active.slug}
-                    track={active}
-                    player={buildPlayerControls(activeIndex)}
-                    stickyHeading
-                  />
-                </div>
-                <div
-                  className="absolute bottom-0 left-0 right-2 h-10 pointer-events-none"
-                  style={{ background: "linear-gradient(to bottom, transparent, #060606)" }}
-                  aria-hidden="true"
-                />
-              </div>
+            <div
+              style={{
+                opacity: isExpanding ? 1 : 0,
+                transform: isExpanding ? "translateX(0)" : "translateX(-48px)",
+                transition: `transform ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1), opacity ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1)`,
+                pointerEvents: isExpanding ? "auto" : "none",
+              }}
+            >
+              <SongInfoPanel key={active.slug} track={active} player={buildPlayerControls(activeIndex)} />
+            </div>
 
-              <div className="flex-1 min-w-[260px]" aria-hidden="true" />
+            {band}
 
-              <div
-                className="relative w-[320px] flex-shrink-0"
-                style={{
-                  opacity: isExpanding ? 1 : 0,
-                  transform: isExpanding ? "translateX(0)" : "translateX(48px)",
-                  transition: `transform ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1), opacity ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1)`,
-                }}
-              >
-                <div className="coverflow-scroll max-h-[520px] overflow-y-auto pr-2">
-                  <LyricsPanel key={`${active.slug}-lyrics`} track={active} stickyHeading />
-                </div>
-                <div
-                  className="absolute bottom-0 left-0 right-2 h-10 pointer-events-none"
-                  style={{ background: "linear-gradient(to bottom, transparent, #060606)" }}
-                  aria-hidden="true"
-                />
-              </div>
+            <div
+              style={{
+                opacity: isExpanding ? 1 : 0,
+                transform: isExpanding ? "translateX(0)" : "translateX(48px)",
+                transition: `transform ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1), opacity ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1)`,
+                pointerEvents: isExpanding ? "auto" : "none",
+              }}
+            >
+              <LyricsPanel key={`${active.slug}-lyrics`} track={active} />
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div
+          style={{
+            marginTop: isExpanded ? 20 : 0,
+            transition: `margin-top ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1)`,
+          }}
+        >
+          {band}
+        </div>
+      )}
 
       {!isExpanded ? (
         <div className="relative z-10 text-center pt-6 pb-16 px-6">
