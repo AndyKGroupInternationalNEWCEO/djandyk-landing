@@ -94,6 +94,7 @@ export const beforeIForgetAlbum: Album = {
       chords: "Dm – Bb – Gm – C",
       durationSeconds: 200,
       coverUrl: "/releases/sunset-over-us.png",
+      videoUrl: "/videos/sunset-over-us.mp4",
       audioSrc: "/audio/sunset-over-us.mp3",
       releaseDate: "2026-06-05",
       lyrics: [
