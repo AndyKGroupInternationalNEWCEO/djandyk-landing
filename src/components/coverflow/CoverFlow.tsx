@@ -425,15 +425,15 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
 
       {isExpanded && !isNarrow ? (
         /* Desktop expanded — Song Info / artwork / Lyrics live together inside
-           one rounded card, sized to auto height (no max-height / overflow
-           hidden / negative margin / absolute positioning on the card or its
-           columns), so the card always finishes growing to fit whatever the
-           longest content (usually Lyrics) needs before anything below it
-           can start. A plain margin-bottom below the card — not padding
-           inside it — gives a clean gap before the next page section. */
+           one compact rounded card. All three columns share the same fixed
+           520px height as the artwork band, top-aligned, so the card's size
+           always tracks the artwork — never the length of a track's lyrics.
+           Only the Lyrics box (and, as a safety net, Song Info) scrolls
+           internally when its own content runs long; the card and the page
+           around it never grow because of that. */
         <div className="relative z-10 px-6 max-w-[1600px] mx-auto" style={{ marginTop: 12, marginBottom: 64 }}>
           <div
-            className="grid items-center gap-8 rounded-[32px] px-8 py-10"
+            className="grid items-start gap-8 rounded-[32px] px-8 py-10"
             style={{
               gridTemplateColumns: "320px 1fr 320px",
               background: "rgba(8, 8, 8, 0.88)",
@@ -441,12 +441,17 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
             }}
           >
             <div
-              style={{
-                opacity: isExpanding ? 1 : 0,
-                transform: isExpanding ? "translateX(0)" : "translateX(-48px)",
-                transition: `transform ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1), opacity ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1)`,
-                pointerEvents: isExpanding ? "auto" : "none",
-              }}
+              className="coverflow-scroll overflow-y-auto pr-2"
+              style={
+                {
+                  height: 520,
+                  opacity: isExpanding ? 1 : 0,
+                  transform: isExpanding ? "translateX(0)" : "translateX(-48px)",
+                  transition: `transform ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1), opacity ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1)`,
+                  pointerEvents: isExpanding ? "auto" : "none",
+                  ["--scroll-thumb" as string]: active.accent,
+                } as React.CSSProperties
+              }
             >
               <SongInfoPanel key={active.slug} track={active} player={buildPlayerControls(activeIndex)} />
             </div>
@@ -455,6 +460,7 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
 
             <div
               style={{
+                height: 520,
                 opacity: isExpanding ? 1 : 0,
                 transform: isExpanding ? "translateX(0)" : "translateX(48px)",
                 transition: `transform ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1), opacity ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1)`,

@@ -4,12 +4,12 @@ import type { Track } from "@/types/album";
 
 export default function LyricsPanel({ track }: { track: Track }) {
   return (
-    <div>
-      <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: track.accent }}>
+    <div className="h-full flex flex-col" style={{ ["--scroll-thumb" as string]: track.accent }}>
+      <h2 className="flex-shrink-0 text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: track.accent }}>
         Lyrics
       </h2>
       <div
-        className="rounded-xl p-5"
+        className="coverflow-scroll flex-1 min-h-0 overflow-y-auto pr-2 rounded-xl p-5"
         style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}
       >
         {track.lyrics.length > 0 ? (
