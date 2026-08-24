@@ -312,6 +312,7 @@ export const beforeIForgetAlbum: Album = {
       chords: "Fm – Db – Bb – Eb",
       durationSeconds: 250,
       coverUrl: "/releases/further-than-forever.png",
+      videoUrl: "/videos/further-than-forever.mp4",
       audioSrc: "/audio/further-than-forever.mp3",
       releaseDate: "2026-05-29",
       vocal: "DJ Andy'K & Aria Noir",
