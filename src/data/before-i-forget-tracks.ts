@@ -446,6 +446,7 @@ export const beforeIForgetAlbum: Album = {
       chords: "Fm – Db – Ab – Eb",
       durationSeconds: 292,
       coverUrl: "/releases/the-door-we-found.png",
+      videoUrl: "/videos/the-door-we-found.mp4",
       audioSrc: "/audio/the-door-we-found.mp3",
       releaseDate: "2026-07-03",
       vocal: "DJ Andy'K & Kaelis",
