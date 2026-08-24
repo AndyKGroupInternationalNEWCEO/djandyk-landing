@@ -41,6 +41,68 @@ import LatestReleaseBanner from "@/components/LatestReleaseBanner";
 import MusicLabSection from "@/components/MusicLabSection";
 import MusicLabBanner from "@/components/MusicLabBanner";
 import ScrollReveal from "@/components/ScrollReveal";
+import { ALBUM_CATALOGUE, type CatalogueAlbum } from "@/lib/albumCatalogue";
+
+function splitGenres(genre?: string): string[] {
+  if (!genre) return [];
+  return genre
+    .split(/[/·]/)
+    .map((g) => g.trim())
+    .filter(Boolean);
+}
+
+function isReleased(album: CatalogueAlbum): boolean {
+  if (album.archived) return false;
+  if (album.completeBadge || album.availableNow) return true;
+  if (album.completionDate) return new Date(album.completionDate) <= new Date();
+  return false;
+}
+
+// Only released albums get a publish date — an in-development album's
+// placeholder completionDate (e.g. the far-future date used to mean
+// "in progress") is never real publication data.
+function albumYear(album: CatalogueAlbum): string | undefined {
+  if (!isReleased(album)) return undefined;
+  if (album.completionDate) return album.completionDate.slice(0, 4);
+  const match = album.kicker.match(/(\d{4})/);
+  return match ? match[1] : undefined;
+}
+
+function albumUrl(album: CatalogueAlbum): string | undefined {
+  if (!album.href) return undefined;
+  return album.href.startsWith("/")
+    ? `https://www.djandykofficial.com${album.href}`
+    : album.href;
+}
+
+// Generated from the same central catalogue used by the homepage and
+// Press/EPK — every album appears exactly once, with no separate
+// hand-maintained list to fall out of sync.
+const musicAlbumEntities = ALBUM_CATALOGUE.map((album) => {
+  const entity: Record<string, unknown> = {
+    "@type": "MusicAlbum",
+    name: album.title,
+    byArtist: { "@type": "MusicGroup", name: "DJ Andy'K" },
+  };
+
+  const genres = splitGenres(album.genre);
+  if (genres.length) entity.genre = genres;
+
+  const year = albumYear(album);
+  if (year) entity.datePublished = year;
+
+  if (album.archived) {
+    // Withdrawn release — no active streaming offer, not presented as
+    // currently available.
+    entity.description =
+      "Archived release — withdrawn and no longer actively distributed.";
+  } else {
+    const url = albumUrl(album);
+    if (url) entity.url = url;
+  }
+
+  return entity;
+});
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -76,6 +138,7 @@ const jsonLd = {
         "https://tidal.com/browse/artist/65848653",
         "https://www.instagram.com/djandykofficial",
         "https://www.tiktok.com/@djandykofficial",
+        "https://www.beatport.com/artist/dj-andyk/2441664",
       ],
     },
     {
@@ -95,38 +158,7 @@ const jsonLd = {
       description:
         "Official website of DJ Andy'K. Producer of Trance, Progressive House, and EDM. Based in the UK, sharing music worldwide.",
     },
-    {
-      "@type": "MusicAlbum",
-      name: "When Later Becomes Never",
-      byArtist: { "@type": "MusicGroup", name: "DJ Andy'K" },
-      datePublished: "2026",
-      genre: ["Progressive House", "Trance"],
-      url: "https://open.spotify.com/album/1ezdr7EOZWuLBiw7Rpqis6",
-    },
-    {
-      "@type": "MusicAlbum",
-      name: "Human Stories",
-      byArtist: { "@type": "MusicGroup", name: "DJ Andy'K" },
-      datePublished: "2026",
-      genre: ["House", "Progressive House"],
-      url: "https://open.spotify.com/artist/3JhFGt6jRQvnYgvhWMQHUU",
-    },
-    {
-      "@type": "MusicAlbum",
-      name: "Deep Connections",
-      byArtist: { "@type": "MusicGroup", name: "DJ Andy'K" },
-      datePublished: "2026",
-      genre: ["House", "Progressive House"],
-      url: "https://open.spotify.com/album/39Zb0euYMqdqg658wqKVGU",
-    },
-    {
-      "@type": "MusicAlbum",
-      name: "Four Elements",
-      byArtist: { "@type": "MusicGroup", name: "DJ Andy'K" },
-      datePublished: "2026",
-      genre: ["EDM"],
-      url: "https://open.spotify.com/album/18OaI45bkpYwJtzL59BoUw",
-    },
+    ...musicAlbumEntities,
   ],
 };
 

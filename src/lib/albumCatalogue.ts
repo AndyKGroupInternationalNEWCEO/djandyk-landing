@@ -27,7 +27,7 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     category: "signature",
     kicker: "Album · 2026",
     genre: "Six Trance Ballads",
-    description: "Six personal letters in trance. New track every Wednesday. Full album 22.7.2026.",
+    description: "Six personal letters transformed into trance. The complete album is available now.",
     availableNow: true,
     href: "/six-trance-ballads",
     embedUrl: "https://open.spotify.com/embed/album/6tXnXiMbG1n9Tt3NnVij3n?utm_source=generator&theme=0",

@@ -35,17 +35,9 @@ export const LATEST_RELEASES = [
   },
   {
     title: "THE ALBUM — From Me, To...",
-    type: "Six Trance Ballads · New Every Wednesday",
+    type: "Six Trance Ballads",
     coverUrl: "/releases/six-trance-ballads-the-album.png",
     spotifyUrl: "/six-trance-ballads",
-    weeklyReleases: [
-      { date: "2026-06-17", label: "17.6.2026" },
-      { date: "2026-06-24", label: "24.6.2026" },
-      { date: "2026-07-01", label: "1.7.2026" },
-      { date: "2026-07-08", label: "8.7.2026" },
-      { date: "2026-07-15", label: "15.7.2026" },
-      { date: "2026-07-22", label: "22.7.2026" },
-    ],
   },
   {
     title: "Before I Forget",

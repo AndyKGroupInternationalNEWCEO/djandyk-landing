@@ -20,23 +20,7 @@ export default function LatestReleaseBanner() {
 
   const release = LATEST_RELEASES[idx];
 
-  function getWeeklyLabel(releases: { date: string; label: string }[]): string {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const next = releases.find(r => new Date(r.date) >= today);
-    return next ? next.label : releases[releases.length - 1].label;
-  }
-
   function getReleaseLabel(): string {
-    if ("comingSoon" in release && release.comingSoon) {
-      return "Coming Soon";
-    }
-    if ("weeklyReleases" in release && release.weeklyReleases) {
-      return `Out ${getWeeklyLabel(release.weeklyReleases)}`;
-    }
-    if ("releaseDate" in release && release.releaseDate) {
-      return `Out ${release.releaseDate}`;
-    }
     return "Out Now";
   }
 
