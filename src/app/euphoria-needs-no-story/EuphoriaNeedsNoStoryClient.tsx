@@ -139,25 +139,7 @@ function TrackCard({ track }: { track: Track }) {
             {track.story}
           </p>
 
-          {/* Audio player */}
-          {track.audioSrc && (
-            <div className="mb-3">
-              <audio
-                controls
-                preload="none"
-                className="w-full"
-                style={{
-                  accentColor: track.accent,
-                  colorScheme: "dark",
-                  borderRadius: "6px",
-                }}
-              >
-                <source src={track.audioSrc} type="audio/mpeg" />
-              </audio>
-            </div>
-          )}
-
-          {/* Lyrics — opens the track's own shareable page */}
+          {/* Opens the full experience — real audio player, song info & lyrics */}
           <Link
             href={`/euphoria-needs-no-story/${track.slug}`}
             className="flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest mb-3 py-1.5 transition-opacity hover:opacity-70 w-fit"
@@ -172,7 +154,7 @@ function TrackCard({ track }: { track: Track }) {
             >
               <path d="M6 4l4 4-4 4" />
             </svg>
-            Read lyrics
+            Open Track
           </Link>
 
           {/* Streaming links */}

@@ -31,7 +31,10 @@ export default function CoverFlowSlide({
 }: Props) {
   const abs = Math.abs(offset);
   const isActive = offset === 0;
-  const visible = abs <= 4;
+  // Fewer background covers stay painted once a track is expanded — keeps
+  // the receded stack tight and avoids any stray 3D-transformed cover
+  // rendering out past its intended band.
+  const visible = expandState === "background" && isExpanding ? abs <= 2 : abs <= 4;
   const sign = offset === 0 ? 0 : offset > 0 ? 1 : -1;
 
   // "focus" = this is the artwork being pulled forward toward the viewer.

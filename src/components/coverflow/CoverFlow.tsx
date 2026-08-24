@@ -329,7 +329,7 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
       className="relative w-full select-none"
       style={{
         background: "linear-gradient(180deg, #060606 0%, #0e0e0e 55%, #060606 100%)",
-        overflow: isExpanded && !isNarrow ? "visible" : "hidden",
+        overflow: "hidden",
       }}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
