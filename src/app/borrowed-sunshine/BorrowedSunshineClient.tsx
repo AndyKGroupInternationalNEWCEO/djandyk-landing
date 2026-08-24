@@ -347,6 +347,13 @@ export default function BorrowedSunshineClient({ initialSlug }: { initialSlug?: 
       <main className="pt-[60px] min-h-screen font-sans" style={{ background: "#0d1117" }}>
         {/* Hero */}
         <section className="px-6 pt-20 pb-12 max-w-[680px] mx-auto text-center">
+          <div
+            className="w-[220px] sm:w-[260px] aspect-square mx-auto mb-8 rounded-2xl overflow-hidden"
+            style={{ boxShadow: `0 20px 60px -15px rgba(0,0,0,0.7), 0 0 40px ${GOLD}30` }}
+          >
+            <img src={COVER} alt="Borrowed Sunshine — album cover" className="w-full h-full object-cover" />
+          </div>
+
           <span
             className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-6 px-3 py-1 rounded-full border"
             style={{ color: GOLD, borderColor: `${GOLD}33`, background: `${GOLD}0d` }}
