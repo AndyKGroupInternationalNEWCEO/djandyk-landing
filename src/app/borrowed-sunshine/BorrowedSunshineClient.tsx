@@ -377,6 +377,7 @@ export default function BorrowedSunshineClient({ initialSlug }: { initialSlug?: 
             muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: "center 20%" }}
           />
 
           {/* Legibility gradient */}
