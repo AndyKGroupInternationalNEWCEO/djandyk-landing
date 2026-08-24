@@ -11,7 +11,7 @@ import { deepConnectionsAlbum } from "@/data/deep-connections-tracks";
 import type { Track } from "@/types/album";
 
 const COVER = "/albums/deep-connections.jpg";
-const ACCENT = "#6C63FF";
+const ACCENT = "#C7D0D8";
 
 function TrackCard({ track }: { track: Track }) {
   const innerRef = useRef<HTMLDivElement>(null);
@@ -180,6 +180,7 @@ export default function DeepConnectionsClient({ initialSlug }: { initialSlug?: s
             muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: "center 75%" }}
           />
 
           <div
