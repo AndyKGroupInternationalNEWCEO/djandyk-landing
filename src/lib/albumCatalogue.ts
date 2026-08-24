@@ -157,7 +157,7 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     title: "Music Is Your Passion",
     category: "legacy",
     kicker: "Archived Release",
-    description: "Withdrawn — replaced by Euphoria Needs No Story, which no longer represented the artistic direction and quality standard of DJ Andy'K.",
+    description: "Withdrawn and replaced by Euphoria Needs No Story because the original release no longer represented the artistic direction and quality standards of DJ Andy'K.",
     archived: true,
     cover: "/albums/music-is-your-passion.jpg",
   },
