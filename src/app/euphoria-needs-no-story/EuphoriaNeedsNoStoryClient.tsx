@@ -1,11 +1,12 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import CoverFlow from "@/components/coverflow/CoverFlow";
+import SectionTabs from "@/components/coverflow/SectionTabs";
 import { euphoriaAlbum } from "@/data/euphoria-tracks";
 import type { Track } from "@/types/album";
 
@@ -173,6 +174,8 @@ function TrackCard({ track }: { track: Track }) {
 }
 
 export default function EuphoriaNeedsNoStoryClient({ initialSlug }: { initialSlug?: string } = {}) {
+  const [viewMode, setViewMode] = useState<"coverflow" | "overview">("coverflow");
+
   return (
     <>
       <Navbar />
@@ -270,27 +273,32 @@ export default function EuphoriaNeedsNoStoryClient({ initialSlug }: { initialSlu
           </div>
         </section>
 
-        {/* Cover Flow — interactive 3D track carousel */}
-        <div id="tracks">
-          <CoverFlow album={euphoriaAlbum} initialSlug={initialSlug} />
-        </div>
-
-        {/* Track Overview — full detail cards, each linking to its own track page */}
-        <section className="pt-4 pb-12 px-6 max-w-[1400px] mx-auto">
-          <div className="text-center mb-10">
-            <span
-              className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] px-3 py-1 rounded-full border"
-              style={{ color: ACCENT, borderColor: `${ACCENT}55`, background: "rgba(0,0,0,0.4)" }}
-            >
-              Track Overview
-            </span>
+        {/* Cover Flow vs. Track Overview — one view at a time, Cover Flow by default */}
+        <div id="tracks" style={{ background: "#0d1117" }}>
+          <div className="flex justify-center pt-14 pb-8 px-6">
+            <SectionTabs
+              accent={ACCENT}
+              activeTab={viewMode}
+              onTabChange={(id) => setViewMode(id as "coverflow" | "overview")}
+              tabs={[
+                { id: "coverflow", label: "Cover Flow" },
+                { id: "overview", label: "Track Overview" },
+              ]}
+            />
           </div>
-          <ScrollReveal stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {euphoriaAlbum.tracks.map((track) => (
-              <TrackCard key={track.n} track={track} />
-            ))}
-          </ScrollReveal>
-        </section>
+
+          {viewMode === "coverflow" ? (
+            <CoverFlow album={euphoriaAlbum} initialSlug={initialSlug} />
+          ) : (
+            <section className="pt-0 pb-12 px-6 max-w-[1400px] mx-auto">
+              <ScrollReveal stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                {euphoriaAlbum.tracks.map((track) => (
+                  <TrackCard key={track.n} track={track} />
+                ))}
+              </ScrollReveal>
+            </section>
+          )}
+        </div>
 
         {/* Full tracklist artwork — full-bleed, same treatment as the hero */}
         <section className="relative w-full overflow-hidden">

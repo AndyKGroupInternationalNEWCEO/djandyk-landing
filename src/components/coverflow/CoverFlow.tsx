@@ -383,14 +383,7 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
         ))}
 
       {!isExpanded ? (
-        <div className="relative z-10 text-center pt-14 pb-4 px-6">
-          <span
-            className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] px-3 py-1 rounded-full border"
-            style={{ color: album.accent, borderColor: `${album.accent}55`, background: "rgba(0,0,0,0.4)" }}
-          >
-            Cover Flow
-          </span>
-        </div>
+        <div className="relative z-10 pt-4" />
       ) : (
         <ExpandedHeader
           track={active}
