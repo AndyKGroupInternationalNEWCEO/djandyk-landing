@@ -20,6 +20,7 @@ const TRACKS = [
     date: "28.8.2026",
     accent: "#E8A020",
     coverUrl: "/releases/too-hot-to-go-home.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/too-hot-to-go-home.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -34,6 +35,7 @@ const TRACKS = [
     date: "21.8.2026",
     accent: "#F0C060",
     coverUrl: "/releases/the-way-you-smile.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/the-way-you-smile.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -48,6 +50,7 @@ const TRACKS = [
     date: "14.8.2026",
     accent: "#D4956A",
     coverUrl: "/releases/take-it-off-slowly.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/take-it-off-slowly.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -62,6 +65,7 @@ const TRACKS = [
     date: "7.8.2026",
     accent: "#C4845A",
     coverUrl: "/releases/stay-a-little-longer.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/stay-a-little-longer.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -76,6 +80,7 @@ const TRACKS = [
     date: "31.7.2026",
     accent: "#E8A020",
     coverUrl: "/releases/borrowed-sunshine.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/borrowed-sunshine.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -90,6 +95,7 @@ const TRACKS = [
     date: "4.9.2026",
     accent: "#B87040",
     coverUrl: "/releases/one-more-bad-idea.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/one-more-bad-idea.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -104,6 +110,7 @@ const TRACKS = [
     date: "11.9.2026",
     accent: "#A06030",
     coverUrl: "/releases/we-outran-tomorrow.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/we-outran-tomorrow.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -118,6 +125,7 @@ const TRACKS = [
     date: "18.9.2026",
     accent: "#906050",
     coverUrl: "/releases/hands-all-over-me.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/hands-all-over-me.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -132,6 +140,7 @@ const TRACKS = [
     date: "25.9.2026",
     accent: "#C09060",
     coverUrl: "/releases/half-past-summer.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/half-past-summer.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -146,6 +155,7 @@ const TRACKS = [
     date: "9.10.2026",
     accent: "#8A7060",
     coverUrl: "/releases/nothing-asked-to-stay.png",
+    videoUrl: null as string | null,
     audioSrc: "/audio/nothing-asked-to-stay.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -173,13 +183,25 @@ function TrackCard({ track }: { track: Track }) {
         borderTop: `2px solid ${track.accent}`,
       }}
     >
-      {/* Cover — full width square */}
+      {/* Cover — full width square (animated when a video is available) */}
       <div className="aspect-square w-full relative overflow-hidden">
-        <img
-          src={track.coverUrl}
-          alt={track.title}
-          className="w-full h-full object-cover"
-        />
+        {track.videoUrl ? (
+          <video
+            src={track.videoUrl}
+            poster={track.coverUrl}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <img
+            src={track.coverUrl}
+            alt={track.title}
+            className="w-full h-full object-cover"
+          />
+        )}
         <div className="absolute inset-0 flex items-end p-3">
           <span
             className="text-[9px] font-mono uppercase tracking-[0.3em] px-2.5 py-1 rounded-full border"
@@ -345,41 +367,50 @@ export default function BorrowedSunshineClient({ initialSlug }: { initialSlug?: 
       <Navbar />
 
       <main className="pt-[60px] min-h-screen font-sans" style={{ background: "#0d1117" }}>
-        {/* Hero */}
-        <section className="px-6 pt-20 pb-12 max-w-[680px] mx-auto text-center">
+        {/* Hero — full-width cover (swap to a video like no-translation-hero.mp4 once one exists) */}
+        <section className="relative w-full overflow-hidden" style={{ minHeight: "78vh" }}>
+          <img src={COVER} alt="Borrowed Sunshine — album cover" className="absolute inset-0 w-full h-full object-cover" />
+
+          {/* Legibility gradient */}
           <div
-            className="w-[220px] sm:w-[260px] aspect-square mx-auto mb-8 rounded-2xl overflow-hidden"
-            style={{ boxShadow: `0 20px 60px -15px rgba(0,0,0,0.7), 0 0 40px ${GOLD}30` }}
-          >
-            <img src={COVER} alt="Borrowed Sunshine — album cover" className="w-full h-full object-cover" />
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to top, #0d1117 5%, rgba(13,17,23,0.55) 40%, rgba(13,17,23,0.15) 65%, transparent 100%)" }}
+          />
+
+          <div className="absolute top-6 left-6">
+            <span className="text-[10px] font-mono uppercase tracking-[0.35em]" style={{ color: "rgba(255,255,255,0.6)" }}>
+              Album
+            </span>
           </div>
 
-          <span
-            className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-6 px-3 py-1 rounded-full border"
-            style={{ color: GOLD, borderColor: `${GOLD}33`, background: `${GOLD}0d` }}
-          >
-            {albumStatus === "released" ? "Released" : "Album · Trance · 2026"}
-          </span>
+          <div className="relative z-10 flex flex-col items-center justify-end text-center h-full px-6 pb-14" style={{ minHeight: "78vh" }}>
+            <span
+              className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-6 px-3 py-1 rounded-full border"
+              style={{ color: GOLD, borderColor: `${GOLD}55`, background: "rgba(0,0,0,0.4)" }}
+            >
+              {albumStatus === "released" ? "Released" : "Album · Trance · 2026"}
+            </span>
 
-          <h1
-            className="text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-tight leading-[1.1] mb-3 font-sans"
-            style={{ color: "#f0f6fc" }}
-          >
-            BORROWED SUNSHINE
-          </h1>
+            <h1
+              className="text-[clamp(2.2rem,6vw,4.5rem)] font-bold tracking-tight leading-[1.05] mb-3 font-sans max-w-[900px]"
+              style={{ color: "#ffffff", textShadow: "0 4px 30px rgba(0,0,0,0.6)" }}
+            >
+              BORROWED SUNSHINE
+            </h1>
 
-          <p
-            className="text-lg font-light mb-4 font-mono uppercase tracking-[0.2em]"
-            style={{ color: GOLD }}
-          >
-            Trance / Progressive Trance
-          </p>
+            <p
+              className="text-lg font-light mb-4 font-mono uppercase tracking-[0.2em]"
+              style={{ color: GOLD }}
+            >
+              Trance / Progressive Trance
+            </p>
 
-          <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.28)" }}>
-            10 Tracks. 10 Stories. 10 Moments You&apos;ll Never Forget.
-            <br />
-            Full album: 9.10.2026
-          </p>
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
+              10 Tracks. 10 Stories. 10 Moments You&apos;ll Never Forget.
+              <br />
+              Full album: 9.10.2026
+            </p>
+          </div>
         </section>
 
         {/* Cover Flow vs. Track Overview — one view at a time, Cover Flow by default */}
