@@ -32,6 +32,7 @@ import PricingSection from "@/components/PricingSection";
 import AlbumCatalogue from "@/components/AlbumCatalogue";
 import LovedBySection from "@/components/LovedBySection";
 import IntegrationsSection from "@/components/IntegrationsSection";
+import MonthlyTop10Section from "@/components/MonthlyTop10Section";
 import DJSetsSection from "@/components/DJSetsSection";
 import ContactForm from "@/components/ContactForm";
 import CtaSection from "@/components/CtaSection";
@@ -187,6 +188,18 @@ export default function Home() {
         <FaqSection />
       </ScrollReveal>
 
+      {/* Streaming Platforms — "Where the music lives" */}
+      <ScrollReveal>
+        <IntegrationsSection />
+      </ScrollReveal>
+
+      {/* Monthly Top 10 — directly below "Where the music lives", above the album catalogue */}
+      <ScrollReveal>
+        <MonthlyTop10Section />
+      </ScrollReveal>
+
+      <TronDivider />
+
       {/* Album Catalogue — Signature / Concept / Studio / Legacy, each album exactly once */}
       <ScrollReveal>
         <AlbumCatalogue />
@@ -206,13 +219,6 @@ export default function Home() {
         <section className="relative pt-12 pb-14 px-8 max-w-[1200px] mx-auto">
           <TestimonialPair />
         </section>
-      </ScrollReveal>
-
-      <TronDivider />
-
-      {/* Streaming Platforms */}
-      <ScrollReveal>
-        <IntegrationsSection />
       </ScrollReveal>
 
       <TronDivider />
