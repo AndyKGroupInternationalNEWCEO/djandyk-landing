@@ -15,6 +15,7 @@ const ACCENT = "#D98C5F";
 
 function TrackCard({ track }: { track: Track }) {
   const innerRef = useRef<HTMLDivElement>(null);
+  const isOut = track.releaseDate ? new Date(track.releaseDate) <= new Date() : false;
 
   const handleTilt = (e: React.MouseEvent<HTMLDivElement>) => {
     const el = innerRef.current;
@@ -66,12 +67,12 @@ function TrackCard({ track }: { track: Track }) {
             <span
               className="text-[9px] font-mono uppercase tracking-[0.3em] px-2.5 py-1 rounded-full border"
               style={{
-                color: "rgba(255,255,255,0.4)",
-                borderColor: "rgba(255,255,255,0.15)",
+                color: isOut ? track.accent : "rgba(255,255,255,0.4)",
+                borderColor: isOut ? `${track.accent}66` : "rgba(255,255,255,0.15)",
                 background: "rgba(0,0,0,0.6)",
               }}
             >
-              Coming Soon
+              {isOut ? "Out Now" : "Coming Soon"}
             </span>
           </div>
         </Link>
@@ -94,8 +95,8 @@ function TrackCard({ track }: { track: Track }) {
             {track.title}
           </h3>
 
-          <p className="text-[11px] font-mono uppercase tracking-widest mb-2" style={{ color: "rgba(255,255,255,0.25)" }}>
-            Release · TBA
+          <p className="text-[11px] font-mono uppercase tracking-widest mb-2" style={{ color: isOut ? track.accent : "rgba(255,255,255,0.25)" }}>
+            {isOut ? "Released" : track.releaseDate ? `Release · ${track.releaseDate}` : "Release · TBA"}
           </p>
 
           {(track.key || track.bpm || track.chords) && (
