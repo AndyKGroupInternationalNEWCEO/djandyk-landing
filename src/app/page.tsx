@@ -29,21 +29,15 @@ import FaqSection from "@/components/FaqSection";
 import RoadmapSection from "@/components/RoadmapSection";
 import TestimonialPair from "@/components/TestimonialPair";
 import PricingSection from "@/components/PricingSection";
-import FeaturedAlbums from "@/components/FeaturedAlbums";
+import AlbumCatalogue from "@/components/AlbumCatalogue";
 import LovedBySection from "@/components/LovedBySection";
 import IntegrationsSection from "@/components/IntegrationsSection";
 import DJSetsSection from "@/components/DJSetsSection";
 import ContactForm from "@/components/ContactForm";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
-import FlagshipSystems from "@/components/FlagshipSystems";
 import { HeroBackground } from "@/components/BackgroundGrid";
 import LatestReleaseBanner from "@/components/LatestReleaseBanner";
-import SixTranceBalladsPromo from "@/components/SixTranceBalladsPromo";
-import BorrowedSunshinePromo from "@/components/BorrowedSunshinePromo";
-import BackToEurodancePromo from "@/components/BackToEurodancePromo";
-import NoTranslationPromo from "@/components/NoTranslationPromo";
-import EuphoriaNeedsNoStoryPromo from "@/components/EuphoriaNeedsNoStoryPromo";
 import MusicLabSection from "@/components/MusicLabSection";
 import MusicLabBanner from "@/components/MusicLabBanner";
 import BeatportBanner from "@/components/BeatportBanner";
@@ -164,20 +158,10 @@ export default function Home() {
 
       <BeatportBanner />
 
-      {/* Featured Releases */}
+      {/* Album Catalogue — Signature / Concept / Studio / Legacy, each album exactly once */}
       <ScrollReveal>
-        <FeaturedAlbums />
+        <AlbumCatalogue />
       </ScrollReveal>
-
-      <EuphoriaNeedsNoStoryPromo />
-
-      <SixTranceBalladsPromo />
-
-      <BorrowedSunshinePromo />
-
-      <BackToEurodancePromo />
-
-      <NoTranslationPromo />
 
       <TronDivider />
 
@@ -207,13 +191,6 @@ export default function Home() {
       {/* Discography */}
       <ScrollReveal>
         <PricingSection />
-      </ScrollReveal>
-
-      <TronDivider />
-
-      {/* Flagship Albums */}
-      <ScrollReveal>
-        <FlagshipSystems />
       </ScrollReveal>
 
       <TronDivider />

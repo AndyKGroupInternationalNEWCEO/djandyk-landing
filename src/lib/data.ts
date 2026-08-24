@@ -576,22 +576,6 @@ export const TRACKLISTS: Record<string, TracklistEntry[]> = {
   ],
 };
 
-// Flagship album bullet points — maps to FlagshipSystems (When Later Becomes Never)
-export const ADAM_FEATURES = [
-  "Progressive house with cinematic scope",
-  "120\u2013124 BPM \u2014 crafted for movement and emotion",
-  "Full album: multi-track journey",
-  "Available on all major streaming platforms",
-];
-
-// Piano Series bullet points — maps to FlagshipSystems (second card)
-export const EVA_FEATURES = [
-  "Intimate piano arrangements",
-  "Stripped-back emotional versions of key tracks",
-  "Perfect for late-night listening",
-  "Available alongside the main releases",
-];
-
 export const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Music", href: "#music" },

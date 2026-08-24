@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useState } from "react";
-import { ALBUMS_2026, EPS_SINGLES_2026, PIANO_SERIES_2026, STANDALONE_SINGLES } from "@/lib/data";
+import { EPS_SINGLES_2026, PIANO_SERIES_2026, STANDALONE_SINGLES } from "@/lib/data";
 import { useLanguage } from "@/context/LanguageContext";
 import TabSwitcher from "@/components/TabSwitcher";
 
@@ -126,19 +126,16 @@ function StandardCard({ item, t }: { item: DiscographyItem; t: { albums: { lates
 
 export default function PricingSection() {
   const { t } = useLanguage();
-  const [activeTab, setActiveTab] = useState("albums");
+  const [activeTab, setActiveTab] = useState("singles");
 
   const tabs = [
-    { id: "albums", label: t.albums.tabs.albums },
     { id: "singles", label: t.albums.tabs.singles },
     { id: "piano", label: t.albums.tabs.piano },
     { id: "standalone", label: t.albums.tabs.standalone },
   ];
 
   const data =
-    activeTab === "albums"
-      ? ALBUMS_2026
-      : activeTab === "singles"
+    activeTab === "singles"
       ? EPS_SINGLES_2026
       : activeTab === "standalone"
       ? STANDALONE_SINGLES

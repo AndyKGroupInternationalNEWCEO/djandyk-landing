@@ -134,6 +134,33 @@ const en = {
     ],
   },
 
+  catalogue: {
+    signature: {
+      label: "SIGNATURE ALBUMS",
+      heading: "Signature",
+      headingItalic: "albums",
+      description: "The defining works of DJ Andy\u2019K. Complete worlds built through music, storytelling and visual identity.",
+    },
+    concept: {
+      label: "CONCEPT ALBUMS",
+      heading: "Concept",
+      headingItalic: "albums",
+      description: "Each album begins with one distinct idea \u2014 a language, a night, an era or a world transformed into sound.",
+    },
+    studio: {
+      label: "STUDIO ALBUMS",
+      heading: "Studio",
+      headingItalic: "albums",
+      description: "Full-length releases documenting the evolution of DJ Andy\u2019K across house, progressive and emotional electronic music.",
+    },
+    legacy: {
+      label: "LEGACY COLLECTION",
+      heading: "Legacy",
+      headingItalic: "collection",
+      description: "The early foundations of DJ Andy\u2019K \u2014 the releases that shaped the sound, identity and direction of everything that followed.",
+    },
+  },
+
   flagship: {
     headingBold: "When Later",
     headingItalic: "Becomes Never",
@@ -337,6 +364,33 @@ const es: typeof en = {
         link: "Escuchar Ahora",
       },
     ],
+  },
+
+  catalogue: {
+    signature: {
+      label: "\u00c1LBUMES INSIGNIA",
+      heading: "\u00c1lbumes",
+      headingItalic: "insignia",
+      description: "Las obras definitorias de DJ Andy\u2019K. Mundos completos construidos a trav\u00e9s de la m\u00fasica, la narrativa y la identidad visual.",
+    },
+    concept: {
+      label: "\u00c1LBUMES CONCEPTUALES",
+      heading: "\u00c1lbumes",
+      headingItalic: "conceptuales",
+      description: "Cada \u00e1lbum parte de una idea distintiva \u2014 un idioma, una noche, una \u00e9poca o un mundo transformado en sonido.",
+    },
+    studio: {
+      label: "\u00c1LBUMES DE ESTUDIO",
+      heading: "\u00c1lbumes",
+      headingItalic: "de estudio",
+      description: "Lanzamientos de larga duraci\u00f3n que documentan la evoluci\u00f3n de DJ Andy\u2019K a trav\u00e9s del house, el progressive y la m\u00fasica electr\u00f3nica emocional.",
+    },
+    legacy: {
+      label: "COLECCI\u00d3N LEGADO",
+      heading: "Colecci\u00f3n",
+      headingItalic: "legado",
+      description: "Los primeros cimientos de DJ Andy\u2019K \u2014 los lanzamientos que dieron forma al sonido, la identidad y la direcci\u00f3n de todo lo que vino despu\u00e9s.",
+    },
   },
 
   flagship: {
@@ -544,6 +598,33 @@ const sk: typeof en = {
     ],
   },
 
+  catalogue: {
+    signature: {
+      label: "K\u013d\u00da\u010cOV\u00c9 ALBUMY",
+      heading: "K\u013e\u00fa\u010dov\u00e9",
+      headingItalic: "albumy",
+      description: "K\u013e\u00fa\u010dov\u00e9 diela DJ Andy\u2019K. Kompletn\u00e9 svety postaven\u00e9 na hudbe, pr\u00edbehu a vizu\u00e1lnej identite.",
+    },
+    concept: {
+      label: "KONCEP\u010cN\u00c9 ALBUMY",
+      heading: "Koncep\u010dn\u00e9",
+      headingItalic: "albumy",
+      description: "Ka\u017ed\u00fd album za\u010d\u00edna jednou v\u00fdraznou my\u0161lienkou \u2014 jazykom, nocou, \u00e9rou alebo svetom premenen\u00fdm na zvuk.",
+    },
+    studio: {
+      label: "\u0160T\u00daDIOV\u00c9 ALBUMY",
+      heading: "\u0160t\u00fadiov\u00e9",
+      headingItalic: "albumy",
+      description: "Celove\u010dern\u00e9 vydania dokumentuj\u00face v\u00fdvoj DJ Andy\u2019K naprie\u010d house, progressive a emocion\u00e1lnou elektronickou hudbou.",
+    },
+    legacy: {
+      label: "KOLEKCIA ODKAZU",
+      heading: "Kolekcia",
+      headingItalic: "odkazu",
+      description: "Prv\u00e9 z\u00e1klady DJ Andy\u2019K \u2014 vydania, ktor\u00e9 formovali zvuk, identitu a smerovanie v\u0161etk\u00e9ho, \u010do nasledovalo.",
+    },
+  },
+
   flagship: {
     headingBold: "When Later",
     headingItalic: "Becomes Never",
@@ -747,6 +828,33 @@ const de: typeof en = {
         link: "Jetzt hören",
       },
     ],
+  },
+
+  catalogue: {
+    signature: {
+      label: "PR\u00c4GENDE ALBEN",
+      heading: "Pr\u00e4gende",
+      headingItalic: "Alben",
+      description: "Die pr\u00e4genden Werke von DJ Andy\u2019K. Vollst\u00e4ndige Welten, geschaffen durch Musik, Storytelling und visuelle Identit\u00e4t.",
+    },
+    concept: {
+      label: "KONZEPT ALBEN",
+      heading: "Konzept",
+      headingItalic: "Alben",
+      description: "Jedes Album beginnt mit einer klaren Idee \u2014 einer Sprache, einer Nacht, einer \u00c4ra oder einer in Klang verwandelten Welt.",
+    },
+    studio: {
+      label: "STUDIO ALBEN",
+      heading: "Studio",
+      headingItalic: "Alben",
+      description: "Full-Length-Ver\u00f6ffentlichungen, die die Entwicklung von DJ Andy\u2019K durch House, Progressive und emotionale elektronische Musik dokumentieren.",
+    },
+    legacy: {
+      label: "VERM\u00c4CHTNIS KOLLEKTION",
+      heading: "Verm\u00e4chtnis",
+      headingItalic: "Kollektion",
+      description: "Die fr\u00fchen Grundlagen von DJ Andy\u2019K \u2014 die Ver\u00f6ffentlichungen, die den Sound, die Identit\u00e4t und die Richtung von allem Folgenden gepr\u00e4gt haben.",
+    },
   },
 
   flagship: {
