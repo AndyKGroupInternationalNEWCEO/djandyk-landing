@@ -23,7 +23,7 @@ export const noTranslationAlbum: Album = {
       vocal: "DJ Andy'K & Emir Cem Karahan",
       lyrics: [
         [
-          "[VERSE 1 – 16 BARS – FAST RHYTHMIC SPOKEN VOICE]",
+          "[VERSE 1]",
           "You clocked me once.",
           "Then twice for proof.",
           "Acting unavailable",
@@ -38,7 +38,7 @@ export const noTranslationAlbum: Album = {
           "without saying a word.",
         ],
         [
-          "[PRE-HOOK – 8 BARS – RISING PROGRESSIVE TENSION]",
+          "[PRE-HOOK]",
           "Don't look away.",
           "Not now.",
           "Your eyes already said",
@@ -49,7 +49,7 @@ export const noTranslationAlbum: Album = {
           "or watch it fall.",
         ],
         [
-          "[HOOK – 16 BARS – HALF-SPOKEN, HALF-CHANTED]",
+          "[HOOK]",
           "Don't look away",
           "when I catch your eye.",
           "Don't start the fire",
@@ -60,14 +60,14 @@ export const noTranslationAlbum: Album = {
           "You know who I am.",
         ],
         [
-          "[DROP 1 – 16 BARS – TURKISH VOCAL CYCLE]",
+          "[DROP]",
           "Bana öyle bakma.",
           "Biraz daha yaklaş.",
           "Bu gece bizim.",
           "Kimse bilmesin.",
         ],
         [
-          "[VERSE 2 – 16 BARS – FASTER SPOKEN DELIVERY]",
+          "[VERSE 2]",
           "Your drink got warm.",
           "Your story got thin.",
           "You keep saying no",
@@ -82,7 +82,7 @@ export const noTranslationAlbum: Album = {
           "needs to say a name.",
         ],
         [
-          "[PRE-HOOK 2 – 8 BARS – ENGLISH LEAD, TURKISH RESPONSE]",
+          "[PRE-HOOK]",
           "Don't look away.",
           "You came this far.",
           "No one needs to know",
@@ -90,7 +90,7 @@ export const noTranslationAlbum: Album = {
           "Kimse bilmesin.",
         ],
         [
-          "[BRIDGE – 8 BARS – FULL TURKISH SECTION]",
+          "[BRIDGE]",
           "Ne istediğini biliyorum.",
           "Bana açıkça söyle.",
           "Gözlerini kaçırma.",
@@ -101,7 +101,7 @@ export const noTranslationAlbum: Album = {
           "Bu gece bizim.",
         ],
         [
-          "[FINAL HOOK – 16 BARS – STRONGER VOCAL DOUBLE]",
+          "[FINAL HOOK]",
           "Don't look away.",
           "You started the game.",
           "Don't make me wonder",
@@ -120,7 +120,7 @@ export const noTranslationAlbum: Album = {
           "Come finish the dance.",
         ],
         [
-          "[FINAL DROP – 16 BARS – TURKISH VOCAL CYCLE]",
+          "[FINAL DROP]",
           "Bana öyle bakma.",
           "Biraz daha yaklaş.",
           "Bu gece bizim.",
@@ -152,66 +152,66 @@ export const noTranslationAlbum: Album = {
       vocal: "DJ Andy'K & Rania Al-Masri",
       lyrics: [
         [
-          "[DROP – MODERN PROGRESSIVE TECH HOUSE, SHORT LOW FEMALE VOCAL CHOPS, NO ARABIC INSTRUMENTS]",
+          "[DROP]",
           "No explanation. Come closer. Don't let go.",
         ],
         [
-          "[ARABIC VERSE – DEEP ROUGH FEMALE SPOKEN, LOW AND CONFIDENT, NO RAP]",
+          "[VERSE]",
           "شو بدك؟ قلّي بصراحة. ما بدي وعد، ما بدي حكاية.",
           "قرّب لعندي، خليك قريب. هالليل قصير، والوقت بيغيب.",
           "ما بدي قصة، ما بدي كلام. خلّي عيونك تحكي بالغرام.",
           "لا تسأل بكرا شو رح يكون. خليك معي، خليك هون.",
         ],
         [
-          "[ARABIC CHORUS – DEEP FEMALE CONTRALTO FULLY SUNG, CATCHY MAQAM HIJAZ HOOK, QANUN AND NEY RESPONSES]",
+          "[CHORUS]",
           "بلا كلام، خليك هون. قرّب لعندي، خلّيها تكون.",
         ],
         [
-          "[SHORT QANUN RESPONSE – RISING HIJAZ PHRASE]",
+          "[RESPONSE]",
           "ما بدي وعد، ما بدي سؤال. هالليلة إلنا، والباقي خيال.",
         ],
         [
-          "[NEY RESPONSE – DESCENDING ARABIC ORNAMENT]",
+          "[RESPONSE]",
           "بلا كلام، خليك قريب. هالليل قصير، والوقت بيغيب.",
         ],
         [
-          "[HELD LOW FEMALE NOTE – CONTROLLED ARABIC VIBRATO]",
+          "[HELD NOTE]",
           "بلا كلام… بلا كلام…",
         ],
         [
-          "[SHORT ARABIC BRIDGE – DEEP FEMALE FULLY SUNG, QANUN, NEY AND RESTRAINED DARBUKA]",
+          "[BRIDGE]",
           "لا تسأل شو، ولا تسأل ليه. قرّب لعندي، وخليك هيك.",
           "ما بدي قصة، ما بدي كلام. خلّي عيونك تحكي بالغرام.",
         ],
         [
-          "[PROGRESSIVE BUILD – RISING SYNTH ARPEGGIO, FILTERED KICK, NO ARABIC INSTRUMENTS]",
+          "[BUILD]",
           "بلا كلام. خليك هون.",
         ],
         [
-          "[FINAL ARABIC CHORUS – DEEP FEMALE CONTRALTO FULLY SUNG, STRONGER HIJAZ HOOK, QANUN, NEY AND DARBUKA RESPONSES]",
+          "[FINAL CHORUS]",
           "بلا كلام، خليك هون. قرّب لعندي، خلّيها تكون.",
         ],
         [
-          "[SHORT QANUN RESPONSE]",
+          "[RESPONSE]",
           "ما بدي وعد، ما بدي سؤال. هالليلة إلنا، والباقي خيال.",
         ],
         [
-          "[NEY AND DARBUKA RESPONSE]",
+          "[RESPONSE]",
           "بلا كلام، خليك قريب. هالليل قصير، والوقت بيغيب.",
         ],
         [
-          "[EXTENDED LOW FEMALE VOCAL – CONTROLLED ARABIC VIBRATO]",
+          "[HELD NOTE]",
           "بلا كلام… بلا كلام…",
         ],
         [
-          "[FINAL DROP – POWERFUL MODERN PROGRESSIVE TECH HOUSE, SHORT LOW FEMALE VOCAL CHOPS, NO ARABIC INSTRUMENTS]",
+          "[FINAL DROP]",
           "بلا كلام. خليك هون. ولا كلمة.",
         ],
         [
-          "[OUTRO – DEEP ROUGH FEMALE CONTRALTO SPOKEN, LOW REGISTER]",
+          "[OUTRO]",
           "No explanation. بلا كلام.",
         ],
-        ["[SHORT DJ OUTRO – DRUMS, ROLLING BASS AND EVOLVING ARPEGGIO, NO VOCALS]"],
+        ["[DJ OUTRO]"],
       ],
     },
     {
@@ -232,14 +232,14 @@ export const noTranslationAlbum: Album = {
       vocal: "DJ Andy'K & Arta Gashi",
       lyrics: [
         [
-          "[ALBANIAN PRE-CHORUS – RISING MELODY, FILTERED BASS, BUILDING TENSION]",
+          "[PRE-CHORUS]",
           "Mos më pyet asgjë.",
           "Sytë e tu më tregojnë.",
           "Mos më gënje sonte.",
           "Pa fjalë, të kuptoj.",
         ],
         [
-          "[CHORUS – MALE AND FEMALE UNISON, DESCENDING VOCAL HOOK]",
+          "[CHORUS]",
           "Read my face.",
           "I won't repeat it.",
           "Pa fjalë.",
@@ -252,7 +252,7 @@ export const noTranslationAlbum: Album = {
           "Read my face.",
         ],
         [
-          "[ALBANIAN DROP – CHOPPED VOCALS, ÇIFTELI PLUCKS, HEAVY ROLLING BASS]",
+          "[DROP]",
           "Pa fjalë.",
           "Eja këtu.",
           "Mos më gënje.",
@@ -262,9 +262,9 @@ export const noTranslationAlbum: Album = {
           "Mos ik tani.",
           "Sytë e tu flasin.",
         ],
-        ["[INSTRUMENTAL BREAK – PROGRESSIVE ALBANIAN STRING MOTIF, FRAME DRUM TEXTURE, NO VOCALS]"],
+        ["[INSTRUMENTAL BREAK]"],
         [
-          "[VERSE 2 – FULL ALBANIAN VERSE, FEMALE RHYTHMIC SPOKEN, FASTER DELIVERY]",
+          "[VERSE 2]",
           "Krenaria jote hyri para teje.",
           "Tani pret vetëm te dera.",
           "Goja jote thotë \"ndalo\".",
@@ -279,7 +279,7 @@ export const noTranslationAlbum: Album = {
           "Sonte, qëndro këtu.",
         ],
         [
-          "[ALBANIAN BRIDGE – MALE AND FEMALE CALL AND RESPONSE, REDUCED PERCUSSION]",
+          "[BRIDGE]",
           "Çfarë do ti?",
           "Thuaje drejt.",
           "Mos më gënje.",
@@ -290,14 +290,14 @@ export const noTranslationAlbum: Album = {
           "Pa fjalë.",
         ],
         [
-          "[PROGRESSIVE BUILD – RISING ÇIFTELI MOTIF, FILTERED KICK, ALBANIAN VOCAL ECHOES]",
+          "[BUILD]",
           "Pa fjalë.",
           "Pa fjalë.",
           "Eja këtu.",
           "Mos ik tani.",
         ],
         [
-          "[FINAL CHORUS – ENGLISH LEAD, ALBANIAN HOOK, STRONGER VOCAL DOUBLE]",
+          "[FINAL CHORUS]",
           "Read my face.",
           "There is your answer.",
           "Pa fjalë.",
@@ -316,7 +316,7 @@ export const noTranslationAlbum: Album = {
           "Tell me what you believe.",
         ],
         [
-          "[FINAL ALBANIAN DROP – FULL BASS, CHOPPED ALBANIAN VOCALS, PEAK ENERGY]",
+          "[FINAL DROP]",
           "Pa fjalë.",
           "Eja këtu.",
           "Mos më gënje.",
@@ -327,14 +327,14 @@ export const noTranslationAlbum: Album = {
           "Pa fjalë.",
         ],
         [
-          "[OUTRO – FEMALE CLOSE WHISPER, LOW MALE ECHO]",
+          "[OUTRO]",
           "No confession.",
           "No final plea.",
           "You said nothing.",
           "I read everything.",
           "Pa fjalë.",
         ],
-        ["[DJ OUTRO – DRUMS, BASS AND DISTANT ÇIFTELI ECHOES, NO VOCALS]"],
+        ["[DJ OUTRO]"],
       ],
     },
     {
@@ -354,14 +354,14 @@ export const noTranslationAlbum: Album = {
       vocal: "DJ Andy'K & Luka Vuković",
       lyrics: [
         [
-          "[INTRO – DEEP MALE SPOKEN, DARK FILTERED PROGRESSIVE GROOVE]",
+          "[INTRO]",
           "You brought your questions in the night.",
           "I met them with a single light.",
           "You asked me where the truth still lies.",
           "I said: read it in my eyes.",
         ],
         [
-          "[VERSE 1 – DEEP MALE , CONTROLLED TECH HOUSE DELIVERY, NO RAP]",
+          "[VERSE 1]",
           "You came for answers, came for signs,",
           "counting shadows, crossing lines.",
           "You watch my silence, read my face.",
@@ -380,14 +380,14 @@ export const noTranslationAlbum: Album = {
           "Everything is in my eyes.",
         ],
         [
-          "[SERBIAN PRE-CHORUS – DEEP MALE RHYTHMIC SPOKEN, FILTERED BASS, RISING TENSION]",
+          "[PRE-CHORUS]",
           "Pogledaj me, pogledaj sad.",
           "Priđi bliže, ne gledaj nazad.",
           "U mojim očima vidiš sve.",
           "Bez pitanja, samo gledaj me.",
         ],
         [
-          "[CHORUS – DEEP MALE FULLY SUNG, CATCHY BALKAN MELODY, TAMBOURICA AND FRULA RESPONSES]",
+          "[CHORUS]",
           "Read it in my eyes.",
           "No more alibis.",
           "Every hidden truth",
@@ -397,9 +397,9 @@ export const noTranslationAlbum: Album = {
           "If you want the truth tonight,",
           "read it in my eyes.",
         ],
-        ["[HELD LOW MALE NOTE – CONTROLLED BALKAN VIBRATO]"],
+        ["[HELD NOTE]"],
         [
-          "[SERBIAN DROP – MODERN PROGRESSIVE TECH HOUSE, SHORT MALE VOCAL CHOPS, NO FOLK INSTRUMENTS]",
+          "[DROP]",
           "Pogledaj me.",
           "Priđi mi sad.",
           "Bez pitanja.",
@@ -409,9 +409,9 @@ export const noTranslationAlbum: Album = {
           "Priđi bliže.",
           "Oseti moć.",
         ],
-        ["[INSTRUMENTAL BREAK – DARK PROGRESSIVE ARPEGGIO, ROLLING BASS, NO BALKAN INSTRUMENTS]"],
+        ["[INSTRUMENTAL BREAK]"],
         [
-          "[VERSE 2 – DEEP MALE SERBIAN SPOKEN, CONTROLLED RHYTHMIC DELIVERY, NO RAP]",
+          "[VERSE 2]",
           "Znaš kada ćutim, znaš svaki znak.",
           "Kad oči govore, nestaje mrak.",
           "Tražiš mi istinu, tražiš mi glas.",
@@ -422,30 +422,30 @@ export const noTranslationAlbum: Album = {
           "Sve što tražiš moj pogled ti kaže.",
         ],
         [
-          "[SERBIAN BRIDGE – DEEP MALE FULLY SUNG, EMOTIONAL BALKAN MELODY, TAMBOURICA, FRULA AND LOW GUSLE]",
+          "[BRIDGE]",
           "U mojim očima gori noć.",
           "Priđi mi bliže, oseti moć.",
         ],
         [
-          "[SHORT FRULA RESPONSE]",
+          "[RESPONSE]",
           "Ne traži reči, ne traži glas.",
           "Jedan pogled već otkriva nas.",
         ],
         [
-          "[RISING TAMBOURICA RESPONSE]",
+          "[RESPONSE]",
           "Ostani ovde do kraja noći.",
           "Ako želiš istinu, gledaj me u oči.",
         ],
-        ["[HELD MALE NOTE – EXTENDED VOWEL, CONTROLLED BALKAN VIBRATO]"],
+        ["[HELD NOTE]"],
         [
-          "[PROGRESSIVE BUILD – FILTERED KICK, DARK SYNTH ARPEGGIO, MALE VOCAL ECHOES]",
+          "[BUILD]",
           "Pogledaj me.",
           "Pogledaj sad.",
           "Priđi bliže.",
           "Ne gledaj nazad.",
         ],
         [
-          "[FINAL CHORUS – DEEP MALE FULLY SUNG, STRONG BALKAN HOOK, TAMBOURICA AND FRULA RESPONSES]",
+          "[FINAL CHORUS]",
           "Read it in my eyes.",
           "No more alibis.",
           "Every hidden truth",
@@ -464,7 +464,7 @@ export const noTranslationAlbum: Album = {
           "read it in my eyes.",
         ],
         [
-          "[FINAL DROP – MODERN PROGRESSIVE TECH HOUSE, FULL BASS, SHORT MALE VOCAL CHOPS]",
+          "[FINAL DROP]",
           "Pogledaj me.",
           "Priđi mi sad.",
           "Bez pitanja.",
@@ -475,7 +475,7 @@ export const noTranslationAlbum: Album = {
           "Oseti moć.",
         ],
         [
-          "[OUTRO – DEEP MALE SPOKEN, DARK PROGRESSIVE GROOVE]",
+          "[OUTRO]",
           "No final answer.",
           "No goodbye.",
           "I never had",
@@ -483,7 +483,7 @@ export const noTranslationAlbum: Album = {
           "You read it",
           "in my eyes.",
         ],
-        ["[DJ OUTRO – DRUMS, ROLLING BASS AND DARK ARPEGGIO, NO VOCALS]"],
+        ["[DJ OUTRO]"],
       ],
     },
     {
@@ -504,14 +504,14 @@ export const noTranslationAlbum: Album = {
       vocal: "DJ Andy'K & Mira Velinova",
       lyrics: [
         [
-          "[BULGARIAN PRE-CHORUS – FEMALE FULLY SUNG, RISING MELODY, FILTERED BASS, BUILDING TENSION]",
+          "[PRE-CHORUS]",
           "Остани до сутринта.",
           "Не говори за края.",
           "Тази нощ е още наша.",
           "Не си тръгвай. Остани.",
         ],
         [
-          "[CHORUS – FEMALE FULLY SUNG, DESCENDING VOCAL HOOK]",
+          "[CHORUS]",
           "Before dawn.",
           "Stay until the shadows leave.",
           "Преди зори.",
@@ -524,7 +524,7 @@ export const noTranslationAlbum: Album = {
           "Before dawn.",
         ],
         [
-          "[BULGARIAN DROP – CHOPPED FEMALE VOCALS, HEAVY ROLLING BASS, NO FOLK INSTRUMENTS]",
+          "[DROP]",
           "Преди зори.",
           "Остани.",
           "Не си тръгвай.",
@@ -534,9 +534,9 @@ export const noTranslationAlbum: Album = {
           "Не ме оставяй.",
           "Стой до мен.",
         ],
-        ["[INSTRUMENTAL BREAK – PROGRESSIVE GADULKA AND KAVAL MOTIF, LOW TUPAN TEXTURE, NO VOCALS]"],
+        ["[INSTRUMENTAL BREAK]"],
         [
-          "[VERSE 2 – FULL BULGARIAN VERSE, LOW FEMALE RHYTHMIC SPOKEN, FASTER DELIVERY, NO RAP]",
+          "[VERSE 2]",
           "Палтото ти е до вратата.",
           "Сянката ти е на стената.",
           "Не ми обещавай утре.",
@@ -553,7 +553,7 @@ export const noTranslationAlbum: Album = {
           "остани до мен.",
         ],
         [
-          "[BULGARIAN BRIDGE – LAYERED FEMALE CALL AND RESPONSE, REDUCED PERCUSSION]",
+          "[BRIDGE]",
           "Не си тръгвай.",
           "Остани.",
           "До сутринта.",
@@ -566,14 +566,14 @@ export const noTranslationAlbum: Album = {
           "Остани.",
         ],
         [
-          "[PROGRESSIVE BUILD – RISING GADULKA MOTIF, FILTERED KICK, BULGARIAN FEMALE VOCAL ECHOES]",
+          "[BUILD]",
           "Преди зори.",
           "Преди зори.",
           "Не си тръгвай.",
           "Остани.",
         ],
         [
-          "[FINAL CHORUS – FEMALE FULLY SUNG, STRONGER VOCAL DOUBLE]",
+          "[FINAL CHORUS]",
           "Before dawn.",
           "Stay until the shadows leave.",
           "Преди зори.",
@@ -594,7 +594,7 @@ export const noTranslationAlbum: Album = {
           "Остани.",
         ],
         [
-          "[FINAL BULGARIAN DROP – FULL BASS, CHOPPED FEMALE VOCALS, PEAK ENERGY, NO FOLK INSTRUMENTS]",
+          "[FINAL DROP]",
           "Преди зори.",
           "Остани.",
           "Не си тръгвай.",
@@ -605,12 +605,12 @@ export const noTranslationAlbum: Album = {
           "Остани.",
         ],
         [
-          "[OUTRO – LOW FEMALE CLOSE WHISPER, NO OTHER VOICES]",
+          "[OUTRO]",
           "Morning found the room.",
           "You were already gone.",
           "Преди зори.",
         ],
-        ["[DJ OUTRO – DRUMS, ROLLING BASS AND DISTANT GADULKA ECHOES, NO VOCALS]"],
+        ["[DJ OUTRO]"],
       ],
     },
     {
@@ -630,14 +630,14 @@ export const noTranslationAlbum: Album = {
       vocal: "DJ Andy'K & Andreea Dumitrescu",
       lyrics: [
         [
-          "[INTRO – SMOKY FEMALE SPOKEN, LOW MALE ECHO, DARK FILTERED GROOVE]",
+          "[INTRO]",
           "You said you forgot me.",
           "You almost sounded convincing.",
           "Almost.",
           "Sub pielea ta.",
         ],
         [
-          "[VERSE 1 – FEMALE RHYTHMIC SPOKEN, LOW MALE RESPONSES, DARK PROGRESSIVE PULSE]",
+          "[VERSE 1]",
           "You changed the number.",
           "You changed the room.",
           "You changed every detail",
@@ -656,14 +656,14 @@ export const noTranslationAlbum: Album = {
           "where you hide the effect.",
         ],
         [
-          "[ROMANIAN PRE-CHORUS – RISING MELODY, FILTERED BASS, CIMBALOM PULSE]",
+          "[PRE-CHORUS]",
           "Nu mă poți uita.",
           "Te cunosc prea bine.",
           "Nu fugi de mine.",
           "Sunt sub pielea ta.",
         ],
         [
-          "[CHORUS – FEMALE HALF-CHANTED, LOW MALE SHADOW, DESCENDING VOCAL HOOK]",
+          "[CHORUS]",
           "Under your skin.",
           "I know where I've been.",
           "Sub pielea ta.",
@@ -676,7 +676,7 @@ export const noTranslationAlbum: Album = {
           "Under your skin.",
         ],
         [
-          "[ROMANIAN DROP – CHOPPED VOCALS, DARK CIMBALOM PLUCKS, HEAVY ROLLING BASS]",
+          "[DROP]",
           "Sub pielea ta.",
           "Vino mai aproape.",
           "Nu spune nimic.",
@@ -686,9 +686,9 @@ export const noTranslationAlbum: Album = {
           "Nu pleca acum.",
           "Te cunosc prea bine.",
         ],
-        ["[INSTRUMENTAL BREAK – PROGRESSIVE ROMANIAN FOLK MOTIF, COBZA PLUCKS, DISTANT FLUIER TEXTURE]"],
+        ["[INSTRUMENTAL BREAK]"],
         [
-          "[VERSE 2 – FULL ROMANIAN VERSE, FEMALE RHYTHMIC SPOKEN, FASTER DELIVERY]",
+          "[VERSE 2]",
           "Spui că nu-ți pasă.",
           "Dar te întorci mereu.",
           "Îți ascunzi privirea,",
@@ -707,7 +707,7 @@ export const noTranslationAlbum: Album = {
           "sub pielea ta.",
         ],
         [
-          "[ROMANIAN BRIDGE – FEMALE LEAD, LOW MALE RESPONSES, REDUCED PERCUSSION]",
+          "[BRIDGE]",
           "Ce cauți aici?",
           "Spune-mi adevărul.",
           "Nu pleca acum.",
@@ -718,14 +718,14 @@ export const noTranslationAlbum: Album = {
           "Sunt sub pielea ta.",
         ],
         [
-          "[PROGRESSIVE BUILD – RISING CIMBALOM MOTIF, FILTERED KICK, ROMANIAN VOCAL ECHOES]",
+          "[BUILD]",
           "Sub pielea ta.",
           "Nu mă poți uita.",
           "Sub pielea ta.",
           "Vino mai aproape.",
         ],
         [
-          "[FINAL CHORUS – ENGLISH LEAD, ROMANIAN HOOK, STRONGER VOCAL DOUBLE]",
+          "[FINAL CHORUS]",
           "Under your skin.",
           "I know where I've been.",
           "Sub pielea ta.",
@@ -744,7 +744,7 @@ export const noTranslationAlbum: Album = {
           "I never said goodbye.",
         ],
         [
-          "[FINAL ROMANIAN DROP – FULL BASS, CHOPPED ROMANIAN VOCALS, PEAK ENERGY]",
+          "[FINAL DROP]",
           "Sub pielea ta.",
           "Vino mai aproape.",
           "Nu spune nimic.",
@@ -755,13 +755,13 @@ export const noTranslationAlbum: Album = {
           "Sub pielea ta.",
         ],
         [
-          "[OUTRO – FEMALE CLOSE WHISPER, LOW MALE ECHO]",
+          "[OUTRO]",
           "You said you forgot me.",
           "Try saying it",
           "without holding your breath.",
           "Sub pielea ta.",
         ],
-        ["[DJ OUTRO – DRUMS, BASS AND DISTANT CIMBALOM ECHOES, NO VOCALS]"],
+        ["[DJ OUTRO]"],
       ],
     },
   ],
