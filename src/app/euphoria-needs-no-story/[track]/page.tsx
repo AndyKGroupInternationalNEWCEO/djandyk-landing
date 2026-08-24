@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { euphoriaAlbum } from "@/data/euphoria-tracks";
-import TrackDetailClient from "./TrackDetailClient";
+import EuphoriaNeedsNoStoryClient from "../EuphoriaNeedsNoStoryClient";
 
 export function generateStaticParams() {
   return euphoriaAlbum.tracks.map((track) => ({ track: track.slug }));
@@ -34,19 +34,18 @@ export async function generateMetadata({
   };
 }
 
+// Renders the exact same album page as `/euphoria-needs-no-story` — hero,
+// Cover Flow, Track Overview, tracklist — just with Cover Flow already
+// expanded on this track, so a shared link opens straight into the
+// immersive view instead of a separate page layout.
 export default async function TrackPage({
   params,
 }: {
   params: Promise<{ track: string }>;
 }) {
   const { track: slug } = await params;
-  const index = euphoriaAlbum.tracks.findIndex((t) => t.slug === slug);
-  if (index === -1) notFound();
+  const exists = euphoriaAlbum.tracks.some((t) => t.slug === slug);
+  if (!exists) notFound();
 
-  const tracks = euphoriaAlbum.tracks;
-  const track = tracks[index];
-  const prevTrack = tracks[(index - 1 + tracks.length) % tracks.length];
-  const nextTrack = tracks[(index + 1) % tracks.length];
-
-  return <TrackDetailClient album={euphoriaAlbum} track={track} prevTrack={prevTrack} nextTrack={nextTrack} />;
+  return <EuphoriaNeedsNoStoryClient initialSlug={slug} />;
 }

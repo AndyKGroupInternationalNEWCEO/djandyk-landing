@@ -190,7 +190,7 @@ function TrackCard({ track }: { track: Track }) {
   );
 }
 
-export default function EuphoriaNeedsNoStoryClient() {
+export default function EuphoriaNeedsNoStoryClient({ initialSlug }: { initialSlug?: string } = {}) {
   return (
     <>
       <Navbar />
@@ -290,7 +290,7 @@ export default function EuphoriaNeedsNoStoryClient() {
 
         {/* Cover Flow — interactive 3D track carousel */}
         <div id="tracks">
-          <CoverFlow album={euphoriaAlbum} />
+          <CoverFlow album={euphoriaAlbum} initialSlug={initialSlug} />
         </div>
 
         {/* Track Overview — full detail cards, each linking to its own track page */}
