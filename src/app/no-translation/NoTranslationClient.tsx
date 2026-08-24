@@ -20,6 +20,7 @@ const TRACKS = [
     date: "30.10.2026",
     accent: "#E84C3C",
     coverUrl: "/releases/dont-look-away.png",
+    videoUrl: "/videos/dont-look-away.mp4",
     audioSrc: "/audio/dont-look-away.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -34,6 +35,7 @@ const TRACKS = [
     date: "6.11.2026",
     accent: "#F0A020",
     coverUrl: "/releases/no-explanation.png",
+    videoUrl: "/videos/no-explanation.mp4",
     audioSrc: "/audio/no-explanation.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -48,6 +50,7 @@ const TRACKS = [
     date: "13.11.2026",
     accent: "#4A90D9",
     coverUrl: "/releases/read-my-face.png",
+    videoUrl: "/videos/read-my-face.mp4",
     audioSrc: "/audio/read-my-face.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -62,6 +65,7 @@ const TRACKS = [
     date: "20.11.2026",
     accent: "#D9432E",
     coverUrl: "/releases/read-it-in-my-eyes.png",
+    videoUrl: "/videos/read-it-in-my-eyes.mp4",
     audioSrc: "/audio/read-it-in-my-eyes.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -76,6 +80,7 @@ const TRACKS = [
     date: "27.11.2026",
     accent: "#40E0C0",
     coverUrl: "/releases/before-dawn.png",
+    videoUrl: "/videos/before-dawn.mp4",
     audioSrc: "/audio/before-dawn.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -90,6 +95,7 @@ const TRACKS = [
     date: "4.12.2026",
     accent: "#E8B020",
     coverUrl: "/releases/under-your-skin.png",
+    videoUrl: "/videos/under-your-skin.mp4",
     audioSrc: "/audio/under-your-skin.mp3",
     soundcloudUrl: null as string | null,
     spotifyUrl: null as string | null,
@@ -120,13 +126,25 @@ function TrackCard({ track }: { track: Track }) {
         borderTop: `2px solid ${track.accent}`,
       }}
     >
-      {/* Cover — full width square */}
+      {/* Cover — full width square (animated when a video is available) */}
       <div className="aspect-square w-full relative overflow-hidden">
-        <img
-          src={track.coverUrl}
-          alt={track.title}
-          className="w-full h-full object-cover"
-        />
+        {track.videoUrl ? (
+          <video
+            src={track.videoUrl}
+            poster={track.coverUrl}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <img
+            src={track.coverUrl}
+            alt={track.title}
+            className="w-full h-full object-cover"
+          />
+        )}
         <div className="absolute inset-0 flex items-end p-3">
           <span
             className="text-[9px] font-mono uppercase tracking-[0.3em] px-2.5 py-1 rounded-full border"
@@ -292,49 +310,58 @@ export default function NoTranslationClient({ initialSlug }: { initialSlug?: str
       <Navbar />
 
       <main className="pt-[60px] min-h-screen font-sans" style={{ background: "#0d1117" }}>
-        {/* Hero */}
-        <section className="px-6 pt-20 pb-12 max-w-[680px] mx-auto text-center">
+        {/* Hero — full-width animated cover */}
+        <section className="relative w-full overflow-hidden" style={{ minHeight: "78vh" }}>
+          <video
+            src="/videos/no-translation-hero.mp4"
+            poster={COVER}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
+          {/* Legibility gradient */}
           <div
-            className="w-[220px] sm:w-[260px] aspect-square mx-auto mb-8 rounded-2xl overflow-hidden"
-            style={{ boxShadow: `0 20px 60px -15px rgba(0,0,0,0.7), 0 0 40px ${ACCENT}30` }}
-          >
-            <video
-              src="/videos/no-translation-hero.mp4"
-              poster={COVER}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-            />
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to top, #0d1117 5%, rgba(13,17,23,0.55) 40%, rgba(13,17,23,0.15) 65%, transparent 100%)" }}
+          />
+
+          <div className="absolute top-6 left-6">
+            <span className="text-[10px] font-mono uppercase tracking-[0.35em]" style={{ color: "rgba(255,255,255,0.6)" }}>
+              Album
+            </span>
           </div>
 
-          <span
-            className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-6 px-3 py-1 rounded-full border"
-            style={{ color: ACCENT, borderColor: `${ACCENT}33`, background: `${ACCENT}0d` }}
-          >
-            {albumStatus === "released" ? "Released" : "Album · Melodic Progressive Tech House · 2026"}
-          </span>
+          <div className="relative z-10 flex flex-col items-center justify-end text-center h-full px-6 pb-14" style={{ minHeight: "78vh" }}>
+            <span
+              className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-6 px-3 py-1 rounded-full border"
+              style={{ color: ACCENT, borderColor: `${ACCENT}55`, background: "rgba(0,0,0,0.4)" }}
+            >
+              {albumStatus === "released" ? "Released" : "Album · Melodic Progressive Tech House · 2026"}
+            </span>
 
-          <h1
-            className="text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-tight leading-[1.1] mb-3 font-sans"
-            style={{ color: "#f0f6fc" }}
-          >
-            NO TRANSLATION
-          </h1>
+            <h1
+              className="text-[clamp(2.2rem,6vw,4.5rem)] font-bold tracking-tight leading-[1.05] mb-3 font-sans max-w-[900px]"
+              style={{ color: "#ffffff", textShadow: "0 4px 30px rgba(0,0,0,0.6)" }}
+            >
+              NO TRANSLATION
+            </h1>
 
-          <p
-            className="text-lg font-light mb-4 font-mono uppercase tracking-[0.2em]"
-            style={{ color: ACCENT }}
-          >
-            Six Languages. One Night. Nothing Needs Explaining.
-          </p>
+            <p
+              className="text-lg font-light mb-4 font-mono uppercase tracking-[0.2em]"
+              style={{ color: ACCENT }}
+            >
+              Six Languages. One Night. Nothing Needs Explaining.
+            </p>
 
-          <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.28)" }}>
-            Words change. The night does not.
-            <br />
-            Full album: 4.12.2026
-          </p>
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
+              Words change. The night does not.
+              <br />
+              Full album: 4.12.2026
+            </p>
+          </div>
         </section>
 
         {/* Cover Flow vs. Track Overview — one view at a time, Cover Flow by default */}
