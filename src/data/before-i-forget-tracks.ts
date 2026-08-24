@@ -154,6 +154,7 @@ export const beforeIForgetAlbum: Album = {
       chords: "Dm – Bb – F – C",
       durationSeconds: 260,
       coverUrl: "/releases/letting-go-feels-like-falling.png",
+      videoUrl: "/videos/letting-go-feels-like-falling.mp4",
       audioSrc: "/audio/letting-go-feels-like-falling.mp3",
       releaseDate: "2026-06-26",
       lyrics: [
