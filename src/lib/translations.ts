@@ -111,7 +111,7 @@ const en = {
     label: "Featured Releases",
     heading: "Latest",
     headingItalic: "albums",
-    description: "Three releases defining the sound of DJ Andy\u2019K in 2026.",
+    description: "The releases defining the sound of DJ Andy\u2019K in 2026.",
     cards: [
       {
         shortTitle: "When Later Becomes Never",
@@ -316,7 +316,7 @@ const es: typeof en = {
     label: "Lanzamientos Destacados",
     heading: "\u00daltimos",
     headingItalic: "\u00e1lbumes",
-    description: "Tres lanzamientos que definen el sonido de DJ Andy\u2019K en 2026.",
+    description: "Los lanzamientos que definen el sonido de DJ Andy\u2019K en 2026.",
     cards: [
       {
         shortTitle: "When Later Becomes Never",
@@ -521,7 +521,7 @@ const sk: typeof en = {
     label: "Vybrané vydania",
     heading: "Najnov\u0161ie",
     headingItalic: "albumy",
-    description: "Tri vydania definuj\u00face zvuk DJ Andy\u2019K v roku 2026.",
+    description: "Vydania definuj\u00face zvuk DJ Andy\u2019K v roku 2026.",
     cards: [
       {
         shortTitle: "When Later Becomes Never",
@@ -726,7 +726,7 @@ const de: typeof en = {
     label: "Ausgewählte Releases",
     heading: "Aktuelle",
     headingItalic: "Alben",
-    description: "Drei Veröffentlichungen, die den Sound von DJ Andy’K im Jahr 2026 prägen.",
+    description: "Die Veröffentlichungen, die den Sound von DJ Andy’K im Jahr 2026 prägen.",
     cards: [
       {
         shortTitle: "When Later Becomes Never",
