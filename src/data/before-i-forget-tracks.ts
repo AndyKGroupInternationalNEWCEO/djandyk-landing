@@ -380,6 +380,7 @@ export const beforeIForgetAlbum: Album = {
       chords: "A – E – F#m – D",
       durationSeconds: 160,
       coverUrl: "/releases/between-me-and-you.png",
+      videoUrl: "/videos/between-me-and-you.mp4",
       audioSrc: "/audio/between-me-and-you.mp3",
       releaseDate: "2026-05-22",
       lyrics: [
