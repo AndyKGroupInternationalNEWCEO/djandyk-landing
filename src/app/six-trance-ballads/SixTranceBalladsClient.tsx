@@ -4,6 +4,11 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getAlbumStatus } from "@/lib/albumStatus";
+import CoverFlow from "@/components/coverflow/CoverFlow";
+import SectionTabs from "@/components/coverflow/SectionTabs";
+import { sixTranceBalladsAlbum } from "@/data/six-trance-ballads-tracks";
+
+const COVER = "/releases/six-trance-ballads-the-album.png";
 
 const TRACKS = [
   {
@@ -578,47 +583,68 @@ function TrackCard({ track }: { track: Track }) {
   );
 }
 
-export default function SixTranceBalladsClient() {
+export default function SixTranceBalladsClient({ initialSlug }: { initialSlug?: string } = {}) {
   const albumStatus = getAlbumStatus(TRACKS);
+  const [viewMode, setViewMode] = useState<"coverflow" | "overview">("coverflow");
 
   return (
     <>
       <Navbar />
 
       <main className="pt-[60px] min-h-screen font-sans" style={{ background: "#000000" }}>
-        {/* Hero */}
-        <section className="px-6 pt-20 pb-12 max-w-[680px] mx-auto text-center">
-          <span
-            className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-6 px-3 py-1 rounded-full border"
-            style={{ color: GREEN, borderColor: `${GREEN}33`, background: `${GREEN}0d` }}
-          >
-            {albumStatus === "released" ? "Released" : "Album · Trance Ballads · 2026"}
-          </span>
+        {/* Hero — full-width cover (swap to a video like no-translation-hero.mp4 once one exists) */}
+        <section className="relative w-full overflow-hidden" style={{ minHeight: "78vh" }}>
+          <img
+            src={COVER}
+            alt="Six Trance Ballads — album cover"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
 
-          <h1
-            className="text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-tight leading-[1.1] mb-3 font-sans"
-            style={{ color: "#f0f6fc" }}
-          >
-            THE ALBUM
-          </h1>
+          {/* Legibility gradient */}
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to top, #000000 5%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.15) 65%, transparent 100%)" }}
+          />
 
-          <p
-            className="text-lg font-light mb-1 font-mono uppercase tracking-[0.2em]"
-            style={{ color: GREEN }}
-          >
-            Six Trance Ballads
-          </p>
+          <div className="absolute top-6 left-6">
+            <span className="text-[10px] font-mono uppercase tracking-[0.35em]" style={{ color: "rgba(255,255,255,0.6)" }}>
+              Album
+            </span>
+          </div>
 
-          <p
-            className="text-base italic font-light mb-4 font-serif"
-            style={{ color: "rgba(255,255,255,0.45)" }}
-          >
-            From Me, To...
-          </p>
+          <div className="relative z-10 flex flex-col items-center justify-end text-center h-full px-6 pb-14" style={{ minHeight: "78vh" }}>
+            <span
+              className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-6 px-3 py-1 rounded-full border"
+              style={{ color: GREEN, borderColor: `${GREEN}55`, background: "rgba(0,0,0,0.4)" }}
+            >
+              {albumStatus === "released" ? "Released" : "Album · Trance Ballads · 2026"}
+            </span>
 
-          <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.28)" }}>
-            All 6 tracks out now. Full album available on all platforms.
-          </p>
+            <h1
+              className="text-[clamp(2.2rem,6vw,4.5rem)] font-bold tracking-tight leading-[1.05] mb-3 font-sans max-w-[900px]"
+              style={{ color: "#ffffff", textShadow: "0 4px 30px rgba(0,0,0,0.6)" }}
+            >
+              THE ALBUM
+            </h1>
+
+            <p
+              className="text-lg font-light mb-1 font-mono uppercase tracking-[0.2em]"
+              style={{ color: GREEN }}
+            >
+              Six Trance Ballads
+            </p>
+
+            <p
+              className="text-base italic font-light mb-4 font-serif"
+              style={{ color: "rgba(255,255,255,0.65)" }}
+            >
+              From Me, To...
+            </p>
+
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
+              All 6 tracks out now. Full album available on all platforms.
+            </p>
+          </div>
         </section>
 
         {/* SoundCloud early access */}
@@ -649,15 +675,32 @@ export default function SixTranceBalladsClient() {
           </div>
         </div>
 
-        {/* Track list — horizontal swipeable row */}
-        <section className="pb-12 max-w-[1100px] mx-auto">
-          <div className="no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-6 pb-2">
-            {TRACKS.map((track) => (
-              <TrackCard key={track.n} track={track} />
-            ))}
+        {/* Cover Flow vs. Track Overview — one view at a time, Cover Flow by default */}
+        <div id="tracks" style={{ background: "#000000" }}>
+          <div className="flex justify-center pb-8 px-6">
+            <SectionTabs
+              accent={GREEN}
+              activeTab={viewMode}
+              onTabChange={(id) => setViewMode(id as "coverflow" | "overview")}
+              tabs={[
+                { id: "coverflow", label: "Cover Flow" },
+                { id: "overview", label: "Track Overview" },
+              ]}
+            />
           </div>
-        </section>
 
+          {viewMode === "coverflow" ? (
+            <CoverFlow album={sixTranceBalladsAlbum} initialSlug={initialSlug} />
+          ) : (
+            <section className="pb-12 max-w-[1100px] mx-auto">
+              <div className="no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-6 pb-2">
+                {TRACKS.map((track) => (
+                  <TrackCard key={track.n} track={track} />
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
       </main>
 
       {/* Footer in white wrapper so site CSS vars render correctly */}
