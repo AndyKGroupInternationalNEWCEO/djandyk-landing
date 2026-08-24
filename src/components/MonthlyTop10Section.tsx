@@ -139,7 +139,7 @@ export default function MonthlyTop10Section() {
             DJ Andy&apos;K Top 10{" "}
             <span className="font-serif italic font-light">· {collection.label}</span>
           </h2>
-          <p className="text-base text-muted font-light">Ten tracks defining this month.</p>
+          <p className="text-base text-muted font-light">My ten essential tracks this month.</p>
         </div>
 
         <div

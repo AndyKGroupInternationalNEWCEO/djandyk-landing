@@ -29,7 +29,86 @@ export const MONTHLY_TOP10_COLLECTIONS: MonthlyTop10Collection[] = [
     label: "August 2026",
     month: 8,
     year: 2026,
-    tracks: [],
+    tracks: [
+      {
+        rank: 1,
+        title: "Opus No. 1: Vienna",
+        artwork: "/releases/opus-no-1-vienna-cover.png",
+        audioPreview: "/audio/opus-no-1-vienna-i-prologue.mp3",
+        releaseLink: "/opus-no-1-vienna",
+      },
+      {
+        rank: 2,
+        title: "Breathe Me Back to Life",
+        featuredArtist: "Mattew Brexon",
+        artwork: "/releases/breathe-me-back-to-life.png",
+        audioPreview: "/audio/breathe-me-back-to-life.mp3",
+        releaseLink: "/euphoria-needs-no-story/breathe-me-back-to-life",
+      },
+      {
+        rank: 3,
+        title: "Before I Forget",
+        artwork: "/releases/before-i-forget.png",
+        audioPreview: "/audio/before-i-forget.mp3",
+        releaseLink: "/before-i-forget/before-i-forget",
+      },
+      {
+        rank: 4,
+        title: "The Distance Learned to Dance",
+        featuredArtist: "Thymoty Lorrens",
+        artwork: "/releases/the-distance-learned-to-dance.png",
+        audioPreview: "/audio/the-distance-learned-to-dance.mp3",
+        releaseLink: "/euphoria-needs-no-story/the-distance-learned-to-dance",
+      },
+      {
+        rank: 5,
+        title: "Euphoria Needs No Story",
+        featuredArtist: "Mattew Brexon",
+        artwork: "/releases/euphoria-needs-no-story.png",
+        audioPreview: "/audio/euphoria-needs-no-story.mp3",
+        releaseLink: "/euphoria-needs-no-story/euphoria-needs-no-story",
+      },
+      {
+        rank: 6,
+        title: "Borrowed Sunshine",
+        artwork: "/releases/borrowed-sunshine.png",
+        audioPreview: "/audio/borrowed-sunshine.mp3",
+        releaseLink: "/borrowed-sunshine/borrowed-sunshine",
+      },
+      {
+        rank: 7,
+        title: "Stay A Little Longer",
+        featuredArtist: "Ben Wheeler",
+        artwork: "/releases/stay-a-little-longer.png",
+        audioPreview: "/audio/stay-a-little-longer.mp3",
+        releaseLink: "/borrowed-sunshine/stay-a-little-longer",
+      },
+      {
+        rank: 8,
+        title: "I Arrived As Someone Else",
+        artwork: "/releases/i-arrived-as-someone-else.png",
+        audioPreview: "/audio/i-arrived-as-someone-else.mp3",
+        releaseLink: "/six-trance-ballads/i-arrived-as-someone-else",
+      },
+      {
+        rank: 9,
+        title: "Blame The DJ",
+        featuredArtist: "Juliana Ritter",
+        artwork: "/releases/blame-the-dj.png",
+        // No audio file exists yet for this Do Not Disturb track —
+        // intentionally left without an audioPreview rather than
+        // inventing or reusing an unrelated one.
+        releaseLink:
+          "https://soundcloud.com/djandyk_2024/sets/do-not-disturb?si=58acd55f3e454217b5d57763b09a9515&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+      },
+      {
+        rank: 10,
+        title: "In My Veins",
+        artwork: "/releases/in-my-veins.png",
+        audioPreview: "/audio/in-my-veins.mp3",
+        releaseLink: "/deep-connections/in-my-veins",
+      },
+    ],
   },
 ];
 
