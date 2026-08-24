@@ -40,7 +40,6 @@ import { HeroBackground } from "@/components/BackgroundGrid";
 import LatestReleaseBanner from "@/components/LatestReleaseBanner";
 import MusicLabSection from "@/components/MusicLabSection";
 import MusicLabBanner from "@/components/MusicLabBanner";
-import BeatportBanner from "@/components/BeatportBanner";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const jsonLd = {
@@ -155,8 +154,6 @@ export default function Home() {
       <ScrollReveal>
         <FaqSection />
       </ScrollReveal>
-
-      <BeatportBanner />
 
       {/* Album Catalogue — Signature / Concept / Studio / Legacy, each album exactly once */}
       <ScrollReveal>

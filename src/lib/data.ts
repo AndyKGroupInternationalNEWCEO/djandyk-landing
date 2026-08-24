@@ -98,6 +98,11 @@ export const STREAMING_PLATFORMS = [
     href: "https://hyperfollow.com/djandyk",
     icon: "hyperfollow",
   },
+  {
+    name: "Beatport",
+    href: "https://www.beatport.com/artist/dj-andyk/2441664",
+    icon: "beatport",
+  },
 ];
 
 // Sound philosophy pillars — maps to FaqSection ("Crafting the Sound")
