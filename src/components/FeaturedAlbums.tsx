@@ -78,7 +78,7 @@ const FEATURED_RELEASES = [
     completionDate: "2026-07-03",
     href: "/before-i-forget",
     embedUrl: "https://open.spotify.com/embed/album/5pRDNwagYj2SS5CgYdhC5a?utm_source=generator&theme=0",
-    cover: "/releases/before-i-forget.png",
+    cover: "/releases/before-i-forget-hero.png",
   },
   {
     kicker: "Album · 2026",
