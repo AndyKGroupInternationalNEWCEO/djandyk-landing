@@ -180,7 +180,7 @@ export default function DeepConnectionsClient({ initialSlug }: { initialSlug?: s
             muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "center 75%" }}
+            style={{ objectPosition: "center 10%" }}
           />
 
           <div
