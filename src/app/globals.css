@@ -352,6 +352,17 @@ body {
   }
 }
 
+@media print {
+  .reveal,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
 /* ===== MUSIC LAB BANNER WAVEFORM ===== */
 .lab-waveform {
   position: absolute; bottom: 0; left: 0; right: 0; height: 110px;
