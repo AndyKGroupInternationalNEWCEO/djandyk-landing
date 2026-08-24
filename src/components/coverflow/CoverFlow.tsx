@@ -401,7 +401,7 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
       <div
         className="relative"
         style={{
-          height: isNarrow ? 340 : isExpanded ? 640 : 520,
+          height: isNarrow ? 340 : 520,
           marginTop: isExpanded ? (isNarrow ? 20 : 12) : 0,
           perspective: 1400,
           transition: `margin-top ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1)`,
@@ -442,8 +442,13 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
                   transition: `transform ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1), opacity ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1)`,
                 }}
               >
-                <div className="coverflow-scroll max-h-[640px] overflow-y-auto pr-2">
-                  <SongInfoPanel key={active.slug} track={active} player={buildPlayerControls(activeIndex)} />
+                <div className="coverflow-scroll max-h-[520px] overflow-y-auto pr-2">
+                  <SongInfoPanel
+                    key={active.slug}
+                    track={active}
+                    player={buildPlayerControls(activeIndex)}
+                    stickyHeading
+                  />
                 </div>
                 <div
                   className="absolute bottom-0 left-0 right-2 h-10 pointer-events-none"
@@ -462,8 +467,8 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
                   transition: `transform ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1), opacity ${reducedMotion ? 120 : TRANSITION_MS}ms cubic-bezier(0.19,1,0.22,1)`,
                 }}
               >
-                <div className="coverflow-scroll max-h-[640px] overflow-y-auto pr-2">
-                  <LyricsPanel key={`${active.slug}-lyrics`} track={active} />
+                <div className="coverflow-scroll max-h-[520px] overflow-y-auto pr-2">
+                  <LyricsPanel key={`${active.slug}-lyrics`} track={active} stickyHeading />
                 </div>
                 <div
                   className="absolute bottom-0 left-0 right-2 h-10 pointer-events-none"
