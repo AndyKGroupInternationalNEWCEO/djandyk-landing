@@ -298,7 +298,15 @@ export default function NoTranslationClient({ initialSlug }: { initialSlug?: str
             className="w-[220px] sm:w-[260px] aspect-square mx-auto mb-8 rounded-2xl overflow-hidden"
             style={{ boxShadow: `0 20px 60px -15px rgba(0,0,0,0.7), 0 0 40px ${ACCENT}30` }}
           >
-            <img src={COVER} alt="No Translation — album cover" className="w-full h-full object-cover" />
+            <video
+              src="/videos/no-translation-hero.mp4"
+              poster={COVER}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
           </div>
 
           <span
