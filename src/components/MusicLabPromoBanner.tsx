@@ -38,10 +38,14 @@ export default function MusicLabPromoBanner() {
   if (!visible) return null;
 
   return (
-    <div className="fixed z-[65] left-3 right-3 bottom-3 md:left-6 md:right-auto md:bottom-6 md:w-[380px]">
+    <div className="fixed z-[65] left-3 right-3 top-[72px] md:left-6 md:right-auto md:top-auto md:bottom-6 md:w-[380px]">
       <style>{`
-        @keyframes lab-promo-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes lab-promo-out { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(16px); } }
+        @keyframes lab-promo-in { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes lab-promo-out { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-16px); } }
+        @media (min-width: 768px) {
+          @keyframes lab-promo-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+          @keyframes lab-promo-out { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(16px); } }
+        }
         .lab-promo-enter { animation: lab-promo-in 0.36s cubic-bezier(0.19,1,0.22,1) forwards; }
         .lab-promo-exit { animation: lab-promo-out 0.28s cubic-bezier(0.19,1,0.22,1) forwards; }
       `}</style>

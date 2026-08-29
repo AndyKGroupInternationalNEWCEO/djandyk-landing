@@ -171,7 +171,7 @@ export default function DeepConnectionsClient({ initialSlug }: { initialSlug?: s
 
       <main className="pt-[60px] min-h-screen font-sans" style={{ background: "#0d1117" }}>
         {/* Hero — full-width cover video */}
-        <section className="relative w-full overflow-hidden" style={{ minHeight: "78vh" }}>
+        <section className="relative w-full overflow-hidden" style={{ minHeight: "78dvh" }}>
           <video
             src="/videos/deep-connections-hero.mp4"
             poster={COVER}
@@ -194,7 +194,7 @@ export default function DeepConnectionsClient({ initialSlug }: { initialSlug?: s
             </span>
           </div>
 
-          <div className="relative z-10 flex flex-col items-center justify-end text-center h-full px-6 pb-14" style={{ minHeight: "78vh" }}>
+          <div className="relative z-10 flex flex-col items-center justify-end text-center h-full px-6 pb-14" style={{ minHeight: "78dvh" }}>
             <span
               className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-6 px-3 py-1 rounded-full border"
               style={{ color: ACCENT, borderColor: `${ACCENT}55`, background: "rgba(0,0,0,0.4)" }}
