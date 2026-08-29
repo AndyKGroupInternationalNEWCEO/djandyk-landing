@@ -48,7 +48,7 @@ export default function ExpandedTrackOverlay({
       {mobileTab === "info" ? (
         <SongInfoPanel key={`${track.slug}-info`} track={track} player={player} />
       ) : (
-        <div style={{ height: "55vh" }}>
+        <div style={{ height: "55dvh" }}>
           <LyricsPanel key={`${track.slug}-lyrics`} track={track} />
         </div>
       )}
