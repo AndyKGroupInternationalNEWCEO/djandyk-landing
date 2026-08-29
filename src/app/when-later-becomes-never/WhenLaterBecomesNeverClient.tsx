@@ -108,9 +108,17 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
             >
               WHEN LATER BECOMES NEVER
             </h1>
-            <p className="text-base sm:text-lg font-light font-mono uppercase tracking-[0.2em]" style={{ color: ACCENT }}>
+            <p className="text-base sm:text-lg font-light font-mono uppercase tracking-[0.2em] mb-5" style={{ color: ACCENT }}>
               11 Tracks. Progressive House / House.
             </p>
+            {whenLaterBecomesNeverAlbum.story && (
+              <p
+                className="text-sm sm:text-base leading-relaxed italic font-serif max-w-[560px]"
+                style={{ color: "rgba(255,255,255,0.6)" }}
+              >
+                {whenLaterBecomesNeverAlbum.story}
+              </p>
+            )}
           </div>
         </section>
 
