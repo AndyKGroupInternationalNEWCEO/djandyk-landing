@@ -2,6 +2,7 @@
 
 import { Pause, Play, Volume2, VolumeX } from "lucide-react";
 import type { Track } from "@/types/album";
+import RepeatButton, { type RepeatMode } from "@/components/RepeatButton";
 
 function formatTime(seconds: number) {
   if (!isFinite(seconds) || seconds < 0) return "0:00";
@@ -19,6 +20,8 @@ export interface AudioPlayerControls {
   onTogglePlay: () => void;
   onSeek: (time: number) => void;
   onVolumeChange: (volume: number) => void;
+  repeatMode: RepeatMode;
+  onCycleRepeat: () => void;
 }
 
 /**
@@ -37,6 +40,8 @@ export default function AudioPlayer({
   onTogglePlay,
   onSeek,
   onVolumeChange,
+  repeatMode,
+  onCycleRepeat,
 }: { track: Track } & AudioPlayerControls) {
   if (!track.audioSrc) return null;
 
@@ -102,6 +107,8 @@ export default function AudioPlayer({
             style={{ accentColor: track.accent }}
           />
         </div>
+
+        <RepeatButton mode={repeatMode} onCycle={onCycleRepeat} accent={track.accent} />
       </div>
     </div>
   );

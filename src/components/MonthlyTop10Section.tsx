@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { getActiveMonthlyTop10 } from "@/lib/monthlyTop10";
+import RepeatButton, { nextRepeatMode, type RepeatMode } from "@/components/RepeatButton";
 
 const ROTATE_INTERVAL = 6000;
 const INTERACTION_COOLDOWN = 6000;
@@ -55,10 +56,12 @@ export default function MonthlyTop10Section() {
   const [interacting, setInteracting] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [repeatMode, setRepeatMode] = useState<RepeatMode>("off");
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const touchStartX = useRef(0);
+  const shouldAutoPlayRef = useRef(false);
 
   const track = tracks[index];
 
@@ -80,7 +83,18 @@ export default function MonthlyTop10Section() {
     if (audio) {
       audio.pause();
       audio.currentTime = 0;
+      if (shouldAutoPlayRef.current) {
+        shouldAutoPlayRef.current = false;
+        if (tracks[index]?.audioPreview) {
+          audio.load();
+          audio
+            .play()
+            .then(() => setIsPlaying(true))
+            .catch(() => {});
+        }
+      }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
   useEffect(() => {
@@ -122,6 +136,26 @@ export default function MonthlyTop10Section() {
     if (Math.abs(delta) > 50) {
       goTo(index + (delta > 0 ? 1 : -1));
     }
+  }
+
+  // When the preview finishes: repeat-one loops it in place; otherwise
+  // advance to the next track, wrapping around forever only in repeat-all.
+  function handleTrackEnded() {
+    if (repeatMode === "one") {
+      const audio = audioRef.current;
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(() => {});
+      }
+      return;
+    }
+    const isLast = index === tracks.length - 1;
+    if (isLast && repeatMode !== "all") {
+      setIsPlaying(false);
+      return;
+    }
+    shouldAutoPlayRef.current = true;
+    goTo(index + 1);
   }
 
   // No collection with tracks yet — render nothing rather than a
@@ -230,6 +264,13 @@ export default function MonthlyTop10Section() {
                   <span className="text-[11px] font-mono w-9 text-muted-2 shrink-0">
                     {formatTime(duration)}
                   </span>
+
+                  <RepeatButton
+                    mode={repeatMode}
+                    onCycle={() => setRepeatMode(nextRepeatMode)}
+                    accent="var(--color-highlight)"
+                    inactiveColor="rgba(0,0,0,0.35)"
+                  />
                 </div>
               ) : (
                 <p className="text-xs text-muted-2 italic">Preview coming soon</p>

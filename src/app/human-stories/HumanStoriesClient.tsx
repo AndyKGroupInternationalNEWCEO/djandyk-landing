@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Play, Pause } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import RepeatButton, { nextRepeatMode, type RepeatMode } from "@/components/RepeatButton";
 import { humanStoriesAlbum } from "@/data/human-stories-tracks";
 
 const ACCENT = "#C7B896";
@@ -36,11 +37,13 @@ export default function HumanStoriesClient({ initialSlug }: { initialSlug?: stri
   const [interacting, setInteracting] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [railHovered, setRailHovered] = useState(false);
+  const [repeatMode, setRepeatMode] = useState<RepeatMode>("off");
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const touchStartY = useRef(0);
   const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const railRef = useRef<HTMLDivElement>(null);
+  const shouldAutoPlayRef = useRef(false);
 
   const track = tracks[index];
 
@@ -53,6 +56,14 @@ export default function HumanStoriesClient({ initialSlug }: { initialSlug?: stri
     if (audio) {
       audio.pause();
       audio.currentTime = 0;
+      if (shouldAutoPlayRef.current) {
+        shouldAutoPlayRef.current = false;
+        audio.load();
+        audio
+          .play()
+          .then(() => setIsPlaying(true))
+          .catch(() => {});
+      }
     }
   }, [index]);
 
@@ -123,6 +134,26 @@ export default function HumanStoriesClient({ initialSlug }: { initialSlug?: stri
   function handleTouchEnd(e: React.TouchEvent) {
     const delta = touchStartY.current - e.changedTouches[0].clientY;
     if (Math.abs(delta) > 40) goTo(index + (delta > 0 ? 1 : -1));
+  }
+
+  // When the track finishes: repeat-one loops it in place; otherwise
+  // advance to the next track, wrapping around forever only in repeat-all.
+  function handleTrackEnded() {
+    if (repeatMode === "one") {
+      const audio = audioRef.current;
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(() => {});
+      }
+      return;
+    }
+    const isLast = index === tracks.length - 1;
+    if (isLast && repeatMode !== "all") {
+      setIsPlaying(false);
+      return;
+    }
+    shouldAutoPlayRef.current = true;
+    goTo(index + 1);
   }
 
   return (
@@ -259,7 +290,7 @@ export default function HumanStoriesClient({ initialSlug }: { initialSlug?: stri
               </div>
 
               {/* Stage */}
-              <div className="order-1 md:order-2 text-center" key={enterKey}>
+              <div className="order-1 md:order-2 text-center stage-fade-in" key={enterKey}>
                 <div
                   className="mx-auto rounded-xl overflow-hidden bg-black"
                   style={{
@@ -413,6 +444,8 @@ export default function HumanStoriesClient({ initialSlug }: { initialSlug?: stri
                     <span className="text-[11px] font-mono w-9 shrink-0" style={{ color: "rgba(255,255,255,0.4)" }}>
                       {formatTime(duration)}
                     </span>
+
+                    <RepeatButton mode={repeatMode} onCycle={() => setRepeatMode(nextRepeatMode)} accent={ACCENT} />
                   </div>
                 )}
 
@@ -444,23 +477,36 @@ export default function HumanStoriesClient({ initialSlug }: { initialSlug?: stri
                     <h3 className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: ACCENT }}>
                       Lyrics
                     </h3>
-                    <div className="flex flex-col gap-4">
-                      {track.lyrics.map((stanza, si) => (
-                        <div key={si}>
-                          {stanza.map((line, li) => {
-                            const isTag = li === 0 && /^\[.*\]$/.test(line);
-                            return (
-                              <p
-                                key={li}
-                                className={isTag ? "text-xs font-mono font-semibold uppercase tracking-wide mb-1" : "text-sm leading-relaxed font-serif"}
-                                style={{ color: isTag ? ACCENT : "rgba(255,255,255,0.65)" }}
-                              >
-                                {line}
-                              </p>
-                            );
-                          })}
-                        </div>
-                      ))}
+                    <div
+                      className="coverflow-scroll overflow-y-auto pr-2"
+                      style={
+                        {
+                          maxHeight: 380,
+                          ["--scroll-thumb" as string]: ACCENT,
+                          maskImage: "linear-gradient(to bottom, transparent 0, black 16px, black calc(100% - 16px), transparent 100%)",
+                          WebkitMaskImage:
+                            "linear-gradient(to bottom, transparent 0, black 16px, black calc(100% - 16px), transparent 100%)",
+                        } as React.CSSProperties
+                      }
+                    >
+                      <div className="flex flex-col gap-4">
+                        {track.lyrics.map((stanza, si) => (
+                          <div key={si}>
+                            {stanza.map((line, li) => {
+                              const isTag = li === 0 && /^\[.*\]$/.test(line);
+                              return (
+                                <p
+                                  key={li}
+                                  className={isTag ? "text-xs font-mono font-semibold uppercase tracking-wide mb-1" : "text-sm leading-relaxed font-serif"}
+                                  style={{ color: isTag ? ACCENT : "rgba(255,255,255,0.65)" }}
+                                >
+                                  {line}
+                                </p>
+                              );
+                            })}
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -478,7 +524,7 @@ export default function HumanStoriesClient({ initialSlug }: { initialSlug?: stri
             preload="none"
             onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
             onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
-            onEnded={() => setIsPlaying(false)}
+            onEnded={handleTrackEnded}
           />
         </section>
       </main>

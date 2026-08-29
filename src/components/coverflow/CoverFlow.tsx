@@ -9,6 +9,7 @@ import ExpandedHeader from "./ExpandedHeader";
 import ExpandedTrackOverlay from "./ExpandedTrackOverlay";
 import SongInfoPanel from "./SongInfoPanel";
 import LyricsPanel from "./LyricsPanel";
+import { nextRepeatMode, type RepeatMode } from "@/components/RepeatButton";
 
 const SPACING_DESKTOP = 200;
 const SPACING_MOBILE = 110;
@@ -77,6 +78,7 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(1);
+  const [repeatMode, setRepeatMode] = useState<RepeatMode>("off");
   const audioRef = useRef<HTMLAudioElement>(null);
   const shouldPlayRef = useRef(false);
   const playerTrack = playerIndex !== null ? tracks[playerIndex] : null;
@@ -309,7 +311,31 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
         setVolume(v);
         if (audioRef.current) audioRef.current.volume = v;
       },
+      repeatMode,
+      onCycleRepeat: () => setRepeatMode(nextRepeatMode),
     };
+  };
+
+  // When the loaded track finishes: repeat-one loops it in place; otherwise
+  // advance to the next track, wrapping around forever only in repeat-all.
+  const handleTrackEnded = () => {
+    if (repeatMode === "one") {
+      const audio = audioRef.current;
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(() => {});
+      }
+      return;
+    }
+    setIsPlaying(false);
+    if (playerIndex === null) return;
+    const isLast = playerIndex === tracks.length - 1;
+    if (isLast && repeatMode !== "all") return;
+    const next = (playerIndex + 1) % tracks.length;
+    setCurrentTime(0);
+    setDuration(tracks[next].durationSeconds ?? 0);
+    shouldPlayRef.current = true;
+    setPlayerIndex(next);
   };
 
   const stopPlayer = () => {
@@ -373,7 +399,7 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
         preload="metadata"
         onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
         onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
-        onEnded={() => setIsPlaying(false)}
+        onEnded={handleTrackEnded}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         style={{ display: "none" }}
