@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ChevronUp, ChevronDown, Play, Pause } from "lucide-react";
+import { Play, Pause } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { whenLaterBecomesNeverAlbum } from "@/data/when-later-becomes-never-tracks";
@@ -34,10 +34,13 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
   const [duration, setDuration] = useState(0);
   const [enterKey, setEnterKey] = useState(0);
   const [interacting, setInteracting] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [railHovered, setRailHovered] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const touchStartY = useRef(0);
   const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const railRef = useRef<HTMLDivElement>(null);
 
   const track = tracks[index];
 
@@ -56,12 +59,12 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
   // Auto-roll the rail on its own — paused while a track is playing or
   // right after the user manually navigates, then resumes.
   useEffect(() => {
-    if (isPlaying || interacting) return;
+    if (isPlaying || interacting || railHovered) return;
     const t = setInterval(() => {
       setIndex((i) => (i + 1) % tracks.length);
     }, AUTO_ROLL_INTERVAL);
     return () => clearInterval(t);
-  }, [isPlaying, interacting, tracks.length]);
+  }, [isPlaying, interacting, railHovered, tracks.length]);
 
   useEffect(() => {
     return () => {
@@ -79,6 +82,28 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
     setIndex(((i % tracks.length) + tracks.length) % tracks.length);
     if (manual) pauseAutoRollBriefly();
   }
+
+  // Mouse wheel / trackpad scroll over the rail browses tracks, same
+  // interaction as the standard Cover Flow carousel.
+  useEffect(() => {
+    const el = railRef.current;
+    if (!el) return;
+    let locked = false;
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      if (locked) return;
+      const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+      if (Math.abs(delta) < 12) return;
+      locked = true;
+      goTo(index + (delta > 0 ? 1 : -1));
+      window.setTimeout(() => {
+        locked = false;
+      }, 260);
+    };
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index]);
 
   function handleTogglePlay() {
     const audio = audioRef.current;
@@ -160,6 +185,12 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
               {/* Rail */}
               <div className="flex md:flex-col items-center gap-5 order-2 md:order-1">
                 <div
+                  ref={railRef}
+                  onMouseEnter={() => setRailHovered(true)}
+                  onMouseLeave={() => {
+                    setRailHovered(false);
+                    setHoveredIndex(null);
+                  }}
                   className="relative w-full md:h-[420px] h-[120px] flex md:block overflow-visible"
                   style={{ perspective: 1000 }}
                 >
@@ -167,12 +198,16 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
                     {tracks.map((t, i) => {
                       const offset = i - index;
                       const abs = Math.abs(offset);
-                      const scale = offset === 0 ? 1.25 : Math.max(0.55, 1 - abs * 0.22);
+                      const isHovered = hoveredIndex === i;
+                      const baseScale = offset === 0 ? 1.25 : Math.max(0.55, 1 - abs * 0.22);
+                      const scale = isHovered ? baseScale * 1.06 : baseScale;
                       const opacity = abs > 3 ? 0 : offset === 0 ? 1 : Math.max(0.2, 1 - abs * 0.28);
                       return (
                         <button
                           key={t.slug}
                           onClick={() => (i === index ? handleTogglePlay() : goTo(i))}
+                          onMouseEnter={() => setHoveredIndex(i)}
+                          onMouseLeave={() => setHoveredIndex((h) => (h === i ? null : h))}
                           aria-label={`${i === index ? "Toggle play" : "Go to"} ${t.title}`}
                           className="absolute top-1/2 left-1/2 rounded-lg overflow-hidden bg-black"
                           style={{
@@ -181,13 +216,16 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
                             margin: "-48px 0 0 -48px",
                             transform: `translateY(${offset * RAIL_SPACING}px) scale(${scale})`,
                             opacity,
-                            zIndex: 100 - abs,
+                            zIndex: isHovered ? 150 : 100 - abs,
+                            filter: isHovered ? "brightness(1.2)" : "brightness(1)",
                             pointerEvents: abs > 3 ? "none" : "auto",
                             boxShadow:
                               offset === 0
                                 ? `0 24px 50px -14px rgba(0,0,0,0.75), 0 0 0 2px ${ACCENT}88`
+                                : isHovered
+                                ? `0 18px 36px -12px rgba(0,0,0,0.7), 0 0 0 1px ${ACCENT}55`
                                 : "0 14px 30px -12px rgba(0,0,0,0.65)",
-                            transition: "transform 620ms cubic-bezier(.19,1,.22,1), opacity 620ms cubic-bezier(.19,1,.22,1), box-shadow 620ms ease",
+                            transition: "transform 620ms cubic-bezier(.19,1,.22,1), opacity 620ms cubic-bezier(.19,1,.22,1), box-shadow 320ms ease, filter 320ms ease",
                           }}
                         >
                           <img src={t.coverUrl} alt={t.title} className="w-full h-full object-cover" draggable={false} />
@@ -217,24 +255,6 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
                   </div>
                 </div>
 
-                <div className="hidden md:flex items-center gap-1.5">
-                  <button
-                    onClick={() => goTo(index - 1)}
-                    aria-label="Previous track"
-                    className="flex items-center justify-center w-8 h-8 rounded-full transition-colors"
-                    style={{ border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.5)" }}
-                  >
-                    <ChevronUp size={15} />
-                  </button>
-                  <button
-                    onClick={() => goTo(index + 1)}
-                    aria-label="Next track"
-                    className="flex items-center justify-center w-8 h-8 rounded-full transition-colors"
-                    style={{ border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.5)" }}
-                  >
-                    <ChevronDown size={15} />
-                  </button>
-                </div>
                 <span className="hidden md:block text-[10px] font-mono tracking-widest" style={{ color: "rgba(255,255,255,0.3)" }}>
                   {String(track.n).padStart(2, "0")} / {String(tracks.length).padStart(2, "0")}
                 </span>
