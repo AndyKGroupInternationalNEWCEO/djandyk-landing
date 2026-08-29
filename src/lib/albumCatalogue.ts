@@ -64,9 +64,11 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     href: "/euphoria-needs-no-story",
     cover: "/releases/euphoria-needs-no-story-cover.png",
   },
+
+  // ---- Concept Albums ----
   {
     title: "Opus No. 1: Vienna",
-    category: "signature",
+    category: "concept",
     kicker: "Album · 2026",
     genre: "Fortepiano · Orchestra · Progressive Trance",
     description: "A continuous work in four movements — fortepiano and orchestra transformed into progressive trance, composed in Vienna.",
@@ -74,8 +76,6 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     href: "/opus-no-1-vienna",
     cover: "/releases/opus-no-1-vienna-cover.png",
   },
-
-  // ---- Concept Albums ----
   {
     title: "No Translation",
     category: "concept",
