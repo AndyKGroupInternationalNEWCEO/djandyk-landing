@@ -248,7 +248,7 @@ export default function EuphoriaNeedsNoStoryClient({ initialSlug }: { initialSlu
               className="text-base sm:text-lg font-light mb-5 font-mono uppercase tracking-[0.2em]"
               style={{ color: ACCENT }}
             >
-              Ten Tracks. Four Voices. One Continuous Trance Journey.
+              Four Voices. One Continuous Trance Journey.
             </p>
 
             <p className="text-sm leading-relaxed mb-5 max-w-[600px]" style={{ color: "rgba(255,255,255,0.55)" }}>

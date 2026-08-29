@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: "https://www.djandykofficial.com/back-to-eurodance",
     title: "Back to Eurodance | Authentic 90s Eurodance Album by DJ Andy'K",
     description:
-      "6 Tracks. 6 Memories. One Return to the Dancefloor. New track every Friday. Full album 23.10.2026.",
+      "6 Memories. One Return to the Dancefloor. New track every Friday. Full album 23.10.2026.",
     images: [
       {
         url: "/releases/back-to-eurodance-cover.png",

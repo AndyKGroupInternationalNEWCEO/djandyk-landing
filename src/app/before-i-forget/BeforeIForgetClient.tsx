@@ -208,8 +208,12 @@ export default function BeforeIForgetClient({ initialSlug }: { initialSlug?: str
               BEFORE I FORGET
             </h1>
 
-            <p className="text-base sm:text-lg font-light font-mono uppercase tracking-[0.2em]" style={{ color: ACCENT }}>
-              8 Tracks. Trance / Progressive Trance.
+            <p className="text-base sm:text-lg font-light font-mono uppercase tracking-[0.2em] mb-5" style={{ color: ACCENT }}>
+              Trance / Progressive Trance.
+            </p>
+
+            <p className="text-sm sm:text-base leading-relaxed italic font-serif max-w-[560px]" style={{ color: "rgba(255,255,255,0.6)" }}>
+              Before the memory fades, before it all slips away — a journey through what we hold onto, and what we finally let go.
             </p>
           </div>
         </section>

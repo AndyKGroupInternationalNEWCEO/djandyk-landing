@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     type: "music.album",
     url: "https://www.djandykofficial.com/deep-connections",
     title: "Deep Connections | House / Progressive House Album by DJ Andy'K",
-    description: "7 Tracks. House / Progressive House.",
+    description: "House / Progressive House.",
     images: [
       {
         url: "/albums/deep-connections.jpg",

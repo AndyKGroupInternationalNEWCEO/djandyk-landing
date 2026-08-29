@@ -204,8 +204,12 @@ export default function FourElementsClient({ initialSlug }: { initialSlug?: stri
               FOUR ELEMENTS
             </h1>
 
-            <p className="text-base sm:text-lg font-light font-mono uppercase tracking-[0.2em]" style={{ color: ACCENT }}>
-              4 Tracks. Deep Melodic / Progressive.
+            <p className="text-base sm:text-lg font-light font-mono uppercase tracking-[0.2em] mb-5" style={{ color: ACCENT }}>
+              Deep Melodic / Progressive.
+            </p>
+
+            <p className="text-sm sm:text-base leading-relaxed italic font-serif max-w-[560px]" style={{ color: "rgba(255,255,255,0.6)" }}>
+              Fire, earth, water, air — four feelings distilled into one direction.
             </p>
           </div>
         </section>

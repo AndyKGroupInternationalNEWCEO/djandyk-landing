@@ -308,7 +308,7 @@ export default function BackToEurodanceClient() {
           </p>
 
           <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.28)" }}>
-            6 Tracks. 6 Memories. One Return to the Dancefloor.
+            6 Memories. One Return to the Dancefloor.
             <br />
             Full album: 3.1.2027
           </p>

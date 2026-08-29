@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     type: "music.album",
     url: "https://www.djandykofficial.com/four-elements",
     title: "Four Elements | Deep Melodic / Progressive Album by DJ Andy'K",
-    description: "4 Tracks. Deep Melodic / Progressive.",
+    description: "Deep Melodic / Progressive.",
     images: [
       {
         url: "/albums/four-elements.jpg",

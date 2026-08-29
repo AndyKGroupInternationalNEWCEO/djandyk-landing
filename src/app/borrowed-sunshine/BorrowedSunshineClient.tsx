@@ -415,7 +415,7 @@ export default function BorrowedSunshineClient({ initialSlug }: { initialSlug?: 
             </p>
 
             <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
-              10 Tracks. 10 Stories. 10 Moments You&apos;ll Never Forget.
+              10 Stories. 10 Moments You&apos;ll Never Forget.
               <br />
               Full album: 9.10.2026
             </p>

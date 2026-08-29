@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: "https://www.djandykofficial.com/borrowed-sunshine",
     title: "Borrowed Sunshine | Trance / Progressive Trance Album by DJ Andy'K",
     description:
-      "10 Tracks. 10 Stories. 10 Moments You'll Never Forget. New track every Friday. Full album 2.10.2026.",
+      "10 Stories. 10 Moments You'll Never Forget. New track every Friday. Full album 2.10.2026.",
     images: [
       {
         url: "/releases/borrowed-sunshine-cover.png",

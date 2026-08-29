@@ -209,8 +209,12 @@ export default function DeepConnectionsClient({ initialSlug }: { initialSlug?: s
               DEEP CONNECTIONS
             </h1>
 
-            <p className="text-base sm:text-lg font-light font-mono uppercase tracking-[0.2em]" style={{ color: ACCENT }}>
-              7 Tracks. House / Progressive House.
+            <p className="text-base sm:text-lg font-light font-mono uppercase tracking-[0.2em] mb-5" style={{ color: ACCENT }}>
+              House / Progressive House.
+            </p>
+
+            <p className="text-sm sm:text-base leading-relaxed italic font-serif max-w-[560px]" style={{ color: "rgba(255,255,255,0.6)" }}>
+              Connection is the core. Every track a bridge between two worlds.
             </p>
           </div>
         </section>

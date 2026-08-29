@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     type: "music.album",
     url: "https://www.djandykofficial.com/when-later-becomes-never",
     title: "When Later Becomes Never | Progressive House / House Album by DJ Andy'K",
-    description: "11 Tracks. Progressive House / House.",
+    description: "Progressive House / House.",
     images: [
       {
         url: "/releases/wlbn-album.png",

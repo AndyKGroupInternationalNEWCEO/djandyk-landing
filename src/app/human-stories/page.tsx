@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     type: "music.album",
     url: "https://www.djandykofficial.com/human-stories",
     title: "Human Stories | House / Progressive House Album by DJ Andy'K",
-    description: "13 Tracks. House / Progressive House.",
+    description: "House / Progressive House.",
     images: [
       {
         url: "/releases/hs-album.png",

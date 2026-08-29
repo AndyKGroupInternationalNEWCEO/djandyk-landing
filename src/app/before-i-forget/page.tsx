@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     type: "music.album",
     url: "https://www.djandykofficial.com/before-i-forget",
     title: "Before I Forget | Trance / Progressive Trance Album by DJ Andy'K",
-    description: "8 Tracks. Trance / Progressive Trance.",
+    description: "Trance / Progressive Trance.",
     images: [
       {
         url: "/releases/before-i-forget.png",
