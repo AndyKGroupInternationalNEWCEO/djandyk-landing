@@ -106,12 +106,12 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
 
       <main className="pt-[60px] min-h-screen font-sans" style={{ background: "#0d1117" }}>
         {/* Hero */}
-        <section className="relative w-full overflow-hidden" style={{ minHeight: "70vh" }}>
+        <section className="relative w-full overflow-hidden" style={{ minHeight: "86vh" }}>
           <img
             src={whenLaterBecomesNeverAlbum.heroCoverSrc}
             alt="When Later Becomes Never"
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "center 5%" }}
+            style={{ objectPosition: "center 8%" }}
           />
           <div
             className="absolute inset-0"
@@ -122,7 +122,7 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
               Album
             </span>
           </div>
-          <div className="relative z-10 flex flex-col items-center justify-end text-center h-full px-6 pb-14" style={{ minHeight: "70vh" }}>
+          <div className="relative z-10 flex flex-col items-center justify-end text-center h-full px-6 pb-14" style={{ minHeight: "86vh" }}>
             <span
               className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-6 px-3 py-1 rounded-full border"
               style={{ color: ACCENT, borderColor: `${ACCENT}55`, background: "rgba(0,0,0,0.4)" }}
@@ -156,7 +156,7 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
           onTouchEnd={handleTouchEnd}
         >
           <div className="max-w-[1000px] mx-auto px-6 py-16 sm:py-20">
-            <div className="grid grid-cols-1 md:grid-cols-[168px_1fr] gap-8 md:gap-10 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-[168px_1fr_168px] gap-8 md:gap-10 items-center">
               {/* Rail */}
               <div className="flex md:flex-col items-center gap-5 order-2 md:order-1">
                 <div
@@ -371,6 +371,10 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
                   </p>
                 ) : null}
               </div>
+
+              {/* Spacer column — mirrors the rail's width so the stage sits
+                  truly centered on the page, not just within its own track. */}
+              <div className="hidden md:block" aria-hidden="true" />
             </div>
           </div>
 
