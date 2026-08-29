@@ -394,7 +394,7 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
 
               {/* Spacer column — mirrors the rail's width so the stage sits
                   truly centered on the page, not just within its own track. */}
-              <div className="hidden md:block" aria-hidden="true" />
+              <div className="hidden md:block md:order-3" aria-hidden="true" />
             </div>
           </div>
 
