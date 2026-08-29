@@ -9,6 +9,8 @@ import type { WLBNTrack } from "@/data/when-later-becomes-never-tracks";
 
 const ACCENT = "#C7D0D8";
 const RAIL_SPACING = 92;
+const AUTO_ROLL_INTERVAL = 4500;
+const INTERACTION_COOLDOWN = 6000;
 
 function formatTime(seconds: number) {
   if (!isFinite(seconds) || seconds < 0) return "0:00";
@@ -31,9 +33,11 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [enterKey, setEnterKey] = useState(0);
+  const [interacting, setInteracting] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const touchStartY = useRef(0);
+  const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const track = tracks[index];
 
@@ -49,8 +53,31 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
     }
   }, [index]);
 
-  function goTo(i: number) {
-    setIndex(Math.max(0, Math.min(tracks.length - 1, i)));
+  // Auto-roll the rail on its own — paused while a track is playing or
+  // right after the user manually navigates, then resumes.
+  useEffect(() => {
+    if (isPlaying || interacting) return;
+    const t = setInterval(() => {
+      setIndex((i) => (i + 1) % tracks.length);
+    }, AUTO_ROLL_INTERVAL);
+    return () => clearInterval(t);
+  }, [isPlaying, interacting, tracks.length]);
+
+  useEffect(() => {
+    return () => {
+      if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+    };
+  }, []);
+
+  function pauseAutoRollBriefly() {
+    setInteracting(true);
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+    resumeTimeoutRef.current = setTimeout(() => setInteracting(false), INTERACTION_COOLDOWN);
+  }
+
+  function goTo(i: number, manual = true) {
+    setIndex(((i % tracks.length) + tracks.length) % tracks.length);
+    if (manual) pauseAutoRollBriefly();
   }
 
   function handleTogglePlay() {
