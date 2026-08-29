@@ -576,10 +576,14 @@ body {
   animation: coverflowParticleFloat 8s ease-in-out infinite;
 }
 
-/* ===== STREAMING PLATFORM GRID — PLAYFUL IDLE BOB ===== */
+/* ===== STREAMING PLATFORM GRID — PLAYFUL JUMP + COLLISION FLASH ===== */
 @keyframes platformBob {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50%      { transform: translateY(-7px) rotate(-1.2deg); }
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  22%  { transform: translate(3px, -18px) rotate(-3deg); }
+  46%  { transform: translate(-2px, 1px) rotate(1.5deg); }
+  68%  { transform: translate(-3px, -22px) rotate(3deg); }
+  86%  { transform: translate(2px, -2px) rotate(-1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
 }
 
 .platform-bob {
@@ -591,8 +595,31 @@ body {
   animation-play-state: paused;
 }
 
+/* A bright "spark" as if two icons just touched — fires briefly once per
+   loop, timing staggered per-card so it never happens in sync. */
+@keyframes platformFlash {
+  0%, 88%, 100% {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    filter: brightness(1);
+  }
+  92% {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35), 0 0 28px 6px rgba(0, 0, 0, 0.22);
+    filter: brightness(1.18);
+  }
+}
+
+.platform-card {
+  animation: platformFlash var(--platform-flash-duration, 5.2s) ease-in-out infinite;
+  animation-delay: var(--platform-flash-delay, 0s);
+}
+
+.platform-bob:hover .platform-card {
+  animation: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .platform-bob {
+  .platform-bob,
+  .platform-card {
     animation: none;
   }
 }

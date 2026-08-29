@@ -83,8 +83,8 @@ export default function IntegrationsSection() {
             className="platform-bob"
             style={
               {
-                "--platform-bob-delay": `${(i % 5) * 0.35}s`,
-                "--platform-bob-duration": `${3 + (i % 3) * 0.4}s`,
+                "--platform-bob-delay": `${i * 0.4}s`,
+                "--platform-bob-duration": `${2.6 + (i % 4) * 0.35}s`,
               } as React.CSSProperties
             }
           >
@@ -93,7 +93,13 @@ export default function IntegrationsSection() {
               target="_blank"
               rel="noopener noreferrer"
               className="platform-card glass-card group relative rounded-xl p-5 flex flex-col items-center justify-center gap-3"
-              style={{ "--platform-color": PLATFORM_COLORS[platform.icon] } as React.CSSProperties}
+              style={
+                {
+                  "--platform-color": PLATFORM_COLORS[platform.icon],
+                  "--platform-flash-delay": `${i * 0.9}s`,
+                  "--platform-flash-duration": `${4.4 + (i % 3) * 0.6}s`,
+                } as React.CSSProperties
+              }
             >
               <div className="platform-icon text-highlight transition-colors duration-300 group-hover:text-[var(--platform-color)]">
                 {PLATFORM_ICONS[platform.icon]}
