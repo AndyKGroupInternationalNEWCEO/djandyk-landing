@@ -56,6 +56,13 @@ const PLATFORM_COLORS: Record<string, string> = {
   beatport: "#01FF95",
 };
 
+// Deliberately irregular timing per icon — no shared rhythm, so the grid
+// never falls into a predictable synchronized pattern.
+const BOB_DURATIONS = [2.4, 3.6, 2.9, 4.1, 3.1, 2.7, 3.8];
+const BOB_DELAYS = [0, 0.6, 1.5, 0.2, 2.1, 0.9, 1.8];
+const FLASH_DURATIONS = [4.2, 5.8, 4.9, 6.3, 4.5, 5.1, 6.0];
+const FLASH_DELAYS = [0.3, 2.1, 0.8, 3.4, 1.6, 4.0, 0.5];
+
 export default function IntegrationsSection() {
   const { t } = useLanguage();
 
@@ -83,8 +90,8 @@ export default function IntegrationsSection() {
             className="platform-bob"
             style={
               {
-                "--platform-bob-delay": `${i * 0.4}s`,
-                "--platform-bob-duration": `${2.6 + (i % 4) * 0.35}s`,
+                "--platform-bob-delay": `${BOB_DELAYS[i % BOB_DELAYS.length]}s`,
+                "--platform-bob-duration": `${BOB_DURATIONS[i % BOB_DURATIONS.length]}s`,
               } as React.CSSProperties
             }
           >
@@ -96,8 +103,8 @@ export default function IntegrationsSection() {
               style={
                 {
                   "--platform-color": PLATFORM_COLORS[platform.icon],
-                  "--platform-flash-delay": `${i * 0.9}s`,
-                  "--platform-flash-duration": `${4.4 + (i % 3) * 0.6}s`,
+                  "--platform-flash-delay": `${FLASH_DELAYS[i % FLASH_DELAYS.length]}s`,
+                  "--platform-flash-duration": `${FLASH_DURATIONS[i % FLASH_DURATIONS.length]}s`,
                 } as React.CSSProperties
               }
             >

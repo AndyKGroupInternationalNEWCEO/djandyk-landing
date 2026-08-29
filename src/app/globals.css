@@ -591,19 +591,16 @@ body {
   animation-delay: var(--platform-bob-delay, 0s);
 }
 
-.platform-bob:hover {
-  animation-play-state: paused;
-}
-
-/* A bright "spark" as if two icons just touched — fires briefly once per
-   loop, timing staggered per-card so it never happens in sync. */
+/* A bright "spark" in the platform's own brand color, as if two icons just
+   touched — fires briefly once per loop, timing staggered per-card so it
+   never happens in sync. Keeps running on hover too, by design. */
 @keyframes platformFlash {
   0%, 88%, 100% {
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
     filter: brightness(1);
   }
   92% {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35), 0 0 28px 6px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 0 0 1px var(--platform-color, #111), 0 0 28px 6px color-mix(in srgb, var(--platform-color, #111) 55%, transparent);
     filter: brightness(1.18);
   }
 }
@@ -611,10 +608,6 @@ body {
 .platform-card {
   animation: platformFlash var(--platform-flash-duration, 5.2s) ease-in-out infinite;
   animation-delay: var(--platform-flash-delay, 0s);
-}
-
-.platform-bob:hover .platform-card {
-  animation: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
