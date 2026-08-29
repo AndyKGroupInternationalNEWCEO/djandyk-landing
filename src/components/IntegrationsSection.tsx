@@ -83,11 +83,11 @@ export default function IntegrationsSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="flex flex-wrap justify-center gap-4">
         {STREAMING_PLATFORMS.map((platform, i) => (
           <div
             key={platform.name}
-            className="platform-bob"
+            className="platform-bob w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.667rem)] lg:w-[calc(16.6667%-0.834rem)]"
             style={
               {
                 "--platform-bob-delay": `${BOB_DELAYS[i % BOB_DELAYS.length]}s`,
