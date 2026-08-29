@@ -84,7 +84,7 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
             src={whenLaterBecomesNeverAlbum.heroCoverSrc}
             alt="When Later Becomes Never"
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "center 25%" }}
+            style={{ objectPosition: "center 5%" }}
           />
           <div
             className="absolute inset-0"
