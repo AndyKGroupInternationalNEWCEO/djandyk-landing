@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Volume2, VolumeX } from "lucide-react";
 import { getActiveMonthlyTop10 } from "@/lib/monthlyTop10";
 import RepeatButton, { nextRepeatMode, type RepeatMode } from "@/components/RepeatButton";
 
@@ -86,6 +87,7 @@ export default function MonthlyTop10Section() {
   const [duration, setDuration] = useState(0);
   const [repeatMode, setRepeatMode] = useState<RepeatMode>("off");
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [volume, setVolume] = useState(1);
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -162,6 +164,11 @@ export default function MonthlyTop10Section() {
       audio.play();
       setIsPlaying(true);
     }
+  }
+
+  function handleVolumeChange(v: number) {
+    setVolume(v);
+    if (audioRef.current) audioRef.current.volume = v;
   }
 
   function handleTouchStart(e: React.TouchEvent) {
@@ -338,6 +345,29 @@ export default function MonthlyTop10Section() {
                   <span className="text-[11px] font-mono w-9 text-muted-2 shrink-0 tabular-nums">
                     {formatTime(duration)}
                   </span>
+
+                  <span className="hidden sm:block w-px h-4 bg-grid-500 shrink-0" aria-hidden="true" />
+
+                  <div className="hidden sm:flex items-center gap-1.5 shrink-0">
+                    <button
+                      onClick={() => handleVolumeChange(volume === 0 ? 1 : 0)}
+                      aria-label={volume === 0 ? "Unmute" : "Mute"}
+                      className="flex items-center justify-center text-muted-2 hover:text-highlight transition-colors"
+                    >
+                      {volume === 0 ? <VolumeX size={14} /> : <Volume2 size={14} />}
+                    </button>
+                    <input
+                      type="range"
+                      min={0}
+                      max={1}
+                      step={0.01}
+                      value={volume}
+                      onChange={(e) => handleVolumeChange(Number(e.target.value))}
+                      aria-label="Volume"
+                      className="w-14 h-1 rounded-full appearance-none cursor-pointer"
+                      style={{ accentColor: "#111111" }}
+                    />
+                  </div>
 
                   <span className="hidden sm:block w-px h-4 bg-grid-500 shrink-0" aria-hidden="true" />
 
