@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import {
   COMPANY,
   EPS_SINGLES_2026,
-  PIANO_SERIES_2026,
   STREAMING_PLATFORMS,
 } from "@/lib/data";
 import { ALBUM_CATALOGUE, type AlbumCategory, type CatalogueAlbum } from "@/lib/albumCatalogue";
@@ -254,11 +253,11 @@ export default function PressPage() {
           </div>
         </Section>
 
-        {/* Singles & Piano Versions */}
+        {/* Standalone Singles */}
         <Section>
-          <SectionTitle>Singles &amp; Piano Versions</SectionTitle>
+          <SectionTitle>Standalone Singles</SectionTitle>
           <div className="border border-grid-300 rounded-xl overflow-hidden bg-white divide-y divide-grid-300">
-            {[...EPS_SINGLES_2026, ...PIANO_SERIES_2026].map((item) => (
+            {EPS_SINGLES_2026.map((item) => (
               <div key={item.title} className="flex items-center justify-between px-5 py-3.5 gap-4">
                 <div className="min-w-0">
                   <p className="text-sm font-medium text-foreground truncate">{item.title}</p>

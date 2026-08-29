@@ -263,90 +263,11 @@ export const ALBUMS_2026 = [
 // Discography — EPs & Singles 2026 (maps to DiscographySection tab 2)
 export const EPS_SINGLES_2026 = [
   {
-    title: "Someone I Used To Be",
-    type: "Single",
-    year: 2026,
-    coverUrl: "/albums/someone-i-used-to-be.jpg",
-    spotifyUrl: "https://open.spotify.com/album/7bwDl4olECxWFhlPqGzKfA",
-  },
-  {
-    title: "When Home Is Nowhere",
-    type: "Single",
-    year: 2026,
-    coverUrl: "/albums/when-home-is-nowhere.jpg",
-    spotifyUrl: "https://open.spotify.com/album/4ksawSjAnCnbVT6xXVRrSZ",
-  },
-  {
-    title: "Parallel Stories",
-    type: "Single",
-    year: 2026,
-    highlighted: true,
-    note: "Latest release \u00B7 April 2026",
-    coverUrl: "/albums/paraller-stories.jpg",
-    spotifyUrl: "https://open.spotify.com/search/Parallel%20Stories%20DJ%20AndyK",
-  },
-  {
-    title: "Feel My Spirit Wake",
-    type: "Single",
-    year: 2026,
-    coverUrl: "/albums/feel-my-spirit-wake.jpg",
-    spotifyUrl: "https://open.spotify.com/search/Feel%20My%20Spirit%20Wake%20DJ%20AndyK",
-  },
-  {
     title: "Love Will Find Us Once Again",
     type: "Single",
     year: 2026,
     coverUrl: "/albums/love-will-find-us-once-again.jpg",
     spotifyUrl: "https://open.spotify.com/search/Love%20Will%20Find%20Us%20Once%20Again%20DJ%20AndyK",
-  },
-  {
-    title: "Holding On Through All",
-    type: "Single",
-    year: 2026,
-    coverUrl: "/albums/holding-on-through-all.jpg",
-    spotifyUrl: "https://open.spotify.com/search/Holding%20On%20Through%20All%20DJ%20AndyK",
-  },
-  {
-    title: "Hiding From It All",
-    type: "Single",
-    year: 2026,
-    coverUrl: "/albums/hiding-from-it-all.jpg",
-    spotifyUrl: "https://open.spotify.com/search/Hiding%20From%20It%20All%20DJ%20AndyK",
-  },
-  {
-    title: "Pull Me Through",
-    type: "Single",
-    year: 2026,
-    coverUrl: "/albums/pull-me-through.jpg",
-    spotifyUrl: "https://open.spotify.com/search/Pull%20Me%20Through%20DJ%20AndyK",
-  },
-  {
-    title: "Almost",
-    type: "Single",
-    year: 2026,
-    coverUrl: "/albums/almost.jpg",
-    spotifyUrl: "https://open.spotify.com/search/Almost%20DJ%20AndyK",
-  },
-  {
-    title: "After Midnight",
-    type: "Single",
-    year: 2026,
-    coverUrl: "/albums/after-midnight.jpg",
-    spotifyUrl: "https://open.spotify.com/search/After%20Midnight%20DJ%20AndyK",
-  },
-  {
-    title: "The Last Signal",
-    type: "Single",
-    year: 2026,
-    coverUrl: "/albums/the-last-signal.jpg",
-    spotifyUrl: "https://open.spotify.com/search/The%20Last%20Signal%20DJ%20AndyK",
-  },
-  {
-    title: "Between Us",
-    type: "Single",
-    year: 2026,
-    coverUrl: "/albums/between-us.jpg",
-    spotifyUrl: "https://open.spotify.com/search/Between%20Us%20DJ%20AndyK",
   },
 ];
 
@@ -379,38 +300,6 @@ export const STANDALONE_SINGLES = [
     year: 2025,
     coverUrl: "/albums/plastic-hearts-dont-break.jpg",
     spotifyUrl: "https://open.spotify.com/album/3Vak7mxhOyH8uelBENmJmx",
-  },
-];
-
-// Discography — Piano Series 2026 (maps to DiscographySection tab 3)
-export const PIANO_SERIES_2026 = [
-  {
-    title: "Human Stories (Piano)",
-    year: 2026,
-    coverUrl: "/albums/human-stories-piano.jpg",
-    spotifyUrl: "https://open.spotify.com/artist/3JhFGt6jRQvnYgvhWMQHUU",
-    youtubeUrl: "https://www.youtube.com/embed/UheJ-zGRwj0",
-  },
-  {
-    title: "Letters Never Sent (Piano)",
-    year: 2026,
-    coverUrl: "/albums/letters-never-sent-piano.jpg",
-    spotifyUrl: "https://open.spotify.com/artist/3JhFGt6jRQvnYgvhWMQHUU",
-    youtubeUrl: "https://www.youtube.com/embed/TSsDHdT65-Y",
-  },
-  {
-    title: "Only Rivers Know (Piano)",
-    year: 2026,
-    coverUrl: "/albums/only-rivers-know-piano.jpg",
-    spotifyUrl: "https://open.spotify.com/artist/3JhFGt6jRQvnYgvhWMQHUU",
-    youtubeUrl: "https://www.youtube.com/embed/qW9JqVoUfTo",
-  },
-  {
-    title: "Running From Yesterday (Piano)",
-    year: 2026,
-    coverUrl: "/albums/running-from-yesterday-piano.jpg",
-    spotifyUrl: "https://open.spotify.com/artist/3JhFGt6jRQvnYgvhWMQHUU",
-    youtubeUrl: "https://www.youtube.com/embed/KqJ-rNhN6gE",
   },
 ];
 

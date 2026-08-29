@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useState } from "react";
-import { EPS_SINGLES_2026, PIANO_SERIES_2026, STANDALONE_SINGLES } from "@/lib/data";
+import { EPS_SINGLES_2026, STANDALONE_SINGLES } from "@/lib/data";
 import { useLanguage } from "@/context/LanguageContext";
 import TabSwitcher from "@/components/TabSwitcher";
 
@@ -60,50 +60,6 @@ function ItemMeta({ item, t }: { item: DiscographyItem; t: { albums: { latestRel
   );
 }
 
-function ListenLink({ href, label }: { href: string; label: string }) {
-  return (
-    <div className="mt-4 flex items-center justify-end gap-1">
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-xs font-medium text-highlight hover:text-deep-teal transition-colors flex items-center gap-1"
-      >
-        {label}
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} className="w-3.5 h-3.5">
-          <path d="M6 4l4 4-4 4" />
-        </svg>
-      </a>
-    </div>
-  );
-}
-
-function PianoCard({ item, t }: { item: DiscographyItem; t: { albums: { latestRelease: string; listenOn: string } } }) {
-  return (
-    <div className="glass-card rounded-xl p-5 flex flex-col">
-      <CoverArt item={item} />
-      <ItemMeta item={item} t={t} />
-
-      {item.youtubeUrl && (
-        <div className="mt-4 rounded-xl overflow-hidden">
-          <iframe
-            src={item.youtubeUrl}
-            width="100%"
-            height="200"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            loading="lazy"
-            style={{ borderRadius: "12px", display: "block" }}
-            title={item.title}
-          />
-        </div>
-      )}
-
-      <ListenLink href={item.spotifyUrl} label={t.albums.listenOn} />
-    </div>
-  );
-}
-
 function StandardCard({ item, t }: { item: DiscographyItem; t: { albums: { latestRelease: string; listenOn: string } } }) {
   return (
     <a
@@ -130,18 +86,10 @@ export default function PricingSection() {
 
   const tabs = [
     { id: "singles", label: t.albums.tabs.singles },
-    { id: "piano", label: t.albums.tabs.piano },
     { id: "standalone", label: t.albums.tabs.standalone },
   ];
 
-  const data =
-    activeTab === "singles"
-      ? EPS_SINGLES_2026
-      : activeTab === "standalone"
-      ? STANDALONE_SINGLES
-      : PIANO_SERIES_2026;
-
-  const isPiano = activeTab === "piano";
+  const data = activeTab === "singles" ? EPS_SINGLES_2026 : STANDALONE_SINGLES;
 
   return (
     <section id="discography" className="relative py-20 px-8">
@@ -165,13 +113,9 @@ export default function PricingSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {(data as DiscographyItem[]).map((item) =>
-            isPiano ? (
-              <PianoCard key={item.title} item={item} t={t} />
-            ) : (
-              <StandardCard key={item.title} item={item} t={t} />
-            )
-          )}
+          {(data as DiscographyItem[]).map((item) => (
+            <StandardCard key={item.title} item={item} t={t} />
+          ))}
         </div>
       </div>
     </section>
