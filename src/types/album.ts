@@ -18,6 +18,8 @@ export interface Track {
   vocal?: string;
   instruments?: string[];
   mood?: string;
+  /** Official YouTube embed (e.g. a piano version music video) — shown as a video player in Song Info alongside the audio player, when present. */
+  youtubeUrl?: string;
   lyrics: string[][];
 }
 

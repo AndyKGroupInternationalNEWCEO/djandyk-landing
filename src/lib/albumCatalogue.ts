@@ -125,9 +125,8 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     genre: "House / Progressive House",
     description: "A house album with emotional depth — four tracks also released in piano versions.",
     completeBadge: true,
-    href: "https://open.spotify.com/artist/3JhFGt6jRQvnYgvhWMQHUU",
-    embedUrl: "https://open.spotify.com/embed/album/6qWISevnIY1Bm4FB8hUhVC?utm_source=generator&theme=0",
-    cover: "/albums/human-stories.jpg",
+    href: "/human-stories",
+    cover: "/releases/hs-album.png",
   },
 
   // ---- Legacy Collection ----

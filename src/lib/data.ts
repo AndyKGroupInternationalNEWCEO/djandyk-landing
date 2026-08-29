@@ -587,7 +587,7 @@ export const NAV_SERVICES = [
       {
         label: "Parallel Stories",
         description: "Single \u00B7 April 2026",
-        href: "https://hyperfollow.com/djandyk",
+        href: "/human-stories/parallel-stories",
       },
       {
         label: "When Later Becomes Never",
