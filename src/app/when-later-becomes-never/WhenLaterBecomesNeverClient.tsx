@@ -8,6 +8,7 @@ import { whenLaterBecomesNeverAlbum } from "@/data/when-later-becomes-never-trac
 import type { WLBNTrack } from "@/data/when-later-becomes-never-tracks";
 
 const ACCENT = "#C7D0D8";
+const PLATFORMS = ["Spotify", "Apple Music", "TIDAL", "YouTube", "Beatport"];
 const RAIL_SPACING = 92;
 const AUTO_ROLL_INTERVAL = 4500;
 const INTERACTION_COOLDOWN = 6000;
@@ -295,17 +296,69 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
                   </p>
                 )}
 
-                <div className="flex items-center gap-2 flex-wrap justify-center mb-8">
-                  <span className="text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded border" style={{ color: ACCENT, borderColor: `${ACCENT}40` }}>
-                    {track.key}
-                  </span>
-                  <span className="text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded border" style={{ color: ACCENT, borderColor: `${ACCENT}40` }}>
-                    {track.bpm} BPM
-                  </span>
-                  <span className="text-[10px] font-mono tracking-widest px-2.5 py-1 rounded border" style={{ color: "rgba(255,255,255,0.45)", borderColor: "rgba(255,255,255,0.15)" }}>
-                    {track.chords}
-                  </span>
+                {/* Streaming platforms — links go live once each track is released */}
+                <div className="flex flex-wrap gap-2 justify-center mb-6">
+                  {PLATFORMS.map((name) => (
+                    <span
+                      key={name}
+                      className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 rounded-full border"
+                      style={{ color: "rgba(255,255,255,0.5)", borderColor: "rgba(255,255,255,0.15)" }}
+                    >
+                      {name}
+                    </span>
+                  ))}
                 </div>
+
+                <dl className="grid grid-cols-2 gap-x-6 gap-y-3 max-w-[360px] mx-auto mb-10 text-left">
+                  <div>
+                    <dt className="text-[10px] font-mono uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.35)" }}>
+                      Producer
+                    </dt>
+                    <dd className="text-sm" style={{ color: "rgba(255,255,255,0.8)" }}>
+                      DJ Andy&apos;K
+                    </dd>
+                  </div>
+                  {track.bpm && (
+                    <div>
+                      <dt className="text-[10px] font-mono uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.35)" }}>
+                        BPM
+                      </dt>
+                      <dd className="text-sm" style={{ color: "rgba(255,255,255,0.8)" }}>
+                        {track.bpm}
+                      </dd>
+                    </div>
+                  )}
+                  {track.key && (
+                    <div>
+                      <dt className="text-[10px] font-mono uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.35)" }}>
+                        Key
+                      </dt>
+                      <dd className="text-sm" style={{ color: "rgba(255,255,255,0.8)" }}>
+                        {track.key}
+                      </dd>
+                    </div>
+                  )}
+                  {track.chords && (
+                    <div>
+                      <dt className="text-[10px] font-mono uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.35)" }}>
+                        Chord Progression
+                      </dt>
+                      <dd className="text-sm" style={{ color: "rgba(255,255,255,0.8)" }}>
+                        {track.chords}
+                      </dd>
+                    </div>
+                  )}
+                  {track.releaseDate && (
+                    <div>
+                      <dt className="text-[10px] font-mono uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.35)" }}>
+                        Release Date
+                      </dt>
+                      <dd className="text-sm" style={{ color: "rgba(255,255,255,0.8)" }}>
+                        {track.releaseDate}
+                      </dd>
+                    </div>
+                  )}
+                </dl>
 
                 {/* Player */}
                 <div className="flex items-center gap-3 w-full max-w-[380px] mx-auto mb-10">
