@@ -181,7 +181,7 @@ export default function WhenLaterBecomesNeverClient({ initialSlug }: { initialSl
           onTouchEnd={handleTouchEnd}
         >
           <div className="max-w-[1000px] mx-auto px-6 py-16 sm:py-20">
-            <div className="grid grid-cols-1 md:grid-cols-[168px_1fr_168px] gap-8 md:gap-10 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-[168px_1fr_168px] gap-8 md:gap-10 items-start">
               {/* Rail */}
               <div className="flex md:flex-col items-center gap-5 order-2 md:order-1">
                 <div
