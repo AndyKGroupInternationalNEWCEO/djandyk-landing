@@ -13,6 +13,28 @@ const RAIL_SPACING = 92;
 const AUTO_ROLL_INTERVAL = 4500;
 const INTERACTION_COOLDOWN = 6000;
 
+// Same minimal floating-particle field used by the standard Cover Flow
+// pages — fills the large empty margins around the rail/stage with a
+// little ambient life instead of flat black.
+const PARTICLES = [
+  { left: "8%", top: "22%", size: 3, opacity: 0.5, delay: "0s" },
+  { left: "18%", top: "62%", size: 2, opacity: 0.35, delay: "1.4s" },
+  { left: "30%", top: "14%", size: 2, opacity: 0.4, delay: "2.6s" },
+  { left: "72%", top: "26%", size: 3, opacity: 0.45, delay: "0.8s" },
+  { left: "85%", top: "58%", size: 2, opacity: 0.3, delay: "2s" },
+  { left: "92%", top: "18%", size: 2, opacity: 0.35, delay: "3.2s" },
+  { left: "12%", top: "82%", size: 2, opacity: 0.3, delay: "2.2s" },
+  { left: "60%", top: "80%", size: 3, opacity: 0.4, delay: "1s" },
+];
+
+function hexToRgba(hex: string, alpha: number): string {
+  const clean = hex.replace("#", "");
+  const r = parseInt(clean.slice(0, 2), 16);
+  const g = parseInt(clean.slice(2, 4), 16);
+  const b = parseInt(clean.slice(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
 function formatTime(seconds: number) {
   if (!isFinite(seconds) || seconds < 0) return "0:00";
   const m = Math.floor(seconds / 60);
@@ -38,6 +60,7 @@ export default function HumanStoriesClient({ initialSlug }: { initialSlug?: stri
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [railHovered, setRailHovered] = useState(false);
   const [repeatMode, setRepeatMode] = useState<RepeatMode>("off");
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const touchStartY = useRef(0);
@@ -66,6 +89,14 @@ export default function HumanStoriesClient({ initialSlug }: { initialSlug?: stri
       }
     }
   }, [index]);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReducedMotion(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   // Auto-roll the rail on its own — paused while a track is playing or
   // right after the user manually navigates, then resumes.
@@ -205,11 +236,37 @@ export default function HumanStoriesClient({ initialSlug }: { initialSlug?: stri
 
         {/* Interactive rail + stage */}
         <section
-          className="relative w-full select-none"
+          className="relative w-full select-none overflow-hidden"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          <div className="max-w-[1000px] mx-auto px-6 py-16 sm:py-20">
+          {/* Ambient fog + floating particles, tinted with the album accent —
+              fills the large empty margins either side of the rail/stage. */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{ background: `radial-gradient(ellipse 70% 50% at 50% 40%, ${hexToRgba(ACCENT, 0.08)}, transparent 70%)` }}
+          />
+          {!reducedMotion &&
+            PARTICLES.map((p, i) => (
+              <span
+                key={i}
+                className="coverflow-particle absolute rounded-full pointer-events-none"
+                style={
+                  {
+                    left: p.left,
+                    top: p.top,
+                    width: p.size,
+                    height: p.size,
+                    background: ACCENT,
+                    opacity: p.opacity,
+                    animationDelay: p.delay,
+                    "--particle-opacity": p.opacity,
+                  } as React.CSSProperties
+                }
+              />
+            ))}
+
+          <div className="relative z-10 max-w-[1000px] mx-auto px-6 py-16 sm:py-20">
             <div className="grid grid-cols-1 md:grid-cols-[168px_1fr_168px] gap-8 md:gap-10 items-start">
               {/* Rail */}
               <div className="flex md:flex-col items-center gap-5 order-2 md:order-1">

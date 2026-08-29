@@ -4,6 +4,7 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 import CookieBanner from "@/components/CookieBanner";
 import AlbumAnnouncementPopup from "@/components/AlbumAnnouncementPopup";
+import MusicLabPromoBanner from "@/components/MusicLabPromoBanner";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
@@ -131,6 +132,7 @@ export default function RootLayout({
           <LanguageProvider>
             {children}
             <CookieBanner />
+            <MusicLabPromoBanner />
             {/* AlbumAnnouncementPopup removed — Before I Forget campaign ended */}
           </LanguageProvider>
         </ThemeProvider>
