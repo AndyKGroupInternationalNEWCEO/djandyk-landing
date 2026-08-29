@@ -115,9 +115,8 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     genre: "Progressive House / House",
     description: "A journey through emotion, memory, and release. Eleven tracks, one story.",
     availableNow: true,
-    href: "https://open.spotify.com/album/1ezdr7EOZWuLBiw7Rpqis6",
-    embedUrl: "https://open.spotify.com/embed/album/1ezdr7EOZWuLBiw7Rpqis6?utm_source=generator&theme=0",
-    cover: "/albums/when-later-becomes-never.jpg",
+    href: "/when-later-becomes-never",
+    cover: "/releases/wlbn-album.png",
   },
   {
     title: "Human Stories",

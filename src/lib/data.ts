@@ -592,7 +592,7 @@ export const NAV_SERVICES = [
       {
         label: "When Later Becomes Never",
         description: "Album \u00B7 Progressive House / House",
-        href: "https://open.spotify.com/artist/3JhFGt6jRQvnYgvhWMQHUU",
+        href: "/when-later-becomes-never",
       },
     ],
   },

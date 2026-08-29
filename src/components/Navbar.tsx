@@ -147,8 +147,7 @@ export default function Navbar() {
                         <a
                           key={item.label}
                           href={item.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          {...(item.href.startsWith("/") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                           onClick={() => setPlatformsOpen(false)}
                           className="block p-2 -mx-1 rounded-lg hover:bg-bg-light transition-colors group/item"
                         >
@@ -248,8 +247,7 @@ export default function Navbar() {
                         <a
                           key={item.label}
                           href={item.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          {...(item.href.startsWith("/") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                           onClick={closeMobile}
                           className="block px-3 py-2.5 rounded-lg hover:bg-bg-light transition-colors"
                         >
