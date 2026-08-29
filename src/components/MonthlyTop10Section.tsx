@@ -47,6 +47,34 @@ function NextIcon() {
   );
 }
 
+// A tiny 3-band equalizer indicator (High / Bass / Mid) — bars bounce while
+// playing, settle to a low resting height when paused or reduced-motion.
+function EQBars({ animate }: { animate: boolean }) {
+  const bars = [
+    { duration: "0.62s", delay: "0s" },
+    { duration: "0.78s", delay: "0.12s" },
+    { duration: "0.54s", delay: "0.06s" },
+  ];
+  return (
+    <span
+      className="inline-flex items-end gap-[2px] h-2.5 w-3"
+      role="img"
+      aria-label="Equalizer: High, Bass, Mid"
+    >
+      {bars.map((bar, i) => (
+        <span
+          key={i}
+          className="w-[2.5px] rounded-full bg-highlight"
+          style={{
+            height: animate ? "40%" : "35%",
+            animation: animate ? `top10-eq ${bar.duration} ease-in-out ${bar.delay} infinite` : "none",
+          }}
+        />
+      ))}
+    </span>
+  );
+}
+
 export default function MonthlyTop10Section() {
   const collection = getActiveMonthlyTop10();
   const tracks = collection?.tracks ?? [];
@@ -174,7 +202,7 @@ export default function MonthlyTop10Section() {
   return (
     <section id="top10" className="relative pt-10 pb-20 px-8 section-with-glass">
       <div className="max-w-[900px] mx-auto">
-        <div className="text-center max-w-[700px] mx-auto mb-10">
+        <div className="text-center max-w-[700px] mx-auto mb-8">
           <span className="text-[10px] uppercase tracking-[0.3em] text-highlight font-mono block mb-3">
             Monthly Selection
           </span>
@@ -186,11 +214,22 @@ export default function MonthlyTop10Section() {
         </div>
 
         <div
-          className="glass-card no-hover-lift rounded-2xl p-6 sm:p-8"
+          className="glass-card no-hover-lift relative overflow-hidden rounded-2xl p-5 sm:p-6"
+          style={{
+            background: "rgba(255,255,255,0.5)",
+            backdropFilter: "blur(40px) saturate(200%)",
+            WebkitBackdropFilter: "blur(40px) saturate(200%)",
+          }}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          <div className="flex items-center justify-between mb-6">
+          <div
+            className="absolute inset-x-0 top-0 h-24 pointer-events-none z-0"
+            style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.5), transparent)" }}
+            aria-hidden="true"
+          />
+
+          <div className="relative z-10 flex items-center justify-between mb-5">
             <span className="flex items-baseline gap-1 font-mono text-muted-2">
               <span className="text-2xl font-light tracking-tight text-foreground">
                 {String(track.rank).padStart(2, "0")}
@@ -215,12 +254,12 @@ export default function MonthlyTop10Section() {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+          <div className="relative z-10 flex flex-col sm:flex-row gap-5 items-center sm:items-start">
             <div className="relative shrink-0">
               <img
                 src={track.artwork}
                 alt={track.title}
-                className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl object-cover shadow-[0_12px_32px_-8px_rgba(0,0,0,0.28)] ring-1 ring-black/5"
+                className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover shadow-[0_12px_32px_-8px_rgba(0,0,0,0.28)] ring-1 ring-black/5"
               />
               {isPlaying && !reducedMotion && (
                 <span
@@ -236,10 +275,7 @@ export default function MonthlyTop10Section() {
             <div className="flex-1 min-w-0 w-full text-center sm:text-left">
               {isPlaying && (
                 <span className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-muted-2 mb-1.5">
-                  <span
-                    className="inline-block w-1.5 h-1.5 rounded-full bg-highlight"
-                    style={reducedMotion ? undefined : { animation: "top10-blink 1.4s ease-in-out infinite" }}
-                  />
+                  <EQBars animate={!reducedMotion} />
                   Now Playing
                 </span>
               )}
@@ -386,6 +422,10 @@ export default function MonthlyTop10Section() {
         @keyframes top10-blink {
           0%, 100% { opacity: 1; }
           50% { opacity: 0.25; }
+        }
+        @keyframes top10-eq {
+          0%, 100% { height: 30%; }
+          50% { height: 100%; }
         }
       `}</style>
     </section>
