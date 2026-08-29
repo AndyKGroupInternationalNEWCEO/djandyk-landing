@@ -64,6 +64,16 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     href: "/euphoria-needs-no-story",
     cover: "/releases/euphoria-needs-no-story-cover.png",
   },
+  {
+    title: "No Translation",
+    category: "signature",
+    kicker: "Album · 2026",
+    genre: "Melodic Progressive Tech House",
+    description: "Six Languages. One Night. Nothing Needs Explaining.",
+    completionDate: "2026-12-04",
+    href: "/no-translation",
+    cover: "/releases/no-translation-cover.png",
+  },
 
   // ---- Concept Albums ----
   {
@@ -75,16 +85,6 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     completionDate: "2026-08-22",
     href: "/opus-no-1-vienna",
     cover: "/releases/opus-no-1-vienna-cover.png",
-  },
-  {
-    title: "No Translation",
-    category: "concept",
-    kicker: "Album · 2026",
-    genre: "Melodic Progressive Tech House",
-    description: "Six Languages. One Night. Nothing Needs Explaining.",
-    completionDate: "2026-12-04",
-    href: "/no-translation",
-    cover: "/releases/no-translation-cover.png",
   },
   {
     title: "Do Not Disturb",
