@@ -576,6 +576,27 @@ body {
   animation: coverflowParticleFloat 8s ease-in-out infinite;
 }
 
+/* ===== STREAMING PLATFORM GRID — PLAYFUL IDLE BOB ===== */
+@keyframes platformBob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-7px) rotate(-1.2deg); }
+}
+
+.platform-bob {
+  animation: platformBob var(--platform-bob-duration, 3.4s) ease-in-out infinite;
+  animation-delay: var(--platform-bob-delay, 0s);
+}
+
+.platform-bob:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .platform-bob {
+    animation: none;
+  }
+}
+
 /* ===== RAIL + STAGE (When Later Becomes Never, Human Stories) ===== */
 @keyframes stageFadeIn {
   from { opacity: 0; transform: translateY(14px); }

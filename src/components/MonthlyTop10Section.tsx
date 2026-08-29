@@ -57,16 +57,16 @@ function EQBars({ animate }: { animate: boolean }) {
   ];
   return (
     <span
-      className="inline-flex items-end gap-[2px] h-2.5 w-3"
+      className="inline-flex items-end gap-[3px] h-4 w-[18px] shrink-0"
       role="img"
       aria-label="Equalizer: High, Bass, Mid"
     >
       {bars.map((bar, i) => (
         <span
           key={i}
-          className="w-[2.5px] rounded-full bg-highlight"
+          className="w-[4px] rounded-[1px] bg-highlight"
           style={{
-            height: animate ? "40%" : "35%",
+            height: animate ? "45%" : "30%",
             animation: animate ? `top10-eq ${bar.duration} ease-in-out ${bar.delay} infinite` : "none",
           }}
         />

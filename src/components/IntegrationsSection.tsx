@@ -77,22 +77,32 @@ export default function IntegrationsSection() {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        {STREAMING_PLATFORMS.map((platform) => (
-          <a
+        {STREAMING_PLATFORMS.map((platform, i) => (
+          <div
             key={platform.name}
-            href={platform.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="platform-card glass-card group relative rounded-xl p-5 flex flex-col items-center justify-center gap-3"
-            style={{ ["--platform-color" as string]: PLATFORM_COLORS[platform.icon] }}
+            className="platform-bob"
+            style={
+              {
+                "--platform-bob-delay": `${(i % 5) * 0.35}s`,
+                "--platform-bob-duration": `${3 + (i % 3) * 0.4}s`,
+              } as React.CSSProperties
+            }
           >
-            <div className="platform-icon text-highlight transition-colors duration-300 group-hover:text-[var(--platform-color)]">
-              {PLATFORM_ICONS[platform.icon]}
-            </div>
-            <span className="text-xs font-medium text-highlight transition-colors duration-300 text-center group-hover:text-[var(--platform-color)]">
-              {platform.name}
-            </span>
-          </a>
+            <a
+              href={platform.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="platform-card glass-card group relative rounded-xl p-5 flex flex-col items-center justify-center gap-3"
+              style={{ "--platform-color": PLATFORM_COLORS[platform.icon] } as React.CSSProperties}
+            >
+              <div className="platform-icon text-highlight transition-colors duration-300 group-hover:text-[var(--platform-color)]">
+                {PLATFORM_ICONS[platform.icon]}
+              </div>
+              <span className="text-xs font-medium text-highlight transition-colors duration-300 text-center group-hover:text-[var(--platform-color)]">
+                {platform.name}
+              </span>
+            </a>
+          </div>
         ))}
       </div>
       </div>
