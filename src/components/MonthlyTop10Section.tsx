@@ -57,6 +57,7 @@ export default function MonthlyTop10Section() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [repeatMode, setRepeatMode] = useState<RepeatMode>("off");
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement>(null);
   const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -101,6 +102,14 @@ export default function MonthlyTop10Section() {
     return () => {
       if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
     };
+  }, []);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReducedMotion(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
   }, []);
 
   function pauseRotationBriefly() {
@@ -177,26 +186,29 @@ export default function MonthlyTop10Section() {
         </div>
 
         <div
-          className="glass-card rounded-xl p-6 sm:p-8"
+          className="glass-card no-hover-lift rounded-2xl p-6 sm:p-8"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
           <div className="flex items-center justify-between mb-6">
-            <span className="text-xs font-mono text-muted-2 tracking-widest">
-              {String(track.rank).padStart(2, "0")} / {String(tracks.length).padStart(2, "0")}
+            <span className="flex items-baseline gap-1 font-mono text-muted-2">
+              <span className="text-2xl font-light tracking-tight text-foreground">
+                {String(track.rank).padStart(2, "0")}
+              </span>
+              <span className="text-xs tracking-widest">/ {String(tracks.length).padStart(2, "0")}</span>
             </span>
-            <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-2">
               <button
                 onClick={() => goTo(index - 1)}
                 aria-label="Previous track"
-                className="flex items-center justify-center w-8 h-8 rounded-full border border-grid-500 text-muted-2 hover:text-highlight hover:border-highlight transition-colors"
+                className="flex items-center justify-center w-9 h-9 rounded-full border border-grid-500 text-muted-2 hover:text-highlight hover:border-highlight hover:shadow-[0_2px_10px_rgba(0,0,0,0.08)] transition-all"
               >
                 <PrevIcon />
               </button>
               <button
                 onClick={() => goTo(index + 1)}
                 aria-label="Next track"
-                className="flex items-center justify-center w-8 h-8 rounded-full border border-grid-500 text-muted-2 hover:text-highlight hover:border-highlight transition-colors"
+                className="flex items-center justify-center w-9 h-9 rounded-full border border-grid-500 text-muted-2 hover:text-highlight hover:border-highlight hover:shadow-[0_2px_10px_rgba(0,0,0,0.08)] transition-all"
               >
                 <NextIcon />
               </button>
@@ -204,13 +216,33 @@ export default function MonthlyTop10Section() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
-            <img
-              src={track.artwork}
-              alt={track.title}
-              className="w-32 h-32 sm:w-36 sm:h-36 rounded-xl object-cover shrink-0"
-            />
+            <div className="relative shrink-0">
+              <img
+                src={track.artwork}
+                alt={track.title}
+                className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl object-cover shadow-[0_12px_32px_-8px_rgba(0,0,0,0.28)] ring-1 ring-black/5"
+              />
+              {isPlaying && !reducedMotion && (
+                <span
+                  className="absolute -inset-1.5 rounded-2xl pointer-events-none"
+                  style={{
+                    border: "1px solid rgba(17,17,17,0.5)",
+                    animation: "top10-pulse 1.8s ease-in-out infinite",
+                  }}
+                />
+              )}
+            </div>
 
             <div className="flex-1 min-w-0 w-full text-center sm:text-left">
+              {isPlaying && (
+                <span className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-muted-2 mb-1.5">
+                  <span
+                    className="inline-block w-1.5 h-1.5 rounded-full bg-highlight"
+                    style={reducedMotion ? undefined : { animation: "top10-blink 1.4s ease-in-out infinite" }}
+                  />
+                  Now Playing
+                </span>
+              )}
               <h3 className="text-lg font-bold text-foreground tracking-tight mb-1 leading-snug">
                 {track.title}
               </h3>
@@ -224,12 +256,12 @@ export default function MonthlyTop10Section() {
                   <button
                     onClick={handleTogglePlay}
                     aria-label={isPlaying ? "Pause" : "Play"}
-                    className="flex items-center justify-center w-10 h-10 rounded-full bg-highlight text-white flex-shrink-0 transition-transform hover:scale-105"
+                    className="flex items-center justify-center w-11 h-11 rounded-full bg-highlight text-white flex-shrink-0 shadow-[0_6px_20px_-4px_rgba(0,0,0,0.4)] transition-all hover:scale-105 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.5)]"
                   >
                     {isPlaying ? <PauseIcon /> : <PlayIcon />}
                   </button>
 
-                  <span className="text-[11px] font-mono w-9 text-right text-muted-2 shrink-0">
+                  <span className="text-[11px] font-mono w-9 text-right text-muted-2 shrink-0 tabular-nums">
                     {formatTime(currentTime)}
                   </span>
 
@@ -239,7 +271,7 @@ export default function MonthlyTop10Section() {
                     aria-valuemin={0}
                     aria-valuemax={duration || 0}
                     aria-valuenow={currentTime}
-                    className="flex-1 h-1.5 rounded-full cursor-pointer min-w-[80px]"
+                    className="group relative flex-1 h-1.5 rounded-full cursor-pointer min-w-[80px]"
                     style={{ background: "rgba(0,0,0,0.08)" }}
                     onClick={(e) => {
                       if (!duration) return;
@@ -252,18 +284,26 @@ export default function MonthlyTop10Section() {
                     }}
                   >
                     <div
-                      className="h-full rounded-full"
+                      className="relative h-full rounded-full"
                       style={{
                         width: `${duration ? Math.min(100, (currentTime / duration) * 100) : 0}%`,
-                        background: "var(--color-highlight)",
+                        background: "linear-gradient(90deg, #444, var(--color-highlight))",
                         transition: "width 150ms linear",
                       }}
-                    />
+                    >
+                      <span
+                        className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-3 h-3 rounded-full bg-highlight shadow-[0_1px_4px_rgba(0,0,0,0.4)] transition-opacity ${
+                          isPlaying ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                        }`}
+                      />
+                    </div>
                   </div>
 
-                  <span className="text-[11px] font-mono w-9 text-muted-2 shrink-0">
+                  <span className="text-[11px] font-mono w-9 text-muted-2 shrink-0 tabular-nums">
                     {formatTime(duration)}
                   </span>
+
+                  <span className="hidden sm:block w-px h-4 bg-grid-500 shrink-0" aria-hidden="true" />
 
                   <RepeatButton
                     mode={repeatMode}
@@ -299,10 +339,7 @@ export default function MonthlyTop10Section() {
             preload="none"
             onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
             onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
-            onEnded={() => {
-              setIsPlaying(false);
-              goTo(index + 1);
-            }}
+            onEnded={handleTrackEnded}
           />
         </div>
 
@@ -313,6 +350,7 @@ export default function MonthlyTop10Section() {
               key={t.rank}
               onClick={() => goTo(i)}
               aria-label={`Go to track ${i + 1}`}
+              className="hover:opacity-70"
               style={{
                 height: "8px",
                 width: i === index ? "20px" : "8px",
@@ -332,12 +370,24 @@ export default function MonthlyTop10Section() {
           <button
             onClick={handleTogglePlay}
             disabled={!track.audioPreview}
-            className="inline-flex items-center justify-center h-10 px-6 text-sm font-medium text-white bg-highlight hover:bg-deep-teal transition-colors rounded disabled:opacity-40 disabled:cursor-default"
+            className="inline-flex items-center gap-2 justify-center h-11 px-7 text-sm font-medium text-white bg-highlight hover:bg-deep-teal shadow-[0_8px_24px_-6px_rgba(0,0,0,0.35)] transition-all hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-6px_rgba(0,0,0,0.45)] rounded-full disabled:opacity-40 disabled:cursor-default disabled:transform-none disabled:shadow-none"
           >
+            <PlayIcon />
             Listen to this month&apos;s Top 10
           </button>
         </div>
       </div>
+
+      <style>{`
+        @keyframes top10-pulse {
+          0%, 100% { opacity: 0.6; transform: scale(1); }
+          50% { opacity: 0; transform: scale(1.06); }
+        }
+        @keyframes top10-blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.25; }
+        }
+      `}</style>
     </section>
   );
 }
