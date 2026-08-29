@@ -44,6 +44,18 @@ const PLATFORM_ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
+// Each platform's own brand color — only ever shown on hover, so the grid
+// stays black/white at rest and doesn't break the site's monochrome identity.
+const PLATFORM_COLORS: Record<string, string> = {
+  spotify: "#1DB954",
+  apple: "#FA2D48",
+  soundcloud: "#FF5500",
+  youtube: "#FF0000",
+  tidal: "#00FFFF",
+  hyperfollow: "#7C3AED",
+  beatport: "#01FF95",
+};
+
 export default function IntegrationsSection() {
   const { t } = useLanguage();
 
@@ -72,11 +84,12 @@ export default function IntegrationsSection() {
             target="_blank"
             rel="noopener noreferrer"
             className="platform-card glass-card group relative rounded-xl p-5 flex flex-col items-center justify-center gap-3"
+            style={{ ["--platform-color" as string]: PLATFORM_COLORS[platform.icon] }}
           >
-            <div className="platform-icon text-highlight transition-all duration-300">
+            <div className="platform-icon text-highlight transition-colors duration-300 group-hover:text-[var(--platform-color)]">
               {PLATFORM_ICONS[platform.icon]}
             </div>
-            <span className="text-xs font-medium text-highlight transition-colors text-center">
+            <span className="text-xs font-medium text-highlight transition-colors duration-300 text-center group-hover:text-[var(--platform-color)]">
               {platform.name}
             </span>
           </a>

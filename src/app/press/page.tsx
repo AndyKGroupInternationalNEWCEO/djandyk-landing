@@ -131,7 +131,7 @@ export default function PressPage() {
     genre: ["Trance", "Progressive House", "EDM"],
     sameAs: [
       "https://open.spotify.com/artist/3JhFGt6jRQvnYgvhWMQHUU",
-      "https://soundcloud.com/djandykofficial",
+      "https://soundcloud.com/djandyk_2024",
       "https://www.instagram.com/djandykofficial",
       "https://www.tiktok.com/@djandykofficial",
     ],

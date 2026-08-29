@@ -72,7 +72,7 @@ export const STREAMING_PLATFORMS = [
   },
   {
     name: "SoundCloud",
-    href: "https://soundcloud.com/djandykofficial",
+    href: "https://soundcloud.com/djandyk_2024",
     icon: "soundcloud",
   },
   {
@@ -225,7 +225,7 @@ export const ALBUMS_2026 = [
     status: "in-progress",
     coverUrl: "/releases/before-i-forget.png",
     spotifyUrl: "https://open.spotify.com/album/5pRDNwagYj2SS5CgYdhC5a",
-    soundcloudUrl: "https://soundcloud.com/djandykofficial",
+    soundcloudUrl: "https://soundcloud.com/djandyk_2024",
   },
   {
     title: "When Later Becomes Never",
@@ -501,7 +501,7 @@ export const NAV_SERVICES = [
       {
         label: "SoundCloud",
         description: "Follow on SoundCloud",
-        href: "https://soundcloud.com/djandykofficial",
+        href: "https://soundcloud.com/djandyk_2024",
       },
       {
         label: "YouTube",

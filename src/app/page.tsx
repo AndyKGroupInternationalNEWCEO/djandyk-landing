@@ -134,7 +134,7 @@ const jsonLd = {
       sameAs: [
         "https://open.spotify.com/artist/3JhFGt6jRQvnYgvhWMQHUU",
         "https://music.apple.com/gb/artist/dj-andyk/1835064975",
-        "https://soundcloud.com/djandykofficial",
+        "https://soundcloud.com/djandyk_2024",
         "https://www.youtube.com/@djandykofficial",
         "https://tidal.com/browse/artist/65848653",
         "https://www.instagram.com/djandykofficial",
