@@ -509,7 +509,7 @@ export default function HumanStoriesClient({ initialSlug }: { initialSlug?: stri
                 {/* Official video — piano versions */}
                 {track.youtubeUrl && (
                   <div
-                    className="max-w-[420px] mx-auto mb-10 rounded-xl overflow-hidden"
+                    className="max-w-[420px] mx-auto mb-2 rounded-xl overflow-hidden"
                     style={{ border: "1px solid rgba(255,255,255,0.08)" }}
                   >
                     <iframe
@@ -523,6 +523,11 @@ export default function HumanStoriesClient({ initialSlug }: { initialSlug?: stri
                       title={`${track.title} — official video`}
                     />
                   </div>
+                )}
+                {track.youtubeUrl && track.videoCredit && (
+                  <p className="text-[11px] font-mono mb-10" style={{ color: "rgba(255,255,255,0.3)" }}>
+                    {track.videoCredit}
+                  </p>
                 )}
 
                 {/* Lyrics */}
@@ -566,6 +571,11 @@ export default function HumanStoriesClient({ initialSlug }: { initialSlug?: stri
                       </div>
                     </div>
                   </div>
+                )}
+                {track.lyrics.length === 0 && track.vocal?.toLowerCase().includes("instrumental") && (
+                  <p className="text-sm font-mono italic" style={{ color: "rgba(255,255,255,0.35)" }}>
+                    Instrumental — no lyrics
+                  </p>
                 )}
               </div>
 

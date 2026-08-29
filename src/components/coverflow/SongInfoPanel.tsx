@@ -43,7 +43,7 @@ export default function SongInfoPanel({ track, player }: { track: Track; player:
       )}
 
       {track.youtubeUrl && (
-        <div className="mb-5 rounded-xl overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
+        <div className="mb-1 rounded-xl overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
           <iframe
             src={track.youtubeUrl}
             width="100%"
@@ -55,6 +55,11 @@ export default function SongInfoPanel({ track, player }: { track: Track; player:
             title={`${track.title} — official video`}
           />
         </div>
+      )}
+      {track.youtubeUrl && track.videoCredit && (
+        <p className="text-[11px] font-mono mb-5" style={{ color: "rgba(255,255,255,0.3)" }}>
+          {track.videoCredit}
+        </p>
       )}
 
       {track.story && (
