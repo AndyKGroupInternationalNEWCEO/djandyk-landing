@@ -223,7 +223,7 @@ export default function HumanStoriesClient({ initialSlug }: { initialSlug?: stri
               HUMAN STORIES
             </h1>
             <p className="text-base sm:text-lg font-light font-mono uppercase tracking-[0.2em] mb-5" style={{ color: ACCENT }}>
-              13 Tracks. House / Progressive House.
+              House / Progressive House.
             </p>
             <p
               className="text-sm sm:text-base leading-relaxed italic font-serif max-w-[560px]"
