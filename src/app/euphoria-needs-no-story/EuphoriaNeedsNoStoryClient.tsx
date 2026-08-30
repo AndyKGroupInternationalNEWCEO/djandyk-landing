@@ -285,6 +285,36 @@ export default function EuphoriaNeedsNoStoryClient({ initialSlug }: { initialSlu
           </div>
         </section>
 
+        {/* Promo Video — the "luxury beamer intro" announcement, with sound */}
+        <section className="py-16 px-6" style={{ background: "#0d1117" }}>
+          <ScrollReveal className="max-w-[560px] mx-auto text-center">
+            <span
+              className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-4"
+              style={{ color: ACCENT }}
+            >
+              Watch the Announcement
+            </span>
+            <h2
+              className="text-2xl sm:text-3xl font-bold tracking-tight mb-8 font-sans"
+              style={{ color: "#ffffff" }}
+            >
+              Euphoria Needs No Story — The Film
+            </h2>
+            <div
+              className="aspect-square w-full rounded-xl overflow-hidden"
+              style={{ border: `1px solid ${ACCENT}33`, boxShadow: "0 20px 60px rgba(0,0,0,0.5)" }}
+            >
+              <video
+                src="/videos/euphoria-needs-no-story-promo.mp4"
+                poster={COVER}
+                controls
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </ScrollReveal>
+        </section>
+
         {/* Cover Flow vs. Track Overview — one view at a time, Cover Flow by default */}
         <div id="tracks" style={{ background: "#0d1117" }}>
           <div className="flex justify-center pt-14 pb-8 px-6">
