@@ -24,7 +24,7 @@ export const euphoriaAlbum: Album = {
         ["This new ten-track trance album", "marks a new chapter", "and becomes the defining album", "of his musical journey."],
         ["A new era begins."],
         ["Four voices.", "One continuous trance journey."],
-        ["[Cover Line]", "Euphoria needs no story.", "Let it move,", "let it move through me.", "Euphoria needs no story.", "No words—", "only frequency."],
+        ["[From 'Euphoria Needs No Story']", "Euphoria needs no story.", "Let it move,", "let it move through me.", "Euphoria needs no story.", "No words—", "only frequency."],
         ["[Spoken Outro]", "Written, produced,", "and created by DJ Andy'K."],
         ["Featuring", "Mattew Brexon,", "Jullian Recherr,", "Robert Zigller,", "and Thymoty Lorrens."],
       ],
