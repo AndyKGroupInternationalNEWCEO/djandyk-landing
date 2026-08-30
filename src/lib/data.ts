@@ -349,6 +349,7 @@ export type TracklistEntry = { num: string; title: string; released?: boolean; c
 
 export const TRACKLISTS: Record<string, TracklistEntry[]> = {
   "Euphoria Needs No Story": [
+    { num: "00", title: "Intro", isIntro: true, label: "Coming Soon" },
     { num: "01", title: "Breathe Me Back to Life (feat. Mattew Brexon)", label: "Coming Soon" },
     { num: "02", title: "Alive in the Afterglow (feat. Jullian Recherr)", label: "Coming Soon" },
     { num: "03", title: "Even Silence Sounds Like You (feat. Robert Zigller)", label: "Coming Soon" },
