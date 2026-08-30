@@ -225,7 +225,7 @@ export const euphoriaAlbum: Album = {
       title: "I Kept the Storm",
       from: "feat. Jullian Recherr",
       story:
-        "Wreckage becomes fuel instead of wound. What was left behind is not mourned but claimed, turned into a fire that dances instead of destroys.",
+        "Your shadow still lingers in the hallway, knowing my name too well — so I took the broken pieces and built a ring of hell instead of a grave.",
       accent: "#D8A030",
       key: "F minor",
       bpm: 129,
@@ -251,7 +251,7 @@ export const euphoriaAlbum: Album = {
       title: "Euphoria Needs No Story",
       from: "feat. Mattew Brexon",
       story:
-        "The album arrives at a feeling that requires no explanation, memory or future. Nothing needs to happen first. Euphoria exists as pulse, frequency and pure presence.",
+        "No reason, no warning, no memory, no future — nothing has to happen first. Just pulse beneath the surface, only frequency, and I have never felt more alive.",
       accent: "#E8B020",
       key: "F# minor",
       bpm: 138,
