@@ -257,13 +257,25 @@ export default function EuphoriaNeedsNoStoryClient({ initialSlug }: { initialSlu
               final explanation.
             </p>
 
-            <a
-              href="#tracks"
-              className="inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold rounded transition-all duration-200 hover:-translate-y-0.5 mb-6"
-              style={{ background: ACCENT, color: "#111111" }}
-            >
-              Explore the Album ↓
-            </a>
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <a
+                href="#tracks"
+                className="inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold rounded transition-all duration-200 hover:-translate-y-0.5"
+                style={{ background: ACCENT, color: "#111111" }}
+              >
+                Explore the Album ↓
+              </a>
+
+              <a
+                href="/downloads/euphoria-needs-no-story-story-booklet.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold rounded border transition-all duration-200 hover:-translate-y-0.5"
+                style={{ borderColor: `${ACCENT}55`, color: ACCENT, background: "rgba(0,0,0,0.4)" }}
+              >
+                Download Story Booklet (PDF)
+              </a>
+            </div>
 
             <p className="text-xs font-mono uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.35)" }}>
               Written, produced &amp; created by DJ Andy&apos;K
