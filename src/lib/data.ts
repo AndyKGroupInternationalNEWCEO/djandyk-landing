@@ -425,7 +425,7 @@ export const TRACKLISTS: Record<string, TracklistEntry[]> = {
     { num: "05", title: "When Later Becomes Never" },
     { num: "06", title: "Almost" },
     { num: "07", title: "After Midnight" },
-    { num: "08", title: "Hotel Without Words" },
+    { num: "08", title: "Hostel Without Words (Sin Palabras)" },
     { num: "09", title: "One More Moment" },
     { num: "10", title: "The Last Signal" },
     { num: "11", title: "Outro \u2013 The Last Signal" },
