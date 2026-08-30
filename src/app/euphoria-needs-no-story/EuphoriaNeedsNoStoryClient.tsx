@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -12,6 +12,94 @@ import type { Track } from "@/types/album";
 
 const COVER = "/releases/euphoria-needs-no-story-cover.png";
 const ACCENT = "#E8B020";
+const INSTAGRAM_URL = "https://www.instagram.com/djandykofficial";
+const PROMO_POPUP_STORAGE_KEY = "euphoria-promo-popup-dismissed";
+const PROMO_POPUP_DISMISS_MS = 24 * 60 * 60 * 1000;
+
+function PromoVideoPopup() {
+  const [visible, setVisible] = useState(false);
+  const [closing, setClosing] = useState(false);
+
+  useEffect(() => {
+    let raw: string | null = null;
+    try {
+      raw = localStorage.getItem(PROMO_POPUP_STORAGE_KEY);
+    } catch {
+      /* localStorage unavailable — just show it */
+    }
+    if (raw && Date.now() - parseInt(raw, 10) < PROMO_POPUP_DISMISS_MS) return;
+    const t = setTimeout(() => setVisible(true), 4000);
+    return () => clearTimeout(t);
+  }, []);
+
+  function dismiss() {
+    setClosing(true);
+    try {
+      localStorage.setItem(PROMO_POPUP_STORAGE_KEY, String(Date.now()));
+    } catch {
+      /* ignore */
+    }
+    setTimeout(() => {
+      setVisible(false);
+      setClosing(false);
+    }, 280);
+  }
+
+  if (!visible) return null;
+
+  return (
+    <div className="fixed z-[60] right-4 bottom-4 sm:right-6 sm:bottom-6">
+      <style>{`
+        @keyframes euphoria-promo-in { from { opacity: 0; transform: translateY(16px) scale(0.94); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes euphoria-promo-out { from { opacity: 1; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(16px) scale(0.94); } }
+        .euphoria-promo-enter { animation: euphoria-promo-in 0.36s cubic-bezier(0.19,1,0.22,1) forwards; }
+        .euphoria-promo-exit { animation: euphoria-promo-out 0.28s cubic-bezier(0.19,1,0.22,1) forwards; }
+      `}</style>
+
+      <div
+        className={`relative rounded-xl overflow-hidden ${closing ? "euphoria-promo-exit" : "euphoria-promo-enter"}`}
+        style={{
+          width: "220px",
+          height: "220px",
+          border: `1px solid ${ACCENT}55`,
+          boxShadow: "0 12px 32px -4px rgba(0,0,0,0.5)",
+        }}
+      >
+        <button
+          onClick={dismiss}
+          aria-label="Close"
+          className="absolute top-2 right-2 z-10 w-6 h-6 rounded-full flex items-center justify-center"
+          style={{ background: "rgba(0,0,0,0.6)", color: "#ffffff" }}
+        >
+          <svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth={2}>
+            <path d="M1 1l12 12M13 1L1 13" strokeLinecap="round" />
+          </svg>
+        </button>
+
+        <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+          <video
+            src="/videos/euphoria-needs-no-story-promo.mp4"
+            poster={COVER}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          />
+          <div
+            className="absolute bottom-0 left-0 right-0 px-2.5 py-2 flex items-center gap-1.5"
+            style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)" }}
+          >
+            <svg viewBox="0 0 24 24" fill="#ffffff" className="w-3.5 h-3.5 flex-shrink-0">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+            </svg>
+            <span className="text-[10px] font-mono uppercase tracking-wider text-white">Follow on Instagram</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  );
+}
 
 function TrackCard({ track }: { track: Track }) {
   const innerRef = useRef<HTMLDivElement>(null);
@@ -285,35 +373,7 @@ export default function EuphoriaNeedsNoStoryClient({ initialSlug }: { initialSlu
           </div>
         </section>
 
-        {/* Promo Video — the "luxury beamer intro" announcement, with sound */}
-        <section className="py-16 px-6" style={{ background: "#0d1117" }}>
-          <ScrollReveal className="max-w-[560px] mx-auto text-center">
-            <span
-              className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-4"
-              style={{ color: ACCENT }}
-            >
-              Watch the Announcement
-            </span>
-            <h2
-              className="text-2xl sm:text-3xl font-bold tracking-tight mb-8 font-sans"
-              style={{ color: "#ffffff" }}
-            >
-              Euphoria Needs No Story — The Film
-            </h2>
-            <div
-              className="aspect-square w-full rounded-xl overflow-hidden"
-              style={{ border: `1px solid ${ACCENT}33`, boxShadow: "0 20px 60px rgba(0,0,0,0.5)" }}
-            >
-              <video
-                src="/videos/euphoria-needs-no-story-promo.mp4"
-                poster={COVER}
-                controls
-                playsInline
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </ScrollReveal>
-        </section>
+        <PromoVideoPopup />
 
         {/* Cover Flow vs. Track Overview — one view at a time, Cover Flow by default */}
         <div id="tracks" style={{ background: "#0d1117" }}>
