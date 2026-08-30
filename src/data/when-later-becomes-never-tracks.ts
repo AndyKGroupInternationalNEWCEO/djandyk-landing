@@ -575,8 +575,8 @@ export const whenLaterBecomesNeverAlbum = {
       bpm: "124",
       chords: "G#m – E – B – F#",
       released: true,
-      coverUrl: "/releases/hotel-without-words.png",
-      audioSrc: "/audio/hotel-without-words.mp3",
+      coverUrl: "/releases/hostel-without-words.png",
+      audioSrc: "/audio/hostel-without-words.mp3",
       lyrics: [
         [
           "[Verse 1]",
