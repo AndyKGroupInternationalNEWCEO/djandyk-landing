@@ -24,7 +24,7 @@ export const whenLaterBecomesNeverAlbum = {
   slug: "when-later-becomes-never",
   title: "When Later Becomes Never",
   story:
-    "Eleven chapters of a love that kept saying \"later\" — through the knowing, the staying, the almost, the last signal — until later was the only word left to say.",
+    "Love that kept whispering \"later,\" while the light kept slipping through our hands — until silence learned the word better than we ever did.",
   accent: "#C7D0D8",
   heroCoverSrc: "/releases/wlbn-album.png",
   tracks: [
