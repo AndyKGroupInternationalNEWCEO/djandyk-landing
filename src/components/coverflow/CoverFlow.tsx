@@ -65,10 +65,34 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
   const [isExpanding, setIsExpanding] = useState(false);
   const [isNarrow, setIsNarrow] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [fineHover, setFineHover] = useState(false);
   const isAnimatingRef = useRef(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef<number | null>(null);
   const collapseTimerRef = useRef<number | null>(null);
+
+  // Mouse-parallax tilt on the carousel band — direct DOM write on each
+  // mousemove, smoothed by a CSS transition rather than a requestAnimationFrame
+  // loop (rAF gets throttled/paused in backgrounded or unfocused tabs, which
+  // would silently kill the effect for anyone who isn't actively looking at
+  // the tab). Purely additive on top of the existing offset/rotateY carousel
+  // transform on each CoverFlowSlide — this tilts the whole 3D scene, the
+  // slides keep animating their own position within it exactly as before.
+  const bandInnerRef = useRef<HTMLDivElement>(null);
+  function handleBandMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    if (!fineHover || reducedMotion) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    if (bandInnerRef.current) {
+      const tiltX = Math.max(-4, Math.min(4, y * -7));
+      const tiltY = Math.max(-4, Math.min(4, x * 7));
+      bandInnerRef.current.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    }
+  }
+  function handleBandMouseLeave() {
+    if (bandInnerRef.current) bandInnerRef.current.style.transform = "";
+  }
 
   // --- Shared audio player. Lives here (not inside a panel) so playback
   // keeps going — as a mini player — when the user closes the expanded
@@ -113,15 +137,20 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
   useEffect(() => {
     const mqNarrow = window.matchMedia("(max-width: 1023px)");
     const mqMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mqHover = window.matchMedia("(hover: hover) and (pointer: fine)");
     const updateNarrow = () => setIsNarrow(mqNarrow.matches);
     const updateMotion = () => setReducedMotion(mqMotion.matches);
+    const updateHover = () => setFineHover(mqHover.matches);
     updateNarrow();
     updateMotion();
+    updateHover();
     mqNarrow.addEventListener("change", updateNarrow);
     mqMotion.addEventListener("change", updateMotion);
+    mqHover.addEventListener("change", updateHover);
     return () => {
       mqNarrow.removeEventListener("change", updateNarrow);
       mqMotion.removeEventListener("change", updateMotion);
+      mqHover.removeEventListener("change", updateHover);
     };
   }, []);
 
@@ -357,8 +386,14 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
     <div
       className="relative"
       style={{ height: isNarrow ? 340 : 520, perspective: 1400, overflow: "hidden" }}
+      onMouseMove={handleBandMouseMove}
+      onMouseLeave={handleBandMouseLeave}
     >
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div
+        ref={bandInnerRef}
+        className="absolute inset-0 flex items-center justify-center"
+        style={{ transformStyle: "preserve-3d", transition: "transform 350ms cubic-bezier(0.16,1,0.3,1)" }}
+      >
         {tracks.map((track, i) => (
           <CoverFlowSlide
             key={track.slug}

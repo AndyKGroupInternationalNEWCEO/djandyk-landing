@@ -630,3 +630,65 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .stage-fade-in { animation: none; }
 }
+
+/* ===== DO NOT DISTURB — AFTER HOURS JUKEBOX ===== */
+@keyframes jukeboxSweep {
+  0%   { transform: translate(-60%, -60%) rotate(20deg); opacity: 0; }
+  8%   { opacity: 0.5; }
+  35%  { opacity: 0.5; }
+  50%  { transform: translate(60%, 60%) rotate(20deg); opacity: 0; }
+  100% { transform: translate(60%, 60%) rotate(20deg); opacity: 0; }
+}
+
+.jukebox-sweep {
+  animation: jukeboxSweep 9s ease-in-out infinite;
+}
+
+@keyframes jukeboxGlowPulse {
+  0%, 100% { box-shadow: 0 0 32px rgba(214, 96, 143, 0.12), 0 0 18px rgba(201, 162, 39, 0.16); }
+  50%      { box-shadow: 0 0 44px rgba(214, 96, 143, 0.2), 0 0 26px rgba(201, 162, 39, 0.24); }
+}
+
+.jukebox-glow-playing {
+  animation: jukeboxGlowPulse 3.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jukebox-sweep { animation: none; opacity: 0; }
+  .jukebox-glow-playing { animation: none; box-shadow: 0 0 32px rgba(214, 96, 143, 0.12), 0 0 18px rgba(201, 162, 39, 0.16); }
+}
+
+/* Vertical volume slider — a horizontal <input type=range> rotated -90deg */
+.jukebox-volume {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+.jukebox-volume::-webkit-slider-runnable-track {
+  height: 3px;
+  background: linear-gradient(90deg, rgba(201, 162, 39, 0.85), rgba(201, 162, 39, 0.25));
+  border-radius: 999px;
+}
+.jukebox-volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  margin-top: -5px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #f0d27a, #c9a227 70%);
+  box-shadow: 0 0 6px rgba(201, 162, 39, 0.6), 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+.jukebox-volume::-moz-range-track {
+  height: 3px;
+  background: linear-gradient(90deg, rgba(201, 162, 39, 0.85), rgba(201, 162, 39, 0.25));
+  border-radius: 999px;
+}
+.jukebox-volume::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border: none;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #f0d27a, #c9a227 70%);
+  box-shadow: 0 0 6px rgba(201, 162, 39, 0.6), 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
