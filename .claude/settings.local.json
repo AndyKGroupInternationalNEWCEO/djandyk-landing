@@ -39,7 +39,15 @@
       "Bash(npm ls *)",
       "Bash(vercel whoami *)",
       "Bash(vercel link *)",
-      "Bash(vercel *)"
+      "Bash(vercel *)",
+      "Bash(rm -rf /private/tmp/claude-501/-Users-andrejkneisl-djandyk-landing/82587e12-4210-4f00-9982-6c34625d5af1/scratchpad/borrowed-sunshine-zip)",
+      "Bash(ffmpeg -y -i \"/Users/andrejkneisl/Desktop/DJ Andy’K – Back to Eurodance. 2026 2/4.No Control feat. Ritta & J-Jack_master.wav\" -codec:a libmp3lame -b:a 192k /Users/andrejkneisl/djandyk-landing/public/audio/no-control.mp3)",
+      "Bash(/usr/bin/curl -sI \"https://www.djandykofficial.com/\")",
+      "Bash(/usr/bin/curl -s \"https://www.djandykofficial.com/borrowed-sunshine\" -o /tmp/bs-page.html)",
+      "Read(//tmp/**)",
+      "Bash(/usr/bin/curl -s \"https://www.djandykofficial.com/back-to-eurodance\" -o /tmp/e-page.html)",
+      "Bash(rm -f /tmp/bs-page.html /tmp/e-page.html)",
+      "Bash(/usr/bin/curl -s \"https://www.djandykofficial.com/\" -o /tmp/live-home.html -D /tmp/live-home-headers.txt)"
     ]
   }
 }
