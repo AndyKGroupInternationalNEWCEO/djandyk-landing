@@ -95,11 +95,8 @@ export const MONTHLY_TOP10_COLLECTIONS: MonthlyTop10Collection[] = [
         title: "Blame The DJ",
         featuredArtist: "Juliana Ritter",
         artwork: "/releases/blame-the-dj.png",
-        // No audio file exists yet for this Do Not Disturb track —
-        // intentionally left without an audioPreview rather than
-        // inventing or reusing an unrelated one.
-        releaseLink:
-          "https://soundcloud.com/djandyk_2024/sets/do-not-disturb?si=58acd55f3e454217b5d57763b09a9515&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+        audioPreview: "/audio/blame-the-dj.mp3",
+        releaseLink: "/do-not-disturb",
       },
       {
         rank: 10,
