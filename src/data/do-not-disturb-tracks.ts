@@ -31,9 +31,12 @@ export const doNotDisturbAlbum = {
   genre: "Groovy House / Funky Tech House",
   description:
     "One unforgettable night, first drink to last confession, told in groovy house and funky tech house.",
+  storyHeadline: "One hotel. One night.",
+  storyHeadlineAccent: "Seven decisions no one plans to explain.",
   storyIntro:
-    "DO NOT DISTURB is not seven separate club records. It is the chronology of one after-hours night, told through alternating voices and held together by a hotel that sees everything and reports nothing. A woman arrives intending to stay for one drink. The DJ pushes the room beyond last call. A man opens a tab. Their looks become an agreement: no screenshots, no proof, no confession. They leave the bar, press the wrong elevator button and decide not to correct it. Morning enters through the curtains and an impatient telephone, but checkout is postponed. In daylight, the woman understands that the halo at the bar was not stolen — she chose to leave it there. By the final track, she no longer blames the DJ and no longer owes anyone an explanation. The door closes. What remains is not evidence. It is memory.",
+    "On a rain-soaked night above the city, a woman enters a rooftop hotel bar promising herself one drink before going home. A stranger offers the next round, and what begins as a playful exchange becomes a secret neither of them intends to explain. With their phones turned face down, they leave the bar and step into an elevator, where one deliberately pressed wrong button changes the rest of the night. Morning finds them behind a DO NOT DISTURB sign while reception demands an answer. But before she finally leaves the hotel, the woman realizes the night did not take anything from her. It gave her a memory, a new confidence and one final decision: to walk into daylight owing no one an explanation.",
   storyPullQuote: "What remains is not evidence. It is memory.",
+  bookletUrl: "/downloads/do-not-disturb-album-booklet.pdf",
   accent: "#C9A227",
   heroCoverSrc: "/releases/do-not-disturb-album-cover.png",
   backgroundSrc: "/releases/do-not-disturb-jukebox-bg.png",

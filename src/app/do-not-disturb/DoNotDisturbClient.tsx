@@ -110,6 +110,38 @@ export default function DoNotDisturbClient() {
             </h1>
           </section>
 
+          {/* Album story */}
+          <section
+            className="max-w-[560px] mx-auto text-center mb-12 rounded-2xl p-6"
+            style={{
+              background: "rgba(10,10,12,0.6)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              backdropFilter: "blur(6px)",
+            }}
+          >
+            <span
+              className="text-[10px] font-mono uppercase tracking-[0.35em] mb-3 block"
+              style={{ color: doNotDisturbAlbum.accent }}
+            >
+              The Story
+            </span>
+            <h2 className="text-lg sm:text-xl font-bold mb-1" style={{ color: "#f0f6fc" }}>
+              {doNotDisturbAlbum.storyHeadline}
+            </h2>
+            <p className="text-base sm:text-lg font-light italic mb-5" style={{ color: "#D6608F" }}>
+              {doNotDisturbAlbum.storyHeadlineAccent}
+            </p>
+            <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.75)" }}>
+              {doNotDisturbAlbum.storyIntro}
+            </p>
+            <p
+              className="text-sm italic pt-4 border-t"
+              style={{ color: doNotDisturbAlbum.accent, borderColor: "rgba(255,255,255,0.08)" }}
+            >
+              {doNotDisturbAlbum.storyPullQuote}
+            </p>
+          </section>
+
           {/* Dock — hover to preview, click to jump to a track */}
           <section className="max-w-[560px] mx-auto mb-8">
             <div className="flex items-end justify-center gap-3 sm:gap-4 px-2">
@@ -309,15 +341,30 @@ export default function DoNotDisturbClient() {
 
           {/* Listen links */}
           <section className="max-w-[520px] mx-auto text-center">
-            <a
-              href={SOUNDCLOUD_PLAYLIST_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold mb-4 transition-transform hover:-translate-y-0.5"
-              style={{ background: "#ff5500", color: "#0d0d0f" }}
-            >
-              ▶ Listen on SoundCloud
-            </a>
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-4">
+              <a
+                href={SOUNDCLOUD_PLAYLIST_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-transform hover:-translate-y-0.5"
+                style={{ background: "#ff5500", color: "#0d0d0f" }}
+              >
+                ▶ Listen on SoundCloud
+              </a>
+              <a
+                href={doNotDisturbAlbum.bookletUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold border transition-all duration-200 hover:-translate-y-0.5"
+                style={{
+                  borderColor: `${doNotDisturbAlbum.accent}55`,
+                  color: doNotDisturbAlbum.accent,
+                  background: "rgba(0,0,0,0.4)",
+                }}
+              >
+                Download Album Booklet (PDF)
+              </a>
+            </div>
 
             <div className="flex flex-wrap items-center justify-center gap-2 mt-2">
               {STREAMING_PLATFORMS.map((platform) => (
