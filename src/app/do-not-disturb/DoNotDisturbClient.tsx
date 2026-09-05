@@ -16,6 +16,38 @@ function formatTime(seconds: number): string {
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
+function PrevIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+      <path d="M6 6h2v12H6zm3.5 6 8.5 6V6z" />
+    </svg>
+  );
+}
+
+function NextIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+      <path d="M16 6h2v12h-2zM6 6l8.5 6L6 18z" />
+    </svg>
+  );
+}
+
+function PlayIcon({ className = "w-6 h-6 ml-0.5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M7 5v14l12-7z" />
+    </svg>
+  );
+}
+
+function PauseIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+      <path d="M7 5h4v14H7zm6 0h4v14h-4z" />
+    </svg>
+  );
+}
+
 export default function DoNotDisturbClient() {
   const tracks = doNotDisturbAlbum.tracks;
   const [trackIndex, setTrackIndex] = useState(0);
@@ -229,26 +261,26 @@ export default function DoNotDisturbClient() {
                 <button
                   onClick={() => goRelative(-1)}
                   aria-label="Previous track"
-                  className="text-2xl transition-transform hover:-translate-y-0.5"
+                  className="flex items-center justify-center transition-transform hover:-translate-y-0.5"
                   style={{ color: "rgba(255,255,255,0.7)" }}
                 >
-                  ⏮
+                  <PrevIcon />
                 </button>
                 <button
                   onClick={togglePlay}
                   aria-label={isPlaying ? "Pause" : "Play"}
-                  className="w-14 h-14 rounded-full flex items-center justify-center text-xl transition-transform hover:scale-105"
+                  className="w-14 h-14 rounded-full flex items-center justify-center transition-transform hover:scale-105"
                   style={{ background: track.accent, color: "#0d0d0f" }}
                 >
-                  {isPlaying ? "❚❚" : "▶"}
+                  {isPlaying ? <PauseIcon /> : <PlayIcon />}
                 </button>
                 <button
                   onClick={() => goRelative(1)}
                   aria-label="Next track"
-                  className="text-2xl transition-transform hover:-translate-y-0.5"
+                  className="flex items-center justify-center transition-transform hover:-translate-y-0.5"
                   style={{ color: "rgba(255,255,255,0.7)" }}
                 >
-                  ⏭
+                  <NextIcon />
                 </button>
               </div>
             </div>
@@ -349,7 +381,7 @@ export default function DoNotDisturbClient() {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-transform hover:-translate-y-0.5"
                 style={{ background: "#ff5500", color: "#0d0d0f" }}
               >
-                ▶ Listen on SoundCloud
+                <PlayIcon className="w-4 h-4" /> Listen on SoundCloud
               </a>
               <a
                 href={doNotDisturbAlbum.bookletUrl}
