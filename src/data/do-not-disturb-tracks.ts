@@ -51,7 +51,7 @@ export const doNotDisturbAlbum = {
       releaseDate: "2026-07-12",
       quote: "I came for one drink. The DJ had other plans.",
       story:
-        "She enters the night with a harmless promise: one drink, one song, then home. The room has other ideas. Each transition erases another boundary, and the DJ becomes the perfect excuse for every decision she is already willing to make. Her phone dies. Her standards follow. By the final drop, tomorrow has become someone else's problem. She still calls it the DJ's fault — but the smile behind the accusation says otherwise.",
+        "A woman arrives at a rooftop bar planning to stay for only one drink. But when the DJ changes the music and a mysterious stranger catches her attention, her quiet evening begins to slip out of control. Before midnight, leaving is no longer part of the plan.",
       outcome: "The bass wins. At the bar, someone else is already opening a tab.",
       bpm: 128,
       key: "F minor",
@@ -84,7 +84,7 @@ export const doNotDisturbAlbum = {
       releaseDate: "2026-07-19",
       quote: "Close the bill? Not yet.",
       story:
-        "At the bar, his voice takes over. He does not count drinks, costs or consequences; he simply keeps the tab open. A glass touches another glass and the evening stops being two separate stories. Their exchange is casual, but the decision underneath it is not. Every new order buys them more time, and every beat makes leaving less likely. When the bartender offers to close the bill, the answer keeps both the tab and the night alive.",
+        "A confident stranger offers to pay for her next drink. What begins as a playful conversation at the bar soon turns into a dangerous attraction. As the glasses keep arriving, both of them realize that neither wants the night to end.",
       outcome: "The bill stays open, but the phones turn face down.",
       bpm: 128,
       key: "F minor",
@@ -118,7 +118,7 @@ export const doNotDisturbAlbum = {
       releaseDate: "2026-07-12",
       quote: "I know what happened. And so do you.",
       story:
-        "The flirtation becomes an agreement. Screens go dark, names stay outside and neither person asks for a version of the night that can survive daylight. There is perfume on a black shirt, a shared look and enough truth between them to make evidence unnecessary. The track turns privacy into complicity: if the night is guilty, both of them are. Nothing is denied. It is simply kept offline, where only the room and the people inside it know the full story.",
+        "With their phones turned face down, the two strangers make an unspoken agreement: no photographs, no questions and no evidence. Away from curious eyes, they allow the night to become their private secret. Whatever happens next will belong only to them.",
       outcome: "With the evidence erased, only the elevator remembers where they went.",
       bpm: 128,
       key: "F minor",
@@ -166,7 +166,7 @@ export const doNotDisturbAlbum = {
       releaseDate: "2026-08-02",
       quote: "Wrong floor. Right mistake.",
       story:
-        "The two voices finally meet in the same frame. She presses five although she lives on three, and neither of them tries very hard to correct the mistake. The elevator becomes a sealed room between the public night below and the private decision above. Every question is answered with another question; every warning sounds more like permission. When the doors open, the floor is technically wrong. The room waiting beyond it is exactly where both of them intended to arrive.",
+        "They enter the hotel elevator together, but she deliberately selects the wrong floor. During the slow ride upward, their flirtation becomes a decision neither of them wants to stop. When the doors finally open, one last choice waits on the other side.",
       outcome: "The doors open on the wrong floor, and morning finds them in the right room.",
       bpm: 128,
       key: "F major / F minor modal blend",
@@ -213,7 +213,7 @@ export const doNotDisturbAlbum = {
       releaseDate: "2026-08-09",
       quote: "Then make it twelve.",
       story:
-        "Morning enters without permission: sunlight through the curtains, shoes by the door and a hotel telephone insisting that the night is over. Reception wants a departure time; she wants another hour. The room is no longer glamorous, but it is honest — cold coffee, white sheets, a wristband and someone else's shirt. She refuses to turn the moment into a romance or a regret. Checkout can wait. For as long as the rhythm survives inside the room, the outside world has no authority.",
+        "Morning arrives in a hotel room filled with scattered clothes, cold coffee and memories of the night before. Reception repeatedly demands that the room be vacated, but she refuses to let reality back inside. For one more hour, the outside world will have to wait.",
       outcome: "When the phone finally stops ringing, the objects left behind begin telling the night back to her.",
       bpm: 128,
       key: "F minor",
@@ -265,7 +265,7 @@ export const doNotDisturbAlbum = {
       releaseDate: "2026-08-16",
       quote: "Same old angel. New little scar.",
       story:
-        "In the morning light, the empty glass and lipstick reconstruct the night. What first sounded like an accident now becomes a choice. Her halo was not stolen, misplaced or broken; she deliberately left it at the bar when behaving stopped being interesting. The memory carries a small scar, but not shame. For the first time, she no longer blames the DJ, the drinks or the person beside her. She claims the pleasure, the distance travelled and the version of herself that walked too far.",
+        "While searching the room for her missing shoe, she discovers a lipstick-stained glass that brings the entire night rushing back. She realizes that nothing was stolen from her—she willingly left her innocence at the rooftop bar. Now she must decide whether to regret the woman she became or finally accept her.",
       outcome: "She leaves the halo where it fell, fixes her lipstick and walks out without an apology.",
       bpm: 128,
       key: "Bb minor",
@@ -310,7 +310,7 @@ export const doNotDisturbAlbum = {
       releaseDate: "2026-08-23",
       quote: "You wanted a story. You got a memory.",
       story:
-        "She returns to the world looking exactly like someone who has stopped asking for permission. The woman who entered blaming the DJ now owns the room, the stare and every decision that brought her here. Questions receive no interview. Judgement receives a smile. The night has not given her a moral or an explanation; it has given her a memory and the confidence to leave it unedited. The hotel door closes behind her. There is no receipt, no confession and no story owed to anyone.",
+        "Wearing last night's dress and someone else's jacket, she walks through the hotel lobby without apology. The night has changed her, but she owes nobody an explanation for what happened. As she disappears into the waking city, she leaves behind only one final message: “You wanted a story. You got a memory.”",
       outcome: "The door closes. The story disappears; the memory remains.",
       bpm: 128,
       key: "F minor",
