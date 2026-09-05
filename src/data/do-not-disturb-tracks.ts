@@ -1,7 +1,6 @@
-// "Do Not Disturb" uses its own door-hanger swipe-stack layout, not the
-// shared Cover Flow Track/Album system — the cards are styled after a
-// hotel "Do Not Disturb" door tag, so they get a lightweight track shape
-// tailored to that instead of reusing src/types/album.ts.
+// "Do Not Disturb" gets its own simple jukebox player layout — not the
+// shared Cover Flow Track/Album system — so it uses a lightweight track
+// shape tailored to that instead of reusing src/types/album.ts.
 
 export interface DNDTrack {
   n: number;
@@ -14,14 +13,15 @@ export interface DNDTrack {
   coverUrl: string;
   audioSrc: string;
   releaseDate: string;
-  /** Not yet supplied for any track — the Song Info drawer omits any of
-   * these that are undefined rather than inventing a value. */
-  story?: string;
-  bpm?: number;
-  key?: string;
-  chords?: string;
-  /** Clean lyric stanzas — no [Verse]/[Drop]/etc. tags. Not yet supplied. */
-  lyrics?: string[][];
+  quote: string;
+  story: string;
+  outcome: string;
+  bpm: number;
+  key: string;
+  coreHarmony: string;
+  vocal: string;
+  /** Clean lyric stanzas — no [Verse]/[Drop]/etc. tags. */
+  lyrics: string[][];
 }
 
 export const doNotDisturbAlbum = {
@@ -31,8 +31,12 @@ export const doNotDisturbAlbum = {
   genre: "Groovy House / Funky Tech House",
   description:
     "One unforgettable night, first drink to last confession, told in groovy house and funky tech house.",
+  storyIntro:
+    "DO NOT DISTURB is not seven separate club records. It is the chronology of one after-hours night, told through alternating voices and held together by a hotel that sees everything and reports nothing. A woman arrives intending to stay for one drink. The DJ pushes the room beyond last call. A man opens a tab. Their looks become an agreement: no screenshots, no proof, no confession. They leave the bar, press the wrong elevator button and decide not to correct it. Morning enters through the curtains and an impatient telephone, but checkout is postponed. In daylight, the woman understands that the halo at the bar was not stolen — she chose to leave it there. By the final track, she no longer blames the DJ and no longer owes anyone an explanation. The door closes. What remains is not evidence. It is memory.",
+  storyPullQuote: "What remains is not evidence. It is memory.",
   accent: "#C9A227",
   heroCoverSrc: "/releases/do-not-disturb-album-cover.png",
+  backgroundSrc: "/releases/do-not-disturb-jukebox-bg.png",
   tracks: [
     {
       n: 1,
@@ -45,6 +49,27 @@ export const doNotDisturbAlbum = {
       coverUrl: "/releases/blame-the-dj.png",
       audioSrc: "/audio/blame-the-dj.mp3",
       releaseDate: "2026-07-12",
+      quote: "I came for one drink. The DJ had other plans.",
+      story:
+        "She enters the night with a harmless promise: one drink, one song, then home. The room has other ideas. Each transition erases another boundary, and the DJ becomes the perfect excuse for every decision she is already willing to make. Her phone dies. Her standards follow. By the final drop, tomorrow has become someone else's problem. She still calls it the DJ's fault — but the smile behind the accusation says otherwise.",
+      outcome: "The bass wins. At the bar, someone else is already opening a tab.",
+      bpm: 128,
+      key: "F minor",
+      coreHarmony: "Fm - Db - Eb - Cm",
+      vocal: "Female lead / spoken",
+      lyrics: [
+        ["Don't blame me.", "Blame the DJ.", "Blame...", "the DJ..."],
+        ["One more drink", "turned into three", "One more song", "turned into me"],
+        ["You said", "\"Let's go home\"", "Then the bass said", "\"No.\""],
+        ["Blame the DJ", "Not my decisions", "Blame the DJ", "Bad conditions"],
+        ["Blame the DJ", "Blame the DJ", "If I'm dancing", "I'm not listening", "My phone died", "My standards too"],
+        ["The lights got lower", "So did you", "I said", "\"This is the last one\"", "The DJ smiled.", "Liar."],
+        ["One more track", "One more shot", "One more reason", "Why I'm not...", "going home."],
+        ["Blame the DJ", "Blame the DJ", "Not my fault", "It's a good playlist"],
+        ["No regrets.", "Only good transitions.", "Turn it louder.", "Blame", "Blame"],
+        ["Blame", "the DJ", "Blame the DJ", "If tomorrow hurts", "That's tomorrow's problem."],
+        ["I came for one drink.", "The DJ had other plans."],
+      ],
     },
     {
       n: 2,
@@ -57,6 +82,28 @@ export const doNotDisturbAlbum = {
       coverUrl: "/releases/put-it-on-my-tab.png",
       audioSrc: "/audio/put-it-on-my-tab.mp3",
       releaseDate: "2026-07-19",
+      quote: "Close the bill? Not yet.",
+      story:
+        "At the bar, his voice takes over. He does not count drinks, costs or consequences; he simply keeps the tab open. A glass touches another glass and the evening stops being two separate stories. Their exchange is casual, but the decision underneath it is not. Every new order buys them more time, and every beat makes leaving less likely. When the bartender offers to close the bill, the answer keeps both the tab and the night alive.",
+      outcome: "The bill stays open, but the phones turn face down.",
+      bpm: 128,
+      key: "F minor",
+      coreHarmony: "Fm tonic vamp - C / Cm turnaround",
+      vocal: "Male lead / bartender",
+      lyrics: [
+        ["Another one?", "Put it on my tab.", "Put it on my tab", "Put it on my tab"],
+        ["One more drink", "won't change a thing", "One more song", "might change everything"],
+        ["Your glass touched mine", "That's where it started", "Nobody noticed", "We already departed"],
+        ["Put it on my tab", "Don't kill the mood", "Put it on my tab", "We're doing good"],
+        ["Put it on my tab", "Put it on my tab", "Tomorrow can complain", "Tonight can spend", "Cash is boring"],
+        ["Cards are easy", "Bad ideas", "Come surprisingly cheap", "You smiled once", "I ordered two"],
+        ["Not because I had to", "Because I wanted to", "Wanted to...", "No calculator", "No discussion"],
+        ["Just another round", "And bad judgement", "You sure?", "Absolutely."],
+        ["Put it on my tab", "Put it on my tab", "Champagne later", "Questions never"],
+        ["Some people collect memories.", "Some people collect receipts.", "I collect neither.", "Not tonight."],
+        ["Put it", "Put it", "Put it", "On my tab", "Put it on my tab", "Tomorrow can complain", "Tonight belongs to us"],
+        ["Close the bill?", "...", "Not yet."],
+      ],
     },
     {
       n: 3,
@@ -69,6 +116,42 @@ export const doNotDisturbAlbum = {
       coverUrl: "/releases/no-receipts.png",
       audioSrc: "/audio/no-receipts.mp3",
       releaseDate: "2026-07-12",
+      quote: "I know what happened. And so do you.",
+      story:
+        "The flirtation becomes an agreement. Screens go dark, names stay outside and neither person asks for a version of the night that can survive daylight. There is perfume on a black shirt, a shared look and enough truth between them to make evidence unnecessary. The track turns privacy into complicity: if the night is guilty, both of them are. Nothing is denied. It is simply kept offline, where only the room and the people inside it know the full story.",
+      outcome: "With the evidence erased, only the elevator remembers where they went.",
+      bpm: 128,
+      key: "F minor",
+      coreHarmony: "Fm - Bbm - Db - Fm",
+      vocal: "Deep male lead",
+      lyrics: [
+        ["No receipts", "no screenshots", "no fucking explanation", "You were there"],
+        ["No receipts", "no receipts", "no receipts"],
+        ["You walked in clean", "with a look like trouble", "two drinks later", "we were seeing double"],
+        ["No small talk", "no long scene", "just your perfume", "on my black tee"],
+        ["I don't ask", "you don't tell", "we both know", "this goes well"],
+        ["This goes well", "Keep the story offline", "leave the names outside", "what happens in the low light", "doesn't need a headline"],
+        ["No proof", "no trace", "no pretty little case", "just the sound of the room", "and the look on your face"],
+        ["No receipts", "we don't need proof", "I know what the fuck happened", "and so do you"],
+        ["No receipts", "nothing to review", "if the night was guilty", "then we were too", "We were too"],
+        ["No proof", "no trace", "low light", "same place", "No fucking receipts"],
+        ["No receipts", "no receipts", "No fucking proof", "No receipts", "no receipts"],
+        ["I know", "and you know too", "You know too", "Your phone face down", "mine on silent", "whole room loud", "but we stayed private"],
+        ["No good reason", "no bad excuse", "just one table", "and a dangerous view"],
+        ["You smiled once", "I lost twice", "some shit happens", "when the timing is right", "Timing is right"],
+        ["Keep the story offline", "leave the names outside", "what happens in the low light", "doesn't need a headline"],
+        ["No proof", "no trace", "no pretty little case", "just the sound of the room", "and the look on your face"],
+        ["No receipts", "we don't need proof", "I know what the fuck happened", "and so do you"],
+        ["No receipts", "nothing to review", "if the night was guilty", "then we were too", "Guilty too"],
+        ["No receipts", "no receipts", "No fucking proof", "No receipts", "no receipts"],
+        ["I know", "and you know too", "You know too", "Delete the question", "keep the lesson", "not every moment", "needs confession"],
+        ["No text back", "no late call", "no fake sorry", "no shame at all", "No confession"],
+        ["No proof", "no trace", "low light", "same place", "(x2)"],
+        ["No fucking receipts", "No receipts", "we don't need proof", "I know what the fuck happened", "and so do you"],
+        ["No receipts", "nothing to review", "if the night was guilty", "then we were too"],
+        ["No receipts", "no receipts", "No fucking proof", "No receipts", "no receipts"],
+        ["I know", "and you know too", "No receipts", "no receipts", "No receipts", "no screenshots", "no fucking explanation", "You were there"],
+      ],
     },
     {
       n: 4,
@@ -81,6 +164,41 @@ export const doNotDisturbAlbum = {
       coverUrl: "/releases/wrong-floor.png",
       audioSrc: "/audio/wrong-floor.mp3",
       releaseDate: "2026-08-02",
+      quote: "Wrong floor. Right mistake.",
+      story:
+        "The two voices finally meet in the same frame. She presses five although she lives on three, and neither of them tries very hard to correct the mistake. The elevator becomes a sealed room between the public night below and the private decision above. Every question is answered with another question; every warning sounds more like permission. When the doors open, the floor is technically wrong. The room waiting beyond it is exactly where both of them intended to arrive.",
+      outcome: "The doors open on the wrong floor, and morning finds them in the right room.",
+      bpm: 128,
+      key: "F major / F minor modal blend",
+      coreHarmony: "F / Fm - Bbm - Db - C",
+      vocal: "Male / female dialogue",
+      lyrics: [
+        ["Wrong floor.", "Right mistake.", "Wrong floor", "right mistake"],
+        ["Wrong door", "right place", "You pressed five", "I live on three", "Then why you smiling?", "Don't ask me"],
+        ["You going up?", "Maybe down", "You got plans?", "Not right now"],
+        ["Fifth floor blinking", "Your hand on the rail", "No cameras working", "Convenient as hell"],
+        ["Wrong floor", "right mistake", "wrong door", "right place"],
+        ["Wrong floor", "right mistake", "we both know", "we came this way"],
+        ["This is not my floor", "Then why are you staying?", "This is not my problem", "Then why are you smiling?"],
+        ["Wrong floor", "right place", "Wrong door", "right mistake"],
+        ["Don't press lobby", "don't press stop", "If we go down", "we still end up on top"],
+        ["You look expensive", "You look late", "You look like trouble", "You look great"],
+        ["This is stupid", "Probably true", "I should leave", "After you"],
+        ["Wrong floor", "right place", "Wrong door", "right mistake"],
+        ["Don't press lobby", "don't press stop", "Not yet", "Too late"],
+        ["Wrong floor", "right mistake", "wrong door", "right place"],
+        ["Wrong floor", "right mistake", "we both know", "we came this way"],
+        ["Wrong floor", "right mistake", "same lift", "new headache"],
+        ["Wrong floor", "right mistake", "don't fix it", "too late"],
+        ["Wrong floor", "right place", "Wrong door", "right mistake"],
+        ["Don't press lobby", "don't press stop", "If we go down", "we still end up on top"],
+        ["This is not my floor", "I know", "This is not my problem", "Not yet"],
+        ["You always this calm?", "Only when I'm wrong", "And are you wrong?", "Completely."],
+        ["Wrong floor", "Right mistake", "Wrong floor", "Right mistake", "Wrong door", "Right place", "Don't press lobby", "Don't press stop"],
+        ["If we go down", "we still end up on top", "Wrong floor", "right mistake", "wrong door", "right place"],
+        ["Don't press lobby", "don't press stop", "If we go down", "we still end up on top"],
+        ["Wrong floor.", "Right mistake.", "Going down?", "Not yet."],
+      ],
     },
     {
       n: 5,
@@ -93,6 +211,46 @@ export const doNotDisturbAlbum = {
       coverUrl: "/releases/late-check-out.png",
       audioSrc: "/audio/late-check-out.mp3",
       releaseDate: "2026-08-09",
+      quote: "Then make it twelve.",
+      story:
+        "Morning enters without permission: sunlight through the curtains, shoes by the door and a hotel telephone insisting that the night is over. Reception wants a departure time; she wants another hour. The room is no longer glamorous, but it is honest — cold coffee, white sheets, a wristband and someone else's shirt. She refuses to turn the moment into a romance or a regret. Checkout can wait. For as long as the rhythm survives inside the room, the outside world has no authority.",
+      outcome: "When the phone finally stops ringing, the objects left behind begin telling the night back to her.",
+      bpm: 128,
+      key: "F minor",
+      coreHarmony: "Fm - Bbm - Db - Eb",
+      vocal: "Female lead / receptionist",
+      lyrics: [
+        ["Good morning, Miss.", "This is reception.", "Check-out was at eleven."],
+        ["Surely fucking not.", "Not ready."],
+        ["Late check-out", "late check-out", "late check-out"],
+        ["Sun through the curtains", "shoes by the door", "last night's lipstick", "still on the floor"],
+        ["No explanation", "no perfect plan", "just a hotel mirror", "and your wristband"],
+        ["Coffee gone cold", "playlist still loud", "we said one drink", "look at us now"],
+        ["Look at us now", "Don't call reception", "don't kill the mood", "we still got rhythm", "left in the room"],
+        ["No shame", "no rush", "no \"what are we now\"", "just one more hour", "and a late check-out"],
+        ["Late check-out", "we're not leaving yet", "last night's trouble", "is my favorite regret"],
+        ["Late check-out", "let the morning wait", "if this is a mistake", "it got excellent taste"],
+        ["Excellent taste", "Do not disturb", "don't ask why", "same old room", "brand new lie"],
+        ["Surely fucking not.", "Late check-out", "late check-out"],
+        ["Do not disturb", "do not disturb", "Late check-out", "late check-out", "Let the morning wait", "Let it wait"],
+        ["Your shirt looks better", "on my side of the bed", "I should be leaving", "but I ordered instead"],
+        ["No big romance", "no movie scene", "just white sheets", "and a little caffeine"],
+        ["Elevator waiting", "but I lost my shoes", "some nights end early", "not the ones with you"],
+        ["Not with you", "Don't call reception", "don't kill the mood", "we still got rhythm", "left in the room"],
+        ["No shame", "no rush", "no \"what are we now\"", "just one more hour", "and a late check-out"],
+        ["Late check-out", "we're not leaving yet", "last night's trouble", "is my favorite regret"],
+        ["Late check-out", "let the morning wait", "if this is a mistake", "it got excellent taste"],
+        ["Favorite regret", "Late check-out", "late check-out", "Do not disturb", "do not disturb"],
+        ["Miss, this is your final reminder.", "You need to check out now."],
+        ["Then make it twelve.", "Make it twelve."],
+        ["Do not disturb", "don't ask why", "same old room", "brand new lie"],
+        ["Do not disturb", "don't ask why", "late check-out", "one more time"],
+        ["Late check-out", "we're not leaving yet", "last night's trouble", "is my favorite regret"],
+        ["Late check-out", "let the morning wait", "if this is a mistake", "it got excellent taste"],
+        ["Late check-out", "late check-out", "Do not disturb", "do not disturb"],
+        ["Late check-out", "late check-out", "Let the morning wait"],
+        ["Late check-out", "late check-out", "Room service called", "but I'm not ready.", "Surely fucking not."],
+      ],
     },
     {
       n: 6,
@@ -105,6 +263,39 @@ export const doNotDisturbAlbum = {
       coverUrl: "/releases/i-left-my-halo-at-the-bar.png",
       audioSrc: "/audio/i-left-my-halo-at-the-bar.mp3",
       releaseDate: "2026-08-16",
+      quote: "Same old angel. New little scar.",
+      story:
+        "In the morning light, the empty glass and lipstick reconstruct the night. What first sounded like an accident now becomes a choice. Her halo was not stolen, misplaced or broken; she deliberately left it at the bar when behaving stopped being interesting. The memory carries a small scar, but not shame. For the first time, she no longer blames the DJ, the drinks or the person beside her. She claims the pleasure, the distance travelled and the version of herself that walked too far.",
+      outcome: "She leaves the halo where it fell, fixes her lipstick and walks out without an apology.",
+      bpm: 128,
+      key: "Bb minor",
+      coreHarmony: "Bbm - Gb - Db - Fm",
+      vocal: "Female lead / whisper",
+      lyrics: [
+        ["I left my halo at the bar", "Don't look for me"],
+        ["Halo", "halo", "at the bar"],
+        ["Halo", "halo", "at the bar"],
+        ["I left my halo at the bar", "don't look for me", "I won't be far"],
+        ["I left my halo at the bar", "same old angel", "new little scar"],
+        ["I was behaving", "for almost an hour", "then the lights got soft", "and the music got louder"],
+        ["One bad joke", "two strong drinks", "three little reasons", "not to overthink"],
+        ["I said I'm fine", "that was a lie", "then the bass walked in", "and I lost my mind"],
+        ["Lost my mind", "I left my halo at the bar", "don't look for me", "I won't be far"],
+        ["I left my halo at the bar", "same old angel", "new little scar"],
+        ["No wings", "no shame", "same face", "new game", "Fuck being good"],
+        ["Halo", "halo", "at the bar", "Same old angel", "new little scar"],
+        ["Halo", "halo", "at the bar", "Don't look for me", "I won't be far"],
+        ["No wings tonight", "no holy light", "no saving face", "no acting right"],
+        ["No good girl", "no perfect line", "just a dirty little rhythm", "and a damn good time"],
+        ["Damn good time", "I left my halo at the bar", "don't blame me", "blame the stars"],
+        ["I left my halo at the bar", "I came in clean", "then went too far"],
+        ["Halo", "halo", "at the bar", "Too far", "too far", "too far"],
+        ["Halo", "halo", "at the bar", "Too far", "too far", "too far", "Too fucking far"],
+        ["I left my halo at the bar", "don't look for me", "I won't be far"],
+        ["Halo", "halo", "at the bar", "Same old angel", "new little scar"],
+        ["Halo", "halo", "at the bar", "I came in clean", "then went too far"],
+        ["I left my halo at the bar", "Fuck being good"],
+      ],
     },
     {
       n: 7,
@@ -117,6 +308,28 @@ export const doNotDisturbAlbum = {
       coverUrl: "/releases/too-pretty-to-explain.png",
       audioSrc: "/audio/too-pretty-to-explain.mp3",
       releaseDate: "2026-08-23",
+      quote: "You wanted a story. You got a memory.",
+      story:
+        "She returns to the world looking exactly like someone who has stopped asking for permission. The woman who entered blaming the DJ now owns the room, the stare and every decision that brought her here. Questions receive no interview. Judgement receives a smile. The night has not given her a moral or an explanation; it has given her a memory and the confidence to leave it unedited. The hotel door closes behind her. There is no receipt, no confession and no story owed to anyone.",
+      outcome: "The door closes. The story disappears; the memory remains.",
+      bpm: 128,
+      key: "F minor",
+      coreHarmony: "Fm - Db - Ab - Cm",
+      vocal: "Female lead / spoken",
+      lyrics: [
+        ["Relax.", "You don't have to understand me.", "No..."],
+        ["Walked in late", "like I owned the room", "everybody staring", "way too soon"],
+        ["Champagne glass", "red lipstick stain", "don't ask questions", "learn my name"],
+        ["Too pretty", "to explain", "Too expensive", "for your brain"],
+        ["Too pretty", "too pretty", "Too pretty", "to explain", "Too pretty", "too pretty"],
+        ["Don't ruin the moment.", "You keep talking", "I keep dancing", "You keep watching", "I keep laughing"],
+        ["No permission", "no apology", "I'm the problem", "apparently", "Apparently..."],
+        ["Don't ask me where I came from", "Don't ask me who I'm with", "If you're lucky", "I'll smile."],
+        ["Too pretty", "to explain", "Too pretty", "to behave", "Too pretty", "to explain", "Now get out of my way."],
+        ["No interviews.", "No explanations.", "No permission.", "No regrets.", "Smile.", "Too pretty"],
+        ["Too pretty", "Too pretty", "Too pretty", "to explain", "Too pretty", "to behave", "Too pretty", "to explain"],
+        ["Don't ruin the moment.", "You wanted a story.", "You got a memory."],
+      ],
     },
   ] satisfies DNDTrack[],
 };
