@@ -128,7 +128,7 @@ export default function Navbar() {
             onMouseLeave={handleMouseLeave}
           >
             <button
-              onClick={() => setPlatformsOpen(!platformsOpen)}
+              onClick={() => setPlatformsOpen(true)}
               className="flex items-center gap-1 hover:text-foreground transition-colors"
             >
               {t.nav.listenNow}

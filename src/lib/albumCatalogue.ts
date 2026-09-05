@@ -93,7 +93,7 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     genre: "Groovy House / Funky Tech House",
     description: "A Concept Album — one unforgettable night, first drink to last confession, told in groovy house and funky tech house.",
     completionDate: "2026-08-23",
-    href: "https://soundcloud.com/djandyk_2024/sets/do-not-disturb?si=58acd55f3e454217b5d57763b09a9515&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+    href: "/do-not-disturb",
     cover: "/releases/do-not-disturb-album-cover.png",
   },
   {
