@@ -272,7 +272,6 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
   };
 
   const openTrack = (index: number) => {
-    if (isAnimatingRef.current) return;
     const track = tracks[index];
     try {
       sessionStorage.setItem(`${album.slug}:lastTrack`, track.slug);
