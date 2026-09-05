@@ -414,11 +414,21 @@ export default function BorrowedSunshineClient({ initialSlug }: { initialSlug?: 
               Trance / Progressive Trance
             </p>
 
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
+            <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
               10 Stories. 10 Moments You&apos;ll Never Forget.
               <br />
               Full album: 9.10.2026
             </p>
+
+            <a
+              href="/downloads/borrowed-sunshine-album-booklet.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold rounded border transition-all duration-200 hover:-translate-y-0.5"
+              style={{ borderColor: `${GOLD}55`, color: GOLD, background: "rgba(0,0,0,0.4)" }}
+            >
+              Download Album Booklet (PDF)
+            </a>
           </div>
         </section>
 
