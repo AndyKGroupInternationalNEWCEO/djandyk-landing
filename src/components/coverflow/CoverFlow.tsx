@@ -403,6 +403,7 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
             angle={ANGLE}
             size={size}
             reducedMotion={reducedMotion}
+            isNarrow={isNarrow}
             expandState={!isExpanded ? "none" : i === activeIndex ? "focus" : "background"}
             isExpanding={isExpanding}
             onSelect={() => (i === activeIndex ? openTrack(i) : goTo(i))}

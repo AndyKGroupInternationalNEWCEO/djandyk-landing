@@ -12,6 +12,7 @@ interface Props {
   angle: number;
   size: number;
   reducedMotion: boolean;
+  isNarrow: boolean;
   expandState: ExpandState;
   isExpanding: boolean;
   onSelect: () => void;
@@ -25,6 +26,7 @@ export default function CoverFlowSlide({
   angle,
   size,
   reducedMotion,
+  isNarrow,
   expandState,
   isExpanding,
   onSelect,
@@ -33,8 +35,13 @@ export default function CoverFlowSlide({
   const isActive = offset === 0;
   // Fewer background covers stay painted once a track is expanded — keeps
   // the receded stack tight and avoids any stray 3D-transformed cover
-  // rendering out past its intended band.
-  const visible = expandState === "background" && isExpanding ? abs <= 2 : abs <= 4;
+  // rendering out past its intended band. On narrow (touch) viewports we
+  // also cap how many neighboring covers stay mounted at all: each one is a
+  // 3D-transformed, animating layer, and swiping was visibly janky on phones
+  // with the full 9-wide stack — fewer simultaneous layers keeps the swipe
+  // transition smooth without changing how it looks on desktop.
+  const maxAbs = isNarrow ? 2 : 4;
+  const visible = expandState === "background" && isExpanding ? abs <= Math.min(2, maxAbs) : abs <= maxAbs;
   const sign = offset === 0 ? 0 : offset > 0 ? 1 : -1;
 
   // "focus" = this is the artwork being pulled forward toward the viewer.
@@ -108,8 +115,10 @@ export default function CoverFlowSlide({
         )}
       </div>
 
-      {/* Reflection — pure CSS, no extra assets, doesn't touch the artwork itself */}
-      {abs <= 2 && !isFocusBoosted && (
+      {/* Reflection — pure CSS, no extra assets, doesn't touch the artwork itself.
+          Skipped on narrow/touch viewports: it's decorative only, and doubles
+          the number of animating image layers during a swipe. */}
+      {!isNarrow && abs <= 2 && !isFocusBoosted && (
         <div
           className="absolute left-0 w-full overflow-hidden rounded-lg bg-black"
           aria-hidden="true"
