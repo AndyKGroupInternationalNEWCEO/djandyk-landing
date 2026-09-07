@@ -368,7 +368,7 @@ export default function BorrowedSunshineClient({ initialSlug }: { initialSlug?: 
 
       <main className="pt-[60px] min-h-screen font-sans" style={{ background: "#0d1117" }}>
         {/* Hero — full-width cover (swap to a video like no-translation-hero.mp4 once one exists) */}
-        <section className="relative w-full overflow-hidden" style={{ minHeight: "78dvh", background: "#0d1117" }}>
+        <section className="relative w-full overflow-hidden" style={{ minHeight: "78dvh" }}>
           <video
             src="/videos/borrowed-sunshine-hero.mp4"
             poster={COVER}
@@ -376,8 +376,8 @@ export default function BorrowedSunshineClient({ initialSlug }: { initialSlug?: 
             loop
             muted
             playsInline
-            className="absolute left-0 right-0 bottom-0 w-full object-cover"
-            style={{ top: 60, height: "calc(100% - 60px)", objectPosition: "center 12%" }}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: "center 12%" }}
           />
 
           {/* Legibility gradient */}
