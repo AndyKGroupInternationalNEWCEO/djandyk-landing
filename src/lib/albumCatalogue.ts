@@ -60,7 +60,7 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     kicker: "Album · 2026",
     genre: "Trance",
     description: "Ten tracks. Four voices. One continuous trance journey — rebirth, memory, silence, distance and temporary immortality before arriving at pure euphoria.",
-    completionDate: "2099-01-01",
+    completionDate: "2026-12-18",
     href: "/euphoria-needs-no-story",
     cover: "/releases/euphoria-needs-no-story-cover.png",
   },

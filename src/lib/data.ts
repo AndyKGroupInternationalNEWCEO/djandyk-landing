@@ -349,17 +349,17 @@ export type TracklistEntry = { num: string; title: string; released?: boolean; c
 
 export const TRACKLISTS: Record<string, TracklistEntry[]> = {
   "Euphoria Needs No Story": [
-    { num: "00", title: "Intro", isIntro: true, label: "Coming Soon" },
-    { num: "01", title: "Breathe Me Back to Life (feat. Mattew Brexon)", label: "Coming Soon" },
-    { num: "02", title: "Alive in the Afterglow (feat. Jullian Recherr)", label: "Coming Soon" },
-    { num: "03", title: "Even Silence Sounds Like You (feat. Robert Zigller)", label: "Coming Soon" },
-    { num: "04", title: "After You Left (feat. Robert Zigller)", label: "Coming Soon" },
-    { num: "05", title: "Temporary Immortals (feat. Thymoty Lorrens)", label: "Coming Soon" },
-    { num: "06", title: "The Distance Learned to Dance (feat. Thymoty Lorrens)", label: "Coming Soon" },
-    { num: "07", title: "We Were Future Once (feat. Robert Zigller)", label: "Coming Soon" },
-    { num: "08", title: "Invisible North (feat. Mattew Brexon)", label: "Coming Soon" },
-    { num: "09", title: "I Kept the Storm (feat. Jullian Recherr)", label: "Coming Soon" },
-    { num: "10", title: "Euphoria Needs No Story (feat. Mattew Brexon)", label: "Coming Soon" },
+    { num: "00", title: "Intro", isIntro: true, releaseDate: "2026-08-30", label: "Out Now" },
+    { num: "01", title: "Breathe Me Back to Life (feat. Mattew Brexon)", releaseDate: "2026-10-16", label: "16.10.2026" },
+    { num: "02", title: "Alive in the Afterglow (feat. Jullian Recherr)", releaseDate: "2026-10-23", label: "23.10.2026" },
+    { num: "03", title: "Even Silence Sounds Like You (feat. Robert Zigller)", releaseDate: "2026-10-30", label: "30.10.2026" },
+    { num: "04", title: "After You Left (feat. Robert Zigller)", releaseDate: "2026-11-06", label: "6.11.2026" },
+    { num: "05", title: "Temporary Immortals (feat. Thymoty Lorrens)", releaseDate: "2026-11-13", label: "13.11.2026" },
+    { num: "06", title: "The Distance Learned to Dance (feat. Thymoty Lorrens)", releaseDate: "2026-11-20", label: "20.11.2026" },
+    { num: "07", title: "We Were Future Once (feat. Robert Zigller)", releaseDate: "2026-11-27", label: "27.11.2026" },
+    { num: "08", title: "Invisible North (feat. Mattew Brexon)", releaseDate: "2026-12-04", label: "4.12.2026" },
+    { num: "09", title: "I Kept the Storm (feat. Jullian Recherr)", releaseDate: "2026-12-11", label: "11.12.2026" },
+    { num: "10", title: "Euphoria Needs No Story (feat. Mattew Brexon)", releaseDate: "2026-12-18", label: "18.12.2026" },
   ],
   "No Translation": [
     { num: "01", title: "Don't Look Away (Bana Öyle Bakma) feat. Emir Cem Karahan", releaseDate: "2026-10-30", label: "30.10.2026" },

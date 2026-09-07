@@ -11,6 +11,7 @@ export const euphoriaAlbum: Album = {
       slug: "intro",
       title: "Intro",
       from: "DJ Andy'K",
+      releaseDate: "2026-08-30",
       accent: "#E8B020",
       durationSeconds: 102,
       coverUrl: "/releases/euphoria-needs-no-story-cover.png",
@@ -36,6 +37,7 @@ export const euphoriaAlbum: Album = {
       from: "feat. Mattew Brexon",
       story:
         "A breath becomes the dividing line between fading away and returning. The opening track turns vulnerability into motion: one spark, one heartbeat, and the will to remain.",
+      releaseDate: "2026-10-16",
       accent: "#4AC8E0",
       key: "F# minor",
       bpm: 138,
@@ -67,6 +69,7 @@ export const euphoriaAlbum: Album = {
       from: "feat. Jullian Recherr",
       story:
         "Survival is not shown as an escape, but as light remaining inside every scar. The afterglow becomes proof that the darkness did not win.",
+      releaseDate: "2026-10-23",
       accent: "#E0A050",
       key: "F minor",
       bpm: 138,
@@ -94,6 +97,7 @@ export const euphoriaAlbum: Album = {
       from: "feat. Robert Zigller",
       story:
         "An empty room keeps speaking through objects, memory and echo. Even without a voice, silence carries the shape of someone who remains present.",
+      releaseDate: "2026-10-30",
       accent: "#4A90D0",
       key: "D# minor",
       bpm: 133,
@@ -120,6 +124,7 @@ export const euphoriaAlbum: Album = {
       from: "feat. Robert Zigller",
       story:
         "Departure becomes the impossible place where two people finally meet. Timing is cruel, but the space left behind reveals what was always real.",
+      releaseDate: "2026-11-06",
       accent: "#C87840",
       key: "A major",
       bpm: 136,
@@ -146,6 +151,7 @@ export const euphoriaAlbum: Album = {
       from: "feat. Thymoty Lorrens",
       story:
         "Forever is not required for something to matter. Two people burn brightly inside borrowed time, knowing that what ends can still leave a permanent mark.",
+      releaseDate: "2026-11-13",
       accent: "#9060E0",
       key: "A minor",
       bpm: 135,
@@ -172,6 +178,7 @@ export const euphoriaAlbum: Album = {
       from: "feat. Thymoty Lorrens",
       story:
         "Distance does not disappear; it changes rhythm. Fear loses time, two tired hearts find the same pulse, and the space between them begins to dance.",
+      releaseDate: "2026-11-20",
       accent: "#4070E0",
       key: "F# minor",
       bpm: 130,
@@ -198,6 +205,7 @@ export const euphoriaAlbum: Album = {
       from: "feat. Robert Zigller",
       story:
         "Youth once felt like a guaranteed destination. The future faded, but its pulse remains alive in the people who carried it together.",
+      releaseDate: "2026-11-27",
       accent: "#60D8E8",
       key: "A# minor",
       bpm: 133,
@@ -224,6 +232,7 @@ export const euphoriaAlbum: Album = {
       from: "feat. Mattew Brexon",
       story:
         "No map, no signal, no reason that can be explained out loud — only a pull that keeps proving itself right. Direction survives even when every visible marker disappears.",
+      releaseDate: "2026-12-04",
       accent: "#3AA0E0",
       key: "F# minor",
       bpm: 138,
@@ -249,6 +258,7 @@ export const euphoriaAlbum: Album = {
       from: "feat. Jullian Recherr",
       story:
         "Your shadow still lingers in the hallway, knowing my name too well — so I took the broken pieces and built a ring of hell instead of a grave.",
+      releaseDate: "2026-12-11",
       accent: "#D8A030",
       key: "F minor",
       bpm: 129,
@@ -275,6 +285,7 @@ export const euphoriaAlbum: Album = {
       from: "feat. Mattew Brexon",
       story:
         "No reason, no warning, no memory, no future — nothing has to happen first. Just pulse beneath the surface, only frequency, and I have never felt more alive.",
+      releaseDate: "2026-12-18",
       accent: "#E8B020",
       key: "F# minor",
       bpm: 138,
