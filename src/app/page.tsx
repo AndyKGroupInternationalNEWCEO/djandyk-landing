@@ -40,6 +40,7 @@ import Footer from "@/components/Footer";
 import { HeroBackground } from "@/components/BackgroundGrid";
 import LatestReleaseBanner from "@/components/LatestReleaseBanner";
 import MusicLabSection from "@/components/MusicLabSection";
+import CompetitionPromoBadge from "@/components/CompetitionPromoBadge";
 import MusicLabBanner from "@/components/MusicLabBanner";
 import ScrollReveal from "@/components/ScrollReveal";
 import { ALBUM_CATALOGUE, type CatalogueAlbum } from "@/lib/albumCatalogue";
@@ -173,6 +174,7 @@ export default function Home() {
       <TopBanner />
       <Navbar />
       <LatestReleaseBanner />
+      <CompetitionPromoBadge />
 
       <ScrollReveal>
         <div className="relative overflow-clip">
