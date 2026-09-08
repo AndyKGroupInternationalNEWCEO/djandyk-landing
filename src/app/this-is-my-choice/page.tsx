@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { COMPETITION, COMPETITION_MEDIA } from "@/data/this-is-my-choice";
+import {
+  COMPETITION,
+  COMPETITION_MEDIA,
+  COMPETITION_WINNER_VIDEOS,
+  COMPETITION_AUDIO,
+} from "@/data/this-is-my-choice";
 
 const METALLIC_GRADIENT = "linear-gradient(90deg, #C026D3 0%, #7C3AED 35%, #4F46E5 65%, #06B6D4 100%)";
 
@@ -19,9 +24,9 @@ export const metadata: Metadata = {
       "Choose an official DJ Andy'K track, create a 20-second Instagram Reel and compete for Lifetime Unlimited Access to Andy'K Music Lab.",
     images: [
       {
-        url: "/this-is-my-choice/main-flyer-4x5.png",
-        width: 1080,
-        height: 1350,
+        url: "/this-is-my-choice/prize-flyer-4x5.png",
+        width: 1122,
+        height: 1402,
         alt: "This Is My Choice — competition by DJ Andy'K",
       },
     ],
@@ -257,8 +262,8 @@ export default function ThisIsMyChoicePage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {COMPETITION_MEDIA.filter((m) => m.format !== "audio").map((asset) => (
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-4">
+              {COMPETITION_MEDIA.map((asset) => (
                 <div key={asset.key} className="glass-card rounded-xl overflow-hidden">
                   <div
                     className="relative w-full bg-black/5 flex items-center justify-center"
@@ -278,17 +283,22 @@ export default function ThisIsMyChoicePage() {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-              {COMPETITION_MEDIA.filter((m) => m.format === "audio").map((asset) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              {COMPETITION_WINNER_VIDEOS.map((asset) => (
+                <div key={asset.key} className="glass-card rounded-xl overflow-hidden">
+                  <div className="relative w-full bg-black/5" style={{ aspectRatio: "4/5" }}>
+                    <video src={asset.src} controls className="w-full h-full object-cover" />
+                  </div>
+                  <p className="text-xs font-medium text-foreground p-3">{asset.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {COMPETITION_AUDIO.map((asset) => (
                 <div key={asset.key} className="glass-card rounded-xl p-4">
                   <p className="text-xs font-medium text-foreground mb-3">{asset.label}</p>
-                  {asset.src ? (
-                    <audio controls src={asset.src} className="w-full" />
-                  ) : (
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-muted-2">
-                      Coming soon
-                    </span>
-                  )}
+                  <audio controls src={asset.src} className="w-full" />
                 </div>
               ))}
             </div>

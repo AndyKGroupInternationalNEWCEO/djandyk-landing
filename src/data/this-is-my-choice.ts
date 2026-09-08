@@ -86,16 +86,27 @@ export const COMPETITION = {
 } as const;
 
 export const COMPETITION_MEDIA = [
-  { key: "main-flyer", label: "Main Competition Flyer", format: "4:5", src: "/this-is-my-choice/main-flyer-4x5.png" },
-  { key: "dates-flyer", label: "Official Dates Flyer", format: "4:5", src: "/this-is-my-choice/dates-flyer-4x5.png" },
-  { key: "how-to-enter-flyer", label: "How To Enter Flyer", format: "4:5", src: "/this-is-my-choice/how-to-enter-flyer-4x5.png" },
+  // main-flyer, dates-flyer, how-to-enter-flyer, story and reel-cover were
+  // shown as real assets for a while but were actually unrendered
+  // "REPLACE THIS FILE" placeholder stubs — src is null until the real
+  // files are supplied.
+  { key: "main-flyer", label: "Main Competition Flyer", format: "4:5", src: null },
+  { key: "dates-flyer", label: "Official Dates Flyer", format: "4:5", src: null },
+  { key: "how-to-enter-flyer", label: "How To Enter Flyer", format: "4:5", src: null },
   { key: "prize-flyer", label: "Prize Flyer", format: "4:5", src: "/this-is-my-choice/prize-flyer-4x5.png" },
-  { key: "winner-flyer", label: "Winner Announcement Artwork", format: "4:5", src: "/this-is-my-choice/winner-announcement-flyer-4x5.png" },
-  { key: "story", label: "Instagram Story Artwork", format: "9:16", src: "/this-is-my-choice/instagram-story-9x16.png" },
-  { key: "reel-cover", label: "Instagram Reel Cover", format: "9:16", src: "/this-is-my-choice/instagram-reel-cover-9x16.png" },
+  { key: "story", label: "Instagram Story Artwork", format: "9:16", src: null },
+  { key: "reel-cover", label: "Instagram Reel Cover", format: "9:16", src: null },
   { key: "square", label: "1:1 Square Artwork", format: "1:1", src: null },
   { key: "reel-video", label: "9:16 Reel Video", format: "9:16", src: null },
-  { key: "radio-jingle", label: "Radio Jingle", format: "audio", src: "/this-is-my-choice/radio-jingle.mp3" },
-  { key: "competition-track-1", label: "Competition Music — Track 1", format: "audio", src: "/this-is-my-choice/competition-track-01.wav" },
-  { key: "competition-track-2", label: "Competition Music — Track 2", format: "audio", src: "/this-is-my-choice/competition-track-02.wav" },
+] as const;
+
+export const COMPETITION_WINNER_VIDEOS = [
+  { key: "winner-video-1", label: "Winner Announcement — Draft 1", src: "/this-is-my-choice/winner-announcement-1.mp4" },
+  { key: "winner-video-2", label: "Winner Announcement — Draft 2", src: "/this-is-my-choice/winner-announcement-2.mp4" },
+] as const;
+
+export const COMPETITION_AUDIO = [
+  { key: "radio-jingle", label: "Radio Jingle", src: "/this-is-my-choice/radio-jingle.mp3" },
+  { key: "competition-track-1", label: "Competition Music — Track 1", src: "/this-is-my-choice/competition-track-01.wav" },
+  { key: "competition-track-2", label: "Competition Music — Track 2", src: "/this-is-my-choice/competition-track-02.wav" },
 ] as const;
