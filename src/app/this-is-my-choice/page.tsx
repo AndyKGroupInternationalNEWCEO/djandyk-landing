@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import {
   COMPETITION,
   COMPETITION_MEDIA,
-  COMPETITION_WINNER_VIDEOS,
+  COMPETITION_VIDEOS,
   COMPETITION_AUDIO,
 } from "@/data/this-is-my-choice";
 
@@ -283,8 +283,8 @@ export default function ThisIsMyChoicePage() {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              {COMPETITION_WINNER_VIDEOS.map((asset) => (
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+              {COMPETITION_VIDEOS.map((asset) => (
                 <div key={asset.key} className="glass-card rounded-xl overflow-hidden">
                   <div className="relative w-full bg-black/5" style={{ aspectRatio: "4/5" }}>
                     <video src={asset.src} controls className="w-full h-full object-cover" />

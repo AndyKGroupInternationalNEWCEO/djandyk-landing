@@ -86,10 +86,11 @@ export const COMPETITION = {
 } as const;
 
 export const COMPETITION_MEDIA = [
-  // main-flyer, dates-flyer, how-to-enter-flyer, story and reel-cover were
-  // shown as real assets for a while but were actually unrendered
-  // "REPLACE THIS FILE" placeholder stubs — src is null until the real
-  // files are supplied.
+  // main-flyer, dates-flyer, how-to-enter-flyer, story, reel-cover and
+  // square were shown as real assets for a while but were actually
+  // unrendered "REPLACE THIS FILE" placeholder stubs — src is null until
+  // real static artwork is supplied. Animated video versions of the
+  // Dates, How-To-Enter and Prize flyers exist — see COMPETITION_VIDEOS.
   { key: "main-flyer", label: "Main Competition Flyer", format: "4:5", src: null },
   { key: "dates-flyer", label: "Official Dates Flyer", format: "4:5", src: null },
   { key: "how-to-enter-flyer", label: "How To Enter Flyer", format: "4:5", src: null },
@@ -100,9 +101,10 @@ export const COMPETITION_MEDIA = [
   { key: "reel-video", label: "9:16 Reel Video", format: "9:16", src: null },
 ] as const;
 
-export const COMPETITION_WINNER_VIDEOS = [
-  { key: "winner-video-1", label: "Winner Announcement — Draft 1", src: "/this-is-my-choice/winner-announcement-1.mp4" },
-  { key: "winner-video-2", label: "Winner Announcement — Draft 2", src: "/this-is-my-choice/winner-announcement-2.mp4" },
+export const COMPETITION_VIDEOS = [
+  { key: "how-to-enter-video", label: "How To Enter — Video", src: "/this-is-my-choice/how-to-enter-video-4x5.mp4" },
+  { key: "dates-video", label: "Official Dates — Video", src: "/this-is-my-choice/dates-video-4x5.mp4" },
+  { key: "prize-video", label: "Prize — Video", src: "/this-is-my-choice/prize-video-4x5.mp4" },
 ] as const;
 
 export const COMPETITION_AUDIO = [
