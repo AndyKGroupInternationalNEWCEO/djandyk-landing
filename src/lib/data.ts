@@ -28,6 +28,12 @@ export const COMPANY = {
 
 export const LATEST_RELEASES = [
   {
+    title: "Where the World Turns Gold",
+    type: "Special Release · ft. Margirt “Ritta” Fellner",
+    coverUrl: "/releases/where-the-world-turns-gold.png",
+    spotifyUrl: "/where-the-world-turns-gold",
+  },
+  {
     title: "Opus No. 1: Vienna",
     type: "New Album · Fortepiano · Orchestra · Trance",
     coverUrl: "/releases/opus-no-1-vienna-cover.png",
@@ -475,9 +481,9 @@ export const NAV_SERVICES = [
     group: "Latest Release",
     items: [
       {
-        label: "Parallel Stories",
-        description: "Single \u00B7 April 2026",
-        href: "/human-stories/parallel-stories",
+        label: "Where the World Turns Gold",
+        description: "Special Release \u00B7 Sept 2026",
+        href: "/where-the-world-turns-gold",
       },
       {
         label: "When Later Becomes Never",
