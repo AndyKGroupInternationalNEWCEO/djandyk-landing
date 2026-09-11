@@ -149,8 +149,8 @@ export default function WhereTheWorldTurnsGoldClient({ initialSlug }: { initialS
               "/releases/where-the-world-turns-gold-studio-2.png",
               "/releases/where-the-world-turns-gold-studio-3.png",
             ].map((src) => (
-              <div key={src} className="rounded-2xl overflow-hidden aspect-[4/5]" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
-                <img src={src} alt="DJ Andy'K and Margirt “Ritta” Fellner in the studio" className="w-full h-full object-cover" />
+              <div key={src} className="rounded-2xl overflow-hidden flex items-center" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
+                <img src={src} alt="DJ Andy'K and Margirt “Ritta” Fellner in the studio" className="w-full h-auto block" />
               </div>
             ))}
           </ScrollReveal>
