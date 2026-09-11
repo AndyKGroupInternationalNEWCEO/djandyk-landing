@@ -135,6 +135,12 @@ const en = {
   },
 
   catalogue: {
+    special: {
+      label: "SPECIAL RELEASES & COLLABORATIONS",
+      heading: "Special releases &",
+      headingItalic: "collaborations",
+      description: "One-off songs and featured collaborations, released outside the album cycle \u2014 for the fans, whenever the moment calls for it.",
+    },
     signature: {
       label: "SIGNATURE ALBUMS",
       heading: "Signature",
@@ -367,6 +373,12 @@ const es: typeof en = {
   },
 
   catalogue: {
+    special: {
+      label: "LANZAMIENTOS ESPECIALES Y COLABORACIONES",
+      heading: "Lanzamientos especiales y",
+      headingItalic: "colaboraciones",
+      description: "Canciones puntuales y colaboraciones destacadas, publicadas fuera del ciclo de \u00e1lbumes \u2014 para los fans, cuando el momento lo pide.",
+    },
     signature: {
       label: "\u00c1LBUMES INSIGNIA",
       heading: "\u00c1lbumes",
@@ -599,6 +611,12 @@ const sk: typeof en = {
   },
 
   catalogue: {
+    special: {
+      label: "\u0160PECI\u00c1LNE VYDANIA A SPOLUPR\u00c1CE",
+      heading: "\u0160peci\u00e1lne vydania a",
+      headingItalic: "spolupr\u00e1ce",
+      description: "Jednorazov\u00e9 skladby a hos\u0165uj\u00face spolupr\u00e1ce, vydan\u00e9 mimo albumov\u00e9ho cyklu \u2014 pre fan\u00fa\u0161ikov, kedyko\u013evek si to chv\u00ed\u013ea vy\u017eiada.",
+    },
     signature: {
       label: "K\u013d\u00da\u010cOV\u00c9 ALBUMY",
       heading: "K\u013e\u00fa\u010dov\u00e9",
@@ -831,6 +849,12 @@ const de: typeof en = {
   },
 
   catalogue: {
+    special: {
+      label: "SPECIAL RELEASES & KOLLABORATIONEN",
+      heading: "Special Releases &",
+      headingItalic: "Kollaborationen",
+      description: "Einzelne Songs und besondere Kollaborationen, ver\u00f6ffentlicht au\u00dferhalb des Albumzyklus \u2014 f\u00fcr die Fans, wann immer der Moment es verlangt.",
+    },
     signature: {
       label: "PR\u00c4GENDE ALBEN",
       heading: "Pr\u00e4gende",

@@ -2,7 +2,7 @@
 // Each album has exactly one `category`, so it can only ever render in one
 // section — this is what prevents the duplicate-card problem for good.
 
-export type AlbumCategory = "signature" | "concept" | "studio" | "legacy";
+export type AlbumCategory = "special" | "signature" | "concept" | "studio" | "legacy";
 
 export interface CatalogueAlbum {
   title: string;
@@ -12,6 +12,7 @@ export interface CatalogueAlbum {
   description: string;
   cover?: string;
   href?: string;
+  cta?: string;
   embedUrl?: string;
   completionDate?: string;
   completeBadge?: boolean;
@@ -21,6 +22,19 @@ export interface CatalogueAlbum {
 }
 
 export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
+  // ---- Special Releases & Collaborations ----
+  {
+    title: "Where the World Turns Gold",
+    category: "special",
+    kicker: "Special Release · 2026",
+    genre: "ft. Margirt “Ritta” Fellner",
+    description: "A special release for my fans — a song about taking the long way, letting tomorrow wait, and finding a moment worth staying in.",
+    availableNow: true,
+    href: "/where-the-world-turns-gold",
+    cta: "Listen Now",
+    cover: "/releases/where-the-world-turns-gold.png",
+  },
+
   // ---- Signature Albums ----
   {
     title: "THE ALBUM — From Me, To...",

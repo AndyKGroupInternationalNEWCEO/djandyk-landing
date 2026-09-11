@@ -12,6 +12,10 @@ import { ALBUM_CATALOGUE, type AlbumCategory, type CatalogueAlbum } from "@/lib/
 const PRESS_URL = "https://www.djandykofficial.com/press";
 
 const CATEGORY_META: Record<AlbumCategory, { label: string; note: string }> = {
+  special: {
+    label: "Special Releases & Collaborations",
+    note: "One-off songs and featured collaborations released outside the album cycle.",
+  },
   signature: {
     label: "Signature Albums",
     note: "Main press focus — complete worlds built through music, storytelling and visual identity.",

@@ -186,7 +186,7 @@ function AlbumCard({ release }: { release: CatalogueAlbum }) {
             {...(release.href.startsWith("/") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
             className="inline-flex items-center gap-1.5 text-sm font-medium text-highlight hover:text-deep-teal transition-colors"
           >
-            {release.href.startsWith("/") ? "View Album" : "Listen Now"}
+            {release.cta ?? (release.href.startsWith("/") ? "View Album" : "Listen Now")}
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2} className="w-3.5 h-3.5">
               <path d="M6 4l4 4-4 4" />
             </svg>
@@ -342,6 +342,13 @@ export default function AlbumCatalogue() {
   return (
     <section id="featured" className="relative pt-10 pb-20 px-8 section-with-glass">
       <div className="max-w-[1200px] mx-auto">
+        <CategorySection
+          category="special"
+          label={t.catalogue.special.label}
+          heading={t.catalogue.special.heading}
+          headingItalic={t.catalogue.special.headingItalic}
+          description={t.catalogue.special.description}
+        />
         <CategorySection
           category="signature"
           label={t.catalogue.signature.label}
