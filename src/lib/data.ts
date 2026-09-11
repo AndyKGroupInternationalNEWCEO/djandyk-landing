@@ -32,6 +32,7 @@ export const LATEST_RELEASES = [
     type: "Special Release · ft. Margirt “Ritta” Fellner",
     coverUrl: "/releases/where-the-world-turns-gold.png",
     spotifyUrl: "/where-the-world-turns-gold",
+    cta: "Listen Now",
   },
   {
     title: "Opus No. 1: Vienna",
