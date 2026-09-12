@@ -1,0 +1,77 @@
+import type { Album } from "@/types/album";
+
+export const untilTheLightsComeOnAlbum: Album = {
+  slug: "until-the-lights-come-on",
+  title: "Until the Lights Come On",
+  accent: "#D99C7A",
+  heroCoverSrc: "/releases/until-the-lights-come-on.png",
+  tracks: [
+    {
+      n: 1,
+      slug: "until-the-lights-come-on",
+      title: "Until the Lights Come On",
+      from: "ft. Livia Benttner",
+      story: "When the lights come on, let me be the last to know.",
+      accent: "#D99C7A",
+      bpm: 138,
+      durationSeconds: 218,
+      coverUrl: "/releases/until-the-lights-come-on.png",
+      audioSrc: "/audio/until-the-lights-come-on.mp3",
+      releaseDate: "2026-09-12",
+      vocal: "Livia Benttner (featured vocal)",
+      lyrics: [
+        [
+          "[Verse 1]",
+          "You used to call when you got home.",
+          "I used to wait until you did.",
+          "Now you’re a name that lights my phone,",
+          "And I don’t know what time it is.",
+        ],
+        [
+          "[Pre-Chorus]",
+          "But here you are, against my chest.",
+          "I feel your breath before you speak.",
+          "Let’s leave tomorrow where it is.",
+          "Tonight, there’s nothing we must fix.",
+        ],
+        [
+          "[Chorus]",
+          "Stay until the lights come on.",
+          "Stay until the fear is gone.",
+          "We don’t have to last forever.",
+          "We still have this night together.",
+        ],
+        [
+          "[Verse 2]",
+          "You trace the seam along my sleeve,",
+          "That little thing you used to do.",
+          "I spent so long learning to leave.",
+          "Tonight, I make some room for you.",
+        ],
+        [
+          "[Pre-Chorus]",
+          "Don’t say we’re starting over now.",
+          "Don’t promise what you cannot give.",
+          "Just let me feel you breathing out.",
+          "There’s still a little night to live.",
+        ],
+        [
+          "[Chorus]",
+          "Stay until the lights come on.",
+          "Stay until the fear is gone.",
+          "We don’t have to last forever.",
+          "We still have this night together.",
+          "Stay until the lights come on.",
+          "Stay until the fear is gone.",
+          "We don’t have to last forever.",
+          "We still have this night together.",
+        ],
+        [
+          "[Outro]",
+          "When the lights come on,",
+          "let me be the last to know.",
+        ],
+      ],
+    },
+  ],
+};

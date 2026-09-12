@@ -24,6 +24,17 @@ export interface CatalogueAlbum {
 export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
   // ---- Special Releases & Collaborations ----
   {
+    title: "Until the Lights Come On",
+    category: "special",
+    kicker: "Single · 2026",
+    genre: "ft. Livia Benttner",
+    description: "This song has been part of my repertoire for a long time — a track about letting someone close again without asking one night to answer every question.",
+    availableNow: true,
+    href: "/until-the-lights-come-on",
+    cta: "Listen Now",
+    cover: "/releases/until-the-lights-come-on.png",
+  },
+  {
     title: "Where the World Turns Gold",
     category: "special",
     kicker: "Special Release · 2026",

@@ -28,6 +28,13 @@ export const COMPANY = {
 
 export const LATEST_RELEASES = [
   {
+    title: "Until the Lights Come On",
+    type: "Single · ft. Livia Benttner",
+    coverUrl: "/releases/until-the-lights-come-on.png",
+    spotifyUrl: "/until-the-lights-come-on",
+    cta: "Listen Now",
+  },
+  {
     title: "Where the World Turns Gold",
     type: "Special Release · ft. Margirt “Ritta” Fellner",
     coverUrl: "/releases/where-the-world-turns-gold.png",
@@ -482,9 +489,9 @@ export const NAV_SERVICES = [
     group: "Latest Release",
     items: [
       {
-        label: "Where the World Turns Gold",
-        description: "Special Release \u00B7 Sept 2026",
-        href: "/where-the-world-turns-gold",
+        label: "Until the Lights Come On",
+        description: "Single \u00B7 Sept 2026",
+        href: "/until-the-lights-come-on",
       },
       {
         label: "When Later Becomes Never",

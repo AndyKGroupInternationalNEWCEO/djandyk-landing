@@ -25,7 +25,7 @@ const en = {
       "Every track built as a journey",
       "Based in the UK, sharing music worldwide",
       "Spotify \u00B7 Apple Music \u00B7 YouTube \u00B7 SoundCloud \u00B7 TIDAL",
-      "New release: Where the World Turns Gold \u2014 out now",
+      "New release: Until the Lights Come On \u2014 out now",
     ],
   },
 
@@ -263,7 +263,7 @@ const es: typeof en = {
       "Cada tema construido como un viaje",
       "Desde el Reino Unido, compartiendo m\u00fasica con el mundo",
       "Spotify \u00B7 Apple Music \u00B7 YouTube \u00B7 SoundCloud \u00B7 TIDAL",
-      "Nuevo lanzamiento: Where the World Turns Gold \u2014 disponible ahora",
+      "Nuevo lanzamiento: Until the Lights Come On \u2014 disponible ahora",
     ],
   },
 
@@ -501,7 +501,7 @@ const sk: typeof en = {
       "Ka\u017ed\u00e1 skladba postaven\u00e1 ako cesta",
       "Zo Spojeného kr\u00e1\u013eovstva, zdie\u013eam hudbu so svetom",
       "Spotify \u00B7 Apple Music \u00B7 YouTube \u00B7 SoundCloud \u00B7 TIDAL",
-      "Nov\u00e1 skladba: Where the World Turns Gold \u2014 u\u017e vonku",
+      "Nov\u00e1 skladba: Until the Lights Come On \u2014 u\u017e vonku",
     ],
   },
 
@@ -739,7 +739,7 @@ const de: typeof en = {
       "Jeder Track als eine Reise",
       "Aus dem UK, Musik für die Welt",
       "Spotify · Apple Music · YouTube · SoundCloud · TIDAL",
-      "Neue Single: Where the World Turns Gold — jetzt verfügbar",
+      "Neue Single: Until the Lights Come On — jetzt verfügbar",
     ],
   },
 
