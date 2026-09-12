@@ -53,9 +53,19 @@ export default function WhereTheWorldTurnsGoldClient({ initialSlug }: { initialS
               ft. Margirt &ldquo;Ritta&rdquo; Fellner
             </p>
 
-            <p className="text-sm sm:text-base leading-relaxed italic font-serif max-w-[560px]" style={{ color: "rgba(255,255,255,0.6)" }}>
+            <p className="text-sm sm:text-base leading-relaxed italic font-serif max-w-[560px] mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>
               &ldquo;Somewhere beside you, I stopped feeling lost.&rdquo;
             </p>
+
+            <a
+              href="/downloads/where-the-world-turns-gold-booklet.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold rounded border transition-all duration-200 hover:-translate-y-0.5"
+              style={{ borderColor: `${ACCENT}55`, color: ACCENT, background: "rgba(0,0,0,0.4)" }}
+            >
+              Download Special Release Booklet (PDF)
+            </a>
           </div>
         </section>
 
