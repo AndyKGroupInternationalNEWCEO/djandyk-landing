@@ -108,6 +108,48 @@ export default function UntilTheLightsComeOnClient({ initialSlug }: { initialSlu
           </ScrollReveal>
         </section>
 
+        {/* The Featured Voice */}
+        <section className="max-w-[1100px] mx-auto px-6 pb-24">
+          <ScrollReveal className="grid grid-cols-1 sm:grid-cols-[1fr_1.2fr] gap-10 items-center">
+            <div>
+              <p className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: ACCENT }}>
+                The Featured Voice
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 font-sans" style={{ color: "#ffffff" }}>
+                Livia Benttner
+              </h2>
+              <p className="text-sm sm:text-base italic font-serif mb-4" style={{ color: ACCENT }}>
+                From the Netherlands. Based in Slovenia.
+              </p>
+              <p className="text-base leading-relaxed font-serif mb-4" style={{ color: "rgba(255,255,255,0.65)" }}>
+                Livia Benttner is 32, originally from the Netherlands and now living in Slovenia. A
+                friend of DJ Andy&apos;K, she joins him as the featured artist on Until the Lights
+                Come On.
+              </p>
+              <p className="text-base leading-relaxed font-serif mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
+                At the heart of this collaboration is a simple request: stay a little longer. The
+                lyrics leave room for tenderness, uncertainty and a connection that does not need a
+                promise to matter.
+              </p>
+              <p
+                className="pl-5 text-lg italic font-serif"
+                style={{ color: "#ffffff", borderLeft: `2px solid ${ACCENT}` }}
+              >
+                &ldquo;We don&apos;t have to last forever.
+                <br />
+                We still have this night together.&rdquo;
+              </p>
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/5]" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
+              <img
+                src="/releases/until-the-lights-come-on-livia.png"
+                alt="Livia Benttner recording vocals"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </ScrollReveal>
+        </section>
+
         {/* Behind the Feeling — studio photos */}
         <section className="max-w-[1100px] mx-auto px-6 pb-24">
           <ScrollReveal>
@@ -120,7 +162,6 @@ export default function UntilTheLightsComeOnClient({ initialSlug }: { initialSlu
           </ScrollReveal>
           <ScrollReveal stagger className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
-              "/releases/until-the-lights-come-on-livia.png",
               "/releases/until-the-lights-come-on-studio-1.png",
               "/releases/until-the-lights-come-on-studio-2.png",
               "/releases/until-the-lights-come-on-studio-3.png",
