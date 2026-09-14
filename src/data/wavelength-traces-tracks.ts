@@ -16,11 +16,12 @@ export const wavelengthTracesAlbum: Album = {
       accent: "#8EDBE5",
       key: "B major",
       bpm: 139,
+      chords: "B – F#m – G#m – E",
       durationSeconds: 244,
       genre: "Trance",
       coverUrl: "/releases/wt-best-mistake-i-ever-made.png",
       audioSrc: "/audio/wt-best-mistake-i-ever-made.mp3",
-      vocal: "DJ Andy'K & Robert Zigller",
+      vocal: "Robert Zigller",
       lyrics: [
         [
           "[Verse 1]",
@@ -77,11 +78,12 @@ export const wavelengthTracesAlbum: Album = {
       accent: "#8EDBE5",
       key: "A minor",
       bpm: 139,
+      chords: "Am – F – C – G",
       durationSeconds: 237,
       genre: "Trance",
       coverUrl: "/releases/wt-something-i-can-keep.png",
       audioSrc: "/audio/wt-something-i-can-keep.mp3",
-      vocal: "DJ Andy'K & Robert Zigller",
+      vocal: "Robert Zigller",
       lyrics: [
         [
           "[Verse 1]",
@@ -138,11 +140,12 @@ export const wavelengthTracesAlbum: Album = {
       accent: "#8EDBE5",
       key: "B minor",
       bpm: 139,
+      chords: "Bm – G – D – A",
       durationSeconds: 220,
       genre: "Trance",
       coverUrl: "/releases/wt-come-closer.png",
       audioSrc: "/audio/wt-come-closer.mp3",
-      vocal: "DJ Andy'K & Jullian Recherr",
+      vocal: "Jullian Recherr",
       lyrics: [
         [
           "[Verse 1]",
@@ -199,11 +202,12 @@ export const wavelengthTracesAlbum: Album = {
       accent: "#8EDBE5",
       key: "B major",
       bpm: 139,
+      chords: "B – G#m – E – F#",
       durationSeconds: 219,
       genre: "Trance",
       coverUrl: "/releases/wt-static-silence.png",
       audioSrc: "/audio/wt-static-silence.mp3",
-      vocal: "DJ Andy'K & Robert Zigller",
+      vocal: "Robert Zigller",
       lyrics: [
         [
           "[Verse 1]",
@@ -260,11 +264,12 @@ export const wavelengthTracesAlbum: Album = {
       accent: "#8EDBE5",
       key: "Eb major",
       bpm: 140,
+      chords: "Eb – Cm – Ab – Bb",
       durationSeconds: 229,
       genre: "Trance",
       coverUrl: "/releases/wt-still-alive.png",
       audioSrc: "/audio/wt-still-alive.mp3",
-      vocal: "DJ Andy'K & Thymoty Lorrens",
+      vocal: "Thymoty Lorrens",
       lyrics: [
         [
           "[Verse 1]",
@@ -321,12 +326,12 @@ export const wavelengthTracesAlbum: Album = {
       accent: "#8EDBE5",
       key: "G# minor",
       bpm: 137,
-      chords: "G#m - E - B - F#",
+      chords: "G#m – E – B – F#",
       durationSeconds: 243,
       genre: "Trance",
       coverUrl: "/releases/wt-slow-down.png",
       audioSrc: "/audio/wt-slow-down.mp3",
-      vocal: "DJ Andy'K & Mattew Brexon",
+      vocal: "Mattew Brexon",
       lyrics: [
         [
           "[Verse 1]",
@@ -383,12 +388,12 @@ export const wavelengthTracesAlbum: Album = {
       accent: "#8EDBE5",
       key: "A minor",
       bpm: 136,
-      chords: "Am - F - C - G",
+      chords: "Am – Dm – G – C",
       durationSeconds: 237,
       genre: "Trance",
       coverUrl: "/releases/wt-stay-right-here.png",
       audioSrc: "/audio/wt-stay-right-here.mp3",
-      vocal: "DJ Andy'K & Mattew Brexon",
+      vocal: "Mattew Brexon",
       lyrics: [
         [
           "[Verse 1]",
@@ -445,11 +450,12 @@ export const wavelengthTracesAlbum: Album = {
       accent: "#8EDBE5",
       key: "G# minor",
       bpm: 137,
+      chords: "G#m – C#m – E – F#",
       durationSeconds: 218,
       genre: "Trance",
       coverUrl: "/releases/wt-never-took-it-off.png",
       audioSrc: "/audio/wt-never-took-it-off.mp3",
-      vocal: "DJ Andy'K & Jullian Recherr",
+      vocal: "Jullian Recherr",
       lyrics: [
         [
           "[Verse 1]",
@@ -506,11 +512,12 @@ export const wavelengthTracesAlbum: Album = {
       accent: "#8EDBE5",
       key: "C major",
       bpm: 139,
+      chords: "C – G – Am – F",
       durationSeconds: 227,
       genre: "Trance",
       coverUrl: "/releases/wt-same-corner-tuesday.png",
       audioSrc: "/audio/wt-same-corner-tuesday.mp3",
-      vocal: "DJ Andy'K & Thymoty Lorrens",
+      vocal: "Thymoty Lorrens",
       lyrics: [
         [
           "[Verse 1]",
@@ -567,11 +574,12 @@ export const wavelengthTracesAlbum: Album = {
       accent: "#8EDBE5",
       key: "Eb major",
       bpm: 139,
+      chords: "Eb – Bb – Cm – Ab",
       durationSeconds: 224,
       genre: "Trance",
       coverUrl: "/releases/wt-one-more-song.png",
       audioSrc: "/audio/wt-one-more-song.mp3",
-      vocal: "DJ Andy'K & Robert Zigller",
+      vocal: "Robert Zigller",
       lyrics: [
         [
           "[Verse 1]",
@@ -629,11 +637,12 @@ export const wavelengthTracesAlbum: Album = {
       accent: "#8EDBE5",
       key: "Bb major",
       bpm: 139,
+      chords: "Bb – Gm – Eb – F",
       durationSeconds: 241,
       genre: "Trance",
       coverUrl: "/releases/wt-i-never-sent-it.png",
       audioSrc: "/audio/wt-i-never-sent-it.mp3",
-      vocal: "DJ Andy'K & Robert Zigller",
+      vocal: "Robert Zigller",
       lyrics: [
         [
           "[Verse 1]",
@@ -690,12 +699,12 @@ export const wavelengthTracesAlbum: Album = {
       accent: "#8EDBE5",
       key: "G minor",
       bpm: 137,
-      chords: "Gm - Eb - Bb - Dm",
+      chords: "Gm – Eb – Bb – Dm",
       durationSeconds: 263,
       genre: "Trance",
       coverUrl: "/releases/wt-feed-the-crows.png",
       audioSrc: "/audio/wt-feed-the-crows.mp3",
-      vocal: "DJ Andy'K & Robert Zigller",
+      vocal: "Robert Zigller",
       lyrics: [
         [
           "[Verse 1]",
@@ -752,12 +761,12 @@ export const wavelengthTracesAlbum: Album = {
       accent: "#8EDBE5",
       key: "G minor",
       bpm: 137,
-      chords: "Gm - Eb - Bb - F",
+      chords: "Gm – Eb – Bb – F",
       durationSeconds: 237,
       genre: "Trance",
       coverUrl: "/releases/wt-leave-the-story-where-it-stopped.png",
       audioSrc: "/audio/wt-leave-the-story-where-it-stopped.mp3",
-      vocal: "DJ Andy'K & Robert Zigller",
+      vocal: "Robert Zigller",
       lyrics: [
         [
           "[Verse 1]",
