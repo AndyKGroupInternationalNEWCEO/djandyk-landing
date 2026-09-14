@@ -183,6 +183,46 @@ export default function WavelengthTracesClient({ initialSlug }: { initialSlug?: 
           </div>
         </section>
 
+        {/* About the Album */}
+        <section className="max-w-[640px] mx-auto px-6 py-20" style={{ background: "#0d1117" }}>
+          <ScrollReveal>
+            <p className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: ACCENT }}>
+              The Album
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-8 font-sans" style={{ color: "#ffffff" }}>
+              Some Connections Fade. Their Traces Stay.
+            </h2>
+            <div className="space-y-5 text-base leading-relaxed font-serif" style={{ color: "rgba(255,255,255,0.65)" }}>
+              <p>
+                A voice saved on an old phone. A jacket that still belongs in the hallway. A plant
+                reaching toward the light long after the person who left it has gone. Our lives hold
+                quiet evidence of one another, often in places we forget to look.
+              </p>
+              <p>
+                Across thirteen trance songs, DJ Andy&apos;K explores the distance between a passing
+                moment and everything it leaves behind. Desire finds the courage to move closer.
+                Familiar strangers begin to expect each other. Unspoken words wait years to be
+                released. Even an ordinary act of care becomes a way of continuing.
+              </p>
+              <p>
+                There is room here for the missed goodbye, but also for the unexpected beginning —
+                for laughter, hesitation, and the small decision to stay. These stories live where
+                memory meets the present, where something can still hurt and still be beautiful.
+              </p>
+              <p>
+                WAVELENGTH TRACES invites you to move with the music and listen for what remains
+                when the rush settles.
+              </p>
+            </div>
+            <p
+              className="mt-8 pl-5 text-lg italic font-serif"
+              style={{ color: "#ffffff", borderLeft: `2px solid ${ACCENT}` }}
+            >
+              What if the things we carry are also the things that carry us?
+            </p>
+          </ScrollReveal>
+        </section>
+
         {/* Cover Flow vs. Track Overview — one view at a time, Cover Flow by default */}
         <div id="tracks" style={{ background: "#0d1117" }}>
           <div className="flex justify-center pt-14 pb-8 px-6">
