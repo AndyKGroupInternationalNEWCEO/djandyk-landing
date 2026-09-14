@@ -163,64 +163,66 @@ export default function WavelengthTracesClient({ initialSlug }: { initialSlug?: 
               WAVELENGTH TRACES
             </h1>
 
-            <p className="text-base sm:text-lg font-light font-mono uppercase tracking-[0.2em] mb-5" style={{ color: ACCENT }}>
-              Trance.
-            </p>
-
-            <p className="text-sm sm:text-base leading-relaxed italic font-serif max-w-[560px] mb-7" style={{ color: "rgba(255,255,255,0.6)" }}>
-              Some connections fade. Their traces stay.
-            </p>
-
-            <a
-              href="/downloads/wavelength-traces-album-booklet.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold rounded border transition-all duration-200 hover:-translate-y-0.5"
-              style={{ borderColor: `${ACCENT}55`, color: ACCENT, background: "rgba(0,0,0,0.4)" }}
-            >
-              Download Album Booklet (PDF)
-            </a>
-          </div>
-        </section>
-
-        {/* About the Album */}
-        <section className="max-w-[640px] mx-auto px-6 py-20" style={{ background: "#0d1117" }}>
-          <ScrollReveal>
-            <p className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: ACCENT }}>
-              The Album
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-8 font-sans" style={{ color: "#ffffff" }}>
-              Some Connections Fade. Their Traces Stay.
-            </h2>
-            <div className="space-y-5 text-base leading-relaxed font-serif" style={{ color: "rgba(255,255,255,0.65)" }}>
-              <p>
-                A voice saved on an old phone. A jacket that still belongs in the hallway. A plant
-                reaching toward the light long after the person who left it has gone. Our lives hold
-                quiet evidence of one another, often in places we forget to look.
-              </p>
-              <p>
-                Across thirteen trance songs, DJ Andy&apos;K explores the distance between a passing
-                moment and everything it leaves behind. Desire finds the courage to move closer.
-                Familiar strangers begin to expect each other. Unspoken words wait years to be
-                released. Even an ordinary act of care becomes a way of continuing.
-              </p>
-              <p>
-                There is room here for the missed goodbye, but also for the unexpected beginning —
-                for laughter, hesitation, and the small decision to stay. These stories live where
-                memory meets the present, where something can still hurt and still be beautiful.
-              </p>
-              <p>
-                WAVELENGTH TRACES invites you to move with the music and listen for what remains
-                when the rush settles.
-              </p>
-            </div>
             <p
-              className="mt-8 pl-5 text-lg italic font-serif"
-              style={{ color: "#ffffff", borderLeft: `2px solid ${ACCENT}` }}
+              className="text-sm sm:text-base font-bold mb-4 font-mono uppercase tracking-[0.25em]"
+              style={{ color: "#ffffff" }}
             >
+              Some Connections Fade. Their Traces Stay.
+            </p>
+
+            <p className="text-sm leading-relaxed mb-5 max-w-[600px]" style={{ color: "rgba(255,255,255,0.55)" }}>
+              A voice saved on an old phone. A jacket that still belongs in the hallway. A plant
+              reaching toward the light long after the person who left it has gone. Our lives hold
+              quiet evidence of one another, often in places we forget to look.
+            </p>
+
+            <p
+              className="text-base sm:text-lg font-light mb-5 font-mono uppercase tracking-[0.2em]"
+              style={{ color: ACCENT }}
+            >
+              Thirteen Traces. One Album.
+            </p>
+
+            <p className="text-sm leading-relaxed mb-5 max-w-[600px]" style={{ color: "rgba(255,255,255,0.55)" }}>
+              Across thirteen trance songs, DJ Andy&apos;K explores the distance between a passing
+              moment and everything it leaves behind. Desire finds the courage to move closer.
+              Familiar strangers begin to expect each other. Unspoken words wait years to be
+              released. Even an ordinary act of care becomes a way of continuing. There is room
+              here for the missed goodbye, but also for the unexpected beginning — for laughter,
+              hesitation, and the small decision to stay. WAVELENGTH TRACES invites you to move
+              with the music and listen for what remains when the rush settles.
+            </p>
+
+            <p className="text-sm sm:text-base leading-relaxed italic font-serif max-w-[560px] mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>
               What if the things we carry are also the things that carry us?
             </p>
-          </ScrollReveal>
+
+            <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+              <a
+                href="#tracks"
+                className="inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold rounded transition-all duration-200 hover:-translate-y-0.5"
+                style={{ background: ACCENT, color: "#111111" }}
+              >
+                Explore the Album ↓
+              </a>
+
+              <a
+                href="/downloads/wavelength-traces-album-booklet.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold rounded border transition-all duration-200 hover:-translate-y-0.5"
+                style={{ borderColor: `${ACCENT}55`, color: ACCENT, background: "rgba(0,0,0,0.4)" }}
+              >
+                Download Album Booklet (PDF)
+              </a>
+            </div>
+
+            <p className="text-xs font-mono uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.35)" }}>
+              Written, produced &amp; created by DJ Andy&apos;K
+              <br />
+              Featuring Robert Zigller, Jullian Recherr, Thymoty Lorrens &amp; Mattew Brexon
+            </p>
+          </div>
         </section>
 
         {/* Cover Flow vs. Track Overview — one view at a time, Cover Flow by default */}
