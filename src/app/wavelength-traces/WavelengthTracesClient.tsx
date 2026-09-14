@@ -209,6 +209,20 @@ export default function WavelengthTracesClient({ initialSlug }: { initialSlug?: 
             </section>
           )}
         </div>
+
+        {/* Full tracklist artwork — full-bleed, same treatment as the hero */}
+        <section className="relative w-full overflow-hidden">
+          <img src="/releases/wavelength-traces-tracklist.png" alt="Wavelength Traces — official tracklist" className="w-full h-auto" />
+
+          {/* Legibility gradients top & bottom, matching the hero */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom, #0d1117 0%, transparent 8%, transparent 92%, #0d1117 100%)",
+            }}
+          />
+        </section>
       </main>
 
       {/* Footer in white wrapper so site CSS vars render correctly */}
