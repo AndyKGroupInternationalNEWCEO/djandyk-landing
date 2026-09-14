@@ -167,9 +167,19 @@ export default function WavelengthTracesClient({ initialSlug }: { initialSlug?: 
               Trance.
             </p>
 
-            <p className="text-sm sm:text-base leading-relaxed italic font-serif max-w-[560px]" style={{ color: "rgba(255,255,255,0.6)" }}>
+            <p className="text-sm sm:text-base leading-relaxed italic font-serif max-w-[560px] mb-7" style={{ color: "rgba(255,255,255,0.6)" }}>
               Some connections fade. Their traces stay.
             </p>
+
+            <a
+              href="/downloads/wavelength-traces-album-booklet.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold rounded border transition-all duration-200 hover:-translate-y-0.5"
+              style={{ borderColor: `${ACCENT}55`, color: ACCENT, background: "rgba(0,0,0,0.4)" }}
+            >
+              Download Album Booklet (PDF)
+            </a>
           </div>
         </section>
 
