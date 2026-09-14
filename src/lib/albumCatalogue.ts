@@ -48,6 +48,15 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
 
   // ---- Signature Albums ----
   {
+    title: "Wavelength Traces",
+    category: "signature",
+    kicker: "Album · 2026",
+    genre: "Trance",
+    description: "Some connections fade. Their traces stay.",
+    href: "/wavelength-traces",
+    cover: "/releases/wavelength-traces-cover.png",
+  },
+  {
     title: "THE ALBUM — From Me, To...",
     category: "signature",
     kicker: "Album · 2026",
