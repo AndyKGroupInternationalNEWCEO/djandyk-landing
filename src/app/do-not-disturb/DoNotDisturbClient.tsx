@@ -176,7 +176,7 @@ export default function DoNotDisturbClient() {
 
           {/* Dock — hover to preview, click to jump to a track */}
           <section className="max-w-[560px] mx-auto mb-8">
-            <div className="flex items-end justify-center gap-3 sm:gap-4 px-2">
+            <div className="no-scrollbar flex items-end justify-center gap-3 sm:gap-4 px-2 overflow-x-auto snap-x snap-mandatory scroll-smooth">
               {tracks.map((t, i) => (
                 <button
                   key={t.slug}
