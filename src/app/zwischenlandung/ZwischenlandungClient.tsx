@@ -183,22 +183,28 @@ export default function ZwischenlandungClient({ initialSlug }: { initialSlug?: s
           </ScrollReveal>
         </section>
 
-        {/* Full tracklist artwork — full-bleed, same treatment as the hero */}
-        <section className="relative w-full overflow-hidden">
-          <img src="/releases/zwischenlandung-tracklist.png" alt="Zwischenlandung — Deluxe Edition tracklist" className="w-full h-auto" />
-
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to bottom, #0d1117 0%, transparent 8%, transparent 92%, #0d1117 100%)",
-            }}
-          />
+        {/* Closing */}
+        <section className="max-w-[560px] mx-auto px-6 pb-24 text-center">
+          <ScrollReveal>
+            <p className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: ACCENT }}>
+              Closing
+            </p>
+            <p className="text-base leading-relaxed font-serif mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
+              Some encounters become relationships. Others become memories.
+            </p>
+            <p className="text-base leading-relaxed font-serif mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
+              And some remain suspended between the two — like a light beyond the terminal glass,
+              still visible long after the aircraft has disappeared.
+            </p>
+            <p className="text-xl italic font-serif" style={{ color: ACCENT }}>
+              Vielleicht reicht auch nur das eine Mal.
+            </p>
+          </ScrollReveal>
         </section>
 
-        {/* Behind the Song — studio & airport */}
+        {/* Official tracklist artwork — full-bleed, same treatment as the hero */}
         <section className="relative w-full overflow-hidden">
-          <img src="/releases/zwischenlandung-photography.png" alt="Zwischenlandung — behind the song, studio & airport" className="w-full h-auto" />
+          <img src="/releases/zwischenlandung-tracklist.png" alt="Zwischenlandung — Deluxe Edition tracklist" className="w-full h-auto" />
 
           <div
             className="absolute inset-0"
