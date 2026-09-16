@@ -24,6 +24,15 @@ export interface CatalogueAlbum {
 export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
   // ---- Special Releases & Collaborations ----
   {
+    title: "Zwischenlandung",
+    category: "special",
+    kicker: "Deluxe Edition Single · 2026",
+    genre: "feat. Robert Zigller",
+    description: "A German-language trance single about a brief airport encounter, in four interpretations — Official, Piano, Progressive Trance and Melodic Techno & Afro Beats.",
+    href: "/zwischenlandung",
+    cover: "/releases/zwischenlandung-official.png",
+  },
+  {
     title: "Until the Lights Come On",
     category: "special",
     kicker: "Single · 2026",
