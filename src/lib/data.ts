@@ -362,6 +362,33 @@ export const ADAM_SHOWCASE = ADAM_ROADMAP;
 export type TracklistEntry = { num: string; title: string; released?: boolean; comingSoon?: boolean; spotifyUrl?: string; label?: string; isIntro?: boolean; releaseDate?: string };
 
 export const TRACKLISTS: Record<string, TracklistEntry[]> = {
+  "Zwischenlandung": [
+    { num: "01", title: "Zwischenlandung (Official Version)", releaseDate: "2026-09-16" },
+    { num: "02", title: "Zwischenlandung (Official Piano Version)", releaseDate: "2026-09-16" },
+    { num: "03", title: "Zwischenlandung (Progressive Trance Version)", releaseDate: "2026-09-16" },
+    { num: "04", title: "Zwischenlandung (Melodic Techno & Afro Beats Remix)", releaseDate: "2026-09-16" },
+  ],
+  "Until the Lights Come On": [
+    { num: "01", title: "Until the Lights Come On (feat. Livia Benttner)", released: true },
+  ],
+  "Where the World Turns Gold": [
+    { num: "01", title: "Where the World Turns Gold (feat. Margirt “Ritta” Fellner)", released: true },
+  ],
+  "Wavelength Traces": [
+    { num: "01", title: "Best Mistake I Ever Made (feat. Robert Zigller)", released: true },
+    { num: "02", title: "Something I Can Keep (feat. Robert Zigller)", released: true },
+    { num: "03", title: "Come Closer (feat. Jullian Recherr)", released: true },
+    { num: "04", title: "Static Silence (feat. Robert Zigller)", released: true },
+    { num: "05", title: "Still Alive (feat. Thymoty Lorrens)", released: true },
+    { num: "06", title: "Slow Down (feat. Mattew Brexon)", released: true },
+    { num: "07", title: "Stay Right Here (feat. Mattew Brexon)", released: true },
+    { num: "08", title: "Never Took It Off (feat. Jullian Recherr)", released: true },
+    { num: "09", title: "Same Corner, Tuesday (feat. Thymoty Lorrens)", released: true },
+    { num: "10", title: "One More Song (feat. Robert Zigller)", released: true },
+    { num: "11", title: "I Never Sent It (feat. Robert Zigller)", released: true },
+    { num: "12", title: "Feed the Crows (feat. Robert Zigller)", released: true },
+    { num: "13", title: "Leave the Story Where It Stopped (feat. Robert Zigller)", released: true },
+  ],
   "Euphoria Needs No Story": [
     { num: "00", title: "Intro", isIntro: true, releaseDate: "2026-08-30", label: "Out Now" },
     { num: "01", title: "Breathe Me Back to Life (feat. Mattew Brexon)", releaseDate: "2026-10-16", label: "16.10.2026" },
