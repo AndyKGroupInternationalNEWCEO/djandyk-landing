@@ -150,36 +150,73 @@ export default function ZwischenlandungClient({ initialSlug }: { initialSlug?: s
           </ScrollReveal>
         </section>
 
-        {/* The Collaboration */}
-        <section className="max-w-[640px] mx-auto px-6 pb-20">
-          <ScrollReveal>
-            <p className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: ACCENT }}>
-              The Featured Voice
-            </p>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 font-sans" style={{ color: "#ffffff" }}>
-              Robert Zigller
-            </h2>
-            <p className="text-sm sm:text-base italic font-serif mb-4" style={{ color: ACCENT }}>
-              A familiar voice. A new language.
-            </p>
-            <div className="space-y-4 text-base leading-relaxed font-serif" style={{ color: "rgba(255,255,255,0.65)" }}>
-              <p>
+        {/* The Featured Voice */}
+        <section className="max-w-[1100px] mx-auto px-6 pb-24">
+          <ScrollReveal className="grid grid-cols-1 sm:grid-cols-[1fr_1.2fr] gap-10 items-center">
+            <div>
+              <p className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: ACCENT }}>
+                The Featured Voice
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 font-sans" style={{ color: "#ffffff" }}>
+                Robert Zigller
+              </h2>
+              <p className="text-sm sm:text-base italic font-serif mb-4" style={{ color: ACCENT }}>
+                A familiar voice. A new language.
+              </p>
+              <p className="text-base leading-relaxed font-serif mb-4" style={{ color: "rgba(255,255,255,0.65)" }}>
                 Robert Zigller has worked with DJ Andy&apos;K across several songs, singles and
                 album projects. German-born and driven by a personal love of singing rather than a
                 conventional professional career, Robert brings a natural and recognisable voice to
                 every collaboration.
               </p>
-              <p>
-                His voice has already become an important part of the musical world of DJ
-                Andy&apos;K, including several songs from <em>Wavelength Traces</em>.
-              </p>
-              <p>
+              <p className="text-base leading-relaxed font-serif mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
                 For <em>Zwischenlandung</em>, Robert&apos;s German background became part of the
                 creative foundation — an opportunity to explore his native language inside an
                 emotional progressive trance production. What began as an experiment became
                 something personal: a familiar collaboration discovering an entirely new voice.
               </p>
+              <p
+                className="pl-5 text-lg italic font-serif"
+                style={{ color: "#ffffff", borderLeft: `2px solid ${ACCENT}` }}
+              >
+                Only a stopover —
+                <br />
+                yet it carries more weight than everything else.
+              </p>
             </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/5]" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
+              <img
+                src="/releases/zwischenlandung-robert-portrait.png"
+                alt="Robert Zigller in the studio"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </ScrollReveal>
+        </section>
+
+        {/* Behind the Song — studio & airport */}
+        <section className="max-w-[1100px] mx-auto px-6 pb-24">
+          <ScrollReveal>
+            <p className="text-xs font-mono uppercase tracking-[0.3em] mb-4 text-center" style={{ color: ACCENT }}>
+              Behind the Song
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-10 font-sans text-center" style={{ color: "#ffffff" }}>
+              Studio &amp; Airport
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal stagger className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {[
+              "/releases/zwischenlandung-studio-1.png",
+              "/releases/zwischenlandung-studio-2.png",
+              "/releases/zwischenlandung-studio-3.png",
+              "/releases/zwischenlandung-airport-1.png",
+              "/releases/zwischenlandung-airport-2.png",
+              "/releases/zwischenlandung-andy-portrait.png",
+            ].map((src) => (
+              <div key={src} className="rounded-2xl overflow-hidden flex items-center" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
+                <img src={src} alt="DJ Andy'K and Robert Zigller — studio & airport" className="w-full h-auto block" />
+              </div>
+            ))}
           </ScrollReveal>
         </section>
 
