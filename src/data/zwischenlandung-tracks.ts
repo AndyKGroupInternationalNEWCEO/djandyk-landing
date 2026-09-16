@@ -55,6 +55,7 @@ const LYRICS: string[][] = [
     "[Outro]",
     "Nur eine Zwischenlandung, die nichts verspricht.",
     "Doch für immer bleibt in mir dein Licht.",
+    "Nur eine Zwischenlandung, die nichts verspricht.",
   ],
   ["[English Translation — Zwischenlandung / Stopover]"],
   [
@@ -106,6 +107,7 @@ const LYRICS: string[][] = [
     "yet it carries more weight than everything else.",
     "Only a stopover that promises nothing.",
     "But your light will remain inside me forever.",
+    "Only a stopover that promises nothing.",
   ],
 ];
 
@@ -182,7 +184,7 @@ export const zwischenlandungAlbum: Album = {
         "A darker and more rhythmic reconstruction. Melodic techno atmosphere meets Afro-inspired percussion while the original vocal and emotional identity remain at the centre.",
       accent: "#C9A227",
       key: "A minor",
-      bpm: 136,
+      bpm: 132,
       chords: "Am – C – Em – F",
       durationSeconds: 285,
       genre: "Melodic Techno",

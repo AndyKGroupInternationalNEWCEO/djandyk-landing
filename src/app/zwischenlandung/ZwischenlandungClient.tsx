@@ -82,7 +82,7 @@ export default function ZwischenlandungClient({ initialSlug }: { initialSlug?: s
               Opening Introduction
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-8 font-sans" style={{ color: "#ffffff" }}>
-              Some Encounters Do Not Arrive to Stay.
+              Some Encounters Are Not Meant to Stay.
             </h2>
             <div className="space-y-5 text-base leading-relaxed font-serif" style={{ color: "rgba(255,255,255,0.65)" }}>
               <p>
