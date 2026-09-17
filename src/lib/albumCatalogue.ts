@@ -24,6 +24,17 @@ export interface CatalogueAlbum {
 export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
   // ---- Special Releases & Collaborations ----
   {
+    title: "This Is Trance, Hear the Call",
+    category: "special",
+    kicker: "Single · 2026",
+    genre: "feat. Aria Noir",
+    description: "A trance anthem built around one unpolished rehearsal take, in three interpretations — Official Trance, Live Rehearsal Room and Techno Meets Trance.",
+    availableNow: true,
+    href: "/this-is-trance-hear-the-call",
+    cta: "Listen Now",
+    cover: "/releases/this-is-trance-hear-the-call-cover.png",
+  },
+  {
     title: "Zwischenlandung",
     category: "special",
     kicker: "Deluxe Edition Single · 2026",
