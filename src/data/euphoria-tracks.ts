@@ -46,6 +46,7 @@ export const euphoriaAlbum: Album = {
       coverUrl: "/releases/breathe-me-back-to-life.png",
       videoUrl: "/videos/breathe-me-back-to-life.mp4",
       audioSrc: "/audio/breathe-me-back-to-life.mp3",
+      vocal: "Mattew Brexon",
       lyrics: [
         ["[Verse 1]", "I'm on the edge again", "Cold hands, empty room", "Your name in my chest", "Like a beat that wants you"],
         ["I taste the night air", "I count every crack", "One step from the dark", "If you want me, come back"],
@@ -78,6 +79,7 @@ export const euphoriaAlbum: Album = {
       coverUrl: "/releases/alive-in-the-afterglow.png",
       videoUrl: "/videos/alive-in-the-afterglow.mp4",
       audioSrc: "/audio/alive-in-the-afterglow.mp3",
+      vocal: "Jullian Recherr",
       lyrics: [
         ["[Intro]", "Hands on the glass", "I'm still here", "Gold on my skin", "I'm still here", "Heart in my throat", "Turned to a beacon", "One more step", "And I'm beyond the ceiling"],
         ["[Verse 1]", "Morning hit slow", "But I woke up shining", "Scars on my arms", "Look like map lines", "You said I'd fade", "I said watch me glow", "I kept that spark", "Where the dark can't go"],
@@ -106,6 +108,7 @@ export const euphoriaAlbum: Album = {
       coverUrl: "/releases/even-silence-sounds-like-you.png",
       videoUrl: "/videos/even-silence-sounds-like-you.mp4",
       audioSrc: "/audio/even-silence-sounds-like-you.mp3",
+      vocal: "Robert Zigller",
       lyrics: [
         ["[Verse 1]", "Your coat on my chair", "Rain on the glass", "You left your key", "But I still hear your laugh", "The room stays warm", "Then turns to blue", "I turn around", "And find you"],
         ["[Pre-Chorus]", "In the dark", "In the hush", "Your name moves first", "Then it rushes", "I close my eyes", "You come through"],
@@ -133,6 +136,7 @@ export const euphoriaAlbum: Album = {
       coverUrl: "/releases/after-you-left.png",
       videoUrl: "/videos/after-you-left.mp4",
       audioSrc: "/audio/after-you-left.mp3",
+      vocal: "Robert Zigller",
       lyrics: [
         ["[Verse 1]", "I met you after you left", "Still had rain on your sleeve", "You said my name like a dare", "Like you knew what it did to me", "I was two steps too late", "You were already gone", "Then you turned back around", "And the whole room came undone"],
         ["[Pre-Chorus]", "I should've known better", "Than to let that moment pass", "Your eyes hit mine and I", "Fell straight through the glass"],
@@ -160,6 +164,7 @@ export const euphoriaAlbum: Album = {
       coverUrl: "/releases/temporary-immortals.png",
       videoUrl: "/videos/temporary-immortals.mp4",
       audioSrc: "/audio/temporary-immortals.mp3",
+      vocal: "Thymoty Lorrens",
       lyrics: [
         ["[Verse 1]", "You pulled me from the frost", "With your hand on my skin", "We were two small sparks", "Learning how to begin", "Glass in the blood moon", "Silver on your tongue", "We stayed too close to heaven", "For the years we were given"],
         ["[Pre-Chorus]", "Hold me while the world turns", "Hold me while it burns", "If this is only borrowed", "I'll spend it on you"],
@@ -187,6 +192,7 @@ export const euphoriaAlbum: Album = {
       coverUrl: "/releases/the-distance-learned-to-dance.png",
       videoUrl: "/videos/the-distance-learned-to-dance.mp4",
       audioSrc: "/audio/the-distance-learned-to-dance.mp3",
+      vocal: "Thymoty Lorrens",
       lyrics: [
         ["[Verse 1]", "You met me at the edge of dawn", "Where every step felt way too long", "I kept my guard in a paper ring", "You said, \"Just move, let the floor do its thing\"", "The room went soft, then it turned to gold", "Your name on my tongue felt brave and cold", "I watched the fear start losing time", "Like a tide that forgot its line"],
         ["[Pre-Chorus]", "Hold on", "We're almost there", "Hands up", "Forget the stair", "Take my pulse", "Take my pace", "If I fall", "Meet me in space"],
@@ -214,6 +220,7 @@ export const euphoriaAlbum: Album = {
       coverUrl: "/releases/we-were-future-once.png",
       videoUrl: "/videos/we-were-future-once.mp4",
       audioSrc: "/audio/we-were-future-once.mp3",
+      vocal: "Robert Zigller",
       lyrics: [
         ["[Verse 1]", "We had a name in the dark", "Tagged in white on the side of a night bus", "Cheap shoes, hard laughs", "Moving like nothing could touch us", "We lived in the blue hour", "With our plans zipped up in a paper bag", "You said, \"one day, one day\"", "And I held that word like a flag"],
         ["[Pre-Chorus]", "Now the kick drums fade", "And the crowd moves on", "But I still hear you say", "\"We're not gone\""],
@@ -241,6 +248,7 @@ export const euphoriaAlbum: Album = {
       coverUrl: "/releases/invisible-north.png",
       videoUrl: "/videos/invisible-north.mp4",
       audioSrc: "/audio/invisible-north.mp3",
+      vocal: "Mattew Brexon",
       lyrics: [
         ["[Verse 1]", "No signs on the road", "No map in my hand", "I don't know the way", "But I know where I stand", "The city disappears", "The signal is gone", "Something inside me", "Keeps pulling me on"],
         ["[Pre-Chorus]", "I can't see the answer", "I can't see the source", "But every step keeps turning", "To my invisible north"],
@@ -267,6 +275,7 @@ export const euphoriaAlbum: Album = {
       coverUrl: "/releases/i-kept-the-storm.png",
       videoUrl: "/videos/i-kept-the-storm.mp4",
       audioSrc: "/audio/i-kept-the-storm.mp3",
+      vocal: "Jullian Recherr",
       lyrics: [
         ["[Verse 1]", "You left the door half-open", "I felt the cold move in", "Ash on the windowsill", "Rain in the sink again", "Your shadow in the hallway", "Still knows my name too well", "I took the broken pieces", "And made a ring of hell"],
         ["[Pre-Chorus]", "I watched the sky turn black", "Then learned to breathe it in", "If you come back for mercy", "You'll find me standing in"],
@@ -294,6 +303,7 @@ export const euphoriaAlbum: Album = {
       coverUrl: "/releases/euphoria-needs-no-story.png",
       videoUrl: "/videos/euphoria-needs-no-story.mp4",
       audioSrc: "/audio/euphoria-needs-no-story.mp3",
+      vocal: "Mattew Brexon",
       lyrics: [
         ["[Intro]", "No reason.", "No warning.", "No beginning.", "Just this."],
         ["[Verse 1]", "A pulse beneath the surface,", "a signal in my blood.", "Nothing had to happen.", "I knew what it was."],

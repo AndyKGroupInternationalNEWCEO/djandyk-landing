@@ -21,7 +21,7 @@ export const untilTheLightsComeOnAlbum: Album = {
       vocal: "Livia Benttner (featured vocal)",
       lyrics: [
         [
-          "[Verse 1]",
+          "[Verse]",
           "You used to call when you got home.",
           "I used to wait until you did.",
           "Now you’re a name that lights my phone,",
@@ -42,7 +42,7 @@ export const untilTheLightsComeOnAlbum: Album = {
           "We still have this night together.",
         ],
         [
-          "[Verse 2]",
+          "[Verse]",
           "You trace the seam along my sleeve,",
           "That little thing you used to do.",
           "I spent so long learning to leave.",
@@ -61,6 +61,12 @@ export const untilTheLightsComeOnAlbum: Album = {
           "Stay until the fear is gone.",
           "We don’t have to last forever.",
           "We still have this night together.",
+        ],
+        [
+          "[Break]",
+        ],
+        [
+          "[Chorus]",
           "Stay until the lights come on.",
           "Stay until the fear is gone.",
           "We don’t have to last forever.",
@@ -69,7 +75,7 @@ export const untilTheLightsComeOnAlbum: Album = {
         [
           "[Outro]",
           "When the lights come on,",
-          "let me be the last to know.",
+          "Let me be the last to know.",
         ],
       ],
     },
