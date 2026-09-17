@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import BeforeIForgetClient from "./BeforeIForgetClient";
 
 export const metadata: Metadata = {
-  title: "Before I Forget | Trance / Progressive Trance Album | DJ Andy'K",
+  title: "Before I Forget | Trance / Progressive Trance Album",
   description:
     "Before I Forget — an 8-track trance and progressive trance album by DJ Andy'K.",
   alternates: { canonical: "https://www.djandykofficial.com/before-i-forget" },

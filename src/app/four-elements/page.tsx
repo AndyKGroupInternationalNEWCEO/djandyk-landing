@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import FourElementsClient from "./FourElementsClient";
 
 export const metadata: Metadata = {
-  title: "Four Elements | Deep Melodic / Progressive Album | DJ Andy'K",
+  title: "Four Elements | Deep Melodic / Progressive Album",
   description:
     "Four Elements — a 4-track deep melodic and progressive album by DJ Andy'K.",
   alternates: { canonical: "https://www.djandykofficial.com/four-elements" },

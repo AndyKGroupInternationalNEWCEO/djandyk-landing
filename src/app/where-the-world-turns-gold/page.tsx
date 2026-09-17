@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WhereTheWorldTurnsGoldClient from "./WhereTheWorldTurnsGoldClient";
 
 export const metadata: Metadata = {
-  title: "Where the World Turns Gold | Special Release | DJ Andy'K",
+  title: "Where the World Turns Gold | Special Release",
   description:
     "Where the World Turns Gold — a special release by DJ Andy'K featuring Margirt “Ritta” Fellner.",
   alternates: { canonical: "https://www.djandykofficial.com/where-the-world-turns-gold" },

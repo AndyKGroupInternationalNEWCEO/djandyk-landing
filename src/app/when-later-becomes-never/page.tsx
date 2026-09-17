@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WhenLaterBecomesNeverClient from "./WhenLaterBecomesNeverClient";
 
 export const metadata: Metadata = {
-  title: "When Later Becomes Never | Progressive House / House Album | DJ Andy'K",
+  title: "When Later Becomes Never | Progressive House / House Album",
   description:
     "When Later Becomes Never — an 11-track progressive house and house album by DJ Andy'K.",
   alternates: { canonical: "https://www.djandykofficial.com/when-later-becomes-never" },

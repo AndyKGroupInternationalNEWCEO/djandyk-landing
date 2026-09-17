@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ZwischenlandungClient from "./ZwischenlandungClient";
 
 export const metadata: Metadata = {
-  title: "Zwischenlandung | Deluxe Edition Single | DJ Andy'K",
+  title: "Zwischenlandung | Deluxe Edition Single",
   description:
     "Zwischenlandung — a German-language trance single by DJ Andy'K feat. Robert Zigller, in four interpretations: Official, Piano, Progressive Trance and Melodic Techno & Afro Beats.",
   alternates: { canonical: "https://www.djandykofficial.com/zwischenlandung" },

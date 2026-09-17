@@ -16,7 +16,7 @@ export async function generateMetadata({
   const track = beforeIForgetAlbum.tracks.find((t) => t.slug === slug);
   if (!track) return {};
 
-  const title = `${track.title} | ${beforeIForgetAlbum.title} | DJ Andy'K`;
+  const title = `${track.title} | ${beforeIForgetAlbum.title}`;
   const description = track.story ?? `${track.title} — from the album ${beforeIForgetAlbum.title} by DJ Andy'K.`;
   const url = `https://www.djandykofficial.com/${beforeIForgetAlbum.slug}/${track.slug}`;
 

@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Company Information | DJ Andy'K",
+  title: "Company Information",
   description:
     "Company information for ANDY'K GROUP INTERNATIONAL LTD — official record label of DJ Andy'K.",
   alternates: { canonical: "/company-information" },

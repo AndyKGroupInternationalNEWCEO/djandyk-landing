@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import BorrowedSunshineClient from "./BorrowedSunshineClient";
 
 export const metadata: Metadata = {
-  title: "Borrowed Sunshine | Trance / Progressive Trance Album | DJ Andy'K",
+  title: "Borrowed Sunshine | Trance / Progressive Trance Album",
   description:
     "Borrowed Sunshine — a trance and progressive trance album by DJ Andy'K. 10 tracks, 10 stories, 10 moments you'll never forget. New track every Friday.",
   alternates: { canonical: "https://www.djandykofficial.com/borrowed-sunshine" },

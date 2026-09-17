@@ -12,7 +12,7 @@ import {
 const METALLIC_GRADIENT = "linear-gradient(90deg, #C026D3 0%, #7C3AED 35%, #4F46E5 65%, #06B6D4 100%)";
 
 export const metadata: Metadata = {
-  title: "This Is My Choice Competition | DJ Andy'K",
+  title: "This Is My Choice Competition",
   description:
     "Choose an official DJ Andy'K track, create a 20-second Instagram Reel and compete for Lifetime Unlimited Access to Andy'K Music Lab.",
   alternates: { canonical: "https://www.djandykofficial.com/this-is-my-choice" },

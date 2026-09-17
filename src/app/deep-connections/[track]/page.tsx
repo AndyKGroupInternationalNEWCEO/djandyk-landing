@@ -16,7 +16,7 @@ export async function generateMetadata({
   const track = deepConnectionsAlbum.tracks.find((t) => t.slug === slug);
   if (!track) return {};
 
-  const title = `${track.title} | ${deepConnectionsAlbum.title} | DJ Andy'K`;
+  const title = `${track.title} | ${deepConnectionsAlbum.title}`;
   const description = track.story ?? `${track.title} — from the album ${deepConnectionsAlbum.title} by DJ Andy'K.`;
   const url = `https://www.djandykofficial.com/${deepConnectionsAlbum.slug}/${track.slug}`;
 

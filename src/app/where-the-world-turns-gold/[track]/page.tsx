@@ -16,7 +16,7 @@ export async function generateMetadata({
   const track = whereTheWorldTurnsGoldAlbum.tracks.find((t) => t.slug === slug);
   if (!track) return {};
 
-  const title = `${track.title} | DJ Andy'K`;
+  const title = `${track.title}`;
   const description = track.story ?? `${track.title} by DJ Andy'K.`;
   const url = `https://www.djandykofficial.com/${whereTheWorldTurnsGoldAlbum.slug}/${track.slug}`;
 

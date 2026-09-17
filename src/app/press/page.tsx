@@ -44,7 +44,7 @@ function albumStatus(album: CatalogueAlbum): string {
 }
 
 export const metadata: Metadata = {
-  title: "Press & Media Kit | DJ Andy'K Official",
+  title: "Press & Media Kit",
   description:
     "DJ Andy'K press kit, artist bio, Q&A interview and media downloads. UK-based Trance and Progressive House producer Andrej Kneisl.",
   alternates: { canonical: PRESS_URL },

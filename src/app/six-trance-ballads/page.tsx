@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SixTranceBalladsClient from "./SixTranceBalladsClient";
 
 export const metadata: Metadata = {
-  title: "THE ALBUM — From Me, To... | Six Trance Ballads | DJ Andy'K",
+  title: "THE ALBUM — From Me, To... | Six Trance Ballads",
   description:
     "Six trance ballads written as personal letters. THE ALBUM (From Me, To...) by DJ Andy'K. First listen on SoundCloud every Sunday.",
   alternates: { canonical: "https://www.djandykofficial.com/six-trance-ballads" },

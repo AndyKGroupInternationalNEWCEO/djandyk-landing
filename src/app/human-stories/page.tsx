@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import HumanStoriesClient from "./HumanStoriesClient";
 
 export const metadata: Metadata = {
-  title: "Human Stories | House / Progressive House Album | DJ Andy'K",
+  title: "Human Stories | House / Progressive House Album",
   description:
     "Human Stories — a 13-track house and progressive house album by DJ Andy'K, including four instrumental piano versions.",
   alternates: { canonical: "https://www.djandykofficial.com/human-stories" },

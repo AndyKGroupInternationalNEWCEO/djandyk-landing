@@ -16,7 +16,7 @@ export async function generateMetadata({
   const track = borrowedSunshineAlbum.tracks.find((t) => t.slug === slug);
   if (!track) return {};
 
-  const title = `${track.title} | ${borrowedSunshineAlbum.title} | DJ Andy'K`;
+  const title = `${track.title} | ${borrowedSunshineAlbum.title}`;
   const description = track.story ?? `${track.title} — from the album ${borrowedSunshineAlbum.title} by DJ Andy'K.`;
   const url = `https://www.djandykofficial.com/${borrowedSunshineAlbum.slug}/${track.slug}`;
 

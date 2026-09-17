@@ -16,7 +16,7 @@ export async function generateMetadata({
   const track = fourElementsAlbum.tracks.find((t) => t.slug === slug);
   if (!track) return {};
 
-  const title = `${track.title} | ${fourElementsAlbum.title} | DJ Andy'K`;
+  const title = `${track.title} | ${fourElementsAlbum.title}`;
   const description = track.story ?? `${track.title} — from the album ${fourElementsAlbum.title} by DJ Andy'K.`;
   const url = `https://www.djandykofficial.com/${fourElementsAlbum.slug}/${track.slug}`;
 

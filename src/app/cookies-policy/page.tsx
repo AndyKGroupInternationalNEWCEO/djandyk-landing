@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Cookies Policy | DJ Andy'K",
+  title: "Cookies Policy",
   description:
     "Cookies policy for djandykofficial.com — how DJ Andy'K uses cookies and tracking technologies.",
   alternates: { canonical: "/cookies-policy" },

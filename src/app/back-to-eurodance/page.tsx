@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import BackToEurodanceClient from "./BackToEurodanceClient";
 
 export const metadata: Metadata = {
-  title: "Back to Eurodance | Authentic 90s Eurodance Album | DJ Andy'K",
+  title: "Back to Eurodance | Authentic 90s Eurodance Album",
   description:
     "Back to Eurodance — an authentic 90s eurodance album by DJ Andy'K. 6 tracks, 6 memories, one return to the dancefloor. New track every Friday.",
   alternates: { canonical: "https://www.djandykofficial.com/back-to-eurodance" },

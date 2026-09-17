@@ -4,7 +4,7 @@ import path from "path";
 import OpusNo1ViennaClient from "./OpusNo1ViennaClient";
 
 export const metadata: Metadata = {
-  title: "Opus No. 1: Vienna | DJ Andy'K",
+  title: "Opus No. 1: Vienna",
   description:
     "Opus No. 1: Vienna — a continuous work in four movements by DJ Andy'K. Fortepiano, orchestra and progressive trance, composed in Vienna.",
   alternates: { canonical: "https://www.djandykofficial.com/opus-no-1-vienna" },

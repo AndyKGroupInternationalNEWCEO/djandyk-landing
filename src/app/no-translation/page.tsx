@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import NoTranslationClient from "./NoTranslationClient";
 
 export const metadata: Metadata = {
-  title: "No Translation | Melodic Progressive Tech House Album | DJ Andy'K",
+  title: "No Translation | Melodic Progressive Tech House Album",
   description:
     "No Translation — a melodic progressive tech house album by DJ Andy'K. Six languages, one night, nothing needs explaining. New track every Friday.",
   alternates: { canonical: "https://www.djandykofficial.com/no-translation" },

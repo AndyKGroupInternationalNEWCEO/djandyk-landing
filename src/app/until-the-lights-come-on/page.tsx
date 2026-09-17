@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import UntilTheLightsComeOnClient from "./UntilTheLightsComeOnClient";
 
 export const metadata: Metadata = {
-  title: "Until the Lights Come On | DJ Andy'K ft. Livia Benttner",
+  title: "Until the Lights Come On | ft. Livia Benttner",
   description:
     "Until the Lights Come On — a song by DJ Andy'K featuring Livia Benttner.",
   alternates: { canonical: "https://www.djandykofficial.com/until-the-lights-come-on" },

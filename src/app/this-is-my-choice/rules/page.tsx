@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { COMPETITION } from "@/data/this-is-my-choice";
 
 export const metadata: Metadata = {
-  title: "Official Rules — This Is My Choice | DJ Andy'K",
+  title: "Official Rules — This Is My Choice",
   description:
     "Official rules for the This Is My Choice competition by DJ Andy'K, presented by Andy'K Music Lab.",
   alternates: { canonical: "https://www.djandykofficial.com/this-is-my-choice/rules" },

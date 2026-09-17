@@ -16,7 +16,7 @@ export async function generateMetadata({
   const track = whenLaterBecomesNeverAlbum.tracks.find((t) => t.slug === slug);
   if (!track) return {};
 
-  const title = `${track.title} | ${whenLaterBecomesNeverAlbum.title} | DJ Andy'K`;
+  const title = `${track.title} | ${whenLaterBecomesNeverAlbum.title}`;
   const description = track.story ?? `${track.title} — from the album ${whenLaterBecomesNeverAlbum.title} by DJ Andy'K.`;
   const url = `https://www.djandykofficial.com/${whenLaterBecomesNeverAlbum.slug}/${track.slug}`;
 

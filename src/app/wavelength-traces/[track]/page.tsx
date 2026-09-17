@@ -16,7 +16,7 @@ export async function generateMetadata({
   const track = wavelengthTracesAlbum.tracks.find((t) => t.slug === slug);
   if (!track) return {};
 
-  const title = `${track.title} | ${wavelengthTracesAlbum.title} | DJ Andy'K`;
+  const title = `${track.title} | ${wavelengthTracesAlbum.title}`;
   const description = track.story ?? `${track.title} — from the album ${wavelengthTracesAlbum.title} by DJ Andy'K.`;
   const url = `https://www.djandykofficial.com/${wavelengthTracesAlbum.slug}/${track.slug}`;
 

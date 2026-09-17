@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import WavelengthTracesClient from "./WavelengthTracesClient";
 
 export const metadata: Metadata = {
-  title: "Wavelength Traces | Trance Album | DJ Andy'K",
+  title: "Wavelength Traces | Trance Album",
   description:
     "Wavelength Traces — a 13-track trance album by DJ Andy'K. Some connections fade. Their traces stay.",
   alternates: { canonical: "https://www.djandykofficial.com/wavelength-traces" },
