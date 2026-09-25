@@ -16,8 +16,8 @@ const TRACKS = [
     title: "Don't Look Away (Bana Öyle Bakma)",
     from: "feat. Emir Cem Karahan",
     story: "Some looks ask questions. Others already know the answer.",
-    releaseDate: "2026-10-30",
-    date: "30.10.2026",
+    releaseDate: "2026-10-20",
+    date: "20.10.2026",
     accent: "#E84C3C",
     coverUrl: "/releases/dont-look-away.png",
     videoUrl: "/videos/dont-look-away.mp4",
@@ -31,8 +31,8 @@ const TRACKS = [
     title: "No Explanation (Bala Kalam)",
     from: "feat. Rania Al-Masri",
     story: "Some truths arrive without language. Some disappear before they can be explained.",
-    releaseDate: "2026-11-06",
-    date: "6.11.2026",
+    releaseDate: "2026-10-27",
+    date: "27.10.2026",
     accent: "#F0A020",
     coverUrl: "/releases/no-explanation.png",
     videoUrl: "/videos/no-explanation.mp4",
@@ -46,8 +46,8 @@ const TRACKS = [
     title: "Read My Face (Pa Fjalë)",
     from: "feat. Arta Gashi",
     story: "The face speaks before the voice is ready. Before a confession becomes a sentence, it appears in the eyes, the breath and the smallest movement of the face.",
-    releaseDate: "2026-11-13",
-    date: "13.11.2026",
+    releaseDate: "2026-11-03",
+    date: "3.11.2026",
     accent: "#4A90D9",
     coverUrl: "/releases/read-my-face.png",
     videoUrl: "/videos/read-my-face.mp4",
@@ -61,8 +61,8 @@ const TRACKS = [
     title: "Read It in My Eyes (Pročitaj Mi u Očima)",
     from: "feat. Luka Vuković",
     story: "No confession. No disguise. The truth was visible all along.",
-    releaseDate: "2026-11-20",
-    date: "20.11.2026",
+    releaseDate: "2026-11-10",
+    date: "10.11.2026",
     accent: "#D9432E",
     coverUrl: "/releases/read-it-in-my-eyes.png",
     videoUrl: "/videos/read-it-in-my-eyes.mp4",
@@ -76,8 +76,8 @@ const TRACKS = [
     title: "Before Dawn (Преди Зори)",
     from: "feat. Mira Velinova",
     story: "The night doesn't end quietly — it builds until the light breaks through. Some nights don't fade — they rise, rhythm by rhythm, toward the first light.",
-    releaseDate: "2026-11-27",
-    date: "27.11.2026",
+    releaseDate: "2026-11-17",
+    date: "17.11.2026",
     accent: "#40E0C0",
     coverUrl: "/releases/before-dawn.png",
     videoUrl: "/videos/before-dawn.mp4",
@@ -91,8 +91,8 @@ const TRACKS = [
     title: "Under Your Skin (Sub Pielea Ta)",
     from: "feat. Andreea Dumitrescu",
     story: "You can change the story. You can erase every trace. But some people never completely leave.",
-    releaseDate: "2026-12-04",
-    date: "4.12.2026",
+    releaseDate: "2026-11-24",
+    date: "24.11.2026",
     accent: "#E8B020",
     coverUrl: "/releases/under-your-skin.png",
     videoUrl: "/videos/under-your-skin.mp4",
@@ -359,7 +359,7 @@ export default function NoTranslationClient({ initialSlug }: { initialSlug?: str
             <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
               Words change. The night does not.
               <br />
-              Full album: 4.12.2026
+              Full album: 1.12.2026
             </p>
 
             <a

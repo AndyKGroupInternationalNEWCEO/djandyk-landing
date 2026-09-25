@@ -403,12 +403,12 @@ export const TRACKLISTS: Record<string, TracklistEntry[]> = {
     { num: "10", title: "Euphoria Needs No Story (feat. Mattew Brexon)", releaseDate: "2026-12-18", label: "18.12.2026" },
   ],
   "No Translation": [
-    { num: "01", title: "Don't Look Away (Bana Öyle Bakma) feat. Emir Cem Karahan", releaseDate: "2026-10-30", label: "30.10.2026" },
-    { num: "02", title: "No Explanation (Bala Kalam) feat. Rania Al-Masri", releaseDate: "2026-11-06", label: "6.11.2026" },
-    { num: "03", title: "Read My Face (Pa Fjalë) feat. Arta Gashi", releaseDate: "2026-11-13", label: "13.11.2026" },
-    { num: "04", title: "Read It in My Eyes (Pročitaj Mi u Očima) feat. Luka Vuković", releaseDate: "2026-11-20", label: "20.11.2026" },
-    { num: "05", title: "Before Dawn (Преди Зори) feat. Mira Velinova", releaseDate: "2026-11-27", label: "27.11.2026" },
-    { num: "06", title: "Under Your Skin (Sub Pielea Ta) feat. Andreea Dumitrescu", releaseDate: "2026-12-04", label: "4.12.2026" },
+    { num: "01", title: "Don't Look Away (Bana Öyle Bakma) feat. Emir Cem Karahan", releaseDate: "2026-10-20", label: "20.10.2026" },
+    { num: "02", title: "No Explanation (Bala Kalam) feat. Rania Al-Masri", releaseDate: "2026-10-27", label: "27.10.2026" },
+    { num: "03", title: "Read My Face (Pa Fjalë) feat. Arta Gashi", releaseDate: "2026-11-03", label: "3.11.2026" },
+    { num: "04", title: "Read It in My Eyes (Pročitaj Mi u Očima) feat. Luka Vuković", releaseDate: "2026-11-10", label: "10.11.2026" },
+    { num: "05", title: "Before Dawn (Преди Зори) feat. Mira Velinova", releaseDate: "2026-11-17", label: "17.11.2026" },
+    { num: "06", title: "Under Your Skin (Sub Pielea Ta) feat. Andreea Dumitrescu", releaseDate: "2026-11-24", label: "24.11.2026" },
   ],
   "Back to Eurodance": [
     { num: "01", title: "Stay (feat. Eva & Mark Witman)", releaseDate: "2027-01-03", label: "3.1.2027" },

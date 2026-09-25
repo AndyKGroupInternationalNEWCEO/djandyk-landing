@@ -20,7 +20,7 @@ export const noTranslationAlbum: Album = {
       coverUrl: "/releases/dont-look-away.png",
       videoUrl: "/videos/dont-look-away.mp4",
       audioSrc: "/audio/dont-look-away.mp3",
-      releaseDate: "2026-10-30",
+      releaseDate: "2026-10-20",
       vocal: "DJ Andy'K & Emir Cem Karahan",
       lyrics: [
         [
@@ -150,7 +150,7 @@ export const noTranslationAlbum: Album = {
       coverUrl: "/releases/no-explanation.png",
       videoUrl: "/videos/no-explanation.mp4",
       audioSrc: "/audio/no-explanation.mp3",
-      releaseDate: "2026-11-06",
+      releaseDate: "2026-10-27",
       vocal: "DJ Andy'K & Rania Al-Masri",
       lyrics: [
         [
@@ -231,7 +231,7 @@ export const noTranslationAlbum: Album = {
       coverUrl: "/releases/read-my-face.png",
       videoUrl: "/videos/read-my-face.mp4",
       audioSrc: "/audio/read-my-face.mp3",
-      releaseDate: "2026-11-13",
+      releaseDate: "2026-11-03",
       vocal: "DJ Andy'K & Arta Gashi",
       lyrics: [
         [
@@ -354,7 +354,7 @@ export const noTranslationAlbum: Album = {
       coverUrl: "/releases/read-it-in-my-eyes.png",
       videoUrl: "/videos/read-it-in-my-eyes.mp4",
       audioSrc: "/audio/read-it-in-my-eyes.mp3",
-      releaseDate: "2026-11-20",
+      releaseDate: "2026-11-10",
       vocal: "DJ Andy'K & Luka Vuković",
       lyrics: [
         [
@@ -505,7 +505,7 @@ export const noTranslationAlbum: Album = {
       coverUrl: "/releases/before-dawn.png",
       videoUrl: "/videos/before-dawn.mp4",
       audioSrc: "/audio/before-dawn.mp3",
-      releaseDate: "2026-11-27",
+      releaseDate: "2026-11-17",
       vocal: "DJ Andy'K & Mira Velinova",
       lyrics: [
         [
@@ -632,7 +632,7 @@ export const noTranslationAlbum: Album = {
       coverUrl: "/releases/under-your-skin.png",
       videoUrl: "/videos/under-your-skin.mp4",
       audioSrc: "/audio/under-your-skin.mp3",
-      releaseDate: "2026-12-04",
+      releaseDate: "2026-11-24",
       vocal: "DJ Andy'K & Andreea Dumitrescu",
       lyrics: [
         [

@@ -124,7 +124,7 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     kicker: "Album · 2026",
     genre: "Melodic Progressive Tech House",
     description: "Six Languages. One Night. Nothing Needs Explaining.",
-    completionDate: "2026-12-04",
+    completionDate: "2026-12-01",
     href: "/no-translation",
     cover: "/releases/no-translation-cover.png",
   },
