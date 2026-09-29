@@ -73,7 +73,7 @@ const TRACKS = [
   },
   {
     n: 5,
-    title: "Before Dawn (Преди Зори)",
+    title: "Before Dawn (Predi Zori)",
     from: "feat. Mira Velinova",
     story: "The night doesn't end quietly — it builds until the light breaks through. Some nights don't fade — they rise, rhythm by rhythm, toward the first light.",
     releaseDate: "2026-11-17",

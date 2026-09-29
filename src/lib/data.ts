@@ -407,7 +407,7 @@ export const TRACKLISTS: Record<string, TracklistEntry[]> = {
     { num: "02", title: "No Explanation (Bala Kalam) feat. Rania Al-Masri", releaseDate: "2026-10-27", label: "27.10.2026" },
     { num: "03", title: "Read My Face (Pa Fjalë) feat. Arta Gashi", releaseDate: "2026-11-03", label: "3.11.2026" },
     { num: "04", title: "Read It in My Eyes (Pročitaj Mi u Očima) feat. Luka Vuković", releaseDate: "2026-11-10", label: "10.11.2026" },
-    { num: "05", title: "Before Dawn (Преди Зори) feat. Mira Velinova", releaseDate: "2026-11-17", label: "17.11.2026" },
+    { num: "05", title: "Before Dawn (Predi Zori) feat. Mira Velinova", releaseDate: "2026-11-17", label: "17.11.2026" },
     { num: "06", title: "Under Your Skin (Sub Pielea Ta) feat. Andreea Dumitrescu", releaseDate: "2026-11-24", label: "24.11.2026" },
   ],
   "Back to Eurodance": [
