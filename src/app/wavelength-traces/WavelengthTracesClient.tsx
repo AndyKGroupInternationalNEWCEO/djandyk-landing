@@ -84,7 +84,7 @@ function TrackCard({ track }: { track: Track }) {
           </h3>
 
           <p className="text-[11px] font-mono uppercase tracking-widest mb-2" style={{ color: isOut ? track.accent : "rgba(255,255,255,0.25)" }}>
-            {isOut ? "Released" : "Release · TBA"}
+            {isOut ? "Released" : track.releaseDate ? `Release · ${track.releaseDate}` : "Release · TBA"}
           </p>
 
           {track.story && (
@@ -153,7 +153,7 @@ export default function WavelengthTracesClient({ initialSlug }: { initialSlug?: 
               className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-6 px-3 py-1 rounded-full border"
               style={{ color: ACCENT, borderColor: `${ACCENT}55`, background: "rgba(0,0,0,0.4)" }}
             >
-              Album · Trance · 2026
+              Album · Trance · 2027
             </span>
 
             <h1

@@ -10,6 +10,7 @@ export const wavelengthTracesAlbum: Album = {
       n: 1,
       slug: "best-mistake-i-ever-made",
       title: "Best Mistake I Ever Made",
+      releaseDate: "2026-12-01",
       from: "feat. Robert Zigller",
       story:
         "There is a quiet courage in allowing an ordinary day to become something you never planned. For a moment, uncertainty feels warmer than safety, and staying becomes easier than walking away. We spend so much of our lives trying to choose correctly that we sometimes forget how beautiful an unguarded choice can be. What if the best mistake of your life was the moment you finally stopped being careful?",
@@ -72,6 +73,7 @@ export const wavelengthTracesAlbum: Album = {
       n: 2,
       slug: "something-i-can-keep",
       title: "Something I Can Keep",
+      releaseDate: "2026-12-08",
       from: "feat. Robert Zigller",
       story:
         "Ordinary things become precious through the lives that brush against them. They hold the shape of an absence, making an empty room feel a little less empty. Sometimes we keep them because letting go feels too final; sometimes their quiet familiarity gives us enough comfort to carry on. When we ask for something we can keep, are we really asking to know that we mattered?",
@@ -134,6 +136,7 @@ export const wavelengthTracesAlbum: Album = {
       n: 3,
       slug: "come-closer",
       title: "Come Closer",
+      releaseDate: "2026-12-15",
       from: "feat. Jullian Recherr",
       story:
         "Desire can begin with the pleasure of being noticed. A glance lingers, confidence answers, and the distance between two people becomes something both are willing to cross. There is joy in that exchange — in allowing yourself to be wanted, and letting the other person see that you want them too. How close would you come if you trusted that you were welcome?",
@@ -196,6 +199,7 @@ export const wavelengthTracesAlbum: Album = {
       n: 4,
       slug: "static-silence",
       title: "Static Silence",
+      releaseDate: "2026-12-22",
       from: "feat. Robert Zigller",
       story:
         "A familiar voice can reach a place that time has barely touched. For a few seconds, the years fall away, and everything unfinished feels close enough to answer. We return knowing exactly what we will hear, yet some part of us still listens for a different ending. How do you say goodbye when the voice you miss is still there whenever you press play?",
@@ -258,6 +262,7 @@ export const wavelengthTracesAlbum: Album = {
       n: 5,
       slug: "still-alive",
       title: "Still Alive",
+      releaseDate: "2026-12-29",
       from: "feat. Thymoty Lorrens",
       story:
         "Healing often happens too quietly to announce itself. It lives in small acts of care repeated through days when hope feels distant. Only later do we notice how much has changed — how something entrusted to us has flourished, and how we have grown alongside it. What if you have been growing all this time, even on the days you thought you were only holding on?",
@@ -320,6 +325,7 @@ export const wavelengthTracesAlbum: Album = {
       n: 6,
       slug: "slow-down",
       title: "Slow Down",
+      releaseDate: "2027-01-05",
       from: "feat. Mattew Brexon",
       story:
         "Being wanted can make us impatient; feeling safe enough to take our time asks for another kind of trust. Every pause becomes part of the intimacy, every small gesture has room to be felt. For once, there is no need to hurry past the very thing we came close to experience. What might you discover if you let a beautiful moment take as long as it needs?",
@@ -382,6 +388,7 @@ export const wavelengthTracesAlbum: Album = {
       n: 7,
       slug: "stay-right-here",
       title: "Stay Right Here",
+      releaseDate: "2027-01-12",
       from: "feat. Mattew Brexon",
       story:
         "There are evenings when another person's presence makes the world feel gentler. Silence becomes comfortable, the hours loosen, and the need to be elsewhere quietly disappears. Being together feels simple enough to believe in, at least for the length of a rainy night. Could belonging begin with the feeling that, for once, you do not have to leave?",
@@ -444,6 +451,7 @@ export const wavelengthTracesAlbum: Album = {
       n: 8,
       slug: "never-took-it-off",
       title: "Never Took It Off",
+      releaseDate: "2027-01-19",
       from: "feat. Jullian Recherr",
       story:
         "Our habits sometimes preserve what we have not yet found the courage to name. We carry small permissions from an earlier life, long after we stopped knowing whether they still hold. Their familiar weight keeps a possibility close: somewhere, perhaps, there is still a place for us. How much of the past do we carry because a part of us still hopes to be let in?",
@@ -506,6 +514,7 @@ export const wavelengthTracesAlbum: Album = {
       n: 9,
       slug: "same-corner-tuesday",
       title: "Same Corner, Tuesday",
+      releaseDate: "2027-01-26",
       from: "feat. Thymoty Lorrens",
       story:
         "Hope has a playful way of disguising itself as coincidence. We begin to notice patterns, make room in our days, and arrive with expectations we have yet to admit. Beneath the teasing lives a tender possibility: perhaps the other person has been looking forward to this too. How many chance encounters does it take before we admit we are choosing to meet?",
@@ -568,6 +577,7 @@ export const wavelengthTracesAlbum: Album = {
       n: 10,
       slug: "one-more-song",
       title: "One More Song",
+      releaseDate: "2027-02-02",
       from: "feat. Robert Zigller",
       story:
         "Joy can find us at the edge of an evening we never expected to remember. Someone reaches for us, we answer, and suddenly the hours feel generous. There is a particular freedom in sharing happiness before we know what to call it, while one more moment together still seems easy to ask for. Who says a night has to belong to you before it can become part of your story?",
@@ -631,6 +641,7 @@ export const wavelengthTracesAlbum: Album = {
       n: 11,
       slug: "i-never-sent-it",
       title: "I Never Sent It",
+      releaseDate: "2027-02-09",
       from: "feat. Robert Zigller",
       story:
         "Unspoken feelings can remain within us long after the moment that first needed them. Giving them a place in the world may take years. When we finally do, there can be peace in allowing them to travel beyond our control, without asking them to bring anything back. What if saying it was enough, even if an answer never came?",
@@ -693,6 +704,7 @@ export const wavelengthTracesAlbum: Album = {
       n: 12,
       slug: "feed-the-crows",
       title: "Feed the Crows",
+      releaseDate: "2027-02-16",
       from: "feat. Robert Zigller",
       story:
         "Certainty feels easy until something happens that we cannot comfortably explain. Afterward, an old warning acquires a different weight, and a small precaution begins to feel reasonable. We may still doubt the story, even as our hands repeat the ritual. If you were certain nothing was watching, why would you leave something out — just in case?",
@@ -755,6 +767,7 @@ export const wavelengthTracesAlbum: Album = {
       n: 13,
       slug: "leave-the-story-where-it-stopped",
       title: "Leave the Story Where It Stopped",
+      releaseDate: "2027-02-20",
       from: "feat. Robert Zigller",
       story:
         "Some unfinished things offer a shelter we are reluctant to leave. Returning to them keeps a familiar presence close, while each visit reveals something new about the person we have become. Perhaps we need that pause until we can imagine an ending that leaves room for what mattered. If you finally turned the page, would you lose them — or discover what they left within you?",

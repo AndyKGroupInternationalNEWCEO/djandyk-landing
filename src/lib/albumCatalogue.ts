@@ -70,9 +70,10 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
   {
     title: "Wavelength Traces",
     category: "signature",
-    kicker: "Album · 2026",
+    kicker: "Album · 2027",
     genre: "Trance",
     description: "Some connections fade. Their traces stay.",
+    completionDate: "2027-02-20",
     href: "/wavelength-traces",
     cover: "/releases/wavelength-traces-cover.png",
   },

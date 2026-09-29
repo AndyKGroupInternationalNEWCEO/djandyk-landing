@@ -4,7 +4,7 @@ import WavelengthTracesClient from "./WavelengthTracesClient";
 export const metadata: Metadata = {
   title: "Wavelength Traces | Trance Album",
   description:
-    "Wavelength Traces — a 13-track trance album by DJ Andy'K. Some connections fade. Their traces stay.",
+    "Wavelength Traces — a 13-track trance album by DJ Andy'K. Some connections fade. Their traces stay. New track every Tuesday. Full album 20.2.2027.",
   alternates: { canonical: "https://www.djandykofficial.com/wavelength-traces" },
   openGraph: {
     type: "music.album",
