@@ -24,6 +24,17 @@ export interface CatalogueAlbum {
 export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
   // ---- Special Releases & Collaborations ----
   {
+    title: "Turn the Attitude Into Gratitude",
+    category: "special",
+    kicker: "Single · 2026",
+    genre: "feat. Lia Bonson",
+    description: "A modern tech-house record built around attitude, humour and a vocal that never apologises — in three versions: Original Mix, Retro Rock Crossover Mix and Melodic Club Mix.",
+    availableNow: true,
+    href: "/turn-the-attitude-into-gratitude",
+    cta: "Listen Now",
+    cover: "/releases/turn-the-attitude-into-gratitude-cover.jpg",
+  },
+  {
     title: "This Is Trance, Hear the Call",
     category: "special",
     kicker: "Single · 2026",

@@ -1,0 +1,120 @@
+import type { Album } from "@/types/album";
+
+// Official lyrics — from the single booklet (pages 06–07).
+const LYRICS: string[][] = [
+  ["[Intro]", "Oh, fuck.", "Not again."],
+  [
+    "[Verse 1]",
+    "Seven-fifteen, mascara in a taxi",
+    "Coffee in my hand, don’t fucking ask me",
+    "Somebody bumps me, doesn’t say excuse me",
+    "Baby, it’s too early – don’t confuse me",
+    "Red light, late train, somebody’s staring",
+    "Boss keeps calling like I should be caring",
+    "One deep breath, I change my latitude",
+    "Turn the attitude into gratitude",
+  ],
+  [
+    "[Pre-Chorus]",
+    "Smile for the morning",
+    "Smile for the view",
+    "Smile like the universe",
+    "Didn’t just fuck with you",
+    "Okay…",
+    "I’m grateful.",
+    "So grateful.",
+    "Look at me.",
+  ],
+  [
+    "[Chorus]",
+    "Turn the attitude into gratitude",
+    "Fix your face, baby, change the mood",
+    "Life gets messy, coffee gets cold",
+    "But I’m still hot, so I’ve been told",
+    "Turn the attitude into gratitude",
+    "Nobody gives a fuck, you prostitute",
+    "Put your lipstick on, fix your crown",
+    "If the day wants war —",
+    "I’M GOING DOWNTOWN.",
+  ],
+  ["[Drop]", "Attitude.", "Gratitude.", "Atti-atti-attitude.", "Grati-grati-gratitude."],
+  [
+    "[Verse 2]",
+    "Nine-oh-five and I’m already done",
+    "Meeting at ten – pretending it’s fun",
+    "“Could you be nicer?”",
+    "Honey, I could.",
+    "But would I mean it?",
+    "No.",
+    "Didn’t think I would.",
+    "Elevator mirror, checking my face",
+    "One little smile and I’m back in my place",
+    "Maybe life’s good…",
+    "Maybe I’m rude…",
+    "Either way, baby–",
+  ],
+  ["[Build]", "Turn…", "the attitude…", "into…", "GRATITUDE."],
+  [
+    "[Drop]",
+    "Nobody gives a fuck–",
+    "you prostitute.",
+    "Attitude.",
+    "Gratitude.",
+    "Coffee.",
+    "Lipstick.",
+    "Fuck it.",
+  ],
+  ["[Outro]", "Anyway…", "Have a beautiful day, babe.", "I won’t."],
+];
+
+const COVER = "/releases/turn-the-attitude-into-gratitude-cover.jpg";
+const ACCENT = "#E8668A";
+
+export const turnTheAttitudeIntoGratitudeAlbum: Album = {
+  slug: "turn-the-attitude-into-gratitude",
+  title: "Turn the Attitude Into Gratitude",
+  accent: ACCENT,
+  heroCoverSrc: COVER,
+  tracks: [
+    {
+      n: 1,
+      slug: "original-mix",
+      title: "Turn the Attitude Into Gratitude (Original Mix)",
+      from: "feat. Lia Bonson",
+      story:
+        "The core version: modern 2026 tech house, punchy kick, rolling bass and Lia’s dry, sarcastic spoken delivery at the centre.",
+      accent: ACCENT,
+      genre: "Tech House",
+      releaseDate: "2026-09-30",
+      coverUrl: COVER,
+      vocal: "Lia Bonson",
+      lyrics: LYRICS,
+    },
+    {
+      n: 2,
+      slug: "retro-rock-crossover-mix",
+      title: "Turn the Attitude Into Gratitude (Retro Rock Crossover Mix)",
+      from: "feat. Lia Bonson",
+      story:
+        "A more rebellious alternate take, bringing a rougher crossover character into the record without losing the club pulse.",
+      accent: ACCENT,
+      releaseDate: "2026-09-30",
+      coverUrl: COVER,
+      vocal: "Lia Bonson",
+      lyrics: LYRICS,
+    },
+    {
+      n: 3,
+      slug: "melodic-club-mix",
+      title: "Turn the Attitude Into Gratitude (Melodic Club Mix)",
+      from: "feat. Lia Bonson",
+      story:
+        "The more melodic side of the single — broader atmosphere, more lift and a club-focused emotional arc around the same vocal personality.",
+      accent: ACCENT,
+      releaseDate: "2026-09-30",
+      coverUrl: COVER,
+      vocal: "Lia Bonson",
+      lyrics: LYRICS,
+    },
+  ],
+};
