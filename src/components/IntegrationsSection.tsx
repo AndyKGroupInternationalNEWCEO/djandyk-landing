@@ -2,6 +2,7 @@
 
 import { useLanguage } from "@/context/LanguageContext";
 import { STREAMING_PLATFORMS } from "@/lib/data";
+import BeatportLogo from "@/components/BeatportLogo";
 
 const PLATFORM_ICONS: Record<string, React.ReactNode> = {
   spotify: (
@@ -35,13 +36,7 @@ const PLATFORM_ICONS: Record<string, React.ReactNode> = {
       <path d="M10.172 13.828a4 4 0 015.656 0l4 4a4 4 0 01-5.656 5.656l-1.102-1.101" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
-  beatport: (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-      <rect x="3" y="14" width="4" height="7" rx="1" />
-      <rect x="10" y="9" width="4" height="12" rx="1" />
-      <rect x="17" y="3" width="4" height="18" rx="1" />
-    </svg>
-  ),
+  beatport: <BeatportLogo className="w-6 h-6" />,
 };
 
 // Each platform's own brand color — only ever shown on hover, so the grid
