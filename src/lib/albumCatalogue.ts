@@ -21,6 +21,10 @@ export interface CatalogueAlbum {
   note?: string;
 }
 
+// Fallback player for albums without their own Spotify album yet.
+export const ARTIST_EMBED_URL =
+  "https://open.spotify.com/embed/artist/3JhFGt6jRQvnYgvhWMQHUU?utm_source=generator&theme=0";
+
 export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
   // ---- Special Releases & Collaborations ----
   {
@@ -44,6 +48,7 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     href: "/this-is-trance-hear-the-call",
     cta: "Listen Now",
     cover: "/releases/this-is-trance-hear-the-call-cover.png",
+    embedUrl: "https://open.spotify.com/embed/album/3h15cVuRDPKQhhF2Vzvkur?utm_source=generator&theme=0",
   },
   {
     title: "Zwischenlandung",
@@ -183,6 +188,7 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     availableNow: true,
     href: "/when-later-becomes-never",
     cover: "/releases/wlbn-album.png",
+    embedUrl: "https://open.spotify.com/embed/album/1ezdr7EOZWuLBiw7Rpqis6?utm_source=generator&theme=0",
   },
   {
     title: "Human Stories",
@@ -193,6 +199,7 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     completeBadge: true,
     href: "/human-stories",
     cover: "/releases/hs-album.png",
+    embedUrl: "https://open.spotify.com/embed/album/6qWISevnIY1Bm4FB8hUhVC?utm_source=generator&theme=0",
   },
 
   // ---- Legacy Collection ----
@@ -206,6 +213,7 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     availableNow: true,
     href: "/deep-connections",
     cover: "/albums/deep-connections.jpg",
+    embedUrl: "https://open.spotify.com/embed/album/39Zb0euYMqdqg658wqKVGU?utm_source=generator&theme=0",
   },
   {
     title: "Four Elements",
@@ -216,6 +224,7 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     availableNow: true,
     href: "/four-elements",
     cover: "/albums/four-elements.jpg",
+    embedUrl: "https://open.spotify.com/embed/album/18OaI45bkpYwJtzL59BoUw?utm_source=generator&theme=0",
   },
   {
     title: "Music Is Your Passion",

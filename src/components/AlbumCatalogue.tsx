@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { TRACKLISTS } from "@/lib/data";
-import { ALBUM_CATALOGUE, type AlbumCategory, type CatalogueAlbum } from "@/lib/albumCatalogue";
+import { ALBUM_CATALOGUE, ARTIST_EMBED_URL, type AlbumCategory, type CatalogueAlbum } from "@/lib/albumCatalogue";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const TRACK_DOT_STYLES = `
@@ -112,6 +112,7 @@ function isTrackReleased(track: TrackEntry): boolean {
 
 function AlbumCard({ release }: { release: CatalogueAlbum }) {
   const [playerOpen, setPlayerOpen] = useState(false);
+  const playerUrl = release.embedUrl ?? ARTIST_EMBED_URL;
   const [tracklistOpen, setTracklistOpen] = useState(false);
   const tracks = TRACKLISTS[release.title] ?? null;
 
@@ -193,7 +194,7 @@ function AlbumCard({ release }: { release: CatalogueAlbum }) {
           </a>
 
           <div className="flex items-center gap-1 ml-auto">
-            {release.embedUrl && (
+            {playerUrl && (
               <button
                 onClick={() => { setPlayerOpen(!playerOpen); setTracklistOpen(false); }}
                 className={`inline-flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded border transition-colors ${
@@ -225,10 +226,10 @@ function AlbumCard({ release }: { release: CatalogueAlbum }) {
       )}
 
       {/* Spotify embed — lazy: only mounts when playerOpen */}
-      {release.embedUrl && playerOpen && (
+      {playerUrl && playerOpen && (
         <div className="mt-4 rounded-xl overflow-hidden">
           <iframe
-            src={release.embedUrl}
+            src={playerUrl}
             width="100%"
             height="152"
             frameBorder="0"
