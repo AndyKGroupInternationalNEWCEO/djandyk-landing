@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { getAlbumStatus } from "@/lib/albumStatus";
+import { isTrackOut } from "@/lib/albumStatus";
 import CoverFlow from "@/components/coverflow/CoverFlow";
 import SectionTabs from "@/components/coverflow/SectionTabs";
 import { borrowedSunshineAlbum } from "@/data/borrowed-sunshine-tracks";
@@ -151,8 +151,8 @@ const TRACKS = [
     title: "Nothing Asked To Stay",
     from: "DJ Andy'K",
     story: "No promises were broken because none were ever made. Sometimes silence is the only goodbye people leave behind.",
-    releaseDate: "2026-10-09",
-    date: "9.10.2026",
+    releaseDate: "2026-10-03",
+    date: "3.10.2026",
     accent: "#8A7060",
     coverUrl: "/releases/nothing-asked-to-stay.png",
     videoUrl: null as string | null,
@@ -166,6 +166,7 @@ const TRACKS = [
 type Track = (typeof TRACKS)[number];
 
 const GOLD = "#E8A020";
+const FULL_ALBUM_RELEASE_DATE = "2026-10-09";
 
 function TrackCard({ track }: { track: Track }) {
   const [lyricsOpen, setLyricsOpen] = useState(false);
@@ -359,7 +360,8 @@ function TrackCard({ track }: { track: Track }) {
 }
 
 export default function BorrowedSunshineClient({ initialSlug }: { initialSlug?: string } = {}) {
-  const albumStatus = getAlbumStatus(TRACKS);
+  // Badge follows the full-album date (9.10.2026), not the last single.
+  const albumStatus = isTrackOut(FULL_ALBUM_RELEASE_DATE) ? "released" : "in-progress";
   const [viewMode, setViewMode] = useState<"coverflow" | "overview">("coverflow");
 
   return (

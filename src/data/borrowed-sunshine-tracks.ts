@@ -1111,7 +1111,7 @@ export const borrowedSunshineAlbum: Album = {
       durationSeconds: 351,
       coverUrl: "/releases/nothing-asked-to-stay.png",
       audioSrc: "/audio/nothing-asked-to-stay.mp3",
-      releaseDate: "2026-10-09",
+      releaseDate: "2026-10-03",
       lyrics: [
         ["[INTRO]"],
         [
