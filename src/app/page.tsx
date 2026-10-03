@@ -34,7 +34,6 @@ import LovedBySection from "@/components/LovedBySection";
 import IntegrationsSection from "@/components/IntegrationsSection";
 import MonthlyTop10Section from "@/components/MonthlyTop10Section";
 import DJSetsSection from "@/components/DJSetsSection";
-import BeatportSection from "@/components/BeatportSection";
 import ContactForm from "@/components/ContactForm";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
@@ -236,13 +235,6 @@ export default function Home() {
       {/* Album Journey */}
       <ScrollReveal>
         <RoadmapSection />
-      </ScrollReveal>
-
-      <TronDivider />
-
-      {/* Beatport */}
-      <ScrollReveal>
-        <BeatportSection />
       </ScrollReveal>
 
       <TronDivider />
