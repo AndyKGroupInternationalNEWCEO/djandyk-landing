@@ -49,6 +49,7 @@ export default function DashboardPage() {
         return;
       }
     } catch {}
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- browser-only storage must be read after mount to avoid a hydration mismatch
     setReady(true);
   }, [router]);
 

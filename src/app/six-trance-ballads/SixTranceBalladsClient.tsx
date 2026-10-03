@@ -480,7 +480,7 @@ function TrackCard({ track }: { track: Track }) {
           className="text-sm leading-relaxed mb-3 font-serif italic"
           style={{ color: "rgba(255,255,255,0.28)" }}
         >
-          "{track.line}"
+          &quot;{track.line}&quot;
         </p>
 
         {/* Opens the full experience — real audio player, song info & lyrics */}

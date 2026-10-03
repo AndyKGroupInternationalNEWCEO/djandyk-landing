@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 const CURRENCIES = [
   { code: "GBP", symbol: "£",  rate: 1 },
@@ -173,9 +174,9 @@ export default function MusicLabSection() {
           </span>
         </div>
         <p style={{ fontFamily: "'IBM Plex Mono',monospace", fontSize: 11, color: "#a3a3a3", marginBottom: 20 }}>
-          <a href="/#waitlist" style={{ color: "#a3a3a3", textDecoration: "underline" }}>
+          <Link href="/#waitlist" style={{ color: "#a3a3a3", textDecoration: "underline" }}>
             Join the waitlist to lock in your discount →
-          </a>
+          </Link>
         </p>
 
         {/* Currency selector */}

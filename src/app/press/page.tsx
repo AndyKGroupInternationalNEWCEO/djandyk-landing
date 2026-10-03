@@ -410,7 +410,7 @@ export default function PressPage() {
         {/* Footer note */}
         <div className="border-t border-grid-300 pt-8 text-xs text-muted-2 font-mono">
           <p>{COMPANY.label}</p>
-          <p className="mt-1">℗ & © 2026 ANDY'K GROUP INTERNATIONAL LTD · All rights reserved</p>
+          <p className="mt-1">℗ &amp; © 2026 ANDY&apos;K GROUP INTERNATIONAL LTD · All rights reserved</p>
         </div>
 
       </div>

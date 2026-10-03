@@ -46,6 +46,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const saved = getCookie(COOKIE_KEY) as Locale | null;
     if (saved && saved in translations) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- browser-only storage must be read after mount to avoid a hydration mismatch
       setLocaleState(saved);
     } else {
       const detected = detectBrowserLocale();
