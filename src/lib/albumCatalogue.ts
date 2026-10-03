@@ -58,6 +58,7 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     description: "A German-language trance single about a brief airport encounter, in four interpretations — Official, Piano, Progressive Trance and Melodic Techno & Afro Beats.",
     href: "/zwischenlandung",
     cover: "/releases/zwischenlandung-official.png",
+    embedUrl: "https://open.spotify.com/embed/album/0kZKVPE4kugZ3Xd7GSO3sr?utm_source=generator&theme=0",
   },
   {
     title: "Until the Lights Come On",
@@ -156,6 +157,7 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     completionDate: "2026-08-22",
     href: "/opus-no-1-vienna",
     cover: "/releases/opus-no-1-vienna-cover.png",
+    embedUrl: "https://open.spotify.com/embed/album/2WEPktWiqbt7wWzA75MQ7V?utm_source=generator&theme=0",
   },
   {
     title: "Do Not Disturb",
