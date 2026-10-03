@@ -362,6 +362,10 @@ export const ADAM_SHOWCASE = ADAM_ROADMAP;
 export type TracklistEntry = { num: string; title: string; released?: boolean; comingSoon?: boolean; spotifyUrl?: string; label?: string; isIntro?: boolean; releaseDate?: string };
 
 export const TRACKLISTS: Record<string, TracklistEntry[]> = {
+  "Little Boy & Little Girl": [
+    { num: "01", title: "Little Boy, Let the Signal In (feat. Thymoty Lorrens)", releaseDate: "2026-10-03" },
+    { num: "02", title: "Little Girl, Breathe Endlessly (feat. Thymoty Lorrens)", releaseDate: "2026-10-03" },
+  ],
   "Zwischenlandung": [
     { num: "01", title: "Zwischenlandung (Official Version)", releaseDate: "2026-09-16" },
     { num: "02", title: "Zwischenlandung (Official Piano Version)", releaseDate: "2026-09-16" },

@@ -5,6 +5,7 @@ import { deepConnectionsAlbum } from "@/data/deep-connections-tracks";
 import { euphoriaAlbum } from "@/data/euphoria-tracks";
 import { fourElementsAlbum } from "@/data/four-elements-tracks";
 import { humanStoriesAlbum } from "@/data/human-stories-tracks";
+import { littleBoyLittleGirlAlbum } from "@/data/little-boy-little-girl-tracks";
 import { noTranslationAlbum } from "@/data/no-translation-tracks";
 import { sixTranceBalladsAlbum } from "@/data/six-trance-ballads-tracks";
 import { thisIsTranceHearTheCallAlbum } from "@/data/this-is-trance-hear-the-call-tracks";
@@ -25,6 +26,7 @@ type SluggedAlbum = { slug: string; tracks: { slug: string }[] };
 // Albums with per-track pages at /{album.slug}/{track.slug}.
 // When adding a new album with a [track] route, add it here too.
 const ALBUMS_WITH_TRACK_PAGES: SluggedAlbum[] = [
+  littleBoyLittleGirlAlbum,
   turnTheAttitudeIntoGratitudeAlbum,
   wavelengthTracesAlbum,
   zwischenlandungAlbum,

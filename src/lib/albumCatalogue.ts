@@ -28,6 +28,17 @@ export const ARTIST_EMBED_URL =
 export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
   // ---- Special Releases & Collaborations ----
   {
+    title: "Little Boy & Little Girl",
+    category: "special",
+    kicker: "Single · 2026",
+    genre: "feat. Thymoty Lorrens",
+    description: "Two trance songs — Little Boy, Let the Signal In (ADHD) and Little Girl, Breathe Endlessly (Autism).",
+    availableNow: true,
+    href: "/little-boy-little-girl",
+    cta: "Listen Now",
+    cover: "/releases/little-boy-little-girl-cover.png",
+  },
+  {
     title: "Turn the Attitude Into Gratitude",
     category: "special",
     kicker: "Single · 2026",
