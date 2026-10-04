@@ -252,11 +252,17 @@ export default function TurnTheAttitudeIntoGratitudeClient({ initialSlug }: { in
         {/* Making Of */}
         <section className="max-w-[1100px] mx-auto px-6 pb-24">
           <ScrollReveal className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
-              <img src="/releases/atog-making-of.jpg" alt="DJ Andy'K and Lia Bonson — making of" className="w-full h-auto block" />
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
+              <img src="/releases/atog-making-of.jpg" alt="DJ Andy'K and Lia Bonson — making of" className="w-full h-full object-cover" />
             </div>
-            <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
-              <img src="/releases/atog-vocal-booth.jpg" alt="Lia Bonson recording vocals" className="w-full h-auto block" />
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
+              <img src="/releases/atog-vocal-booth.jpg" alt="Lia Bonson recording vocals" className="w-full h-full object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
+              <img src="/releases/atog-working-on-the-mix.jpg" alt="DJ Andy'K and Lia Bonson working on the mix" className="w-full h-full object-cover" />
+            </div>
+            <div className="rounded-2xl overflow-hidden aspect-[4/3]" style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
+              <img src="/releases/atog-reviewing-lyrics.jpg" alt="DJ Andy'K and Lia Bonson reviewing lyrics" className="w-full h-full object-cover" />
             </div>
           </ScrollReveal>
           <ScrollReveal>
