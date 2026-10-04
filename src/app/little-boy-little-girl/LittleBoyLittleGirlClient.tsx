@@ -87,7 +87,7 @@ export default function LittleBoyLittleGirlClient({ initialSlug }: { initialSlug
               className="inline-block text-[10px] font-mono uppercase tracking-[0.35em] mb-6 px-3 py-1 rounded-full border"
               style={{ color: ACCENT, borderColor: `${ACCENT}55`, background: "rgba(0,0,0,0.4)" }}
             >
-              New Single · Trance · 2026
+              New Single · Progressive Trance · 2026
             </span>
 
             <h1

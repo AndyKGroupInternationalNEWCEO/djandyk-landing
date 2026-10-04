@@ -4,7 +4,7 @@ import LittleBoyLittleGirlClient from "./LittleBoyLittleGirlClient";
 export const metadata: Metadata = {
   title: "Little Boy & Little Girl | New Single",
   description:
-    "Little Boy & Little Girl — a new trance single by DJ Andy'K feat. Thymoty Lorrens: Little Boy, Let the Signal In and Little Girl, Breathe Endlessly.",
+    "Little Boy & Little Girl — a new progressive trance / progressive house single by DJ Andy'K feat. Thymoty Lorrens: Little Boy, Let the Signal In and Little Girl, Breathe Endlessly.",
   alternates: { canonical: "https://www.djandykofficial.com/little-boy-little-girl" },
   openGraph: {
     type: "music.album",

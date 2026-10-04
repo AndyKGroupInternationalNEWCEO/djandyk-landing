@@ -32,7 +32,7 @@ export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
     category: "special",
     kicker: "Single · 2026",
     genre: "feat. Thymoty Lorrens",
-    description: "Two trance songs — Little Boy, Let the Signal In (ADHD) and Little Girl, Breathe Endlessly (Autism).",
+    description: "Two progressive trance / progressive house songs — Little Boy, Let the Signal In (ADHD) and Little Girl, Breathe Endlessly (Autism).",
     availableNow: true,
     href: "/little-boy-little-girl",
     cta: "Listen Now",
