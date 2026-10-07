@@ -499,8 +499,8 @@ export const TRACKLISTS: Record<string, TracklistEntry[]> = {
   ],
   "Deep Connections": [
     { num: "01", title: "Deep Connection (Intro)", releaseDate: "2025-08-25" },
-    { num: "02", title: "In My Veins", releaseDate: "2025-08-25" },
-    { num: "03", title: "Game", releaseDate: "2025-08-25" },
+    { num: "02", title: "Game", releaseDate: "2025-08-25" },
+    { num: "03", title: "In My Veins", releaseDate: "2025-08-25" },
     { num: "04", title: "Perfume", releaseDate: "2025-08-25" },
     { num: "05", title: "Midnight Drive", releaseDate: "2025-08-25" },
     { num: "06", title: "Mask", releaseDate: "2025-08-26" },
