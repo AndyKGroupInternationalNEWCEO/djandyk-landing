@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
-import CoverFlow from "@/components/coverflow/CoverFlow";
+import AlbumTracks from "@/components/coverflow/AlbumTracks";
 import { littleBoyLittleGirlAlbum } from "@/data/little-boy-little-girl-tracks";
 
 const COVER = littleBoyLittleGirlAlbum.heroCoverSrc;
@@ -118,9 +118,7 @@ export default function LittleBoyLittleGirlClient({ initialSlug }: { initialSlug
         </section>
 
         {/* Cover Flow — two songs */}
-        <div id="track" style={{ background: BG }}>
-          <CoverFlow album={littleBoyLittleGirlAlbum} initialSlug={initialSlug} />
-        </div>
+        <AlbumTracks album={littleBoyLittleGirlAlbum} initialSlug={initialSlug} background={BG} id="track" />
 
         {/* The Project */}
         <section className="max-w-[640px] mx-auto px-6 py-20">

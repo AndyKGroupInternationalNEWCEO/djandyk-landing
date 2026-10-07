@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
-import CoverFlow from "@/components/coverflow/CoverFlow";
+import AlbumTracks from "@/components/coverflow/AlbumTracks";
 import { silenceForCrazyBitchesAlbum } from "@/data/silence-for-crazy-bitches-tracks";
 
 const COVER = "/releases/silence-for-crazy-bitches-cover.jpg";
@@ -72,9 +72,7 @@ export default function SilenceForCrazyBitchesClient({ initialSlug }: { initialS
         </section>
 
         {/* Cover Flow — three versions, one story */}
-        <div id="track" style={{ background: BG }}>
-          <CoverFlow album={silenceForCrazyBitchesAlbum} initialSlug={initialSlug} />
-        </div>
+        <AlbumTracks album={silenceForCrazyBitchesAlbum} initialSlug={initialSlug} background={BG} id="track" />
 
         {/* The Versions */}
         <section className="max-w-[640px] mx-auto px-6 py-20">

@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
-import CoverFlow from "@/components/coverflow/CoverFlow";
+import AlbumTracks from "@/components/coverflow/AlbumTracks";
 import { zwischenlandungAlbum } from "@/data/zwischenlandung-tracks";
 
 const COVER = "/releases/zwischenlandung-official.png";
@@ -71,9 +71,7 @@ export default function ZwischenlandungClient({ initialSlug }: { initialSlug?: s
         </section>
 
         {/* Cover Flow — four interpretations of one song */}
-        <div id="track" style={{ background: "#0d1117" }}>
-          <CoverFlow album={zwischenlandungAlbum} initialSlug={initialSlug} />
-        </div>
+        <AlbumTracks album={zwischenlandungAlbum} initialSlug={initialSlug} background={"#0d1117"} id="track" />
 
         {/* The Story */}
         <section className="max-w-[640px] mx-auto px-6 py-20">

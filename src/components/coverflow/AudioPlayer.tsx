@@ -51,14 +51,14 @@ export default function AudioPlayer({
 
   return (
     <div
-      className="rounded-xl p-4"
+      className="cf-player rounded-xl p-4"
       style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
     >
       <div className="flex items-center gap-3 flex-wrap">
         <button
           onClick={onTogglePlay}
           aria-label={shownPlaying ? "Pause" : "Play"}
-          className="flex items-center justify-center w-10 h-10 rounded-full flex-shrink-0 transition-transform hover:scale-105"
+          className="cf-play flex items-center justify-center w-10 h-10 rounded-full flex-shrink-0 transition-transform hover:scale-105"
           style={{ background: track.accent, color: "#111111" }}
         >
           {shownPlaying ? (

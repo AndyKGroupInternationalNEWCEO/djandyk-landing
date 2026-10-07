@@ -95,8 +95,7 @@ export default async function SongSheetPage({ params }: { params: Promise<{ albu
     .map((st) => st[0])
     .filter((l) => /^\[.*\]$/.test(l))
     .map((l) => l.slice(1, -1).replace(/\s*[—–-]\s.*$/, ""));
-  const half = Math.ceil(track.lyrics.length / 2);
-  const columns = track.lyrics.length > 3 ? [track.lyrics.slice(0, half), track.lyrics.slice(half)] : [track.lyrics];
+  const lyricsLayout = fitLyrics(track.lyrics);
   const trackNo = String(track.n).padStart(2, "0");
   const url = `${SITE}/${album.slug}/${track.slug}`;
 
@@ -249,24 +248,20 @@ export default async function SongSheetPage({ params }: { params: Promise<{ albu
             </div>
             <img src={img(track.coverUrl, 128)} alt="" style={{ width: "14mm", height: "14mm", objectFit: "cover", borderRadius: "1.5mm", boxShadow: `0 0 0 0.3mm ${accent}66` }} />
           </div>
-          <div className="grid" style={{ gridTemplateColumns: columns.length > 1 ? "1fr 1fr" : "1fr", gap: "0 10mm" }}>
-            {columns.map((col, ci) => (
-              <div key={ci}>
-                {col.map((stanza, si) => (
-                  <div key={si} className="stanza" style={{ marginBottom: "5mm" }}>
-                    {stanza.map((line, li) =>
-                      li === 0 && /^\[.*\]$/.test(line) ? (
-                        <div key={li} className="font-mono font-semibold uppercase" style={{ fontSize: "7.5pt", letterSpacing: "0.18em", color: accent, marginBottom: "1.5mm" }}>
-                          {line.slice(1, -1)}
-                        </div>
-                      ) : (
-                        <p key={li} className="font-serif" style={{ fontSize: "10.5pt", lineHeight: 1.55, color: "rgba(255,255,255,0.86)", margin: 0 }}>
-                          {line}
-                        </p>
-                      )
-                    )}
-                  </div>
-                ))}
+          <div style={{ columnCount: lyricsLayout.cols, columnGap: "9mm", columnFill: "balance" }}>
+            {track.lyrics.map((stanza, si) => (
+              <div key={si} className="stanza" style={{ marginBottom: `${lyricsLayout.gap}mm` }}>
+                {stanza.map((line, li) =>
+                  li === 0 && /^\[.*\]$/.test(line) ? (
+                    <div key={li} className="font-mono font-semibold uppercase" style={{ fontSize: "7pt", letterSpacing: "0.18em", color: accent, marginBottom: "1.2mm" }}>
+                      {line.slice(1, -1)}
+                    </div>
+                  ) : (
+                    <p key={li} className="font-serif" style={{ fontSize: `${lyricsLayout.size}pt`, lineHeight: 1.5, color: "rgba(255,255,255,0.86)", margin: 0 }}>
+                      {line}
+                    </p>
+                  )
+                )}
               </div>
             ))}
           </div>
@@ -284,6 +279,31 @@ export default async function SongSheetPage({ params }: { params: Promise<{ albu
       )}
     </div>
   );
+}
+
+// Picks column count and font size so the lyrics fit on one A4 page.
+// Rough height estimate in mm, including wrapping of long lines.
+const LYRICS_COLUMN_MM = 205;
+function fitLyrics(lyrics: string[][]) {
+  for (const cols of [2, 3]) {
+    for (const size of [10.5, 10, 9.5, 9, 8.5, 8]) {
+      const gap = size >= 9.5 ? 5 : 3.5;
+      const width = (178 - 9 * (cols - 1)) / cols;
+      const charsPerLine = width / (size * 0.3528 * 0.47);
+      const lineMm = size * 1.5 * 0.3528;
+      let total = 0;
+      for (const stanza of lyrics) {
+        total += gap;
+        stanza.forEach((line, i) => {
+          if (i === 0 && /^\[.*\]$/.test(line)) total += 4;
+          else total += Math.max(1, Math.ceil(line.length / charsPerLine)) * lineMm;
+        });
+      }
+      // Stanzas don't split across columns, so leave slack for uneven balancing.
+      if (total / cols <= LYRICS_COLUMN_MM * 0.88) return { cols, size, gap };
+    }
+  }
+  return { cols: 3, size: 7.5, gap: 3 };
 }
 
 function Footer({ url, accent, page }: { url: string; accent: string; page: number }) {

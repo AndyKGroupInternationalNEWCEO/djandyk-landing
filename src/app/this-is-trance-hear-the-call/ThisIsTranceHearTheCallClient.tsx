@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
-import CoverFlow from "@/components/coverflow/CoverFlow";
+import AlbumTracks from "@/components/coverflow/AlbumTracks";
 import { thisIsTranceHearTheCallAlbum } from "@/data/this-is-trance-hear-the-call-tracks";
 
 const COVER = "/releases/this-is-trance-hear-the-call-cover.png";
@@ -70,9 +70,7 @@ export default function ThisIsTranceHearTheCallClient({ initialSlug }: { initial
         </section>
 
         {/* Cover Flow — three interpretations of one call */}
-        <div id="track" style={{ background: "#0d1117" }}>
-          <CoverFlow album={thisIsTranceHearTheCallAlbum} initialSlug={initialSlug} />
-        </div>
+        <AlbumTracks album={thisIsTranceHearTheCallAlbum} initialSlug={initialSlug} background={"#0d1117"} id="track" />
 
         {/* Opening Introduction */}
         <section className="max-w-[640px] mx-auto px-6 py-20">

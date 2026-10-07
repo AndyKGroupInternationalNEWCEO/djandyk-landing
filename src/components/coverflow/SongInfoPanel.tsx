@@ -2,6 +2,7 @@
 
 import AudioPlayer, { type AudioPlayerControls } from "./AudioPlayer";
 import type { Track } from "@/types/album";
+import GlowWords from "./GlowWords";
 
 function formatDuration(seconds?: number) {
   if (!seconds) return null;
@@ -72,8 +73,8 @@ export default function SongInfoPanel({
       )}
 
       {track.story && (
-        <p className="text-sm leading-relaxed italic font-serif mb-5" style={{ color: "rgba(255,255,255,0.55)" }}>
-          {track.story}
+        <p className="cf-line text-sm leading-relaxed italic font-serif mb-5" style={{ color: "rgba(255,255,255,0.55)" }}>
+          <GlowWords text={track.story} />
         </p>
       )}
 

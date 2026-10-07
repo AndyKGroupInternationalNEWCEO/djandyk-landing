@@ -1,11 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getAlbumStatus } from "@/lib/albumStatus";
-import CoverFlow from "@/components/coverflow/CoverFlow";
-import SectionTabs from "@/components/coverflow/SectionTabs";
+import AlbumTracks, { streamingLinks } from "@/components/coverflow/AlbumTracks";
 import { noTranslationAlbum } from "@/data/no-translation-tracks";
 
 const COVER = "/releases/no-translation-cover.png";
@@ -103,207 +101,11 @@ const TRACKS = [
   },
 ];
 
-type Track = (typeof TRACKS)[number];
 
 const ACCENT = "#E84C3C";
 
-function TrackCard({ track }: { track: Track }) {
-  const [lyricsOpen, setLyricsOpen] = useState(false);
-  const isOut = new Date(track.releaseDate) <= new Date();
-
-  return (
-    <div
-      className="card-float w-[260px] sm:w-[280px] shrink-0 snap-start"
-      style={{ animationDelay: `${(track.n % 6) * 0.5}s` }}
-    >
-    <div
-      className="card-float-inner rounded-2xl overflow-hidden"
-      style={{
-        background: "rgba(255,255,255,0.04)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-        border: "1px solid rgba(255,255,255,0.08)",
-        borderTop: `2px solid ${track.accent}`,
-      }}
-    >
-      {/* Cover — full width square (animated when a video is available) */}
-      <div className="aspect-square w-full relative overflow-hidden">
-        {track.videoUrl ? (
-          <video
-            src={track.videoUrl}
-            poster={track.coverUrl}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <img
-            src={track.coverUrl}
-            alt={track.title}
-            className="w-full h-full object-cover"
-          />
-        )}
-        <div className="absolute inset-0 flex items-end p-3">
-          <span
-            className="text-[9px] font-mono uppercase tracking-[0.3em] px-2.5 py-1 rounded-full border"
-            style={{
-              color: isOut ? track.accent : "rgba(255,255,255,0.4)",
-              borderColor: isOut ? `${track.accent}66` : "rgba(255,255,255,0.15)",
-              background: "rgba(0,0,0,0.6)",
-            }}
-          >
-            {isOut ? "Out Now" : track.date}
-          </span>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="p-4">
-        {/* Number + feature credit line */}
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-xs font-mono font-semibold" style={{ color: track.accent }}>
-            {String(track.n).padStart(2, "0")}
-          </span>
-          <span className="text-xs font-mono" style={{ color: "rgba(255,255,255,0.12)" }}>/</span>
-          <span className="text-xs font-mono uppercase tracking-widest min-w-0 truncate" style={{ color: "rgba(255,255,255,0.3)" }}>
-            {track.from}
-          </span>
-        </div>
-
-        {/* Title */}
-        <h3
-          className="text-lg font-bold tracking-tight mb-1 leading-snug font-sans"
-          style={{ color: isOut ? "#f0f6fc" : "rgba(255,255,255,0.55)" }}
-        >
-          {track.title}
-        </h3>
-
-        {/* Release date */}
-        <p className="text-[11px] font-mono uppercase tracking-widest mb-2" style={{ color: isOut ? track.accent : "rgba(255,255,255,0.25)" }}>
-          {isOut ? "Released" : `Release · ${track.date}`}
-        </p>
-
-        {/* Story — 2-line pull-quote */}
-        <p
-          className="text-sm leading-relaxed mb-3 font-serif italic"
-          style={{ color: "rgba(255,255,255,0.28)" }}
-        >
-          {track.story}
-        </p>
-
-        {/* Audio player */}
-        <div className="mb-3">
-          <audio
-            controls
-            preload="none"
-            className="w-full"
-            style={{
-              accentColor: track.accent,
-              colorScheme: "dark",
-              borderRadius: "6px",
-            }}
-          >
-            <source src={track.audioSrc} type="audio/mpeg" />
-          </audio>
-        </div>
-
-        {/* Lyrics toggle */}
-        <button
-          onClick={() => setLyricsOpen((o) => !o)}
-          className="flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest mb-3 py-1.5 transition-opacity hover:opacity-70 w-fit"
-          style={{ color: track.accent }}
-        >
-          <svg
-            viewBox="0 0 16 16"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            className="w-3 h-3 transition-transform duration-200"
-            style={{ transform: lyricsOpen ? "rotate(90deg)" : "rotate(0deg)" }}
-          >
-            <path d="M6 4l4 4-4 4" />
-          </svg>
-          {lyricsOpen ? "Hide lyrics" : "Read lyrics"}
-        </button>
-
-        {/* Lyrics block — stanza format */}
-        {lyricsOpen && (
-          <div
-            className="rounded-xl p-4 mb-3"
-            style={{ background: "rgba(0,0,0,0.35)", border: "1px solid rgba(255,255,255,0.06)" }}
-          >
-            {track.lyrics.length > 0 ? (
-              track.lyrics.map((stanza, si) => (
-                <div key={si} style={{ marginBottom: si < track.lyrics.length - 1 ? "1rem" : 0 }}>
-                  {stanza.map((line, li) => (
-                    <p
-                      key={li}
-                      className="text-sm leading-relaxed font-serif"
-                      style={{ color: "rgba(255,255,255,0.62)" }}
-                    >
-                      {line}
-                    </p>
-                  ))}
-                </div>
-              ))
-            ) : (
-              <p className="text-sm leading-relaxed font-serif italic" style={{ color: "rgba(255,255,255,0.35)" }}>
-                Lyrics coming soon.
-              </p>
-            )}
-          </div>
-        )}
-
-        {/* Streaming links */}
-        <div className="flex gap-2 flex-wrap">
-          {track.soundcloudUrl ? (
-            <a
-              href={track.soundcloudUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 rounded border transition-opacity hover:opacity-70"
-              style={{ color: "#ff5500", borderColor: "rgba(255,85,0,0.35)" }}
-            >
-              SoundCloud
-            </a>
-          ) : (
-            <span
-              className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 rounded border"
-              style={{ color: "rgba(255,255,255,0.15)", borderColor: "rgba(255,255,255,0.08)" }}
-            >
-              SoundCloud — soon
-            </span>
-          )}
-          {track.spotifyUrl ? (
-            <a
-              href={track.spotifyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 rounded border transition-opacity hover:opacity-70"
-              style={{ color: "#1db954", borderColor: "rgba(29,185,84,0.35)" }}
-            >
-              Spotify
-            </a>
-          ) : (
-            <span
-              className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 rounded border"
-              style={{ color: "rgba(255,255,255,0.15)", borderColor: "rgba(255,255,255,0.08)" }}
-            >
-              Streaming — soon
-            </span>
-          )}
-        </div>
-      </div>
-    </div>
-    </div>
-  );
-}
-
 export default function NoTranslationClient({ initialSlug }: { initialSlug?: string } = {}) {
   const albumStatus = getAlbumStatus(TRACKS);
-  const [viewMode, setViewMode] = useState<"coverflow" | "overview">("coverflow");
 
   return (
     <>
@@ -374,32 +176,7 @@ export default function NoTranslationClient({ initialSlug }: { initialSlug?: str
           </div>
         </section>
 
-        {/* Cover Flow vs. Track Overview — one view at a time, Cover Flow by default */}
-        <div id="tracks" style={{ background: "#0d1117" }}>
-          <div className="flex justify-center pb-8 px-6">
-            <SectionTabs
-              accent={ACCENT}
-              activeTab={viewMode}
-              onTabChange={(id) => setViewMode(id as "coverflow" | "overview")}
-              tabs={[
-                { id: "coverflow", label: "Cover Flow" },
-                { id: "overview", label: "Track Overview" },
-              ]}
-            />
-          </div>
-
-          {viewMode === "coverflow" ? (
-            <CoverFlow album={noTranslationAlbum} initialSlug={initialSlug} />
-          ) : (
-            <section className="pb-12 max-w-[1100px] mx-auto">
-              <div className="no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-6 pb-2">
-                {TRACKS.map((track) => (
-                  <TrackCard key={track.n} track={track} />
-                ))}
-              </div>
-            </section>
-          )}
-        </div>
+        <AlbumTracks album={noTranslationAlbum} initialSlug={initialSlug} background="#0d1117" trackLinks={(t) => streamingLinks(TRACKS.find((x) => x.n === t.n))} />
 
         {/* Full tracklist artwork — full-bleed, same treatment as the hero */}
         <section className="relative w-full overflow-hidden">

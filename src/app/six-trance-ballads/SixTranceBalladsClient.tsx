@@ -1,12 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getAlbumStatus } from "@/lib/albumStatus";
-import CoverFlow from "@/components/coverflow/CoverFlow";
-import SectionTabs from "@/components/coverflow/SectionTabs";
+import AlbumTracks, { streamingLinks } from "@/components/coverflow/AlbumTracks";
 import { sixTranceBalladsAlbum } from "@/data/six-trance-ballads-tracks";
 
 const COVER = "/releases/six-trance-ballads-the-album.png";
@@ -400,154 +397,12 @@ const TRACKS = [
   },
 ];
 
-type Track = (typeof TRACKS)[number];
 
 const GREEN = "#63B39A";
 
 
-function TrackCard({ track }: { track: Track }) {
-  const isOut = new Date(track.releaseDate) <= new Date();
-  const slug = track.coverUrl.replace("/releases/", "").replace(".png", "");
-
-  return (
-    <div
-      className="card-breathe rounded-2xl overflow-hidden w-[260px] sm:w-[280px] shrink-0 snap-start"
-      style={{
-        background: "rgba(255,255,255,0.04)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-        border: "1px solid rgba(255,255,255,0.08)",
-        borderTop: `2px solid ${track.accent}`,
-      }}
-    >
-      {/* Cover — full width square */}
-      <div className="aspect-square w-full relative overflow-hidden">
-        <div className="card-breathe-cover-wrap w-full h-full">
-          <img
-            src={track.coverUrl}
-            alt={track.title}
-            className="card-breathe-cover w-full h-full object-cover"
-            style={{
-              filter: !isOut ? "brightness(0.85) saturate(0.9)" : "none",
-            }}
-          />
-        </div>
-        <div
-          className="absolute inset-0 flex items-end p-3"
-          style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55) 20%, transparent)" }}
-        >
-          <span
-            className="text-[9px] font-mono uppercase tracking-[0.3em] px-2.5 py-1 rounded-full border"
-            style={{
-              color: isOut ? track.accent : "rgba(255,255,255,0.4)",
-              borderColor: isOut ? `${track.accent}66` : "rgba(255,255,255,0.15)",
-              background: "rgba(0,0,0,0.6)",
-            }}
-          >
-            {isOut ? "Out Now" : track.date}
-          </span>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="p-4">
-        {/* Number + address line */}
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-xs font-mono font-semibold" style={{ color: track.accent }}>
-            {String(track.n).padStart(2, "0")}
-          </span>
-          <span className="text-xs font-mono" style={{ color: "rgba(255,255,255,0.12)" }}>/</span>
-          <span className="text-xs font-mono uppercase tracking-widest min-w-0 truncate" style={{ color: "rgba(255,255,255,0.3)" }}>
-            {track.from}
-          </span>
-        </div>
-
-        {/* Title */}
-        <h3
-          className="text-lg font-bold tracking-tight mb-1 leading-snug font-sans"
-          style={{ color: isOut ? "#f0f6fc" : "rgba(255,255,255,0.55)" }}
-        >
-          {track.title}
-        </h3>
-
-        {/* Release date */}
-        <p className="text-[11px] font-mono uppercase tracking-widest mb-2" style={{ color: isOut ? track.accent : "rgba(255,255,255,0.25)" }}>
-          {isOut ? "Released" : `Release · ${track.date}`}
-        </p>
-
-        {/* Core line */}
-        <p
-          className="text-sm leading-relaxed mb-3 font-serif italic"
-          style={{ color: "rgba(255,255,255,0.28)" }}
-        >
-          &quot;{track.line}&quot;
-        </p>
-
-        {/* Opens the full experience — real audio player, song info & lyrics */}
-        <Link
-          href={`/six-trance-ballads/${slug}`}
-          className="flex items-center gap-1.5 text-xs font-mono uppercase tracking-widest mb-3 py-1.5 transition-opacity hover:opacity-70 w-fit"
-          style={{ color: track.accent }}
-        >
-          <svg
-            viewBox="0 0 16 16"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            className="w-3 h-3"
-          >
-            <path d="M6 4l4 4-4 4" />
-          </svg>
-          Open Track
-        </Link>
-
-        {/* Streaming links */}
-        <div className="flex gap-2 flex-wrap">
-          {track.soundcloudUrl ? (
-            <a
-              href={track.soundcloudUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 rounded border transition-opacity hover:opacity-70"
-              style={{ color: "#ff5500", borderColor: "rgba(255,85,0,0.35)" }}
-            >
-              SoundCloud
-            </a>
-          ) : (
-            <span
-              className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 rounded border"
-              style={{ color: "rgba(255,255,255,0.15)", borderColor: "rgba(255,255,255,0.08)" }}
-            >
-              SoundCloud — soon
-            </span>
-          )}
-          {track.spotifyUrl ? (
-            <a
-              href={track.spotifyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 rounded border transition-opacity hover:opacity-70"
-              style={{ color: "#1db954", borderColor: "rgba(29,185,84,0.35)" }}
-            >
-              Spotify
-            </a>
-          ) : (
-            <span
-              className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 rounded border"
-              style={{ color: "rgba(255,255,255,0.15)", borderColor: "rgba(255,255,255,0.08)" }}
-            >
-              Streaming — soon
-            </span>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function SixTranceBalladsClient({ initialSlug }: { initialSlug?: string } = {}) {
   const albumStatus = getAlbumStatus(TRACKS);
-  const [viewMode, setViewMode] = useState<"coverflow" | "overview">("coverflow");
 
   return (
     <>
@@ -638,32 +493,7 @@ export default function SixTranceBalladsClient({ initialSlug }: { initialSlug?: 
           </div>
         </div>
 
-        {/* Cover Flow vs. Track Overview — one view at a time, Cover Flow by default */}
-        <div id="tracks" style={{ background: "#000000" }}>
-          <div className="flex justify-center pb-8 px-6">
-            <SectionTabs
-              accent={GREEN}
-              activeTab={viewMode}
-              onTabChange={(id) => setViewMode(id as "coverflow" | "overview")}
-              tabs={[
-                { id: "coverflow", label: "Cover Flow" },
-                { id: "overview", label: "Track Overview" },
-              ]}
-            />
-          </div>
-
-          {viewMode === "coverflow" ? (
-            <CoverFlow album={sixTranceBalladsAlbum} initialSlug={initialSlug} />
-          ) : (
-            <section className="pb-12 max-w-[1100px] mx-auto">
-              <div className="no-scrollbar flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-6 pb-2">
-                {TRACKS.map((track) => (
-                  <TrackCard key={track.n} track={track} />
-                ))}
-              </div>
-            </section>
-          )}
-        </div>
+        <AlbumTracks album={sixTranceBalladsAlbum} initialSlug={initialSlug} background="#000000" trackLinks={(t) => streamingLinks(TRACKS.find((x) => x.n === t.n))} />
       </main>
 
       {/* Footer in white wrapper so site CSS vars render correctly */}

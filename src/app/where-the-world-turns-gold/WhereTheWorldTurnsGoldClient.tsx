@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
-import CoverFlow from "@/components/coverflow/CoverFlow";
+import AlbumTracks from "@/components/coverflow/AlbumTracks";
 import { whereTheWorldTurnsGoldAlbum } from "@/data/where-the-world-turns-gold-track";
 
 const COVER = "/releases/where-the-world-turns-gold.png";
@@ -70,9 +70,7 @@ export default function WhereTheWorldTurnsGoldClient({ initialSlug }: { initialS
         </section>
 
         {/* Cover Flow — single-track player, artwork, song info & lyrics */}
-        <div id="track" style={{ background: "#0d1117" }}>
-          <CoverFlow album={whereTheWorldTurnsGoldAlbum} initialSlug={initialSlug} />
-        </div>
+        <AlbumTracks album={whereTheWorldTurnsGoldAlbum} initialSlug={initialSlug} background={"#0d1117"} id="track" />
 
         {/* The Story */}
         <section className="max-w-[640px] mx-auto px-6 py-20">

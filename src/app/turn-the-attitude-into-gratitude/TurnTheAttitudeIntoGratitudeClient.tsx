@@ -3,7 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
-import CoverFlow from "@/components/coverflow/CoverFlow";
+import AlbumTracks from "@/components/coverflow/AlbumTracks";
 import { turnTheAttitudeIntoGratitudeAlbum } from "@/data/turn-the-attitude-into-gratitude-tracks";
 
 const COVER = "/releases/turn-the-attitude-into-gratitude-cover.jpg";
@@ -92,9 +92,7 @@ export default function TurnTheAttitudeIntoGratitudeClient({ initialSlug }: { in
         </section>
 
         {/* Cover Flow — three versions, one attitude */}
-        <div id="track" style={{ background: BG }}>
-          <CoverFlow album={turnTheAttitudeIntoGratitudeAlbum} initialSlug={initialSlug} />
-        </div>
+        <AlbumTracks album={turnTheAttitudeIntoGratitudeAlbum} initialSlug={initialSlug} background={BG} id="track" />
 
         {/* The Single */}
         <section className="max-w-[640px] mx-auto px-6 py-20">

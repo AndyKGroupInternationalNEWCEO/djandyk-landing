@@ -849,3 +849,46 @@ body {
   .card-glow:hover .glow-zoom { transform: none; }
   .cf-glow .cf-sheen { display: none; }
 }
+
+/* Song info — player, download button (part of .cf-glow) */
+.cf-glow .cf-player {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cf-glow .cf-player:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent) !important;
+  box-shadow: 0 0 28px -6px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.cf-glow .cf-play {
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.cf-glow .cf-play:hover {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent), 0 0 26px color-mix(in srgb, var(--accent) 70%, transparent);
+}
+
+.cf-glow .cf-download {
+  position: relative;
+  overflow: hidden;
+}
+
+.cf-glow .cf-download:hover {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 30px -4px color-mix(in srgb, var(--accent) 55%, transparent), inset 0 0 18px color-mix(in srgb, var(--accent) 14%, transparent);
+  transform: translateY(-1px);
+}
+
+.cf-glow .cf-download::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.14) 50%, transparent 65%);
+  transform: translateX(-120%);
+}
+
+.cf-glow .cf-download:hover::after {
+  transition: transform 0.9s cubic-bezier(0.19,1,0.22,1);
+  transform: translateX(120%);
+}

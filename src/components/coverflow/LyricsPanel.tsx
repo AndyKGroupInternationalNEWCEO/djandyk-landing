@@ -1,21 +1,7 @@
 "use client";
 
 import type { Track } from "@/types/album";
-
-// Each word is its own span so `.cf-glow` can light up a single word on hover.
-function Words({ line }: { line: string }) {
-  return (
-    <>
-      {line.split(/(\s+)/).map((part, i) =>
-        /^\s+$/.test(part) || part === "" ? part : (
-          <span key={i} className="cf-word">
-            {part}
-          </span>
-        )
-      )}
-    </>
-  );
-}
+import GlowWords from "./GlowWords";
 
 export default function LyricsPanel({ track }: { track: Track }) {
   return (
@@ -42,7 +28,7 @@ export default function LyricsPanel({ track }: { track: Track }) {
                     }
                     style={{ color: isTag ? track.accent : "rgba(255,255,255,0.65)" }}
                   >
-                    {isTag ? line : <Words line={line} />}
+                    {isTag ? line : <GlowWords text={line} />}
                   </p>
                 );
               })}
