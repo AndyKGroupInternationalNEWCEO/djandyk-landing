@@ -24,6 +24,7 @@ function TrackCard({
   links: TrackLink[];
 }) {
   const innerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const isOut = track.releaseDate
     ? new Date(track.releaseDate) <= new Date()
     : false;
@@ -43,6 +44,7 @@ function TrackCard({
   const resetTilt = () => {
     const el = innerRef.current;
     if (el) el.style.transform = "";
+    videoRef.current?.pause();
   };
 
   return (
@@ -50,6 +52,7 @@ function TrackCard({
       <div
         ref={innerRef}
         onMouseMove={handleTilt}
+        onMouseEnter={() => videoRef.current?.play().catch(() => {})}
         onMouseLeave={resetTilt}
         className="card-glow-inner glow-spot rounded-2xl overflow-hidden h-full"
         style={{
@@ -66,11 +69,26 @@ function TrackCard({
           href={href}
           className="aspect-square w-full relative overflow-hidden block"
         >
-          <img
-            src={track.coverUrl}
-            alt={track.title}
-            className="glow-zoom w-full h-full object-cover"
-          />
+          {/* Animated artwork plays while the card is hovered. */}
+          {track.videoUrl ? (
+            <video
+              ref={videoRef}
+              src={track.videoUrl}
+              poster={track.coverUrl}
+              loop
+              muted
+              playsInline
+              preload="none"
+              aria-label={track.title}
+              className="glow-zoom w-full h-full object-cover"
+            />
+          ) : (
+            <img
+              src={track.coverUrl}
+              alt={track.title}
+              className="glow-zoom w-full h-full object-cover"
+            />
+          )}
           <div className="absolute inset-0 flex items-start justify-start p-3">
             <span
               className="text-[9px] font-mono uppercase tracking-[0.3em] px-2.5 py-1 rounded-full border"

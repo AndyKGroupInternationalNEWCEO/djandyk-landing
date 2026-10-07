@@ -21,6 +21,7 @@ export const wavelengthTracesAlbum: Album = {
       durationSeconds: 244,
       genre: "Trance",
       coverUrl: "/releases/wt-best-mistake-i-ever-made.png",
+      videoUrl: "/videos/wt-best-mistake-i-ever-made.mp4",
       audioSrc: "/audio/wt-best-mistake-i-ever-made.mp3",
       vocal: "Robert Zigller",
       lyrics: [
@@ -84,6 +85,7 @@ export const wavelengthTracesAlbum: Album = {
       durationSeconds: 237,
       genre: "Trance",
       coverUrl: "/releases/wt-something-i-can-keep.png",
+      videoUrl: "/videos/wt-something-i-can-keep.mp4",
       audioSrc: "/audio/wt-something-i-can-keep.mp3",
       vocal: "Robert Zigller",
       lyrics: [
@@ -147,6 +149,7 @@ export const wavelengthTracesAlbum: Album = {
       durationSeconds: 220,
       genre: "Trance",
       coverUrl: "/releases/wt-come-closer.png",
+      videoUrl: "/videos/wt-come-closer.mp4",
       audioSrc: "/audio/wt-come-closer.mp3",
       vocal: "Jullian Recherr",
       lyrics: [
@@ -210,6 +213,7 @@ export const wavelengthTracesAlbum: Album = {
       durationSeconds: 219,
       genre: "Trance",
       coverUrl: "/releases/wt-static-silence.png",
+      videoUrl: "/videos/wt-static-silence.mp4",
       audioSrc: "/audio/wt-static-silence.mp3",
       vocal: "Robert Zigller",
       lyrics: [
@@ -273,6 +277,7 @@ export const wavelengthTracesAlbum: Album = {
       durationSeconds: 229,
       genre: "Trance",
       coverUrl: "/releases/wt-still-alive.png",
+      videoUrl: "/videos/wt-still-alive.mp4",
       audioSrc: "/audio/wt-still-alive.mp3",
       vocal: "Thymoty Lorrens",
       lyrics: [
@@ -336,6 +341,7 @@ export const wavelengthTracesAlbum: Album = {
       durationSeconds: 243,
       genre: "Trance",
       coverUrl: "/releases/wt-slow-down.png",
+      videoUrl: "/videos/wt-slow-down.mp4",
       audioSrc: "/audio/wt-slow-down.mp3",
       vocal: "Mattew Brexon",
       lyrics: [
@@ -399,6 +405,7 @@ export const wavelengthTracesAlbum: Album = {
       durationSeconds: 237,
       genre: "Trance",
       coverUrl: "/releases/wt-stay-right-here.png",
+      videoUrl: "/videos/wt-stay-right-here.mp4",
       audioSrc: "/audio/wt-stay-right-here.mp3",
       vocal: "Mattew Brexon",
       lyrics: [
@@ -462,6 +469,7 @@ export const wavelengthTracesAlbum: Album = {
       durationSeconds: 218,
       genre: "Trance",
       coverUrl: "/releases/wt-never-took-it-off.png",
+      videoUrl: "/videos/wt-never-took-it-off.mp4",
       audioSrc: "/audio/wt-never-took-it-off.mp3",
       vocal: "Jullian Recherr",
       lyrics: [
@@ -588,6 +596,7 @@ export const wavelengthTracesAlbum: Album = {
       durationSeconds: 224,
       genre: "Trance",
       coverUrl: "/releases/wt-one-more-song.png",
+      videoUrl: "/videos/wt-one-more-song.mp4",
       audioSrc: "/audio/wt-one-more-song.mp3",
       vocal: "Robert Zigller",
       lyrics: [
@@ -652,6 +661,7 @@ export const wavelengthTracesAlbum: Album = {
       durationSeconds: 241,
       genre: "Trance",
       coverUrl: "/releases/wt-i-never-sent-it.png",
+      videoUrl: "/videos/wt-i-never-sent-it.mp4",
       audioSrc: "/audio/wt-i-never-sent-it.mp3",
       vocal: "Robert Zigller",
       lyrics: [
