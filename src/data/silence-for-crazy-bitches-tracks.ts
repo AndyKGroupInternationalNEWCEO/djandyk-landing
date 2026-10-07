@@ -129,7 +129,7 @@ export const silenceForCrazyBitchesAlbum: Album = {
       accent: "#E0559A",
       genre: "Piano & Vocals",
       key: "G minor",
-      bpm: 126,
+      bpm: 63,
       chords: "Gm – F – Eb – Cm",
       releaseDate: RELEASE_DATE,
       durationSeconds: 249,
