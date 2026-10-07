@@ -3,7 +3,31 @@
 import { useRef, useState } from "react";
 import { COMPANY } from "@/lib/data";
 
-const DJ_SETS = [
+type DJSet = {
+  year: string;
+  title: string;
+  url: string;
+  /** Private (unlisted) SoundCloud tracks need the secret token in the embed. */
+  secretToken?: string;
+};
+
+const DJ_SETS: DJSet[] = [
+  {
+    year: "2026",
+    title: "Silence for Crazy Bitches – Tribal Mix 2026",
+    url: "https://soundcloud.com/djandyk_2024/dj-andyk-silence-for-crazy",
+  },
+  {
+    year: "2026",
+    title: "Borrowed Sunshine – A State of Summer 2026",
+    url: "https://soundcloud.com/djandyk_2024/dj-andy_k-borrowed-sunshine-a",
+  },
+  {
+    year: "2026",
+    title: "A State of Summer – Frequency Exclusive",
+    url: "https://api.soundcloud.com/tracks/2414181120",
+    secretToken: "s-z7rGpDL4B3L",
+  },
   {
     year: "2026",
     title: "The European Summer 2026",
@@ -65,8 +89,9 @@ function Waveform({ fast }: { fast: boolean }) {
   );
 }
 
-function embedUrl(url: string) {
-  return `https://w.soundcloud.com/player/?url=${encodeURIComponent(url)}&color=%23111111&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=true`;
+function embedUrl(set: DJSet) {
+  const secret = set.secretToken ? `&secret_token=${set.secretToken}` : "";
+  return `https://w.soundcloud.com/player/?url=${encodeURIComponent(set.url)}${secret}&color=%23111111&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=true`;
 }
 
 /** Returns inline styles for a card in the 3D fan effect */
@@ -202,7 +227,7 @@ export default function DJSetsSection() {
                     <Waveform fast={hoveredIndex === i} />
                   </div>
                   <iframe
-                    src={embedUrl(set.url)}
+                    src={embedUrl(set)}
                     width="100%"
                     height="120"
                     frameBorder="0"
@@ -244,7 +269,7 @@ export default function DJSetsSection() {
                       <Waveform fast={false} />
                     </div>
                     <iframe
-                      src={embedUrl(set.url)}
+                      src={embedUrl(set)}
                       width="100%"
                       height="120"
                       frameBorder="0"
