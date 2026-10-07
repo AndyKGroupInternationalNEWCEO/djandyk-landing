@@ -362,6 +362,12 @@ export const ADAM_SHOWCASE = ADAM_ROADMAP;
 export type TracklistEntry = { num: string; title: string; released?: boolean; comingSoon?: boolean; spotifyUrl?: string; label?: string; isIntro?: boolean; releaseDate?: string };
 
 export const TRACKLISTS: Record<string, TracklistEntry[]> = {
+  "Silence for Crazy Bitches": [
+    { num: "01", title: "Silence for Crazy Bitches (Original Tribal Version) (feat. Max Liem)", releaseDate: "2026-10-07" },
+    { num: "02", title: "Silence for Crazy Bitches (Trance Version) (feat. Max Liem)", releaseDate: "2026-10-07" },
+    { num: "03", title: "Silence for Crazy Bitches (Techno Version) (feat. Max Liem)", releaseDate: "2026-10-07" },
+    { num: "04", title: "Silence for Crazy Bitches (Special Piano Version) (feat. Max Liem)", releaseDate: "2026-10-07" },
+  ],
   "Little Boy & Little Girl": [
     { num: "01", title: "Little Boy, Let the Signal In (feat. Thymoty Lorrens)", releaseDate: "2026-10-03" },
     { num: "02", title: "Little Girl, Breathe Endlessly (feat. Thymoty Lorrens)", releaseDate: "2026-10-03" },

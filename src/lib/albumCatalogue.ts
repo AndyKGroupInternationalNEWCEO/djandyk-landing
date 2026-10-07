@@ -28,6 +28,17 @@ export const ARTIST_EMBED_URL =
 export const ALBUM_CATALOGUE: CatalogueAlbum[] = [
   // ---- Special Releases & Collaborations ----
   {
+    title: "Silence for Crazy Bitches",
+    category: "special",
+    kicker: "Single · 2026",
+    genre: "feat. Max Liem",
+    description: "Relationship drama turned into dancefloor energy — in three versions: Original Tribal Version, Trance Version and Techno Version, plus a Special Piano Version bonus track.",
+    availableNow: true,
+    href: "/silence-for-crazy-bitches",
+    cta: "Listen Now",
+    cover: "/releases/silence-for-crazy-bitches-cover.jpg",
+  },
+  {
     title: "Little Boy & Little Girl",
     category: "special",
     kicker: "Single · 2026",
