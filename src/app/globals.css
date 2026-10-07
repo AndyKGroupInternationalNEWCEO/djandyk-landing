@@ -708,3 +708,144 @@ body {
   background: radial-gradient(circle at 35% 30%, #f0d27a, #c9a227 70%);
   box-shadow: 0 0 6px rgba(201, 162, 39, 0.6), 0 0 0 1px rgba(0, 0, 0, 0.4);
 }
+
+/* ===== COVER FLOW — HOVER GLOW (opt-in via <CoverFlow glow />) =====
+   Standard album effects, first used on Wavelength Traces. Everything is
+   scoped under .cf-glow so albums without the prop are unaffected.
+   Accent colors come from --slide-accent (covers) and --accent (panels). */
+@keyframes cfAmbient {
+  0%, 100% { box-shadow: 0 30px 60px -15px rgba(0,0,0,0.7), 0 0 34px color-mix(in srgb, var(--slide-accent) 22%, transparent); }
+  50%      { box-shadow: 0 30px 60px -15px rgba(0,0,0,0.7), 0 0 58px color-mix(in srgb, var(--slide-accent) 42%, transparent); }
+}
+
+.cf-glow .cf-art {
+  transition: box-shadow 0.35s ease, transform 0.35s ease, filter 0.35s ease;
+}
+
+.cf-glow .cf-art[data-active] {
+  animation: cfAmbient 4s ease-in-out infinite;
+}
+
+.cf-glow .cf-art:hover {
+  animation: none;
+  transform: scale(1.03);
+  filter: brightness(1.08) saturate(1.1);
+  box-shadow:
+    0 30px 60px -15px rgba(0,0,0,0.7),
+    0 0 0 1px color-mix(in srgb, var(--slide-accent) 70%, transparent),
+    0 0 70px 8px color-mix(in srgb, var(--slide-accent) 55%, transparent) !important;
+}
+
+/* Light sweep across the artwork on hover */
+.cf-sheen { display: none; }
+
+.cf-glow .cf-sheen {
+  display: block;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.22) 50%, transparent 65%);
+  transform: translateX(-120%);
+}
+
+.cf-glow .cf-art:hover .cf-sheen {
+  transition: transform 0.9s cubic-bezier(0.19,1,0.22,1);
+  transform: translateX(120%);
+}
+
+/* Lyrics — the hovered word glows, its neighbours catch a softer echo */
+.cf-glow .cf-word {
+  display: inline-block;
+  transition: color 0.2s ease, text-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.cf-glow .cf-line:hover {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+.cf-glow .cf-word:hover {
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.06);
+  text-shadow:
+    0 0 6px var(--accent),
+    0 0 18px var(--accent),
+    0 0 32px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+
+.cf-glow .cf-word:hover + .cf-word,
+.cf-glow .cf-word:has(+ .cf-word:hover) {
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.cf-glow .cf-tag {
+  transition: text-shadow 0.25s ease, letter-spacing 0.25s ease;
+}
+
+.cf-glow .cf-tag:hover {
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 12px var(--accent);
+}
+
+/* Song info — rows and platform chips light up in the track accent */
+.cf-glow .cf-info dd {
+  transition: color 0.2s ease, text-shadow 0.25s ease;
+}
+
+.cf-glow .cf-info:hover dd {
+  color: #ffffff !important;
+  text-shadow: 0 0 12px var(--accent), 0 0 3px var(--accent);
+}
+
+.cf-glow .cf-info:hover dt {
+  color: var(--accent) !important;
+}
+
+.cf-glow .cf-chip {
+  transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.cf-glow .cf-chip:hover {
+  color: #ffffff !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 16px color-mix(in srgb, var(--accent) 55%, transparent), inset 0 0 8px color-mix(in srgb, var(--accent) 25%, transparent);
+  transform: translateY(-1px);
+}
+
+/* Track cards — cursor spotlight + cover zoom (pairs with .card-glow) */
+.glow-spot {
+  position: relative;
+}
+
+.glow-spot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, currentColor 22%, transparent), transparent 70%);
+}
+
+.card-glow:hover .glow-spot::after {
+  opacity: 1;
+}
+
+.glow-zoom {
+  transition: transform 0.6s cubic-bezier(0.19,1,0.22,1), filter 0.4s ease;
+}
+
+.card-glow:hover .glow-zoom {
+  transform: scale(1.06);
+  filter: brightness(1.08) saturate(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cf-glow .cf-art[data-active] { animation: none; }
+  .cf-glow .cf-art:hover,
+  .cf-glow .cf-word:hover,
+  .cf-glow .cf-chip:hover,
+  .card-glow:hover .glow-zoom { transform: none; }
+  .cf-glow .cf-sheen { display: none; }
+}

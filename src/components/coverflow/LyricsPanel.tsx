@@ -2,9 +2,24 @@
 
 import type { Track } from "@/types/album";
 
+// Each word is its own span so `.cf-glow` can light up a single word on hover.
+function Words({ line }: { line: string }) {
+  return (
+    <>
+      {line.split(/(\s+)/).map((part, i) =>
+        /^\s+$/.test(part) || part === "" ? part : (
+          <span key={i} className="cf-word">
+            {part}
+          </span>
+        )
+      )}
+    </>
+  );
+}
+
 export default function LyricsPanel({ track }: { track: Track }) {
   return (
-    <div className="h-full flex flex-col" style={{ ["--scroll-thumb" as string]: track.accent }}>
+    <div className="h-full flex flex-col" style={{ ["--scroll-thumb" as string]: track.accent, ["--accent" as string]: track.accent }}>
       <h2 className="flex-shrink-0 text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: track.accent }}>
         Lyrics
       </h2>
@@ -22,12 +37,12 @@ export default function LyricsPanel({ track }: { track: Track }) {
                     key={li}
                     className={
                       isTag
-                        ? "text-xs font-mono font-semibold uppercase tracking-wide mb-1"
-                        : "text-sm leading-relaxed font-serif"
+                        ? "cf-tag text-xs font-mono font-semibold uppercase tracking-wide mb-1"
+                        : "cf-line text-sm leading-relaxed font-serif"
                     }
                     style={{ color: isTag ? track.accent : "rgba(255,255,255,0.65)" }}
                   >
-                    {line}
+                    {isTag ? line : <Words line={line} />}
                   </p>
                 );
               })}

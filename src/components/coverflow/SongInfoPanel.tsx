@@ -12,7 +12,16 @@ function formatDuration(seconds?: number) {
 
 const PLATFORMS = ["Spotify", "Apple Music", "TIDAL", "YouTube", "Beatport"];
 
-export default function SongInfoPanel({ track, player }: { track: Track; player: AudioPlayerControls }) {
+export default function SongInfoPanel({
+  track,
+  player,
+  sheetPdf,
+}: {
+  track: Track;
+  player: AudioPlayerControls;
+  /** Downloadable song sheet (info, chords, lyrics) — shown as a button when set. */
+  sheetPdf?: string;
+}) {
   const infoRows: { label: string; value: string }[] = [];
   if (track.bpm) infoRows.push({ label: "BPM", value: String(track.bpm) });
   if (track.key) infoRows.push({ label: "Key", value: track.key });
@@ -31,7 +40,7 @@ export default function SongInfoPanel({ track, player }: { track: Track; player:
   if (track.mood) infoRows.push({ label: "Mood", value: track.mood });
 
   return (
-    <div>
+    <div style={{ ["--accent" as string]: track.accent }}>
       <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: track.accent }}>
         Song Information
       </h2>
@@ -68,12 +77,38 @@ export default function SongInfoPanel({ track, player }: { track: Track; player:
         </p>
       )}
 
+      {sheetPdf && (
+        <a
+          href={sheetPdf}
+          download
+          className="cf-download group mb-6 flex items-center gap-3 rounded-xl px-4 py-3 transition-all"
+          style={{ background: `${track.accent}12`, border: `1px solid ${track.accent}44` }}
+        >
+          <span
+            className="flex items-center justify-center w-9 h-9 rounded-lg flex-shrink-0 transition-transform group-hover:-translate-y-0.5"
+            style={{ background: track.accent, color: "#111111" }}
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+              <path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14" />
+            </svg>
+          </span>
+          <span className="min-w-0">
+            <span className="block text-sm font-semibold" style={{ color: "#ffffff" }}>
+              Download Song Sheet
+            </span>
+            <span className="block text-[10px] font-mono uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.45)" }}>
+              PDF · Info · Chords · Lyrics
+            </span>
+          </span>
+        </a>
+      )}
+
       {/* Streaming platforms — links go live once each track is released */}
       <div className="flex flex-wrap gap-2 mb-6">
         {PLATFORMS.map((name) => (
           <span
             key={name}
-            className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 rounded-full border transition-colors"
+            className="cf-chip text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 rounded-full border transition-colors"
             style={{ color: "rgba(255,255,255,0.5)", borderColor: "rgba(255,255,255,0.15)" }}
           >
             {name}
@@ -82,7 +117,7 @@ export default function SongInfoPanel({ track, player }: { track: Track; player:
       </div>
 
       <dl className="grid grid-cols-2 gap-x-4 gap-y-3">
-        <div>
+        <div className="cf-info">
           <dt className="text-[10px] font-mono uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.35)" }}>
             Producer
           </dt>
@@ -91,7 +126,7 @@ export default function SongInfoPanel({ track, player }: { track: Track; player:
           </dd>
         </div>
         {infoRows.map((row) => (
-          <div key={row.label}>
+          <div key={row.label} className="cf-info">
             <dt className="text-[10px] font-mono uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.35)" }}>
               {row.label}
             </dt>

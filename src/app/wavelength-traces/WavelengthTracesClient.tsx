@@ -24,6 +24,8 @@ function TrackCard({ track }: { track: Track }) {
     const px = (e.clientX - rect.left) / rect.width - 0.5;
     const py = (e.clientY - rect.top) / rect.height - 0.5;
     el.style.transform = `perspective(700px) rotateX(${(-py * 8).toFixed(2)}deg) rotateY(${(px * 8).toFixed(2)}deg) translateY(-4px)`;
+    el.style.setProperty("--mx", `${((px + 0.5) * 100).toFixed(1)}%`);
+    el.style.setProperty("--my", `${((py + 0.5) * 100).toFixed(1)}%`);
   };
 
   const resetTilt = () => {
@@ -38,7 +40,7 @@ function TrackCard({ track }: { track: Track }) {
         ref={innerRef}
         onMouseMove={handleTilt}
         onMouseLeave={resetTilt}
-        className="card-glow-inner rounded-2xl overflow-hidden"
+        className="card-glow-inner glow-spot rounded-2xl overflow-hidden"
         style={{
           background: "rgba(255,255,255,0.04)",
           backdropFilter: "blur(12px)",
@@ -50,7 +52,7 @@ function TrackCard({ track }: { track: Track }) {
         }}
       >
         <Link href={`/wavelength-traces/${track.slug}`} className="aspect-square w-full relative overflow-hidden block">
-          <img src={track.coverUrl} alt={track.title} className="w-full h-full object-cover" />
+          <img src={track.coverUrl} alt={track.title} className="glow-zoom w-full h-full object-cover" />
           <div className="absolute inset-0 flex items-start justify-start p-3">
             <span
               className="text-[9px] font-mono uppercase tracking-[0.3em] px-2.5 py-1 rounded-full border"
@@ -240,7 +242,7 @@ export default function WavelengthTracesClient({ initialSlug }: { initialSlug?: 
           </div>
 
           {viewMode === "coverflow" ? (
-            <CoverFlow album={wavelengthTracesAlbum} initialSlug={initialSlug} />
+            <CoverFlow album={wavelengthTracesAlbum} initialSlug={initialSlug} glow songSheets />
           ) : (
             <section className="pt-0 pb-12 px-6 max-w-[1400px] mx-auto">
               <ScrollReveal stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

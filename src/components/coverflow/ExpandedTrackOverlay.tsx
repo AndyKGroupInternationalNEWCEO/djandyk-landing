@@ -15,11 +15,13 @@ export default function ExpandedTrackOverlay({
   isVisible,
   reducedMotion,
   player,
+  sheetPdf,
 }: {
   track: Track;
   isVisible: boolean;
   reducedMotion: boolean;
   player: AudioPlayerControls;
+  sheetPdf?: string;
 }) {
   const [mobileTab, setMobileTab] = useState<"info" | "lyrics">("info");
 
@@ -46,7 +48,7 @@ export default function ExpandedTrackOverlay({
         />
       </div>
       {mobileTab === "info" ? (
-        <SongInfoPanel key={`${track.slug}-info`} track={track} player={player} />
+        <SongInfoPanel key={`${track.slug}-info`} track={track} player={player} sheetPdf={sheetPdf} />
       ) : (
         <div style={{ height: "55dvh" }}>
           <LyricsPanel key={`${track.slug}-lyrics`} track={track} />

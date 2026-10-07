@@ -9,6 +9,7 @@ import ExpandedHeader from "./ExpandedHeader";
 import ExpandedTrackOverlay from "./ExpandedTrackOverlay";
 import SongInfoPanel from "./SongInfoPanel";
 import LyricsPanel from "./LyricsPanel";
+import { songSheetPdfPath } from "@/lib/songSheet";
 import { nextRepeatMode, type RepeatMode } from "@/components/RepeatButton";
 
 const SPACING_DESKTOP = 200;
@@ -52,7 +53,19 @@ function formatTime(seconds: number) {
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
-export default function CoverFlow({ album, initialSlug }: { album: Album; initialSlug?: string }) {
+export default function CoverFlow({
+  album,
+  initialSlug,
+  glow = false,
+  songSheets = false,
+}: {
+  album: Album;
+  initialSlug?: string;
+  /** Opt-in hover glow effects on covers, song info and lyrics (see `.cf-glow` in globals.css). */
+  glow?: boolean;
+  /** Adds a "Download Song Sheet" PDF button to Song Info (see src/lib/songSheetAlbums.ts). */
+  songSheets?: boolean;
+}) {
   const tracks = album.tracks;
   const [activeIndex, setActiveIndex] = useState(() => {
     if (initialSlug) {
@@ -416,7 +429,7 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
   return (
     <section
       ref={sectionRef}
-      className="relative w-full select-none"
+      className={`relative w-full select-none${glow ? " cf-glow" : ""}`}
       style={{
         background: "linear-gradient(180deg, #060606 0%, #0e0e0e 55%, #060606 100%)",
       }}
@@ -514,7 +527,12 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
                 } as React.CSSProperties
               }
             >
-              <SongInfoPanel key={active.slug} track={active} player={buildPlayerControls(activeIndex)} />
+              <SongInfoPanel
+                key={active.slug}
+                track={active}
+                player={buildPlayerControls(activeIndex)}
+                sheetPdf={songSheets ? songSheetPdfPath(album.slug, active.slug) : undefined}
+              />
             </div>
 
             {band}
@@ -566,6 +584,7 @@ export default function CoverFlow({ album, initialSlug }: { album: Album; initia
             isVisible={isExpanding}
             reducedMotion={reducedMotion}
             player={buildPlayerControls(activeIndex)}
+            sheetPdf={songSheets ? songSheetPdfPath(album.slug, active.slug) : undefined}
           />
         )
       )}

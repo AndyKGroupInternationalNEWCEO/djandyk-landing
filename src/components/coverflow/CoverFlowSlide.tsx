@@ -91,8 +91,10 @@ export default function CoverFlowSlide({
       aria-label={isActive ? `Open ${track.title}` : `View ${track.title}`}
     >
       <div
-        className="relative w-full h-full rounded-lg overflow-hidden bg-black"
+        className="cf-art relative w-full h-full rounded-lg overflow-hidden bg-black"
+        data-active={isActive || isFocusBoosted ? "" : undefined}
         style={{
+          ["--slide-accent" as string]: track.accent,
           boxShadow: isFocusBoosted
             ? `0 50px 100px -20px rgba(0,0,0,0.8), 0 0 70px ${track.accent}40`
             : isActive
@@ -113,6 +115,7 @@ export default function CoverFlowSlide({
         ) : (
           <img src={track.coverUrl} alt={track.title} className="w-full h-full object-contain" draggable={false} />
         )}
+        <span className="cf-sheen" aria-hidden="true" />
       </div>
 
       {/* Reflection — pure CSS, no extra assets, doesn't touch the artwork itself.
